@@ -57,3 +57,5 @@ Valeri Fitz
 27. 4. 2020
 
 Version 0.1.0
+
+Kevin duscht 
