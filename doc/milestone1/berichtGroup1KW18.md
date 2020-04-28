@@ -43,7 +43,7 @@
 
 + Einberufung aller Gruppenmitglieder zur Online-Konferenz
 + Einarbeitung während der Online-Konferenz
-  + alle Mitglieder besitzen die aktuellen Tools 
+  + alle Mitglieder besitzen die aktuellen Tools
 + Durch Screensharing konnte man z.B. Änderungen an den Dokumenten sofort mitverfolgen
 + Erarbeitete Tagesordnungspunkte wurden abgearbeitet
 
@@ -77,11 +77,11 @@
   + Valeri Fitz, Tom Seidel
 
 ## 1.6 Anlagen zum Bericht vom 30.04.2020
-* [Gesprächsprotokoll](protokollGroup1KW18.md)
-* SnowCards
-  * [Funktionale Anforderung][func]
-  * [Nicht-Funktionale Anforderungen][nonFunc]
 
++ [Gesprächsprotokoll](protokollGroup1KW18.md)
++ SnowCards
+  + [Funktionale Anforderung][func]
+  + [Nicht-Funktionale Anforderungen][nonFunc]
 
 [func]: ./../snowCards/snowCardFunctional.md "SnowCard für funktionale Anforderungen"
 [nonFunc]: ./../snowCards/snowCardNonFuctional.md "SnowCard für nicht funktionale Anforderungen"
