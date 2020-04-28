@@ -32,8 +32,8 @@
 
 + Gruppenbesprechungen in Besprechungsräumen nicht möglich, da aktuell Kontakteinschränkungen und Zugangssperren zu Universitätsgebäuden gelten
   + Erstellung einer WhatsApp-Gruppe zum Informationsaustausch
-
-+ Bearbeitung der Übungsaufgabe und Besprechung sonstiger Themen mittels Online-Video-Konferenz über *Google Meetings* mit vorheriger Terminfestlegung
+  + Bearbeitung der Übungsaufgabe und Besprechung sonstiger Themen mittels Online-Video-Konferenz über *Google Meetings* mit vorheriger Terminfestlegung
+  
 + Plattformen, wie *Github* und Syntaxe, wie *Markdown* sind den meisten Gruppenmitgliedern nicht bekannt
   + Einrichtung und Einarbeitung erfolgte über Screen-Sharing während des Online-Meetings
 
