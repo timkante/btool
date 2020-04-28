@@ -43,7 +43,7 @@
 
 + Einberufung aller Gruppenmitglieder zur Online-Konferenz
 + Einarbeitung während der Online-Konferenz
-  + alle Mitglieder besitzen die aktuellen Tools 
+  + alle Mitglieder besitzen die aktuellen Tools
 + Durch Screensharing konnte man z.B. Änderungen an den Dokumenten sofort mitverfolgen
 + Erarbeitete Tagesordnungspunkte wurden abgearbeitet
 
@@ -52,15 +52,15 @@
 + Unterschiedliche Interpretationen der Aufgabenstellungen, wodurch ein hoher Zeitaufwand während der Diskusionen bestand
 + anfängliche akustische Störsignale
 
-## 1.4 Was haben Sie gelernt? Was würden Sie beim nächsten Mal anders machen?
+## 1.4 Was haben Sie gelernt? Was würden Sie beim nächsten Mal anders machen
 
-### 1.4.1 Was haben Sie gelernt?
+### 1.4.1 Was haben Sie gelernt
 
 + Umgang mit Git (Aneignung eines grundlegendes Verständnisses)
 + Grundlagen des Volere Templates
 + Erstellung von SnowCards
 
-### 1.4.2 Was würden Sie beim nächsten Mal anders machen?
+### 1.4.2 Was würden Sie beim nächsten Mal anders machen
 
 + Zeitmanagement für das Meeting (bessere Planung)
 + Abstimmungen zur Konfliktlösung (Mehrheitsentscheid)
@@ -77,11 +77,11 @@
   + Valeri Fitz, Tom Seidel
 
 ## 1.6 Anlagen zum Bericht vom 30.04.2020
-* [Gesprächsprotokoll](protokollGroup1KW18.md)
-* SnowCards
-  * [Funktionale Anforderung][func]
-  * [Nicht-Funktionale Anforderungen][nonFunc]
 
++ [Gesprächsprotokoll](protokollGroup1KW18.md)
++ SnowCards
+  + [Funktionale Anforderung][func]
+  + [Nicht-Funktionale Anforderungen][nonFunc]
 
 [func]: ./../snowCards/snowCardFunctional.md "SnowCard für funktionale Anforderungen"
 [nonFunc]: ./../snowCards/snowCardNonFuctional.md "SnowCard für nicht funktionale Anforderungen"

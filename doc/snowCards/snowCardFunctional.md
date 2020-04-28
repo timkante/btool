@@ -1,57 +1,60 @@
-# ID
+# SnowCard Funktionale Anforderung
+
+## ID
 
 ID: 001
 
-# Req-Type
+## Req-Type
 
 Technische (funktionale) Anforderung
 
-# Events / Use-Cases
+## Events / Use-Cases
 
- Ein einfach zu nutzendes Kommandozeilenprogramm zur Generierung einer anzeigbaren Ausgabe (HTML) anhand einer `.bib` Datei und zur Bearbeitung dieser Datei. 
+ Ein einfach zu nutzendes Kommandozeilenprogramm zur Generierung einer anzeigbaren Ausgabe (HTML) anhand einer `.bib` Datei und zur Bearbeitung einer solchen Datei.
 
-# Description
+## Description
 
-Eingabe des Programms sollte eine `.bib` Datei sein, diese sollte editierbar 
-Input of our Tool should be an `.bib` File, that should be editable for all different Sourcetypes individualy, giving the User the opportunity to easiely edit the Contents of given File, and to give an Overview over all the Files Contents.
+Eingabe des Programms soll eine `.bib` Datei sein, welche für verschiedene Referenzen dem Benutzer die Möglichkeit gibt, den Inhalt dieser zu bearbeiten,aufzulisten und zu sortieren.
 
-# Rationale
+## Rationale
 
-To give a User an easy to use Tool, to edit large ammounts of sources in a quick and simple way.
+Dem Benutzer ein einfaches Tool bereitstellen, um eine Vielzahl an Referenzen schnell und einfach bearbeiten zu können.
 
-# Originator
+## Originator
 
-The Originator of the Tool are either the Frontend/UI Part of the Tool, or the Users that want to use the tool in their own command-line.
+Anwender
 
-# Fit Criterion
+## Fit Criterion
 
-We can test if given Requirements are fulfilled, by either cooperating with a UI-Team, by defining a simple to use interface first, and by writing tests for every functionalyty on our own.
+Es soll getestet werden ob die gestellten Anforderungen erfüllt werden. Dazu sollen Test geschrieben/entwickelt werden, welche die Funktionalitäten prüfen.
 
-# Customer Satisfaction
+## Customer Satisfaction
 
-estimated [5/5]
+[5/5]
 
-Primarily the Front-End-Group, should be able to easiely call our API and should be able to work with the data in a simple and intuitive way.
+Primär: Front-End Gruppe sollte es einfach möglich sein, die API  aufzurufen und die generierten Daten zu benutzen.
 
-# Customer Dissatisfaction
+## Customer Dissatisfaction
 
-estimated [0/5]
+[0/5]
 
-If the Task will be fulfilled correctly, t here should be noone disappointed with the outcome.
+Sollten alle Anforderungen erfüllt sein, wird es keine Unzufriedenheit geben.
 
-# Priority
+## Priority
 
-Highest priority of the project, because the ease of use is the rise and fall of the project.
+[5/5]
 
-# Supporting Material
+Höchste Priorität im Project, da diese Anforderung den Erfolg des Prjektes ausmacht.
 
-Not available so far, but design documents (sepacialy for Design-Documents (RFC)) are crucial for making the CLI usable for an UI.
+## Supporting Material
 
-# Conflicts
+Keine. Später sollen Designdokumente hinzukommen.
 
-No conflicts should happen on our way.
+## Conflicts
 
-# History
+Keine.
+
+## History
 
 Martin Zeidler,
 Kevin Diex,

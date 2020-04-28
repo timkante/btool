@@ -1,54 +1,54 @@
-# ID
+# SnowCard Funktionale Anforderung
+
+## ID
 
 ID: 002
 
-# Req-Type
+## Req-Type
 
 Nicht-funktional / Usability
 
-# Events / Use-Cases
+## Events / Use-Cases
 
 Einlesen der Bib-Datei durch den Anwender
 
-# Description
+## Description
 
 Nach dem Einlesevorgang sollte dem Anwender ein direktes Feedback über den Erfolg oder Misserfolg angezeigt werden.
 
-# Rationale
+## Rationale
 
 Anwender braucht Rückmeldungen, um über seine weiteren Aktionen im Programm zu entscheiden
 
-# Originator
+## Originator
 
 Anwender
 
-# Fit Criterion
+## Fit Criterion
 
 Optisch nachvollziehbar, da bei Erfolg, sowie bei Misserfolg dem Anwender eine eindeutige Nachricht auf dem Bildschirm angezeigt wird.
 
-# Customer Satisfaction
+## Customer Satisfaction
 
-estimated [5/5]
+[5/5]
 
-# Customer Dissatisfaction
+## Customer Dissatisfaction
 
-estimated [0/5]
+[0/5]
 
+## Priority
 
-# Priority
+[0/5]
 
-estimated [0/5]
-
-
-# Supporting Material
+## Supporting Material
 
 Keine
 
-# Conflicts
+## Conflicts
 
 Keine
 
-# History
+## History
 
 Tom Seidel
 Saskia Heinrich
