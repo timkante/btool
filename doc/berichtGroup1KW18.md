@@ -52,8 +52,13 @@
 
 
 
-
-
 ## 1.5 Teilnehmer an dieser Aufgabe und ihre Rollen
 
-## 1.6.1 Anlagen zum Bericht vom 30.04.2020
++ Snowcard-Erstellung: Funktionale Anforderung
+  + Tim Kante, Kevin Diex, Martin Zeidler
++ Snowcard-Erstellung: Nicht-Funktionale Anforderungen
+  + Saskia Heinrich, Valeri Fitz, Tom Seidel, Rashid Katamesh
++ Berichterstellung:
+  + Valeri Fitz, Tom Seidel
+
+## 1.6 Anlagen zum Bericht vom 30.04.2020
