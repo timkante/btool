@@ -1,8 +1,13 @@
 # Protokoll zum ersten Meeting der Group1 am 27.04.2020
 
-* Anwesenheit
-  * Saskia, Tim, Valeri, Kevin, Martin,Tom
+* Anwesenheit:
+  * Saskia, Tim, Valeri, Kevin, Martin, Tom
   * Rashid (ab 19:25 Uhr)
+* Tagesordnungspunkte:
+  * Zeitplanung der Onlinemeetings
+  * Besprechung zur Handhabung der Berichte
+  * Erstellung der Volere SnowCard's
+  * Wahl eines Chief Technology Officers (CTO)
 
 ## 19:00 Uhr
 
