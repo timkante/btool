@@ -11,17 +11,17 @@
   +	Herr Tom Seidel
   +	Herr Martin Zeidler
 +	Wahl des Projektmanagers für Group1:
-  +	Herr Valeri Fitz
+  -	Herr Valeri Fitz
 +	Wahl des Teilschwerpunktes für die Durchführung des Projektes:
-  +	BiB-Parser Tool
+  -	BiB-Parser Tool
 +	Besprechung und Lösung der ersten Übungsaufgabe (Volere Snow Card)
 +	Besprechung zu nutzender Tools und Plattformen für die Projektplanung und -durchführung:
-  + *JIRA*
-  +	*TRELLO*
-  + *Github*
-  + *Git*
+  - *JIRA*
+	- *TRELLO*
+  - *Github*
+  - *Git*
 +	Besprechung zum Design bzw. Durchführung von Berichten und Snowcards
-  + *Markdown*-Sytax
+  - *Markdown*-Sytax
 + Einrichtung eines *Github*-Projektes und Einführung in *Markdown*
 
 ## 1.2 Was waren die Herausforderungen und Probleme? Wie wurden sie gelöst?
