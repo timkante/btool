@@ -50,9 +50,9 @@ Keine
 
 ## History
 
-Tom Seidel
-Saskia Heinrich
-Valeri Fitz
+Tom Seidel,
+Saskia Heinrich,
+Valeri Fitz.
 
 27\. 04\. 2020
 
