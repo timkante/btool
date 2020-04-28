@@ -4,14 +4,15 @@ ID: 001
 
 # Req-Type
 
-Technical (functional) Requirement
+Technische (funktionale) Anforderung
 
 # Events / Use-Cases
 
-> An easy to use command-line-interface to generate renderable output from a `.bib` file and to edit a `.bib` file.
+ Ein einfach zu nutzendes Kommandozeilenprogramm zur Generierung einer anzeigbaren Ausgabe (HTML) anhand einer `.bib` Datei und zur Bearbeitung dieser Datei. 
 
 # Description
 
+Eingabe des Programms sollte eine `.bib` Datei sein, diese sollte editierbar 
 Input of our Tool should be an `.bib` File, that should be editable for all different Sourcetypes individualy, giving the User the opportunity to easiely edit the Contents of given File, and to give an Overview over all the Files Contents.
 
 # Rationale
@@ -56,6 +57,6 @@ Martin Zeidler,
 Kevin Diex,
 Tim Kante.
 
-27. 4. 2020
+27\. 04\. 2020
 
 Version 0.1.0
