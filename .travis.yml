@@ -1,16 +1,19 @@
 os: linux
 dist: bionic
-language: cpp
 
-addons:
-  apt:
-    sources:
-      - sourceline: "ppa:ubuntu-toolchain-r/test"
-    packages:
-      - g++-9
+install:
+  - wget -qO- https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz | tar xvz
+
+language: cpp
+compiler:
+  - gcc
+
+before_script:
+  - export CC=gcc-7
+  - export CXX=g++-7
 
 script:
   - mkdir cmake-build-debug
   - cd cmake-build-debug
-  - CXX=/usr/bin/g++-9 CC=/usr/bin/gcc-9 cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" ./../
-  - cmake --build ./ --target bibParserTests -- -j 6
+  - ../cmake-3.17.0-Linux-x86_64/bin/cmake -DCMAKE_BUILD_TYPE=Debug ./../
+  - ../cmake-3.17.0-Linux-x86_64/bin/cmake --build ./ --target bibParserTests -- -j 6
