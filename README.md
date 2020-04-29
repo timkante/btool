@@ -1,6 +1,6 @@
 # Softwarepraktikum 2020: BiB-Parser-Tool
 
-![TravisCI/CD - Status](https://travis-ci.com/timkante/bibParser.svg?branch=master "Travis Badge")
+![Travis Badge](https://travis-ci.com/timkante/bibParser.svg?branch=master "TravisCI - Status")
 
 ## Projektbeschreibung
 
@@ -19,4 +19,8 @@ Gruppenmitglieder für Group1:
 
 ## Meilensteine
 
-[Meilenstein 1 - KW 18](doc/milestone1/berichtGroup1KW18.md "Bericht der KW 18") 
+[Meilenstein 1 - KW 18](doc/milestone1/berichtGroup1KW18.md "Bericht der KW 18")
+
+## Links
+
+Für alle Informationen zum aktuellen CI-Status: [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")
