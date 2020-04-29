@@ -18,7 +18,7 @@ set(MAIN_HEADERS
         src/add.hpp)
 
 add_library(${PROJECT_NAME} SHARED ${MAIN_SOURCES} ${MAIN_HEADERS})
-target_include_directories(${PROJECT_NAME} PUBLIC include)
+target_include_directories(${PROJECT_NAME} PUBLIC src)
 
 enable_testing()
 
