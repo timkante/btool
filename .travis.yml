@@ -1,0 +1,16 @@
+dist: trusty
+sudo: false
+language: cpp
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-9
+
+script:
+  - mkdir cmake-build-debug
+  - cd cmake-build-debug
+  - CXX=/usr/bin/g++-9 CC=/usr/bin/gcc-9 cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" ./../
+  - cmake --build ./ --target bibParserTests -- -j 6
