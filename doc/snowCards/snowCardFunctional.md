@@ -32,7 +32,7 @@ Es soll getestet werden ob die gestellten Anforderungen erfüllt werden. Dazu so
 
 [5/5]
 
-Primär: Front-End Gruppe sollte es einfach möglich sein, die API  aufzurufen und die generierten Daten zu benutzen.
+Primär: Front-End Gruppe sollte es einfach möglich sein, die API aufzurufen und die generierten Daten zu benutzen.
 
 ## Customer Dissatisfaction
 
@@ -44,7 +44,7 @@ Sollten alle Anforderungen erfüllt sein, wird es keine Unzufriedenheit geben.
 
 [5/5]
 
-Höchste Priorität im Project, da diese Anforderung den Erfolg des Prjektes ausmacht.
+Höchste Priorität im Projekt, da diese Anforderung den Erfolg des Projektes ausmacht.
 
 ## Supporting Material
 
