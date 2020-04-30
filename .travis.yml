@@ -23,11 +23,6 @@ script:
   - mkdir coverage
   - cd cmake-build-debug
   - ../cmake-3.17.0-Linux-x86_64/bin/cmake -DCMAKE_BUILD_TYPE=Debug ./../
-  - cd ./../coverage
-  - GCOV_FILES=$(find ./../cmake-build-debug -path ./../cmake-build-debug/dependencies -prune -o -name "*.gcno" -print)
-  - echo $GCOV_FILES
-  - gcov --version
-  - gcov $GCOV_FILES
   - cd ..
   # Wraps the compilation with the Build Wrapper to generate configuration (used
   # later by the SonarScanner) into the "bw-output" folder
@@ -35,3 +30,9 @@ script:
   # And finally run the SonarCloud analysis - read the "sonar-project.properties"
   # file to see the specific configuration
   - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
+  - ./cmake-build-debug/test/bibParserTests
+  - cd ./coverage
+  - GCOV_FILES=$(find ./../cmake-build-debug -path ./../cmake-build-debug/dependencies -prune -o -name "*.gcno" -print)
+  - echo $GCOV_FILES
+  - gcov --version
+  - gcov $GCOV_FILES
