@@ -22,9 +22,10 @@ script:
   - mkdir cmake-build-debug
   - cd cmake-build-debug
   - ../cmake-3.17.0-Linux-x86_64/bin/cmake -DCMAKE_BUILD_TYPE=Debug ./../
+  - cd ..
   # Wraps the compilation with the Build Wrapper to generate configuration (used
   # later by the SonarScanner) into the "bw-output" folder
-  - build-wrapper-linux-x86-64 --out-dir bw-output ../cmake-3.17.0-Linux-x86_64/bin/cmake --build ./ --target bibParserTests -- -j 6
+  - build-wrapper-linux-x86-64 --out-dir bw-output ../cmake-3.17.0-Linux-x86_64/bin/cmake --build ./cmake-build-debug/ --target bibParserTests -- -j 6
   # And finally run the SonarCloud analysis - read the "sonar-project.properties"
   # file to see the specific configuration
   - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
