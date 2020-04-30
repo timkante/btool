@@ -14,6 +14,7 @@ Nimmt den Namen eines Stils und eine Liste von Namen von [bib-Dateien](https://d
 ## Team
 
 Gruppenmitglieder für Group1:
+
 + Herr Valeri Fitz (Projektmanager)
 + Herr Kevin Diex
 + Frau Saskia Heinrich
@@ -28,5 +29,5 @@ Gruppenmitglieder für Group1:
 
 ## Links
 
-Für alle Informationen zum aktuellen CI-Status: [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")
+Für alle Informationen zum aktuellen CI-Status: [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI") \
 Für ausführliche Code-Analyse: [SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser "SonarCloud.io")
