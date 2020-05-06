@@ -49,7 +49,7 @@
 ## 1.5 Teilnehmer an dieser Aufgabe und ihre Rollen
 
 + CRC Cards-Erstellung: 
-  + Tim, Kevin, Martin, Saskia, Valeri, Tom, Rashi
+  + Tim, Kevin, Martin, Saskia, Valeri, Tom, Rashid
 
 + Berichterstellung:
   + Saskia, Kevin, Martin
