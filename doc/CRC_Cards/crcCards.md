@@ -1,59 +1,56 @@
 | Klasse:  translation_table | |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
-| Konvertiert die Bib-Datei | Ausgabeformate|
-| Auflistung der Attribute (Kategorien wie Autor, Titel...)  |Bib Elemente|
+| konvertiert die Bib-Datei | output_format|
+| Auflistung der Attribute (Kategorien wie Autor, Titel...)  |bib_element|
 | Hinzufügen der Attribute  ||
-| Überprüfung der vorhandenen Atribite ||
-| Enthält Liste mit "Regelwerk" mit Atributzuweisungen für jede Refernzart||
-| Input Validierung für Atributswerten (Regeln für Atributwerte) | |
-| Test ob Sortierung des Attributs überhaupt möglich| |
-<p> Sammlung von Regeln und Werten mit, welchen das Programm funktioniert <br><br>
+| Überprüfung der vorhandenen Attribute ||
+| enthält Liste mit "Regelwerk" mit Attributzuweisungen für jede Referenzart||
+| Input Validierung für Attributswerte (Regeln für Attributwerte) | |
+| Test, ob Sortierung des Attributs überhaupt möglich| |
+<p> Sammlung von Regeln und Werten, mit welchen das Programm funktioniert <br><br>
 
 | Klasse: bib_element| |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
 | Überprüfung der vorhandenen Attribute mit ihren Werten  | |
-| Hinzufügen von Atributen| |
+| Hinzufügen von Attributen| |
 | Bearbeiten/Löschen von Attributen (falls sich jem. verschrieben hat)||
 <p> verwaltet die einzelnen Quelleinträge<br><br>
 
 | Klasse: bib_data| |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
-| Entghält die Bib Elemente  | Bib Elemente|
-| Hinzufügen von Bibelementen| |
-| Bib Elemente ?| |
+| enthält die Bib Elemente  | bib_element|
+| Hinzufügen von Bibelementen| bib_element|
 <p> verwaltet alle Elemente<br><br>
 
-| Klasse: Output_format| |
+| Klasse: output_format| |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
-| Enthält Liste der Ausgabeformate  | HTML|
-| Enthält die Tags  | XML|
-| Sortiert die Tags  | PDF|
-<p> sammelt/verwaltet die Ausgabeformete<br><br>
+| enthält Liste der Ausgabeformate  | HTML|
+| enthält die Tags  | XML|
+| sortiert die Tags  | PDF|
+<p> sammelt/verwaltet die Ausgabeformate<br><br>
 
 | Klasse: Html| |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
-|  Erzeugten der Ausgabedatein aus den Tags| |
+|  Erzeugen der Ausgabedateien aus den Tags| |
 
 | Klasse: XML| |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
-| Erzeugten der Ausgabedatein aus den Tags| |
+| Erzeugen der Ausgabedateien aus den Tags| |
 
 | Klasse: PDF| |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
-| Erzeugten der Ausgabedatein aus den Tags| |
+| Erzeugen der Ausgabedateien aus den Tags| |
 <p> verwaltet die spezifischen Anforderungen an den Aufbau <br><br>
 
-| Klasse: Parser| |
+| Klasse: parser| |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
-| Verwaltet alle Elemente, Tags, Datein, etc.| bib_data|
-| |translation_table|
-| | Output_format|
+| Verwaltet alle Elemente, Tags, Dateien, etc.| bib_data, translation_table, output_format|
 <p>Kernfunktionalität<br>
