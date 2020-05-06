@@ -11,7 +11,7 @@
 | Input Validierung für Attributswerte (Regeln für Attributwerte) | |
 | Test, ob Sortierung des Attributs überhaupt möglich| |
 
-<p> Sammlung von Regeln und Werten, mit welchen das Programm funktioniert <br><br>
+Sammlung von Regeln und Werten, mit welchen das Programm funktioniert
 
 | Klasse: bib_element| |
 | ------------- |:-------------:|
@@ -20,7 +20,7 @@
 | Hinzufügen von Attributen| |
 | Bearbeiten/Löschen von Attributen (falls sich jem. verschrieben hat)||
 
-<p> verwaltet die einzelnen Quelleinträge<br><br>
+verwaltet die einzelnen Quelleinträge
 
 | Klasse: bib_data| |
 | ------------- |:-------------:|
@@ -28,7 +28,7 @@
 | enthält die Bib Elemente  | bib_element|
 | Hinzufügen von Bibelementen| bib_element|
 
-<p> verwaltet alle Elemente<br><br>
+verwaltet alle Elemente
 
 | Klasse: output_format| |
 | ------------- |:-------------:|
@@ -37,7 +37,7 @@
 | enthält die Tags  | XML|
 | sortiert die Tags  | PDF|
 
-<p> sammelt/verwaltet die Ausgabeformate<br><br>
+sammelt/verwaltet die Ausgabeformate
 
 | Klasse: Html| |
 | ------------- |:-------------:|
@@ -54,11 +54,11 @@
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
 | Erzeugen der Ausgabedateien aus den Tags| |
 
-<p> verwaltet die spezifischen Anforderungen an den Aufbau <br><br>
+verwaltet die spezifischen Anforderungen an den Aufbau
 
 | Klasse: parser| |
 | ------------- |:-------------:|
 | **Verantwortlichkeiten:** | **Kollaborationen:** |
 | Verwaltet alle Elemente, Tags, Dateien, etc.| bib_data, translation_table, output_format|
 
-<p>Kernfunktionalität<br>
+Kernfunktionalität
