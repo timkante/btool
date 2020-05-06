@@ -12,7 +12,7 @@
 ### 19:00 Uhr
 
 * Start des Meetings, Begrüßung
-* Besprechung / Erörtern des Feedbacks zum ersten [Bericht](../milestone1/berichtGroup1KW18.md "1. Bericht aus KW18") und zur Bearbeitung der ersten Aufgabe
+* Besprechung / Erörtern des Feedbacks zum ersten [Bericht](../milestone2/berichtGroup1KW19.md "2. Bericht aus KW19") und zur Bearbeitung der ersten Aufgabe
 * Festlegung der Berichtersteller für KW19
   * Saskia
   * Martin
@@ -28,12 +28,9 @@
 ### 20:15 Uhr
 
 * Verantworlichkeiten der Klassen finden und zusammentragen
-* kollaborateure finden und prüfen
+* Kollaborateure finden und prüfen
 
 ### 21:00 Uhr
 
 * Abschluss des Meetings
 
-___
-
-## Meeting#4 am 07.05.2020
