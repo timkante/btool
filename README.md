@@ -29,6 +29,8 @@ Gruppenmitglieder für Group1:
 
 [Meilenstein 2 - KW 19](doc/milestone2/berichtGroup1KW19.md "Bericht der KW 19")
 
+[Meilenstein 3 - KW 20](doc/milestone3/berichtGroup1KW20.md "Bericht der KW 20")
+
 ## Links
 
 Für alle Informationen zum aktuellen CI-Status: [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI") \
