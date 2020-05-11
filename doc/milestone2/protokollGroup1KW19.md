@@ -34,3 +34,39 @@
 
 * Abschluss des Meetings
 
+___
+
+## Meeting#4 am 07.05.2020
+
+* Anwesenheit:
+  * Saskia, Tim, Valeri, Kevin, Martin, Tom, Rashid
+
+### 18:00 Uhr
+
+* Beginn des Meetings
+
+### 18:10 Uhr
+
+* witerführende Erklärungen zu GitHub, Einführung in Branches
+
+### 18:15 Uhr
+
+* Reflexion: Bericht 2 und korrektur
+
+### 18:25 Uhr
+
+* Besprechung der Vorlesungsinhalte
+  * Der Begriff Stil wurde geklärt
+  * (Grund-)Funktionen des Tools wurden näher erläutert
+  * Funktion der Überstzungstabelle geklärt
+
+### 18:45 Uhr
+
+* Besprechung der neuen Aufgabe von Übungsblatt03 und Hausaufgaben für alle
+  * weiterführende Gedanken über die Klassen und derer Zusammenhänge
+  * zugehörigen Foliensatz 4 anschauen
+
+### 19:05 Uhr
+
+* Abschluss des Meeting
+* Terminvereinbarung für das kommende Meeting in KW20
