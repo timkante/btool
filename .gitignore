@@ -2,3 +2,4 @@
 *.pdf
 cmake-build-debug
 build
+.vscode
