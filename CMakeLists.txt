@@ -5,8 +5,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_compile_options(-Wall -Wextra -Wpedantic -fprofile-arcs -ftest-coverage -g -O0)
-add_link_options(-fprofile-arcs -ftest-coverage -g -O0)
+option(SONAR "Build all profiling-files." OFF)
+
+if (SONAR)
+    add_compile_options(-Wall -Wextra -Wpedantic -fprofile-arcs -ftest-coverage)
+    add_link_options(-fprofile-arcs -ftest-coverage)
+endif()
 
 include_directories(
         "${CMAKE_SOURCE_DIR}/src"
@@ -18,7 +22,7 @@ set(MAIN_SOURCES
 set(MAIN_HEADERS
         src/add.hpp)
 
-add_library(${PROJECT_NAME} SHARED ${MAIN_SOURCES} ${MAIN_HEADERS})
+add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 target_include_directories(${PROJECT_NAME} PUBLIC src)
 
 enable_testing()
