@@ -46,6 +46,24 @@ ___
 
 ## Meeting#6 am 14.05.2020
 
+* Anwesenheit:
+  * Saskia, Tim, Valeri, Kevin, Martin, Tom, Rashid
+
+### 17:15 Uhr
+
+* Beginn der Besprechnung und Sondierung der Lage
+  * keine neue Aufgabe verfügbar
+
+### 17:25 Uhr
+
+* gemeinsame Installation des Compilers und von [CMake](https://cmake.org/)
+
+### 19:50 Uhr
+
+* beenden des Meetings
+  * Fazit --> keine neue Aufgabe
+  * Installationen und Projekt bei allen aktuell
+
 [onlinevp]:https://online.visual-paradigm.com/ "UML Tool Online"
 [argouml]:http://argouml.tigris.org/ "ArgoUML Tool"
 [ibmuml]:https://www.ibm.com/de-de/marketplace/uml-tools/purchase "IBM UML Tool"

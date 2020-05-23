@@ -4,48 +4,47 @@
 
 * Anwesenheit:
   * Saskia, Tim, Valeri, Kevin, Martin, Tom, Rashid
-* Tagesordnungspunkte:
-  * Besprechung zum Milestone2 Feedback
-  * Festlegung der neuen Berichtersteller
-  * Bearbeitung des Übungsblatt03 (Klassendiagramm aus CRC-Cards)
 
 ### 19:00 Uhr
 
-* Beginn des Meetings
-* Besprechung des Feedbacks
+* Beginn des Meetings --> Technikprobleme --> neuen BBB Server gewählt
 
 ### 19:05 Uhr
 
-* Überlegung welches Tool für die Erstellung vom UML in Frage kommt:
-  * [IBM UML Designer][ibmuml] (kommerziel)
-  * [ArgoUml][argouml] (keine Installation möglich)
-  * [Online Visual Paradigm][onlineVP] (am besten geeignet)
+* eigentlicher Beginn des Meetings
+  * Besprechung der Aufgabe
+  * Aufteilung in 2 Gruppen und separate Bearbeitung der Teilaufgaben
 
-### 19:15 Uhr
-
-* Erstellung einer TranslationTable (Datei - Beispielhaft)
-
-### 19:45 Uhr
-
-* Beginn der Aufgabenbearbeitung mit [Online VP][onlineVP]
-* Zusammentragen der ersten Vorschläge für Zusammenhänge
-* Bis:
-  * 20:20 Uhr - Klasse TranslationTable
-  * 21:00 Uhr - Klassen BibElement, Field und StyleProperties
-  * 21:20 Uhr - Klasse Parser (als Main Klasse)
-  * 21:30 Uhr - Abstracte Klasse FileGenerator mit Klassen HTML, PDF, XML
-  * 22:15 Uhr - Klassendiagramm fertigstellen, Rolenames und Multiplikatoren festlegen
-
-### 22:15 Uhr
+### 22:00 Uhr
 
 * Abschluss des Meetings
-* Festlegen der Berichtersteller:
-  * Saskia, Valerie, Rashid
 
 ___
 
 ## Meeting#8 am 20.05.2020
 
-[onlinevp]:https://online.visual-paradigm.com/ "UML Tool Online"
-[argouml]:http://argouml.tigris.org/ "ArgoUML Tool"
-[ibmuml]:https://www.ibm.com/de-de/marketplace/uml-tools/purchase "IBM UML Tool"
+* Anwesenheit:
+  * Valeri, Tom
+  * Tim, Kevin, Martin, Rashid (bis 20:00 Uhr)
+* Abwesend
+  * Saskia
+
+### 19:00 Uhr
+
+* Durchsicht der Diagramme
+  * Erklärung durch jeweils ein Gruppenmitglied
+
+### 19:55 Uhr
+
+* Festlegung der Berichtersteller
+  * Valeri, Tom
+
+### 20:00 Uhr
+
+* Berichterstellung für [KW21](berichtGroup1KW21.md)
+* Abwesend:
+  * Tim, Kevin, Martin, Rashid
+
+### 21:00 Uhr
+
+* Beendigung des Meetings und Upload von Bericht und Lösungen zu den Aufgaben
