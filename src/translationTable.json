@@ -1,0 +1,168 @@
+{
+    "commonRequiredFields": [
+        {
+            "title": "author",
+            "format": "\\w+"
+        },
+        {
+            "title": "title",
+            "format": "\\w+"
+        }
+    ],
+    "commonOptionalFields": [
+        {
+            "title": "author",
+            "format": "\\w+"
+        }
+    ],
+    "sortableFields": [
+
+    ],
+    "styles": [
+        {
+            "name": "article",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "title",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "journal",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "volume",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "number",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "pages",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "book",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "title",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "publisher",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "volume",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "series",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "edition",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "isbn",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "proceedings",
+            "requiredFields": [
+                {
+                    "title": "title",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "volume",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "pages",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "edition",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "editor",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "organization",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "publisher",
+                    "format": "\\w+"
+                }
+            ]
+        }
+    ]
+}
