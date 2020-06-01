@@ -24,8 +24,8 @@ script:
   - tar xzvf boost_1_73_0.tar.gz &>/dev/null
   - cd boost_1_73_0/
   - ./bootstrap.sh --prefix=/usr/local &>/dev/null
-  - ./b2 &>/dev/null
-  - ./b2 install &>/dev/null
+  - travis_wait ./b2 &>/dev/null
+  - travis_wait ./b2 install &>/dev/null
   - cd ../..
   - mkdir cmake-build-debug
   - mkdir coverage
