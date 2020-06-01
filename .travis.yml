@@ -21,7 +21,7 @@ addons:
 script:
   - cd dependencies
   - wget -O boost_1_73_0.tar.gz https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.gz &>/dev/null
-  - tar xzvf boost_1_73_0.tar.gz
+  - tar xzvf boost_1_73_0.tar.gz &>/dev/null
   - cd boost_1_73_0/
   - ./bootstrap.sh --prefix=/usr/local &>/dev/null
   - ./b2 &>/dev/null
