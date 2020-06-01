@@ -29,7 +29,7 @@ add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 if(Boost_FOUND)
     message(STATUS "Boost version: ${Boost_VERSION}")
     target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
-    target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
+    target_link_libraries(${PROJECT_NAME} PUBLIC ${Boost_LIBRARIES})
 endif(Boost_FOUND)
 
 target_include_directories(${PROJECT_NAME} PUBLIC src)
