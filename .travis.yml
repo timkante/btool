@@ -25,7 +25,7 @@ script:
   - cd boost_1_73_0/
   - ./bootstrap.sh --prefix=/usr/local &>/dev/null
   - travis_wait ./b2 -d0
-  - travis_wait ./b2 install -d0
+  - sudo travis_wait ./b2 install -d0
   - cd ../..
   - mkdir cmake-build-debug
   - mkdir coverage
