@@ -19,14 +19,7 @@ addons:
       secure: "KXBUdmSUgs/SCLy0U1iZJY1xBpkt0FJdH+lAC6fe1WO/iiHfFbbu+Sx9GA1ml9XaK1W3kXpPvqSmFog2q+dGl4j+HKrxLJuOgq6T0PborBovWKkWNcRxsa+H4fqhh+kgSzUZNABofDSZl5fXzibNTD3yWW+j4OWjvBAAZXKOVSiPj2EoVAWjX9prcf5LPqUs50yrroO5U2KIanrzFaOn/CeGA+HceC0SY5izuSJQJe8AoiVOuMvU1BQXa0pRIGFsiIc3NgUmATP5KdWSbeEAYCX9aKTLwKf+7pKZkjx/LLyuQDY0MIZ2xDUaX0pE7Xp7GGMzptn3UHBZc5K9lLpYPXZBouYa5I3cZtuOSHm/uSORwfpPXCdIBdjMAqnx9qxaiiuRNBk/iSrfLsE+W8NnQ+QRlOpYvnEsAp/fgHXLiIK7uX1kNhS1EjZtnOx46Jc52yWQ61x6DuXcPL0EGVnRucKjFuzXQZQiuF/ZT6UzYF1TPagW69xHtq2oHcDvPRiVuzjA+xSLSWBUBLgoA6biSO9H3mglJQGd093EaZAGKBxYzVjS/7j6Yy+dfQiamvwShJ6XkCwbioFJWtN+mKX3Z6bFfZWpKmvhojZ2zTEvUR2Xe8rWfk1he0cNBEQhLl/n+/2vusAMpJH2+i3/SIG2dhxE6nFAFcU0ut4mFCOBEeY=" # encrypted value of your token
 
 script:
-  - cd dependencies
-  - wget -O boost_1_73_0.tar.gz https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.gz &>/dev/null
-  - tar xzvf boost_1_73_0.tar.gz &>/dev/null
-  - cd boost_1_73_0/
-  - ./bootstrap.sh --prefix=/usr/local &>/dev/null
-  - travis_wait ./b2 -d0
-  - sudo travis_wait ./b2 install -d0
-  - cd ../..
+  - sudo apt-get install libboost-dev
   - mkdir cmake-build-debug
   - mkdir coverage
   - cd cmake-build-debug
