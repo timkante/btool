@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+find_package(Boost 1.70 REQUIRED)
+
 option(SONAR "Build all profiling-files." OFF)
 
 if (SONAR)
@@ -17,12 +19,18 @@ include_directories(
 )
 
 set(MAIN_SOURCES
-        src/add.cpp)
+        src/TranslationTable.cpp)
 
 set(MAIN_HEADERS
-        src/add.hpp)
+        src/TranslationTable.hpp)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
+
+if(Boost_FOUND)
+    target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
+    message(STATUS "Boost version: ${Boost_VERSION}")
+endif(Boost_FOUND)
+
 target_include_directories(${PROJECT_NAME} PUBLIC src)
 
 enable_testing()
