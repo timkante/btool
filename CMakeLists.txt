@@ -27,8 +27,9 @@ set(MAIN_HEADERS
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
 if(Boost_FOUND)
-    target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
     message(STATUS "Boost version: ${Boost_VERSION}")
+    target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
+    target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 endif(Boost_FOUND)
 
 target_include_directories(${PROJECT_NAME} PUBLIC src)
@@ -39,4 +40,4 @@ add_subdirectory(dependencies/googletest)
 add_subdirectory(test)
 
 add_executable(${PROJECT_NAME}Run main.cpp)
-target_link_libraries(${PROJECT_NAME}Run PUBLIC ${PROJECT_NAME} ${Boost_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}Run PUBLIC ${PROJECT_NAME})
