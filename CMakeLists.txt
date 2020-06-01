@@ -39,4 +39,4 @@ add_subdirectory(dependencies/googletest)
 add_subdirectory(test)
 
 add_executable(${PROJECT_NAME}Run main.cpp)
-target_link_libraries(${PROJECT_NAME}Run PUBLIC ${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME}Run PUBLIC ${PROJECT_NAME} ${Boost_LIBRARIES})
