@@ -6,8 +6,11 @@
 #include <sstream>
 #include <TranslationTable.hpp>
 #include <boost/filesystem/path.hpp>
+#include <boost/filesystem.hpp>
 
 TEST(TranslationTableTest, constructorTestFromPath){
+    boost::filesystem::path full_path(boost::filesystem::current_path());
+    std::cout << "Current path is : " << full_path << std::endl;
     ASSERT_NO_THROW(TranslationTable(boost::filesystem::path("../../src/translationTable.json")));
 }
 
