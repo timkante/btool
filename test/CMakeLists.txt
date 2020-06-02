@@ -1,7 +1,7 @@
 set(SuiteName bibParserTests)
 
 set(TEST_SOURCES
-        addTest.cpp)
+        )
 
 add_executable(${SuiteName} ${TEST_SOURCES})
 

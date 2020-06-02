@@ -17,10 +17,12 @@ include_directories(
 )
 
 set(MAIN_SOURCES
-        src/add.cpp)
+        src/fieldConstraint.cpp
+        src/styleProperties.cpp)
 
 set(MAIN_HEADERS
-        src/add.hpp src/fieldConstraint.cpp src/fieldConstraint.h src/styleProperties.cpp src/styleProperties.h)
+        src/fieldConstraint.h
+        src/styleProperties.h)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 target_include_directories(${PROJECT_NAME} PUBLIC src)
