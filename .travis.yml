@@ -29,7 +29,7 @@ script:
   # later by the SonarScanner) into the "bw-output" folder
   - build-wrapper-linux-x86-64 --out-dir bw-output cmake-3.17.0-Linux-x86_64/bin/cmake --build cmake-build-debug/ --target bibParserTests -- -j 6
   # Run tests
-  - cd acmake-build-debug/test
+  - cd cmake-build-debug/test
   - ./bibParserTests
   - cd ../..
   # Generate the coverage - files
