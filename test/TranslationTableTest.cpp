@@ -1,7 +1,3 @@
-//
-// Created by Tim Kante on 01.06.20.
-//
-
 #include <gtest/gtest.h>
 #include <sstream>
 #include <TranslationTable.hpp>

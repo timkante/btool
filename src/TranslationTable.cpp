@@ -1,7 +1,3 @@
-//
-// Created by Tim Kante on 01.06.20.
-//
-
 #include "TranslationTable.hpp"
 #include <boost/property_tree/json_parser.hpp>
 #include <sstream>

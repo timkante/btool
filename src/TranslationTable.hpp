@@ -1,7 +1,3 @@
-//
-// Created by Tim Kante on 01.06.20.
-//
-
 #ifndef BIBPARSER_TRANSLATIONTABLE_HPP
 #define BIBPARSER_TRANSLATIONTABLE_HPP
 
@@ -18,4 +14,4 @@ public:
     auto printAll() -> std::stringstream;
 };
 
-#endif //BIBPARSER_TRANSLATIONTABLE_HPP
+#endif
