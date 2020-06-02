@@ -2,7 +2,6 @@
 #include <sstream>
 #include <TranslationTable.hpp>
 #include <boost/filesystem/path.hpp>
-#include <boost/filesystem.hpp>
 
 TEST(TranslationTableTest, constructorTestFromPath){
     ASSERT_NO_THROW(TranslationTable(boost::filesystem::path("../../src/translationTable.json")));
