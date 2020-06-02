@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-find_package(Boost 1.70 REQUIRED)
+set(Boost_DEBUG 1)
+find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
 
 option(SONAR "Build all profiling-files." OFF)
 
@@ -27,8 +28,9 @@ set(MAIN_HEADERS
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
 if(Boost_FOUND)
-    target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
     message(STATUS "Boost version: ${Boost_VERSION}")
+    target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
+    target_link_libraries(${PROJECT_NAME} Boost::system Boost::filesystem)
 endif(Boost_FOUND)
 
 target_include_directories(${PROJECT_NAME} PUBLIC src)
