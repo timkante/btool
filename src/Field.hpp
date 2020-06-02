@@ -4,7 +4,8 @@
 #include <string>
 
 struct Field {
-    std::string name, value;
+    std::string name;
+    std::string value;
     bool isRequired;
     Field(std::string name, std::string value, bool isRequired);
 };
