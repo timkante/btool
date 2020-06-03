@@ -22,11 +22,15 @@ include_directories(
 
 set(MAIN_SOURCES
         src/TranslationTable.cpp
-        src/Field.cpp)
+        src/Field.cpp
+        src/fieldConstraint.cpp
+        src/styleProperties.cpp)
 
 set(MAIN_HEADERS
         src/TranslationTable.hpp
-        src/Field.hpp)
+        src/Field.hpp
+        src/fieldConstraint.h
+        src/styleProperties.h)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
