@@ -12,10 +12,7 @@ struct BibElement{
 
     BibElement(std::string id, std::string style, std::vector<Field> attributes);
 
-    bool isComplete(){
-        //TODO - Classes missing
-        return false;
-    }
+    bool isComplete();
 };
 
 #endif
