@@ -2,14 +2,15 @@
 #define BIBPARSER_FIELDCONSTRAINT_HPP
 #include <string>
 #include <Field.hpp>
+#include <Regex>
 
 struct FieldConstraint {
     std::string name;
-    std::string format;
+    std::regex format;
 
-    FieldConstraint(std::string fieldName, std::string fieldFormat);
+    FieldConstraint(std::string fieldName, std::regex fieldFormat);
     bool matchesConstraint(std::string value, Field field);
-    bool matchesRegex(std::string dataFormat, std::string fieldFormat);
+    bool matchesRegex(const std::string& dataFormat, std::regex fieldFormat);
 };
 
 

@@ -1,16 +1,12 @@
 #include "FieldConstraint.hpp"
-#include <regex>
 
-FieldConstraint::FieldConstraint(std::string fieldName, std::string fieldFormat) {
+FieldConstraint::FieldConstraint(std::string fieldName, std::regex fieldFormat) {
     name = fieldName;
     format = fieldFormat; // Datentyp zu regex ändern?
 }
 
-bool FieldConstraint::matchesRegex(std::string dataFormat, std::string fieldFormat) {
-    if (dataFormat == fieldFormat)
-        return true;
-    else
-        return false;
+bool FieldConstraint::matchesRegex(const std::string& dataFormat, std::regex fieldFormat) {
+    return std::regex_match(dataFormat, fieldFormat);
 }
 
 bool FieldConstraint::matchesConstraint(std::string value, Field field) {
@@ -21,6 +17,7 @@ bool FieldConstraint::matchesConstraint(std::string value, Field field) {
             return false;
     }
 }
+
 
 
 
