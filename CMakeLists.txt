@@ -34,7 +34,6 @@ set(MAIN_HEADERS
         src/FieldConstraint.hpp
         src/StyleProperties.hpp)
 
-
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
 if(Boost_FOUND)
