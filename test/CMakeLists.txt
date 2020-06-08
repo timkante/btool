@@ -3,7 +3,8 @@ set(SuiteName bibParserTests)
 set(TEST_SOURCES
         TranslationTableTest.cpp
         FieldTest.cpp
-        BibElementTest.cpp)
+        BibElementTest.cpp
+        Parser.cpp)
 
 add_executable(${SuiteName} ${TEST_SOURCES})
 
