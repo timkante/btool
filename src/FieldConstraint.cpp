@@ -1,9 +1,7 @@
 #include "FieldConstraint.hpp"
 
-FieldConstraint::FieldConstraint(std::string fieldName, std::regex fieldFormat) {
-    name = fieldName;
-    format = fieldFormat; // Datentyp zu regex ändern?
-}
+FieldConstraint::FieldConstraint(std::string fieldName, std::regex fieldFormat)
+    : name(std::move(name)), format(std::move(format)){};
 
 bool FieldConstraint::matchesRegex(const std::string& dataFormat, std::regex fieldFormat) {
     return std::regex_match(dataFormat, fieldFormat);
@@ -11,10 +9,7 @@ bool FieldConstraint::matchesRegex(const std::string& dataFormat, std::regex fie
 
 bool FieldConstraint::matchesConstraint(std::string value, Field field) {
     if (field.name == name) {
-        if (matchesRegex(value, format))
-            return true;
-        else
-            return false;
+        return (matchesRegex(field.value, format));
     }
 }
 
