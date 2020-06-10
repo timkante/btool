@@ -5,14 +5,14 @@
 #include <Field.hpp>
 #include <vector>
 
-struct BibElement{
+struct BibElement {
     std::string id;
     std::string style;
     std::vector<Field> attributes;
 
     BibElement(std::string id, std::string style, std::vector<Field> attributes);
 
-    bool isComplete();
+    [[nodiscard]] auto isComplete() const -> bool;
 };
 
 #endif

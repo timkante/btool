@@ -12,6 +12,6 @@ auto TranslationTable::printAll() -> std::stringstream {
     return ss;
 }
 
-TranslationTable::TranslationTable(const boost::filesystem::path& path) {
+TranslationTable::TranslationTable(const boost::filesystem::path &path) {
     boost::property_tree::read_json(path.string(), this->contents);
 }

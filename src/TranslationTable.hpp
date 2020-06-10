@@ -10,7 +10,9 @@ private:
     boost::property_tree::ptree contents;
 public:
     explicit TranslationTable(std::stringstream file);
-    explicit TranslationTable(const boost::filesystem::path& path);
+
+    explicit TranslationTable(const boost::filesystem::path &path);
+
     auto printAll() -> std::stringstream;
 };
 
