@@ -12,6 +12,8 @@ TEST(TranslationTableTest, constructorTestFromContent) {
 }
 
 TEST(TranslationTableTest, printTest) {
-    ASSERT_EQ(TranslationTable(std::stringstream{R"({"key": "value"})"}).printAll().str(),
+    std::stringstream receiver;
+    TranslationTable(std::stringstream{R"({"key": "value"})"}).printAll(receiver);
+    ASSERT_EQ(receiver.str(),
               "{\n    \"key\": \"value\"\n}\n");
 }
