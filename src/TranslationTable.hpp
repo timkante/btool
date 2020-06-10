@@ -14,7 +14,7 @@ public:
 
     explicit TranslationTable(const boost::filesystem::path &path);
 
-    auto printAll(std::ostream &out) const -> void;
+    auto printAll(std::ostream &out = std::cout) const -> void;
 };
 
 #endif

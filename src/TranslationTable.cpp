@@ -6,7 +6,7 @@ TranslationTable::TranslationTable(std::stringstream file) {
     boost::property_tree::read_json(file, this->contents);
 }
 
-auto TranslationTable::printAll(std::ostream &out = std::cout) const -> void {
+auto TranslationTable::printAll(std::ostream &out) const -> void {
     boost::property_tree::json_parser::write_json(out, this->contents);
 }
 
