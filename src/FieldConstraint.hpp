@@ -12,6 +12,8 @@ struct FieldConstraint {
     FieldConstraint(std::string fieldName, std::regex fieldFormat);
 
     [[nodiscard]] auto matchedBy(const Field &field) const -> bool;
+
+    auto operator==(const FieldConstraint& other) const -> bool;
 };
 
 #endif
