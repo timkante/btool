@@ -11,9 +11,7 @@ struct FieldConstraint {
 
     FieldConstraint(std::string fieldName, std::regex fieldFormat);
 
-    auto matchesConstraint(const std::string &value, const Field &field) const -> bool;
-
-    static auto matchesRegex(const std::string &dataFormat, const std::regex &fieldFormat) -> bool;
+    [[nodiscard]] auto matchedBy(const Field &field) const -> bool;
 };
 
 #endif
