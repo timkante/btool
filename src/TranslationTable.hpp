@@ -12,7 +12,7 @@ class TranslationTable {
 private:
     boost::property_tree::ptree contents;
 
-    auto parseCommonProperties() const -> StyleProperties;
+    [[nodiscard]] auto parseCommonProperties() const -> StyleProperties;
 
 public:
     std::vector<StyleProperties> styleProps;
