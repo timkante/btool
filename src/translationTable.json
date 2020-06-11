@@ -1,22 +1,7 @@
 {
-    "commonRequiredFields": [
-        {
-            "title": "author",
-            "format": "\\w+"
-        },
-        {
-            "title": "title",
-            "format": "\\w+"
-        }
-    ],
-    "commonOptionalFields": [
-        {
-            "title": "author",
-            "format": "\\w+"
-        }
-    ],
     "sortableFields": [
-
+        {
+        }
     ],
     "styles": [
         {
@@ -24,11 +9,11 @@
             "requiredFields": [
                 {
                     "title": "author",
-                    "format": "\\w+"
+                    "format": "^.*[^\\s]$"
                 },
                 {
                     "title": "title",
-                    "format": "\\w+"
+                    "format": "^.*[^\\s]$"
                 },
                 {
                     "title": "year",
@@ -54,7 +39,7 @@
                 },
                 {
                     "title": "month",
-                    "format": "\\w+"
+                    "format": "^[A-Z]{1}[a-z]{2}$"
                 },
                 {
                     "title": "note",
@@ -67,11 +52,11 @@
             "requiredFields": [
                 {
                     "title": "author",
-                    "format": "\\w+"
+                    "format": "^.*[^\\s]$"
                 },
                 {
                     "title": "title",
-                    "format": "\\w+"
+                    "format": "^.*[^\\s]$"
                 },
                 {
                     "title": "year",
@@ -101,7 +86,7 @@
                 },
                 {
                     "title": "month",
-                    "format": "\\w+"
+                    "format": "^[A-Z]{1}[a-z]{2}$"
                 },
                 {
                     "title": "note",
@@ -118,7 +103,7 @@
             "requiredFields": [
                 {
                     "title": "title",
-                    "format": "\\w+"
+                    "format": "^.*[^\\s]$"
                 },
                 {
                     "title": "year",
@@ -128,6 +113,222 @@
             "optionalFields": [
                 {
                     "title": "volume",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "editor",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "organization",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "publisher",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "booklet",
+            "requiredFields": [
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "howpublished",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "conference",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "booktitle",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "editor",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "volume",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "series",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "pages",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "organization",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "publisher",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "inbook",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "chapter",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "publisher",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "volume ",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "series",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "type",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "edition",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "incollection",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "booktitle",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "publisher",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "editor",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "volume",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "series",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "type",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "chapter",
                     "format": "\\w+"
                 },
                 {
@@ -143,16 +344,59 @@
                     "format": "\\w+"
                 },
                 {
-                    "title": "editor",
-                    "format": "\\w+"
-                },
-                {
                     "title": "month",
-                    "format": "\\w+"
+                    "format": "^[A-Z]{1}[a-z]{2}$"
                 },
                 {
                     "title": "note",
                     "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "inproceedings",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "booktitle",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "editor",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "volume",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "series",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "pages",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
                 },
                 {
                     "title": "organization",
@@ -160,6 +404,226 @@
                 },
                 {
                     "title": "publisher",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "manual",
+            "requiredFields": [
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "organization",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "edition",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "mastersthesis",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "school",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "type",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "misc",
+            "optionalFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "howpublished",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "phdthesis",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "school",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "type",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "techreport",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "institution",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "year",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "type",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "number",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "address",
+                    "format": "\\w+"
+                },
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ]
+        },
+        {
+            "name": "unpublished",
+            "requiredFields": [
+                {
+                    "title": "author",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "title",
+                    "format": "^.*[^\\s]$"
+                },
+                {
+                    "title": "note",
+                    "format": "\\w+"
+                }
+            ],
+            "optionalFields": [
+                {
+                    "title": "month",
+                    "format": "^[A-Z]{1}[a-z]{2}$"
+                },
+                {
+                    "title": "year",
                     "format": "\\w+"
                 }
             ]
