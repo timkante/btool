@@ -6,3 +6,5 @@ StyleProperties::StyleProperties(std::string name,
         : name{std::move(name)},
           requiredFields{std::move(requiredFields)},
           optionalFields{std::move(optionalFields)} {}
+
+StyleProperties::StyleProperties() : name{""}, requiredFields{}, optionalFields{} {}

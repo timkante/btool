@@ -10,6 +10,8 @@ struct StyleProperties {
     std::vector<FieldConstraint> requiredFields;
     std::vector<FieldConstraint> optionalFields;
 
+    StyleProperties();
+
     StyleProperties(std::string name,
                     std::vector<FieldConstraint> requiredFields,
                     std::vector<FieldConstraint> optionalFields);
