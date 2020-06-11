@@ -34,10 +34,8 @@ auto TranslationTable::parseCommonProperties() const -> StyleProperties {
                 std::cend(node),
                 std::back_inserter(resultCollector),
                 [](const boost::property_tree::ptree::value_type &field) -> std::optional<FieldConstraint> {
-                    const boost::optional<const boost::property_tree::ptree &> title
-                            = field.second.get_child_optional("title");
-                    const boost::optional<const boost::property_tree::ptree &> format
-                            = field.second.get_child_optional("format");
+                    const auto title = field.second.get_child_optional("title");
+                    const auto format = field.second.get_child_optional("format");
                     if (title.has_value() && format.has_value()) {
                         return FieldConstraint(title.value().data(), std::regex{format.value().data()});
                     } else {
@@ -53,10 +51,8 @@ auto TranslationTable::parseCommonProperties() const -> StyleProperties {
         return validResults;
     };
 
-    const boost::optional<const boost::property_tree::ptree &> requiredFieldsNode
-            = contents.get_child_optional("commonRequiredFields");
-    const boost::optional<const boost::property_tree::ptree &> optionalFieldsNode
-            = contents.get_child_optional("commonOptionalFields");
+    const auto requiredFieldsNode = contents.get_child_optional("commonRequiredFields");
+    const auto optionalFieldsNode = contents.get_child_optional("commonOptionalFields");
 
     return StyleProperties("_common",
                            requiredFieldsNode.has_value() ? parseConstraintNode(requiredFieldsNode.value())
