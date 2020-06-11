@@ -3,16 +3,15 @@
 
 #include <string>
 #include <Field.hpp>
+#include <Regex>
 
 struct FieldConstraint {
     std::string name;
-    std::string format;
+    std::regex format;
 
-    FieldConstraint(std::string fieldName, std::string fieldFormat);
-
-    auto matchesConstraint(const std::string &value, Field field) const -> bool;
-
-    auto matchesRegex(const std::string &dataFormat, const std::string &fieldFormat) const -> bool;
+    FieldConstraint(std::string fieldName, std::regex fieldFormat);
+    bool matchesConstraint(std::string value, Field field);
+    bool matchesRegex(const std::string& dataFormat, std::regex fieldFormat);
 };
 
 #endif

@@ -1,21 +1,14 @@
 #include "FieldConstraint.hpp"
-#include <regex>
+
+bool FieldConstraint::matchesRegex(const std::string& dataFormat, std::regex fieldFormat) {
+    return std::regex_match(dataFormat, fieldFormat);
+}
 
 FieldConstraint::FieldConstraint(std::string fieldName, std::string fieldFormat)
         : name{std::move(fieldName)}, format{std::move(fieldFormat)} {}
 
-bool FieldConstraint::matchesRegex(const std::string &dataFormat, const std::string &fieldFormat) const {
-    if (dataFormat == fieldFormat)
-        return true;
-    else
-        return false;
-}
-
 bool FieldConstraint::matchesConstraint(const std::string &value, Field field) const {
     if (field.name == name) {
-        if (matchesRegex(value, format))
-            return true;
-        else
-            return false;
+        return (matchesRegex(field.value, format));
     }
 }

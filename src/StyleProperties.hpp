@@ -1,10 +1,8 @@
-#include "FieldConstraint.hpp"
-#include <vector>
-
 #ifndef BIBPARSER_STYLEPROPERTIES_HPP
 #define BIBPARSER_STYLEPROPERTIES_HPP
 
 #include <string>
+#include <vector>
 #include <FieldConstraint.hpp>
 
 struct StyleProperties {
