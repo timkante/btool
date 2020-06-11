@@ -19,4 +19,3 @@ TEST(FieldConstraintTests, fieldMatchingTest) {
     ASSERT_TRUE(longWordConstraint.matchedBy(longWordField));
     ASSERT_FALSE(longWordConstraint.matchedBy(wordField));
 }
-
