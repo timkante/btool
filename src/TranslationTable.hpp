@@ -2,6 +2,7 @@
 #define BIBPARSER_TRANSLATIONTABLE_HPP
 
 #include <sstream>
+#include <iostream>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/filesystem/path.hpp>
 
@@ -10,8 +11,10 @@ private:
     boost::property_tree::ptree contents;
 public:
     explicit TranslationTable(std::stringstream file);
-    explicit TranslationTable(const boost::filesystem::path& path);
-    auto printAll() -> std::stringstream;
+
+    explicit TranslationTable(const boost::filesystem::path &path);
+
+    auto printAll(std::ostream &out = std::cout) const -> void;
 };
 
 #endif

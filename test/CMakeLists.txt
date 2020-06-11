@@ -4,7 +4,8 @@ set(TEST_SOURCES
         TranslationTableTest.cpp
         FieldTest.cpp
         FieldConstraintTest.cpp
-        StylePropertiesTest.cpp)
+        StylePropertiesTest.cpp
+        BibElementTest.cpp)
 
 add_executable(${SuiteName} ${TEST_SOURCES})
 
