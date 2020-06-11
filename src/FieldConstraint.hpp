@@ -13,7 +13,7 @@ struct FieldConstraint {
 
     auto matchesConstraint(const std::string &value, const Field &field) const -> bool;
 
-    static auto matchesRegex(const std::string &dataFormat, const std::regex& fieldFormat) -> bool;
+    static auto matchesRegex(const std::string &dataFormat, const std::regex &fieldFormat) -> bool;
 };
 
 #endif
