@@ -1,4 +1,4 @@
-# Halbzeitbericht zum BibParser-Tool vom 18.06.2020
+# Zwischenbericht zum BibParser-Tool vom 18.06.2020
 
 ## 8.1  Tools für Umsetzung des Projektes
 
@@ -8,7 +8,7 @@
   + objekt-orientierte Programmiersprache
   + funktioniert performanter als viele andere Programmiersprachen
   + hat sehr gute Bibliotheken (Standardbibliotheken, Boost, usw.)
-  + alle Gruppenmitglieder grundlegende Erfahrung
+  + alle Gruppenmitglieder haben grundlegende Erfahrung
 + Qualitätsicherung mithilfe von TravisCI (Integrationstests) und SonarCloud (Codequalität)
 + CMake als Build-Tool genutzt
 
