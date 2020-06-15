@@ -5,11 +5,11 @@
 + Projektmanagment mithilfe von Trello organisiert
 + Versionsmanagment mithilfe von Github  
 + C++ als Programmiersprache ausgewählt
-  + C++ ist eine objekt-orientierte Programmiersprache
-  + C++ funktioniert performanter als viele andere Programmiersprachen
-  + C++ hat sehr gute Bibliotheken (Standardbibliotheken, Boost usw)
-  + Mit C++ haben alle Gruppenmitglieder grundlegende Erfahrung
-+ Qualitätsicherung mithilfe von TravisCI und SonarCloud
+  + objekt-orientierte Programmiersprache
+  + funktioniert performanter als viele andere Programmiersprachen
+  + hat sehr gute Bibliotheken (Standardbibliotheken, Boost, usw.)
+  + alle Gruppenmitglieder grundlegende Erfahrung
++ Qualitätsicherung mithilfe von TravisCI (Integrationstests) und SonarCloud (Codequalität)
 + CMake als Build-Tool genutzt
 
 ## 8.2 Aktueller Stand
