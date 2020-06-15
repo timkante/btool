@@ -41,6 +41,8 @@ Gruppenmitglieder für Group1:
 
 [Bericht - KW 24](doc/Berichte/berichtGroup1KW24.md "Bericht der KW 24")
 
+[Zwischenbericht - KW 25](doc/Berichte/Zwischenbericht.md "Zwischenbericht der KW 25")
+
 ## Links
 
 Für alle Informationen zum aktuellen CI-Status: [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI") \
