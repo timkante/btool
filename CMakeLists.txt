@@ -24,14 +24,12 @@ set(MAIN_SOURCES
         src/TranslationTable.cpp
         src/Field.cpp
         src/BibElement.cpp
-        src/FieldConstraint.cpp
         src/StyleProperties.cpp)
 
 set(MAIN_HEADERS
         src/TranslationTable.hpp
         src/Field.hpp
         src/BibElement.hpp
-        src/FieldConstraint.hpp
         src/StyleProperties.hpp)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
