@@ -1,6 +1,16 @@
 #include <iostream>
+#include "Parser.hpp"
+
+
 
 int main() {
-    std::cout << "Hello, World!\n";
+
+    Parser parser = Parser("","",TranslationTable("..\\src\\translationTable.json"));
+
+    std::cout << "Ordner angeben\n";
+    std::string path;
+    std::cin >> path;
+
+    parser.parseFiles(path);
     return 0;
 }
