@@ -115,3 +115,53 @@ TEST(TranslationTableTest, printTest) {
     TranslationTable(std::stringstream{R"({"key": "value"})"}).printAll(receiver);
     ASSERT_EQ(receiver.str(), "{\n    \"key\": \"value\"\n}\n");
 }
+
+TEST(TranslationTableTest, parsingInvalidStyleFieldsTest) {
+    auto invalidContent = std::stringstream{R"(
+        {
+            "styles": [
+                {
+                    "name": "garbage",
+                    "abc": "def"
+                }
+            ]
+        }
+    )"};
+    const auto table = TranslationTable(std::move(invalidContent));
+    const auto expected = std::vector<StyleProperties>{{"garbage", {}, {}}};
+    ASSERT_EQ(table.getStyleProperties(), expected);
+}
+
+TEST(TranslationTableTest, parsingInvalidStyleNameTest) {
+    auto invalidContent = std::stringstream{R"(
+        {
+            "styles": [
+                {
+                    "someKey": "garbage",
+                    "requiredFields": "def",
+                    "optionalFields": "def"
+                }
+            ]
+        }
+    )"};
+    const auto table = TranslationTable(std::move(invalidContent));
+    const auto expected = std::vector<StyleProperties>{{"", {}, {}}};
+    ASSERT_EQ(table.getStyleProperties(), expected);
+}
+
+TEST(TranslationTableTest, parsingInvalidStylesTest) {
+    auto invalidContent = std::stringstream{R"(
+        {
+            "not styles": [
+                {
+                    "name": "garbage",
+                    "requiredFields": "def",
+                    "optionalFields": "def"
+                }
+            ]
+        }
+    )"};
+    const auto table = TranslationTable(std::move(invalidContent));
+    const auto expected = std::vector<StyleProperties>{};
+    ASSERT_EQ(table.getStyleProperties(), expected);
+}

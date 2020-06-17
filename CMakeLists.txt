@@ -12,9 +12,11 @@ find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
 option(SONAR "Build all profiling-files." OFF)
 
 if (SONAR)
-    add_compile_options(-Wall -Wextra -Wpedantic -fprofile-arcs -ftest-coverage)
-    add_link_options(-fprofile-arcs -ftest-coverage)
+    add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
+
+add_compile_options(--coverage)
+add_link_options(--coverage)
 
 include_directories(
         "${CMAKE_SOURCE_DIR}/src"
