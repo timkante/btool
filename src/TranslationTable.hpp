@@ -24,9 +24,9 @@ public:
 
     auto printAll(std::ostream &out = std::cout) const -> void;
 
-    [[nodiscard]] auto getStyleProperties() const -> const std::vector<StyleProperties>&;
+    [[nodiscard]] auto getStyleProperties() const -> const std::vector<StyleProperties> &;
 
-    [[nodiscard]] auto stylePropertiesOf(const std::string& name) const -> std::optional<StyleProperties>;
+    [[nodiscard]] auto stylePropertiesOf(const std::string &name) const -> std::optional<StyleProperties>;
 };
 
 #endif
