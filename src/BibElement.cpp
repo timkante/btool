@@ -1,5 +1,6 @@
 #include <StyleProperties.hpp>
 #include <BibElement.hpp>
+#include <algorithm>
 #include <utility>
 
 BibElement::BibElement(std::string id, std::string style, std::vector<Field> attributes)

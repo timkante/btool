@@ -1,6 +1,7 @@
 #include <TranslationTable.hpp>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/optional/optional.hpp>
+#include <algorithm>
 #include <iterator>
 
 TranslationTable::TranslationTable(std::stringstream file) {
