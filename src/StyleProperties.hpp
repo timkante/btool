@@ -5,11 +5,11 @@
 #include <vector>
 
 struct StyleProperties {
-    std::string name;
-    std::vector<std::string> requiredFields;
-    std::vector<std::string> optionalFields;
+    std::string name = "";
+    std::vector<std::string> requiredFields = {};
+    std::vector<std::string> optionalFields = {};
 
-    StyleProperties();
+    StyleProperties() = default;
 
     StyleProperties(std::string name,
                     std::vector<std::string> requiredFields,
