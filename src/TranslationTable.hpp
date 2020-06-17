@@ -12,11 +12,12 @@ class TranslationTable {
 private:
     boost::property_tree::ptree contents;
 
-    [[nodiscard]] auto parseCommonProperties() const -> StyleProperties;
+    [[nodiscard]] auto parseStyle(const boost::property_tree::ptree &style) const -> StyleProperties;
+
+    [[nodiscard]] auto parseStyles() const -> std::vector<StyleProperties>;
 
 public:
     std::vector<StyleProperties> styleProps;
-    StyleProperties commonProps;
 
     explicit TranslationTable(std::stringstream file);
 

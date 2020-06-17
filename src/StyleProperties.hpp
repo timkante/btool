@@ -3,18 +3,19 @@
 
 #include <string>
 #include <vector>
-#include <FieldConstraint.hpp>
 
 struct StyleProperties {
     std::string name;
-    std::vector<FieldConstraint> requiredFields;
-    std::vector<FieldConstraint> optionalFields;
+    std::vector<std::string> requiredFields;
+    std::vector<std::string> optionalFields;
 
     StyleProperties();
 
     StyleProperties(std::string name,
-                    std::vector<FieldConstraint> requiredFields,
-                    std::vector<FieldConstraint> optionalFields);
+                    std::vector<std::string> requiredFields,
+                    std::vector<std::string> optionalFields);
+
+    auto operator==(const StyleProperties &other) const -> bool;
 };
 
 #endif

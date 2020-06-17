@@ -1,56 +1,61 @@
 #include <TranslationTable.hpp>
-#include <FieldConstraint.hpp>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/optional/optional.hpp>
-#include <optional>
 #include <iterator>
 
 TranslationTable::TranslationTable(std::stringstream file) {
     boost::property_tree::read_json(file, contents);
-    styleProps = std::vector<StyleProperties>();
-    commonProps = parseCommonProperties();
+    styleProps = parseStyles();
 }
 
 TranslationTable::TranslationTable(const boost::filesystem::path &path) {
     boost::property_tree::read_json(path.string(), contents);
-    styleProps = std::vector<StyleProperties>();
-    commonProps = parseCommonProperties();
+    styleProps = parseStyles();
 }
 
 auto TranslationTable::printAll(std::ostream &out) const -> void {
     boost::property_tree::json_parser::write_json(out, contents);
 }
 
-auto TranslationTable::parseCommonProperties() const -> StyleProperties {
+auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) const -> StyleProperties {
     const auto parseConstraintNode = [](const boost::property_tree::ptree &node) {
-        assert(std::all_of(std::cbegin(node),
-                           std::cend(node),
-                           [](const boost::property_tree::ptree::value_type &field) {
-                               return field.first.empty();
-                           }));
-        std::vector<FieldConstraint> fields;
+        std::vector<std::string> fields;
         std::for_each(std::cbegin(node),
                       std::cend(node),
                       [&fields](const boost::property_tree::ptree::value_type &field) {
-                          const boost::optional<const boost::property_tree::ptree &> title =
-                                  field.second.get_child_optional("title");
-                          const boost::optional<const boost::property_tree::ptree &> format =
-                                  field.second.get_child_optional("format");
-                          if (title && format && !title.value().data().empty() && !format.value().data().empty()) {
-                              fields.emplace_back(title.value().data(), std::regex{format.value().data()});
+                          const std::string title = field.second.data();
+                          if (!title.empty()) {
+                              fields.emplace_back(title);
                           }
                       });
         return fields;
     };
 
+    const boost::optional<const boost::property_tree::ptree &> name =
+            style.get_child_optional("name");
     const boost::optional<const boost::property_tree::ptree &> requiredFieldsNode =
-            contents.get_child_optional("commonRequiredFields");
+            style.get_child_optional("requiredFields");
     const boost::optional<const boost::property_tree::ptree &> optionalFieldsNode =
-            contents.get_child_optional("commonOptionalFields");
+            style.get_child_optional("optionalFields");
 
-    return StyleProperties("_common",
+    return StyleProperties(name ? name.value().data() : "",
                            requiredFieldsNode ? parseConstraintNode(requiredFieldsNode.value())
-                                              : std::vector<FieldConstraint>{},
+                                              : std::vector<std::string>{},
                            optionalFieldsNode ? parseConstraintNode(optionalFieldsNode.value())
-                                              : std::vector<FieldConstraint>{});
+                                              : std::vector<std::string>{});
+}
+
+auto TranslationTable::parseStyles() const -> std::vector<StyleProperties> {
+    std::vector<StyleProperties> props;
+    const boost::optional<const boost::property_tree::ptree &> styles =
+            contents.get_child_optional("styles");
+    if (styles) {
+        std::transform(std::cbegin(styles.value()),
+                       std::cend(styles.value()),
+                       std::back_inserter(props),
+                       [this](const boost::property_tree::ptree::value_type &style) {
+                           return this->parseStyle(style.second);
+                       });
+    }
+    return props;
 }
