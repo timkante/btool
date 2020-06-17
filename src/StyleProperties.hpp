@@ -14,6 +14,8 @@ struct StyleProperties {
     StyleProperties(std::string name,
                     std::vector<std::string> requiredFields,
                     std::vector<std::string> optionalFields);
+
+    auto operator==(const StyleProperties &other) const -> bool;
 };
 
 #endif

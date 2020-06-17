@@ -17,3 +17,9 @@ TEST(StylePropertiesTests, constructionTest) {
     };
     ASSERT_NO_THROW(StyleProperties("a name", required, optional));
 }
+
+TEST(StylePropertiesTests, equalityOperatorTest) {
+    const auto first = StyleProperties("name", {"a", "b", "c"}, {"a", "b", "c"});
+    const auto second = StyleProperties("name", {"a", "b", "c"}, {"a", "b", "c"});
+    ASSERT_NO_THROW(ASSERT_EQ(first, second));
+}
