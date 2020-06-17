@@ -15,8 +15,10 @@ if (SONAR)
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-add_compile_options(--coverage)
-add_link_options(--coverage)
+if(UNIX OR APPLE)
+    add_compile_options(--coverage)
+    add_link_options(--coverage)
+endif()
 
 include_directories(
         "${CMAKE_SOURCE_DIR}/src"
