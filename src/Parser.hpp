@@ -15,7 +15,7 @@ private:
     std::string targetStyle;
     TranslationTable translationTable;
 public:
-    Parser(std::string ruleFile, std::vector<std::string> bibFiles, std::string targetStyle);
+    Parser(std::string ruleFile, std::vector<std::string> bibFiles, std::string targetStyle, TranslationTable translationTable);
     void generate(std::string sorting, std::string format);
     std::vector<BibElement> parseFile(std::string fileName);
     void parseFiles(std::vector<std::string> fileName);
