@@ -5,12 +5,12 @@
 
 TranslationTable::TranslationTable(std::stringstream file) {
     boost::property_tree::read_json(file, contents);
-    styleProps = parseStyles();
+    styleProperties = parseStyles();
 }
 
 TranslationTable::TranslationTable(const boost::filesystem::path &path) {
     boost::property_tree::read_json(path.string(), contents);
-    styleProps = parseStyles();
+    styleProperties = parseStyles();
 }
 
 auto TranslationTable::printAll(std::ostream &out) const -> void {
@@ -58,4 +58,14 @@ auto TranslationTable::parseStyles() const -> std::vector<StyleProperties> {
                        });
     }
     return props;
+}
+
+auto TranslationTable::getStyleProperties() const -> const std::vector<StyleProperties> & {
+    return styleProperties;
+}
+
+auto TranslationTable::stylePropertiesOf(const std::string &name) const -> std::optional<StyleProperties> {
+    const auto propItr = std::find_if(std::cbegin(styleProperties), std::cend(styleProperties),
+                                      [&name](const StyleProperties &prop) { return prop.name == name; });
+    return (propItr != std::cend(styleProperties)) ? std::optional(*propItr) : std::nullopt;
 }

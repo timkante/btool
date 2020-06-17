@@ -11,19 +11,22 @@
 class TranslationTable {
 private:
     boost::property_tree::ptree contents;
+    std::vector<StyleProperties> styleProperties;
 
     [[nodiscard]] auto parseStyle(const boost::property_tree::ptree &style) const -> StyleProperties;
 
     [[nodiscard]] auto parseStyles() const -> std::vector<StyleProperties>;
 
 public:
-    std::vector<StyleProperties> styleProps;
-
     explicit TranslationTable(std::stringstream file);
 
     explicit TranslationTable(const boost::filesystem::path &path);
 
     auto printAll(std::ostream &out = std::cout) const -> void;
+
+    [[nodiscard]] auto getStyleProperties() const -> const std::vector<StyleProperties>&;
+
+    [[nodiscard]] auto stylePropertiesOf(const std::string& name) const -> std::optional<StyleProperties>;
 };
 
 #endif
