@@ -1,8 +1,8 @@
 #include "StyleProperties.hpp"
 
 StyleProperties::StyleProperties(std::string name,
-                                 std::vector<FieldConstraint> requiredFields,
-                                 std::vector<FieldConstraint> optionalFields)
+                                 std::vector<std::string> requiredFields,
+                                 std::vector<std::string> optionalFields)
         : name{std::move(name)},
           requiredFields{std::move(requiredFields)},
           optionalFields{std::move(optionalFields)} {}
