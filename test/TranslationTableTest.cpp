@@ -1,8 +1,9 @@
+#include <TranslationTable.hpp>
 #include <gtest/gtest.h>
+#include <boost/filesystem/path.hpp>
+#include <utility>
 #include <sstream>
 #include <vector>
-#include <TranslationTable.hpp>
-#include <boost/filesystem/path.hpp>
 
 struct TranslationTableFixtureTest : public ::testing::Test {
     TranslationTable sample;

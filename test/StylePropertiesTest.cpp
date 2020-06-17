@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include <StyleProperties.hpp>
+#include <gtest/gtest.h>
 #include <vector>
 
 TEST(StylePropertiesTests, noArgConstructionTest) {

@@ -1,8 +1,8 @@
 #ifndef BIBPARSER_BIBELEMENT_HPP
 #define BIBPARSER_BIBELEMENT_HPP
 
-#include <string>
 #include <Field.hpp>
+#include <string>
 #include <vector>
 
 struct BibElement {

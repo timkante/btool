@@ -38,7 +38,7 @@ auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) -> S
     const boost::optional<const boost::property_tree::ptree &> optionalFieldsNode =
             style.get_child_optional("optionalFields");
 
-    return StyleProperties(name ? name.value().data() : "",
+    return StyleProperties(name ? std::string{name.value().data()} : "",
                            requiredFieldsNode ? parseConstraintNode(requiredFieldsNode.value())
                                               : std::vector<std::string>{},
                            optionalFieldsNode ? parseConstraintNode(optionalFieldsNode.value())

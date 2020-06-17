@@ -1,12 +1,13 @@
 #ifndef BIBPARSER_TRANSLATIONTABLE_HPP
 #define BIBPARSER_TRANSLATIONTABLE_HPP
 
-#include <sstream>
-#include <iostream>
-#include <vector>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/filesystem/path.hpp>
 #include <StyleProperties.hpp>
+#include <optional>
+#include <iostream>
+#include <sstream>
+#include <vector>
 
 class TranslationTable {
 private:

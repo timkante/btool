@@ -1,4 +1,5 @@
-#include "StyleProperties.hpp"
+#include <StyleProperties.hpp>
+#include <utility>
 
 StyleProperties::StyleProperties(std::string name,
                                  std::vector<std::string> requiredFields,
