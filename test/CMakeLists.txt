@@ -3,7 +3,6 @@ set(SuiteName bibParserTests)
 set(TEST_SOURCES
         TranslationTableTest.cpp
         FieldTest.cpp
-        FieldConstraintTest.cpp
         StylePropertiesTest.cpp
         BibElementTest.cpp)
 

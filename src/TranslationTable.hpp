@@ -16,7 +16,6 @@ private:
 
 public:
     std::vector<StyleProperties> styleProps;
-    StyleProperties commonProps;
 
     explicit TranslationTable(std::stringstream file);
 
