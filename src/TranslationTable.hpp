@@ -13,7 +13,7 @@ private:
     boost::property_tree::ptree contents;
     std::vector<StyleProperties> styleProperties;
 
-    [[nodiscard]] auto parseStyle(const boost::property_tree::ptree &style) const -> StyleProperties;
+    [[nodiscard]] static auto parseStyle(const boost::property_tree::ptree &style) -> StyleProperties;
 
     [[nodiscard]] auto parseStyles() const -> std::vector<StyleProperties>;
 

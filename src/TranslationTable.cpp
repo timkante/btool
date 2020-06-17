@@ -17,7 +17,7 @@ auto TranslationTable::printAll(std::ostream &out) const -> void {
     boost::property_tree::json_parser::write_json(out, contents);
 }
 
-auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) const -> StyleProperties {
+auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) -> StyleProperties {
     const auto parseConstraintNode = [](const boost::property_tree::ptree &node) {
         std::vector<std::string> fields;
         std::for_each(std::cbegin(node),
