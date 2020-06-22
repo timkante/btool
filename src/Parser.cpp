@@ -6,7 +6,7 @@
 #include <boost/filesystem.hpp>
 #include <iostream>
 
-void checkFolder(std::string path);
+void checkFolder(const boost::filesystem::path& path);
 
 
 Parser::Parser(std::string ruleFile, const std::string targetStyle, TranslationTable translationTable)
@@ -22,21 +22,19 @@ std::vector<BibElement> Parser::parseFile(boost::filesystem::ifstream &fsStream)
 
     std::string str;
     while(std::getline(fsStream, str)){
-        std::cout << str << std::endl;
+        //std::cout << str << std::endl;
     }
 
     return bibElems;
 }
-void Parser::parseFiles(std::string path){
+void Parser::parseFiles(const boost::filesystem::path& path){
     checkFolder(path);
 
-    boost::filesystem::path p = {path};
-    boost::filesystem::directory_iterator it{p};
+    boost::filesystem::directory_iterator it{path};
     bool bibFound = false;
     while (it != boost::filesystem::directory_iterator{}) {
         std::string fileExt = boost::filesystem::extension(*it);
         if(fileExt.compare(".bib") == 0){
-            std::cout << "Folgende Datei wird eingelesen: " << *it << std::endl;
             bibFound = true;
             boost::filesystem::ifstream in(*it);
             parseFile(in);
@@ -44,9 +42,8 @@ void Parser::parseFiles(std::string path){
         *it++;
     }
     if(!bibFound){
-        std::cout << "Keine Bib Files im Pfad gefunden!\nOrdnerpfad mit Bib's eingeben:\n";
-        std::cin >> path;
-        parseFiles(path);
+        std::cout << "Keine Bib Files im Pfad gefunden!\n";
+        std::cout << path.string() << std::endl;
     }
 }
 
@@ -64,10 +61,8 @@ BibElement Parser::parseElement(std::string element, StyleProperties style){
     return bibElem;
 }
 
-void checkFolder(std::string path) {
-    while (!boost::filesystem::is_directory(path)){
+void checkFolder(const boost::filesystem::path& path) {
+    if (!boost::filesystem::is_directory(path)){
         std::cout << "Kein Ordner!\n";
-        std::cout << "Ordner angeben\n";
-        std::cin >> path;
     }
 }
