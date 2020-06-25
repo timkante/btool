@@ -19,11 +19,27 @@ void Parser::generate(const std::string sorting, const std::string format){
 std::vector<BibElement> Parser::parseFile(boost::filesystem::ifstream &fsStream){
     BibElement bibElem = parseElement("",StyleProperties());
     std::vector<BibElement> bibElems = {bibElem};
-
+    std::vector<std::string> style;
+    std::vector<std::vector<std::string>> allStyles;
     std::string str;
     while(std::getline(fsStream, str)){
+        if (str.find('@') != std::string::npos) {
+            if(style.empty() && allStyles.empty()) {
+                style.insert(style.end(), str);
+            }
+            else{
+                //std::cout << str << std::endl;
+                allStyles.insert(allStyles.end(), style);
+                style.clear();
+                style.insert(style.end(), str);
+            }
+        }
+        style.insert(style.end(), str);
+        //std::cout << allStyles << std::endl;
+         //style.insert(str);
         //std::cout << str << std::endl;
     }
+    allStyles.insert(allStyles.end(), style);
 
     return bibElems;
 }
