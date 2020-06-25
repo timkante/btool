@@ -1,7 +1,7 @@
 #include "Parser.hpp"
-#include <boost/regex.hpp>
 #include <iostream>
 #include <boost/algorithm/string.hpp>
+#include <regex>
 //#include "FileGenerator.hpp"
 
 void checkFolder(const boost::filesystem::path& path);
@@ -20,23 +20,29 @@ std::vector<BibElement> Parser::parseFile(boost::filesystem::ifstream &fsStream)
     std::vector<std::string> style;
     std::vector<std::vector<std::string>> allStyles;
     std::string line;
-    boost::regex expr{"\\@(.*)\\{(.*)\\,"};
-    boost::smatch group;
+    std::regex expr{"\\@(.*)\\{(.*)\\,"};
+    std::smatch group;
+    bool styleMatch;
     while(std::getline(fsStream, line)){
         boost::trim(line);
         // (line.find('@') != std::string::npos) {
-        if(boost::regex_search(line, group, expr)){
+        if(std::regex_search(line, group, expr)){
             if (!(allStyles.empty() && style.empty())) {
-                allStyles.insert(allStyles.end(), style);
+                styleMatch = group[1]==targetStyle;
+                if (styleMatch) {
+                    allStyles.insert(allStyles.end(), style);
+                    std::cout << "ID " << group[2] << std::endl << "Style " << group[1] << std::endl << std::endl;
+                }
                 style.clear();
-                std::cout << "ID " << group[2] << std::endl << "Style " << group[1];
             }
         }
         if(!line.empty()) {
             style.insert(style.end(), line);
         }
     }
-    allStyles.insert(allStyles.end(), style);
+    if(styleMatch) {
+        allStyles.insert(allStyles.end(), style);
+    }
 
     return bibElems;
 }
