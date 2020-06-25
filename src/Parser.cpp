@@ -1,10 +1,8 @@
 #include "Parser.hpp"
-//#include "FileGenerator.hpp"
-#include "StyleProperties.hpp"
-#include "BibElement.hpp"
-#include "StyleProperties.hpp"
-#include <boost/filesystem.hpp>
+#include <boost/regex.hpp>
 #include <iostream>
+#include <boost/algorithm/string.hpp>
+//#include "FileGenerator.hpp"
 
 void checkFolder(const boost::filesystem::path& path);
 
@@ -21,23 +19,22 @@ std::vector<BibElement> Parser::parseFile(boost::filesystem::ifstream &fsStream)
     std::vector<BibElement> bibElems = {bibElem};
     std::vector<std::string> style;
     std::vector<std::vector<std::string>> allStyles;
-    std::string str;
-    while(std::getline(fsStream, str)){
-        if (str.find('@') != std::string::npos) {
-            if(style.empty() && allStyles.empty()) {
-                style.insert(style.end(), str);
-            }
-            else{
-                //std::cout << str << std::endl;
+    std::string line;
+    boost::regex expr{"\\@(.*)\\{(.*)\\,"};
+    boost::smatch group;
+    while(std::getline(fsStream, line)){
+        boost::trim(line);
+        // (line.find('@') != std::string::npos) {
+        if(boost::regex_search(line, group, expr)){
+            if (!(allStyles.empty() && style.empty())) {
                 allStyles.insert(allStyles.end(), style);
                 style.clear();
-                style.insert(style.end(), str);
+                std::cout << "ID " << group[2] << std::endl << "Style " << group[1];
             }
         }
-        style.insert(style.end(), str);
-        //std::cout << allStyles << std::endl;
-         //style.insert(str);
-        //std::cout << str << std::endl;
+        if(!line.empty()) {
+            style.insert(style.end(), line);
+        }
     }
     allStyles.insert(allStyles.end(), style);
 
