@@ -12,8 +12,12 @@ find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
 option(SONAR "Build all profiling-files." OFF)
 
 if (SONAR)
-    add_compile_options(-Wall -Wextra -Wpedantic -fprofile-arcs -ftest-coverage)
-    add_link_options(-fprofile-arcs -ftest-coverage)
+    add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+if(UNIX OR APPLE)
+    add_compile_options(--coverage)
+    add_link_options(--coverage)
 endif()
 
 include_directories(
@@ -24,17 +28,13 @@ set(MAIN_SOURCES
         src/TranslationTable.cpp
         src/Field.cpp
         src/BibElement.cpp
-        src/FieldConstraint.cpp
-        src/StyleProperties.cpp
-        src/Parser.cpp)
+        src/StyleProperties.cpp)
 
 set(MAIN_HEADERS
         src/TranslationTable.hpp
         src/Field.hpp
         src/BibElement.hpp
-        src/FieldConstraint.hpp
-        src/StyleProperties.hpp
-        src/Parser.hpp)
+        src/StyleProperties.hpp)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 

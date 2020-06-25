@@ -2,6 +2,6 @@
 #include <Field.hpp>
 
 TEST(FieldTests, constructionTest) {
-    ASSERT_NO_THROW(Field("a name", "a value", true));
-    ASSERT_NO_THROW(Field("another name", "another value", false));
+    ASSERT_NO_THROW(Field("a name", "a value"));
+    ASSERT_NO_THROW(Field("another name", "another value"));
 }
