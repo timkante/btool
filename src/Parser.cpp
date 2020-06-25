@@ -49,14 +49,14 @@ void Parser::parseFiles(const boost::filesystem::path& path){
 
 Field Parser::parseField(std::string field, StyleProperties checkAgainst){
     //BibElement bibElement = new BibElement(id , styles.name, /*vector*/);
-    Field f = Field("name", "value", false);
+    Field f = Field("name", "value");
     return f;
 }
 
 BibElement Parser::parseElement(std::string element, StyleProperties style){
     //style = translationTableranslationTable.getStyle(targetStyle);
     //parseField(targetStyle ,style);
-    std::vector<Field> fields = {Field("name", "value", false)};
+    std::vector<Field> fields = {Field("name", "value")};
     BibElement bibElem = BibElement("id", "style", fields);
     return bibElem;
 }

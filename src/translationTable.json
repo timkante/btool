@@ -52,6 +52,80 @@
         "organization",
         "publisher"
       ]
-    }
+    },
+    {
+      "name": "booklet",
+      "requiredFields": [
+        "title",
+        "author"
+      ],
+      "optionalFields": [
+        "author",
+        "howpublished",
+        "address",
+        "month",
+        "year",
+        "note"
+      ]
+    },
+    {
+      "name": "conference",
+      "requiredFields": [
+        "author",
+        "title",
+        "booktitle",
+        "year"
+      ],
+      "optionalFields": [
+        "editor",
+        "volume",
+        "series",
+        "pages",
+        "address",
+        "month",
+        "organization",
+        "publisher",
+        "note"
+      ]
+    },
+    {
+      "name": "inbook",
+      "requiredFields": [
+       "author",
+        "title",
+        "chapter",
+        "publisher",
+        "year"
+      ],
+      "optionalFields": [
+        "volume ",
+        "series",
+        "type",
+        "edition",
+        "month",
+        "note"
   ]
-}
+  },
+    {
+      "name": "incollection",
+      "requiredFields": [
+        "author",
+        "title",
+        "booktitle",
+        "publisher",
+        "year"
+      ],
+      "optionalFields": [
+        "editor",
+        "volume",
+        "series",
+        "type",
+        "chapter",
+        "pages",
+        "address",
+        "edition",
+        "month",
+        "note"
+      ]
+    }
+]}
