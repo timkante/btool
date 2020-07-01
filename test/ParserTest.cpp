@@ -9,7 +9,7 @@ TEST(ParserTest, constructionTest) {
 
 TEST(ParserTest, parseFileTest) {
     boost::filesystem::ifstream in("../../test/res/publications.bib");
-    ASSERT_NO_THROW(Parser("","inproceedings",TranslationTable(TRANSLATION_TABLE_PATH)).parseFile(in));
+    ASSERT_NO_THROW(Parser("","article",TranslationTable(TRANSLATION_TABLE_PATH)).parseFile(in));
 }
 
 TEST(ParserTest, parseFilesTest) {
