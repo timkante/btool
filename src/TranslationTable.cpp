@@ -18,6 +18,12 @@ auto TranslationTable::printAll(std::ostream &out) const -> void {
     boost::property_tree::json_parser::write_json(out, contents);
 }
 
+/**
+ * Parses a style from the styles json-pointer
+ *
+ * @param style the json-pointer to the style
+ * @return the parsed style-properties
+ */
 auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) -> StyleProperties {
     const auto parseConstraintNode = [](const boost::property_tree::ptree &node) {
         std::vector<std::string> fields;
