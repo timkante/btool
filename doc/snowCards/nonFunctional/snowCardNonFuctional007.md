@@ -1,4 +1,4 @@
-# SnowCard Funktionale Anforderung
+# SnowCard Nicht-Funktionale Anforderung
 
 ## ID
 
