@@ -83,5 +83,5 @@
   + [Funktionale Anforderung][func]
   + [Nicht-Funktionale Anforderungen][nonFunc]
 
-[func]: ./../snowCards/snowCardFunctional.md "SnowCard für funktionale Anforderungen"
-[nonFunc]: ./../snowCards/snowCardNonFuctional.md "SnowCard für nicht funktionale Anforderungen"
+[func]: ./../snowCards/functional/snowCardFunctional.md "SnowCard für funktionale Anforderungen"
+[nonFunc]: ./../snowCards/nonFunctional/snowCardNonFuctional.md "SnowCard für nicht funktionale Anforderungen"

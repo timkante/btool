@@ -14,10 +14,14 @@ Einlesen der Bib-Datei durch den Anwender
 
 ## Description
 
+Das Einlesen der bib-Datei soll über die Kommandozeile zusammen mit dem Programmaufruf gesteuert werden.
+Der Ort bzw. der Ordner in welchem die Datei liegt, sollte dem Anwender bekannt sein.
+Dazu soll dem Anwender ein entsprechendes Programmargument zu Verfügung stehen.  
 Nach dem Einlesevorgang sollte dem Anwender ein direktes Feedback über den Erfolg oder Misserfolg angezeigt werden.
 
 ## Rationale
 
+Der Parser kann nur durch Kommandozeilenparameter aufgerufen und ausgeführt werden. 
 Anwender braucht Rückmeldungen, um über seine weiteren Aktionen im Programm zu entscheiden
 
 ## Originator
