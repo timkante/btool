@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['field_9',['Field',['../struct_field.html#abb7ebc95adf7ef42213c4a8bf44346d8',1,'Field']]]
+  ['bibelement_14',['BibElement',['../struct_bib_element.html#afe28c2771802ba90fc4dfc1b57aa4a62',1,'BibElement']]]
 ];

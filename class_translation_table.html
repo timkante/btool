@@ -69,25 +69,166 @@ $(function() {
 <div class="title">TranslationTable Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>interface to interact with translation-table resource  
+ <a href="class_translation_table.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_translation_table_8hpp_source.html">TranslationTable.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa275364fbefd658530d3f6907e754920"><td class="memItemLeft" align="right" valign="top"><a id="aa275364fbefd658530d3f6907e754920"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TranslationTable</b> (std::stringstream file)</td></tr>
+<tr class="memitem:aa275364fbefd658530d3f6907e754920"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#aa275364fbefd658530d3f6907e754920">TranslationTable</a> (std::stringstream file)</td></tr>
 <tr class="separator:aa275364fbefd658530d3f6907e754920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af266ea92b4028756e10eeee8be850b5b"><td class="memItemLeft" align="right" valign="top"><a id="af266ea92b4028756e10eeee8be850b5b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TranslationTable</b> (const boost::filesystem::path &amp;path)</td></tr>
+<tr class="memitem:af266ea92b4028756e10eeee8be850b5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#af266ea92b4028756e10eeee8be850b5b">TranslationTable</a> (const boost::filesystem::path &amp;path)</td></tr>
 <tr class="separator:af266ea92b4028756e10eeee8be850b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e1a27368a0becda3e6ce4ba6129b17a"><td class="memItemLeft" align="right" valign="top"><a id="a7e1a27368a0becda3e6ce4ba6129b17a"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>printAll</b> (std::ostream &amp;out=std::cout) const -&gt; void</td></tr>
+<tr class="memitem:a7e1a27368a0becda3e6ce4ba6129b17a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a">printAll</a> (std::ostream &amp;out=std::cout) const -&gt; void</td></tr>
 <tr class="separator:a7e1a27368a0becda3e6ce4ba6129b17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3991ceebdf1be2c0645e70493077fad3"><td class="memItemLeft" align="right" valign="top"><a id="a3991ceebdf1be2c0645e70493077fad3"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>getStyleProperties</b> () const -&gt; const std::vector&lt; <a class="el" href="struct_style_properties.html">StyleProperties</a> &gt; &amp;</td></tr>
+<tr class="memitem:a3991ceebdf1be2c0645e70493077fad3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#a3991ceebdf1be2c0645e70493077fad3">getStyleProperties</a> () const -&gt; const std::vector&lt; <a class="el" href="struct_style_properties.html">StyleProperties</a> &gt; &amp;</td></tr>
 <tr class="separator:a3991ceebdf1be2c0645e70493077fad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcb9631c526db17fde780cc01af76e03"><td class="memItemLeft" align="right" valign="top"><a id="abcb9631c526db17fde780cc01af76e03"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>stylePropertiesOf</b> (const std::string &amp;name) const -&gt; std::optional&lt; <a class="el" href="struct_style_properties.html">StyleProperties</a> &gt;</td></tr>
+<tr class="memitem:abcb9631c526db17fde780cc01af76e03"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#abcb9631c526db17fde780cc01af76e03">stylePropertiesOf</a> (const std::string &amp;name) const -&gt; std::optional&lt; <a class="el" href="struct_style_properties.html">StyleProperties</a> &gt;</td></tr>
 <tr class="separator:abcb9631c526db17fde780cc01af76e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>interface to interact with translation-table resource </p>
+<p>Handles interaction with the translation-table-file and does parsing of it </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa275364fbefd658530d3f6907e754920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa275364fbefd658530d3f6907e754920">&#9670;&nbsp;</a></span>TranslationTable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TranslationTable::TranslationTable </td>
+          <td>(</td>
+          <td class="paramtype">std::stringstream&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>contents of a file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af266ea92b4028756e10eeee8be850b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af266ea92b4028756e10eeee8be850b5b">&#9670;&nbsp;</a></span>TranslationTable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TranslationTable::TranslationTable </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>path to a translation-table json-file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3991ceebdf1be2c0645e70493077fad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3991ceebdf1be2c0645e70493077fad3">&#9670;&nbsp;</a></span>getStyleProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto TranslationTable::getStyleProperties </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const std::vector&lt;<a class="el" href="struct_style_properties.html">StyleProperties</a>&gt; &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Provides all parsed style-properties</p>
+<dl class="section return"><dt>Returns</dt><dd>all parsed style-properties </dd></dl>
+
+</div>
+</div>
+<a id="a7e1a27368a0becda3e6ce4ba6129b17a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e1a27368a0becda3e6ce4ba6129b17a">&#9670;&nbsp;</a></span>printAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto TranslationTable::printAll </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em> = <code>std::cout</code></td><td>)</td>
+          <td> const -&gt; void</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Prints the content of contents</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>the ostream to print into </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abcb9631c526db17fde780cc01af76e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb9631c526db17fde780cc01af76e03">&#9670;&nbsp;</a></span>stylePropertiesOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto TranslationTable::stylePropertiesOf </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const -&gt; std::optional&lt;<a class="el" href="struct_style_properties.html">StyleProperties</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Provides style-properties for a specific style</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the style name to get properties for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(maybe) the properties for the style - None if there are none </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="_translation_table_8hpp_source.html">TranslationTable.hpp</a></li>
 <li>src/TranslationTable.cpp</li>

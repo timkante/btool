@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['softwarepraktikum_202020_3a_20bib_2dparser_2dtool_2',['Softwarepraktikum 2020: BiB-Parser-Tool',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['styleproperties_3',['StyleProperties',['../struct_style_properties.html',1,'']]]
+  ['getstyleproperties_2',['getStyleProperties',['../class_translation_table.html#a3991ceebdf1be2c0645e70493077fad3',1,'TranslationTable']]]
 ];

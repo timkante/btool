@@ -76,23 +76,25 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="struct_style_properties.html">    7</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_style_properties.html">StyleProperties</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    std::string name = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::vector&lt;std::string&gt; requiredFields = {};</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::vector&lt;std::string&gt; optionalFields = {};</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="struct_style_properties.html">StyleProperties</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="struct_style_properties.html">StyleProperties</a>(std::string name,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                    std::vector&lt;std::string&gt; requiredFields,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                    std::vector&lt;std::string&gt; optionalFields);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">auto</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_style_properties.html">StyleProperties</a> &amp;other) <span class="keyword">const</span> -&gt; bool;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_style_properties.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_style_properties.html">StyleProperties</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::string name = <span class="stringliteral">&quot;&quot;</span>; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::vector&lt;std::string&gt; requiredFields = {}; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::vector&lt;std::string&gt; optionalFields = {}; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_style_properties.html#a7af3a43e3d4131780ada6c7d93f36f77">   20</a></span>&#160;    <a class="code" href="struct_style_properties.html#a7af3a43e3d4131780ada6c7d93f36f77">StyleProperties</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="struct_style_properties.html#a7af3a43e3d4131780ada6c7d93f36f77">StyleProperties</a>(std::string name,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    std::vector&lt;std::string&gt; requiredFields,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    std::vector&lt;std::string&gt; optionalFields);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> <a class="code" href="struct_style_properties.html#ac92c8336d49a1d1e628c0073f8d4e792">operator==</a>(<span class="keyword">const</span> <a class="code" href="struct_style_properties.html">StyleProperties</a> &amp;other) <span class="keyword">const</span> -&gt; bool;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astruct_style_properties_html"><div class="ttname"><a href="struct_style_properties.html">StyleProperties</a></div><div class="ttdef"><b>Definition:</b> StyleProperties.hpp:7</div></div>
+<div class="ttc" id="astruct_style_properties_html"><div class="ttname"><a href="struct_style_properties.html">StyleProperties</a></div><div class="ttdoc">style-properties-container</div><div class="ttdef"><b>Definition:</b> StyleProperties.hpp:12</div></div>
+<div class="ttc" id="astruct_style_properties_html_ac92c8336d49a1d1e628c0073f8d4e792"><div class="ttname"><a href="struct_style_properties.html#ac92c8336d49a1d1e628c0073f8d4e792">StyleProperties::operator==</a></div><div class="ttdeci">auto operator==(const StyleProperties &amp;other) const -&gt; bool</div><div class="ttdef"><b>Definition:</b> StyleProperties.cpp:11</div></div>
+<div class="ttc" id="astruct_style_properties_html_a7af3a43e3d4131780ada6c7d93f36f77"><div class="ttname"><a href="struct_style_properties.html#a7af3a43e3d4131780ada6c7d93f36f77">StyleProperties::StyleProperties</a></div><div class="ttdeci">StyleProperties()=default</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
