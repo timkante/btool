@@ -49,5 +49,8 @@ Gruppenmitglieder für Group1:
 
 ## Links
 
-Für alle Informationen zum aktuellen CI-Status: [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI") \
+Für alle Informationen zum aktuellen CI-Status: [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")
+
 Für ausführliche Code-Analyse: [SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser "SonarCloud.io")
+
+Dokumentation: [Netlify](https://bibparser.timkante.dev "Doxygen")
