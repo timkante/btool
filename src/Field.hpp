@@ -4,14 +4,17 @@
 #include <string>
 
 /**
- * @brief Stores information of a Field of a bib-Element
+ * Stores information of a Field of a bib-element
+ *
+ * @brief Field-Container
  */
 struct Field {
-    std::string name; ///< @property The name of the Field
-    std::string value; ///< @property The value of the Field
+    std::string name; ///< @property the name of the Field
+    std::string value; ///< @property the value of the Field
 
     /**
-     * @brief Constructor.
+     * Constructor.
+     *
      * @param name Name of the Field
      * @param value Value of the Field
      */
