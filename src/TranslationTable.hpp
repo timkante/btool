@@ -19,6 +19,12 @@ private:
     boost::property_tree::ptree contents; ///< @property pointer to parsed json-tree
     std::vector<StyleProperties> styleProperties; ///< @property parsed style-properties
 
+    /**
+     * Parses a style from the styles json-pointer
+     *
+     * @param style the json-pointer to the style
+     * @return the parsed style-properties
+     */
     [[nodiscard]] static auto parseStyle(const boost::property_tree::ptree &style) -> StyleProperties;
 
     /**
