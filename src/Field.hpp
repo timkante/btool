@@ -7,8 +7,8 @@
  * @brief Stores information of a Field of a bib-Element
  */
 struct Field {
-    std::string name; ///<@property The name of the Field
-    std::string value; ///<@property The value of the Field
+    std::string name; ///< @property The name of the Field
+    std::string value; ///< @property The value of the Field
 
     /**
      * @brief Constructor.
