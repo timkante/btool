@@ -18,7 +18,7 @@ Das Programm (BibParser) soll über die Kommandozeile aufgerufen und ausgeführt
 
 ## Rationale
 
-Der Parser kann nur durch Kommandozeilenparameter aufgerufen und ausgeführt werden. 
+Da der BibParser nur als Werkzeug ausgeliefert werden soll, kann der Parser nur über die Kommandozeile und nur durch Kommandozeilenparameter aufgerufen und ausgeführt werden. 
 
 ## Originator
 
@@ -34,11 +34,11 @@ Das Programm zeigt beim Aufruf über die Kommandozeile **ohne Parameter** die Hi
 
 ## Customer Dissatisfaction
 
-[0/5]
+[5/5]
 
 ## Priority
 
-[0/5]
+[5/5]
 
 ## Supporting Material
 
