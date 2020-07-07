@@ -18,8 +18,34 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 
-## Projektbeschreibung :pencil:
+## Project-Description :pencil:
 
+A Tool to process `.bib`-Files like:
+
+```raw
+@inproceedings{someID,
+    author = {Author A and Author B},
+    title = {{Very, very fancy title}},
+    booktitle = {A very serious collection of fancy stuff},
+    year = {2013},
+    pages = {1--18},
+    month = Feb,
+    publisher = {E-Corp},
+}
+@article{someID+42,
+    author = {Author C},
+    title = {{Is this a even more fancy title?}},
+    booktitle = {Greatest collection of knowlage ever},
+    year = {2019},
+    pages = {154--164},
+    month = May,
+    publisher = {Anonymous},
+    url = {https://www.anons.com/publications/docs/reallyfancy.pdf},
+    file = {reallyfancy.pdf}
+}
+...
+```
+Takes the name of a style (article )
 Nimmt den Namen eines Stils und eine Liste von Namen von [bib-Dateien](https://de.wikipedia.org/wiki/BibTeX) und produziert eine HTML-Ausgabedatei. Die Konvertierung wird mit Hilfe einer Übersetzungstabelle (semantische tags) durchgeführt, so dass es sehr einfach sein sollte, weitere Symbole hinzuzufügen und zu aktualisieren. Es sollte möglich sein, den Inhalt der erzeugten HTML-Datei nach Datum (d.h.: Jahr), Typ (d.h.: Zeitschrift, Konferenz usw.) oder Autoren-Namen zu sortieren und anzuordnen. Darüber hinaus sollte das Parser-Tool in der Lage sein, die bib-Dateien zu bearbeiten und zu aktualisieren. Das bib-Parser-Werkzeug wäre in der Lage, den Inhalt einer bib-Datei in andere Formate als HTML zu konvertieren, wie z.B. XML- oder PDF-Dateien (gut zu haben).
 
 ## Team
