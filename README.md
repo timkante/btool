@@ -56,7 +56,66 @@ The rule-table is easily editable and adding styles or fields will be a breeze. 
 #### Boost-Library
 
 __Boost with a minimum version of `1.50`__  
-Follow the official boost instructions [for linux/mac](https://www.boost.org/doc/libs/1_73_0/more/getting_started/unix-variants.html) or [windows](https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html) to install and compile it on your machine.  
+Follow the official boost instructions for [linux/mac](https://www.boost.org/doc/libs/1_73_0/more/getting_started/unix-variants.html) or [windows](https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html) to install and compile it on your machine.  
+
+### CMake
+
+__CMake with a minimum version of `3.15`__
+Follow the [official cmake instructions](https://cmake.org/download/) to get yourself a running version of cmake.
+
+### Build :construction_worker:
+
+1. __Clone the Repo and Submodules:__
+
+    ```bash
+    $ git clone --recursive git@github.com:timkante/bibParser.git
+    ```
+
+2. __cd into the project:__
+
+    ```bash
+    $ cd bibParser
+    ```
+
+3. __Create a build directory and cd into it:__
+
+    ```bash
+    $ mkdir build && cd build
+    ```
+
+4. __Run the CMake target:__
+
+    ```bash
+    $ cmake ..
+    ```
+
+5. __Build a target:__
+
+    5.1. __For building the Tests:__
+    
+    ```bash
+    $ make bibParserTests
+    ```
+   
+    5.2. __For building the Executable:__
+   
+    ```bash
+    $ make bibParserRun
+    ```
+
+6. __Run a target:__
+
+    6.1. __For running the Tests:__
+    
+    ```bash
+    $ ./test/bibParserTests
+    ```
+   
+    6.2. __For running the Executable:__
+   
+    ```bash
+    $ ./bibParserRun <YOUR_ARGUMENTS>
+    ```
 
 ## Team :busts_in_silhouette:
 
