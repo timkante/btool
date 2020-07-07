@@ -10,15 +10,15 @@ Nicht-funktional / Perfomance
 
 ## Events / Use-Cases
 
-Aufruf des Programms (Commandline)
+Dauer des Parsing-Vorgangs
 
 ## Description
 
-Das Programm (BibParser) soll über die Kommandozeile aufgerufen und ausgeführt werden. 
+Der Vorgang des Parsens einer .bib - Datei mit 100 Einträgen eines Stils soll unter 500 ms bis zur Vorbereitung der Ausgabe in das entsprechende Format dauern. 
 
 ## Rationale
 
-Der Parser kann nur durch Kommandozeilenparameter aufgerufen und ausgeführt werden. 
+Damit wird ein nahezu Verzögerungsfreier Ablauf für den Anwender gewährleistet.
 
 ## Originator
 
@@ -26,7 +26,7 @@ Anwender
 
 ## Fit Criterion
 
-Das Programm zeigt beim Aufruf über die Kommandozeile **ohne Parameter** die Hilfe des Programms an. 
+Es wird ein Test (mittels GTest Suite) geschrieben, welcher die exate Ausführungszeit des Parsens überwacht.
 
 ## Customer Satisfaction
 
@@ -34,11 +34,11 @@ Das Programm zeigt beim Aufruf über die Kommandozeile **ohne Parameter** die Hi
 
 ## Customer Dissatisfaction
 
-[0/5]
+[2/5]
 
 ## Priority
 
-[0/5]
+[3/5]
 
 ## Supporting Material
 
@@ -54,6 +54,6 @@ Kevin Diex,
 Martin Zeidler,
 Tom Seidel
 
-06\. 07\. 2020
+07\. 07\. 2020
 
 Version 1.0.0
