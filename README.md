@@ -146,7 +146,7 @@ Group-Members of Group 1:
 [Milestone 3 - KW 20](doc/milestone3/berichtGroup1KW20.md "Report of KW 20")  
 [Milestone 4 - KW 21](doc/milestone4/berichtGroup1KW21.md "Report of KW 21")
 
-## Reports
+## Reports :pencil:
 
 [Report - KW 22](doc/Berichte/berichtGroup1KW22.md "Report of KW 22")  
 [Report - KW 23](doc/Berichte/berichtGroup1KW23.md "Report of KW 23")  
@@ -156,7 +156,7 @@ Group-Members of Group 1:
 [Report - KW 27](doc/Berichte/berichtGroup1KW27.md "Report of KW 27")  
 [Report - KW 28](doc/Berichte/berichtGroup1KW28.md "Report of KW 28")
 
-## Links
+## Links :link:
 
 For the current CI-Status/Report [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")  
 For Code-Analysis: [SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser "SonarCloud")  
