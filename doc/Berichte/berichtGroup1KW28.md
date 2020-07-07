@@ -74,13 +74,3 @@
 + Code (siehe Master-Branch und Neben-Branches, SonarCloud und TravisCI)
 + Dokumentation: [Netlify](https://bibparser.timkante.dev "Doxygen")
 + SnowCards
-  + [Funktionale Anforderung ID 001-005][func]
-  
-  + [Nicht-Funktionale Anforderungen ID 006][nonFunc6]
-  + [Nicht-Funktionale Anforderungen ID 007][nonFunc7]
-  + [Nicht-Funktionale Anforderungen ID 008][nonFunc8]
-
-[func]: ./../snowCards/functional/snowCardFunctional.md "SnowCard für funktionale Anforderungen"
-[nonFunc8]: ./../snowCards/nonFunctional/snowCardNonFuctional.md "SnowCard für nicht funktionale Anforderungen"
-[nonFunc6]: ./../snowCards/nonFunctional/snowCardNonFuctional006.md "SnowCard für nicht funktionale Anforderungen"
-[nonFunc7]: ./../snowCards/nonFunctional/snowCardNonFuctional007.md "SnowCard für nicht funktionale Anforderungen"
