@@ -45,46 +45,56 @@ A Tool to process `.bib`-Files like:
 }
 ...
 ```
-Takes the name of a style (article )
-Nimmt den Namen eines Stils und eine Liste von Namen von [bib-Dateien](https://de.wikipedia.org/wiki/BibTeX) und produziert eine HTML-Ausgabedatei. Die Konvertierung wird mit Hilfe einer Übersetzungstabelle (semantische tags) durchgeführt, so dass es sehr einfach sein sollte, weitere Symbole hinzuzufügen und zu aktualisieren. Es sollte möglich sein, den Inhalt der erzeugten HTML-Datei nach Datum (d.h.: Jahr), Typ (d.h.: Zeitschrift, Konferenz usw.) oder Autoren-Namen zu sortieren und anzuordnen. Darüber hinaus sollte das Parser-Tool in der Lage sein, die bib-Dateien zu bearbeiten und zu aktualisieren. Das bib-Parser-Werkzeug wäre in der Lage, den Inhalt einer bib-Datei in andere Formate als HTML zu konvertieren, wie z.B. XML- oder PDF-Dateien (gut zu haben).
+Takes the name of a style (article, inproceedings, book, etc.), a collection of [`.bib`-Files](https://de.wikipedia.org/wiki/BibTeX) and a Property (title, author, year, etc.) to sort after, and produces a nicely formatted HTML-File with an overview over all the Publications in the given files matching the given style, ordered by the given ordering.  
+The Tool uses a JSON-File with rules containing names of known styles and their required and optional fields. :wrench:  
+The rule-table is easily editable and adding styles or fields will be a breeze. :sparkles:
 
-## Team
+## Installation :rocket:
 
-Gruppenmitglieder für Group1:
+### Prerequisites :seedling:
 
-+ Herr Valeri Fitz (Projektmanager)
-+ Herr Kevin Diex
-+ Frau Saskia Heinrich
-+ Herr Tim Kante
-+ Herr Rashid Katamesh
-+ Herr Tom Seidel
-+ Herr Martin Zeidler
+#### Boost-Library
 
-## Meilensteine
+__Boost with a minimum version of `1.50`__
+Follow the official boost instructions [for linux/mac](https://www.boost.org/doc/libs/1_73_0/more/getting_started/unix-variants.html) or [windows](https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html) to install and compile it on your machine.  
 
-[Meilenstein 1 - KW 18](doc/milestone1/berichtGroup1KW18.md "Bericht der KW 18")
+## Team :busts_in_silhouette:
 
-[Meilenstein 2 - KW 19](doc/milestone2/berichtGroup1KW19.md "Bericht der KW 19")
+Group-Members of Group 1:
 
-[Meilenstein 3 - KW 20](doc/milestone3/berichtGroup1KW20.md "Bericht der KW 20")
++ Valeri Fitz (Project-Manager)
++ Kevin Diex
++ Saskia Heinrich
++ Tim Kante
++ Rashid Katamesh
++ Tom Seidel
++ Martin Zeidler
 
-[Meilenstein 4 - KW 21](doc/milestone4/berichtGroup1KW21.md "Bericht der KW 21")
+## Milestones :triangular_flag_on_post:
 
----
+[Milestone 1 - KW 18](doc/milestone1/berichtGroup1KW18.md "Report of KW 18")
 
-[Bericht - KW 22](doc/Berichte/berichtGroup1KW22.md "Bericht der KW 22")
+[Milestone 2 - KW 19](doc/milestone2/berichtGroup1KW19.md "Report of KW 19")
 
-[Bericht - KW 23](doc/Berichte/berichtGroup1KW23.md "Bericht der KW 23")
+[Milestone 3 - KW 20](doc/milestone3/berichtGroup1KW20.md "Report of KW 20")
 
-[Bericht - KW 24](doc/Berichte/berichtGroup1KW24.md "Bericht der KW 24")
+[Milestone 4 - KW 21](doc/milestone4/berichtGroup1KW21.md "Report of KW 21")
 
-[Zwischenbericht - KW 25](doc/Berichte/Zwischenbericht.md "Zwischenbericht der KW 25")
+## Reports
 
-[Bericht - KW 26](doc/Berichte/berichtGroup1KW26.md "Bericht der KW 26")
+[Report - KW 22](doc/Berichte/berichtGroup1KW22.md "Report of KW 22")
 
-[Bericht - KW 27](doc/Berichte/berichtGroup1KW27.md "Bericht der KW 27")
+[Report - KW 23](doc/Berichte/berichtGroup1KW23.md "Report of KW 23")
 
-[Bericht - KW 28](doc/Berichte/berichtGroup1KW28.md "Bericht der KW 28")
+[Report - KW 24](doc/Berichte/berichtGroup1KW24.md "Report of KW 24")
+
+[Report - KW 25](doc/Berichte/Zwischenbericht.md "Report of KW 25")
+
+[Report - KW 26](doc/Berichte/berichtGroup1KW26.md "Report of KW 26")
+
+[Report - KW 27](doc/Berichte/berichtGroup1KW27.md "Report of KW 27")
+
+[Report - KW 28](doc/Berichte/berichtGroup1KW28.md "Report of KW 28")
 
 ## Links
 
