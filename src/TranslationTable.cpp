@@ -5,13 +5,24 @@
 #include <iterator>
 
 TranslationTable::TranslationTable(std::stringstream file) {
-    boost::property_tree::read_json(file, contents);
-    styleProperties = parseStyles();
+    try {
+        boost::property_tree::read_json(file, contents);
+        styleProperties = parseStyles();
+    } catch (std::exception &e) {
+        std::cerr << "Contents are no valid JSON-Format [contents=" << file.str() << "]\n";
+        styleProperties = {};
+    }
 }
 
 TranslationTable::TranslationTable(const boost::filesystem::path &path) {
-    boost::property_tree::read_json(path.string(), contents);
-    styleProperties = parseStyles();
+    try {
+        boost::property_tree::read_json(path.string(), contents);
+        styleProperties = parseStyles();
+        // TODO add handling if file exists
+    } catch (std::exception &e) {
+        std::cerr << "File does not contain valid JSON-Format [file=" << path.string() << "]\n";
+        styleProperties = {};
+    }
 }
 
 auto TranslationTable::printAll(std::ostream &out) const -> void {

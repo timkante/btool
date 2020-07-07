@@ -166,3 +166,25 @@ TEST(TranslationTableTest, parsingInvalidStylesTest) {
     const auto expected = std::vector<StyleProperties>{};
     ASSERT_EQ(table.getStyleProperties(), expected);
 }
+
+TEST(TranslationTableTest, parsingInvalidFileContent){
+    auto invalidContent = std::stringstream{R"(
+        {,
+            "some": [
+                {
+                    "invalid": "json"
+                },
+            ],
+        }
+    )"};
+    const auto table = TranslationTable(std::move(invalidContent));
+    const auto expected = std::vector<StyleProperties>{};
+    ASSERT_EQ(table.getStyleProperties(), expected);
+}
+
+TEST(TranslationTableTest, parsingInvalidFile){
+    auto invalidFile = boost::filesystem::path("./someUnExistingFile.json");
+    const auto table = TranslationTable(invalidFile);
+    const auto expected = std::vector<StyleProperties>{};
+    ASSERT_EQ(table.getStyleProperties(), expected);
+}
