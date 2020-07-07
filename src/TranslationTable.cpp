@@ -10,7 +10,7 @@ TranslationTable::TranslationTable(std::stringstream file) {
     try {
         boost::property_tree::read_json(file, contents);
         styleProperties = parseStyles();
-    } catch (boost::property_tree::json_parser_error &e) {
+    } catch (const boost::property_tree::json_parser_error &e) {
         spdlog::critical("Contents are no valid JSON-Format [contents={}]", file.str());
         styleProperties = {};
     }
@@ -27,7 +27,7 @@ TranslationTable::TranslationTable(const boost::filesystem::path &path) {
         try {
             boost::property_tree::read_json(path.string(), contents);
             styleProperties = parseStyles();
-        } catch (boost::property_tree::json_parser_error &e) {
+        } catch (const boost::property_tree::json_parser_error &e) {
             spdlog::critical("Contents are no valid JSON-Format [contents={}]", path.string());
             styleProperties = {};
         }
