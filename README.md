@@ -1,17 +1,24 @@
 <img align="right" src="https://upload.wikimedia.org/wikipedia/de/thumb/e/e3/Logo_TU_Chemnitz.svg/2000px-Logo_TU_Chemnitz.svg.png" width="200" height="99.5"/>
 
 <h1>Software-Engineering-Assignment <br/> summer semester 2020 <br/> BiB-Parser-Tool</h1>
-<h2 style="text-align: right">TU-Chemnitz <br/> Faculty of Computer Science <br/> Professorship of Software Engineering</h2>
+<h2>TU-Chemnitz <br/> Faculty of Computer Science <br/> Professorship of Software Engineering</h2>
+
+## Project Status
+
+### Builds :construction_worker: and Deployments :rocket:
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c88170d7-f1a1-48d4-8e86-d8d1fdfb8afd/deploy-status)](https://app.netlify.com/sites/relaxed-heisenberg-aecc6d/deploys)
 ![Travis Badge](https://travis-ci.com/timkante/bibParser.svg?branch=master "TravisCI - Status")
+
+### Code-Quality :art:
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=alert_status)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=sqale_index)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=bugs)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 
-## Projektbeschreibung
+## Projektbeschreibung :pencil:
 
 Nimmt den Namen eines Stils und eine Liste von Namen von [bib-Dateien](https://de.wikipedia.org/wiki/BibTeX) und produziert eine HTML-Ausgabedatei. Die Konvertierung wird mit Hilfe einer Übersetzungstabelle (semantische tags) durchgeführt, so dass es sehr einfach sein sollte, weitere Symbole hinzuzufügen und zu aktualisieren. Es sollte möglich sein, den Inhalt der erzeugten HTML-Datei nach Datum (d.h.: Jahr), Typ (d.h.: Zeitschrift, Konferenz usw.) oder Autoren-Namen zu sortieren und anzuordnen. Darüber hinaus sollte das Parser-Tool in der Lage sein, die bib-Dateien zu bearbeiten und zu aktualisieren. Das bib-Parser-Werkzeug wäre in der Lage, den Inhalt einer bib-Datei in andere Formate als HTML zu konvertieren, wie z.B. XML- oder PDF-Dateien (gut zu haben).
 
