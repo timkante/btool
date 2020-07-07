@@ -58,7 +58,7 @@ The rule-table is easily editable and adding styles or fields will be a breeze. 
 __Boost with a minimum version of `1.50`__  
 Follow the official boost instructions for [linux/mac](https://www.boost.org/doc/libs/1_73_0/more/getting_started/unix-variants.html) or [windows](https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html) to install and compile it on your machine.  
 
-### CMake
+#### CMake
 
 __CMake with a minimum version of `3.15`__
 Follow the [official cmake instructions](https://cmake.org/download/) to get yourself a running version of cmake.
@@ -117,10 +117,20 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
     $ ./bibParserRun <YOUR_ARGUMENTS>
     ```
 
+## Built with :heart: and
+
+| logo | technology | purpose |
+|---|---|---|
+|![C++](https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/612px-ISO_C%2B%2B_Logo.svg.png)| C++ | speed |
+|![Travis-CI](https://travis-ci.org/images/logos/TravisCI-Mascot-1.png)| Travis-CI | CI/CD |
+|![SonarCloud](https://pbs.twimg.com/profile_images/955394530806829056/LC7DAYM3_400x400.jpg)| SonarQube/SonarCloud | Code-Quality |
+|![CMake](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cmake.svg/2072px-Cmake.svg.png)| CMake | builds |
+|![Netlify](https://cdn.worldvectorlogo.com/logos/netlify.svg)| Netlify | documentation |
+|![GitHub](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png)| GitHub | version-control |
+
 ## Team :busts_in_silhouette:
 
 Group-Members of Group 1:
-
 + Valeri Fitz (Project-Manager)
 + Kevin Diex
 + Saskia Heinrich
@@ -131,34 +141,23 @@ Group-Members of Group 1:
 
 ## Milestones :triangular_flag_on_post:
 
-[Milestone 1 - KW 18](doc/milestone1/berichtGroup1KW18.md "Report of KW 18")
-
-[Milestone 2 - KW 19](doc/milestone2/berichtGroup1KW19.md "Report of KW 19")
-
-[Milestone 3 - KW 20](doc/milestone3/berichtGroup1KW20.md "Report of KW 20")
-
+[Milestone 1 - KW 18](doc/milestone1/berichtGroup1KW18.md "Report of KW 18")  
+[Milestone 2 - KW 19](doc/milestone2/berichtGroup1KW19.md "Report of KW 19")  
+[Milestone 3 - KW 20](doc/milestone3/berichtGroup1KW20.md "Report of KW 20")  
 [Milestone 4 - KW 21](doc/milestone4/berichtGroup1KW21.md "Report of KW 21")
 
 ## Reports
 
-[Report - KW 22](doc/Berichte/berichtGroup1KW22.md "Report of KW 22")
-
-[Report - KW 23](doc/Berichte/berichtGroup1KW23.md "Report of KW 23")
-
-[Report - KW 24](doc/Berichte/berichtGroup1KW24.md "Report of KW 24")
-
-[Report - KW 25](doc/Berichte/Zwischenbericht.md "Report of KW 25")
-
-[Report - KW 26](doc/Berichte/berichtGroup1KW26.md "Report of KW 26")
-
-[Report - KW 27](doc/Berichte/berichtGroup1KW27.md "Report of KW 27")
-
+[Report - KW 22](doc/Berichte/berichtGroup1KW22.md "Report of KW 22")  
+[Report - KW 23](doc/Berichte/berichtGroup1KW23.md "Report of KW 23")  
+[Report - KW 24](doc/Berichte/berichtGroup1KW24.md "Report of KW 24")  
+[Report - KW 25](doc/Berichte/Zwischenbericht.md "Report of KW 25")  
+[Report - KW 26](doc/Berichte/berichtGroup1KW26.md "Report of KW 26")  
+[Report - KW 27](doc/Berichte/berichtGroup1KW27.md "Report of KW 27")  
 [Report - KW 28](doc/Berichte/berichtGroup1KW28.md "Report of KW 28")
 
 ## Links
 
-Für alle Informationen zum aktuellen CI-Status: [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")
-
-Für ausführliche Code-Analyse: [SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser "SonarCloud.io")
-
-Dokumentation: [Netlify](https://bibparser.timkante.dev "Doxygen")
+For the current CI-Status/Report [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")  
+For Code-Analysis: [SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser "SonarCloud")  
+Documentation: [Netlify](https://bibparser.timkante.dev "Doxygen")
