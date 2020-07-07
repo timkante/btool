@@ -188,3 +188,10 @@ TEST(TranslationTableTest, parsingInvalidFile){
     const auto expected = std::vector<StyleProperties>{};
     ASSERT_EQ(table.getStyleProperties(), expected);
 }
+
+TEST(TranslationTableTest, parsingDirectory){
+    auto invalidFile = boost::filesystem::path(".");
+    const auto table = TranslationTable(invalidFile);
+    const auto expected = std::vector<StyleProperties>{};
+    ASSERT_EQ(table.getStyleProperties(), expected);
+}

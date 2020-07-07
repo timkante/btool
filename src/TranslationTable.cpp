@@ -1,27 +1,36 @@
 #include <TranslationTable.hpp>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/optional/optional.hpp>
+#include <boost/filesystem.hpp>
 #include <algorithm>
 #include <iterator>
+#include <spdlog/spdlog.h>
 
 TranslationTable::TranslationTable(std::stringstream file) {
     try {
         boost::property_tree::read_json(file, contents);
         styleProperties = parseStyles();
-    } catch (std::exception &e) {
-        std::cerr << "Contents are no valid JSON-Format [contents=" << file.str() << "]\n";
+    } catch (boost::property_tree::json_parser_error &e) {
+        spdlog::critical("Contents are no valid JSON-Format [contents={}]", file.str());
         styleProperties = {};
     }
 }
 
 TranslationTable::TranslationTable(const boost::filesystem::path &path) {
-    try {
-        boost::property_tree::read_json(path.string(), contents);
-        styleProperties = parseStyles();
-        // TODO add handling if file exists
-    } catch (std::exception &e) {
-        std::cerr << "File does not contain valid JSON-Format [file=" << path.string() << "]\n";
+    if (!boost::filesystem::exists(path)){
+        spdlog::critical("No such file. [translationTablePath={}]", path.string());
         styleProperties = {};
+    } else if (!boost::filesystem::is_regular_file(path)){
+        spdlog::critical("Translation-Table is not a file. [translationTablePath={}]", path.string());
+        styleProperties = {};
+    } else {
+        try {
+            boost::property_tree::read_json(path.string(), contents);
+            styleProperties = parseStyles();
+        } catch (boost::property_tree::json_parser_error &e) {
+            spdlog::critical("Contents are no valid JSON-Format [contents={}]", path.string());
+            styleProperties = {};
+        }
     }
 }
 
@@ -68,6 +77,8 @@ auto TranslationTable::parseStyles() const -> std::vector<StyleProperties> {
                        [this](const boost::property_tree::ptree::value_type &style) {
                            return this->parseStyle(style.second);
                        });
+    } else {
+        spdlog::critical("Property \"styles\" not found in provided Translation-Table.");
     }
     return props;
 }
