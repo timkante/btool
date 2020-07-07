@@ -1,6 +1,6 @@
 <img align="right" src="https://upload.wikimedia.org/wikipedia/de/thumb/e/e3/Logo_TU_Chemnitz.svg/2000px-Logo_TU_Chemnitz.svg.png" width="200" height="99.5"/>
 
-# Softwarepraktikum Summer-Semester 2020: BiB-Parser-Tool
+# Software-Engineering assignment summer semester 2020: BiB-Parser-Tool
 ## _TU-Chemnitz - Faculty of Computer Science - Professorship of Software Engineering_
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c88170d7-f1a1-48d4-8e86-d8d1fdfb8afd/deploy-status)](https://app.netlify.com/sites/relaxed-heisenberg-aecc6d/deploys)
