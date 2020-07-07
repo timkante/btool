@@ -38,17 +38,15 @@ set(MAIN_HEADERS
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
-if(Boost_FOUND)
-    message(STATUS "Boost version: ${Boost_VERSION}")
-    target_include_directories(${PROJECT_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
-    target_link_libraries(${PROJECT_NAME} Boost::system Boost::filesystem)
-endif(Boost_FOUND)
+add_subdirectory(dependencies/spdlog)
+add_subdirectory(dependencies/googletest)
+
+message(STATUS "Boost version: ${Boost_VERSION}")
+target_link_libraries(${PROJECT_NAME} Boost::system Boost::filesystem spdlog::spdlog)
 
 target_include_directories(${PROJECT_NAME} PUBLIC src)
 
 enable_testing()
-
-add_subdirectory(dependencies/googletest)
 add_subdirectory(test)
 
 add_executable(${PROJECT_NAME}Run main.cpp)
