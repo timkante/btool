@@ -55,7 +55,7 @@ The rule-table is easily editable and adding styles or fields will be a breeze. 
 
 #### Boost-Library
 
-__Boost with a minimum version of `1.50`__
+__Boost with a minimum version of `1.50`__  
 Follow the official boost instructions [for linux/mac](https://www.boost.org/doc/libs/1_73_0/more/getting_started/unix-variants.html) or [windows](https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html) to install and compile it on your machine.  
 
 ## Team :busts_in_silhouette:
