@@ -1,7 +1,7 @@
 <img align="right" src="https://upload.wikimedia.org/wikipedia/de/thumb/e/e3/Logo_TU_Chemnitz.svg/2000px-Logo_TU_Chemnitz.svg.png" width="200" height="99.5"/>
 
 <h1>Software-Engineering-Assignment <br/> summer semester 2020 <br/> BiB-Parser-Tool</h1>
-<h2>TU-Chemnitz <br/> Faculty of Computer Science <br/> Professorship of Software Engineering</h2>
+<h2 style="text-align:right">TU-Chemnitz <br/> Faculty of Computer Science <br/> Professorship of Software Engineering</h2>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c88170d7-f1a1-48d4-8e86-d8d1fdfb8afd/deploy-status)](https://app.netlify.com/sites/relaxed-heisenberg-aecc6d/deploys)
 ![Travis Badge](https://travis-ci.com/timkante/bibParser.svg?branch=master "TravisCI - Status")
