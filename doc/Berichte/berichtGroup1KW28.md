@@ -4,8 +4,8 @@
 
 + Besprechung zur Endpräsentation (Bestandteile der Abgabe.pdf)
   + Aufteilung der neuen Aufgaben zwischen Teilgruppen:
-    + Volere Snow Cards (funktionale Anforderungen) --> Valeri, Saskia, Rashid
-    + Volere Snow Cards (nicht-funktionale Anforderungen) --> Kevin, Martin, Tom
+    + Volere Snow Cards (funktionale Anforderungen), fertiggestellt --> Valeri, Saskia, Rashid
+    + Volere Snow Cards (nicht-funktionale Anforderungen), fertiggestellt --> Kevin, Martin, Tom
     + Use-Case-Diagramme --> Kevin, Martin, Tom
     + Zustands- und Sequenzdiagramme --> Valeri, Saskia, Rashid
     + Doxygen- und Netlify-Integration für Code-Dokumentation --> Tim
@@ -73,4 +73,9 @@
 
 + Code (siehe Master-Branch und Neben-Branches, SonarCloud und TravisCI)
 + Dokumentation: [Netlify](https://bibparser.timkante.dev "Doxygen")
-+ SnowCards
++ SnowCards:
+  + [SnowCards funktionale Anforderungen][func]
+  + [SnowCards nicht-funktionale Anforderungen][Nonfunc]
+
+[func]: ./../snowCards/functional/snowCardFunctional.md "SnowCards funktionale Anforderungen"
+[Nonfunc]: ./../snowCards/nonFunctional/snowCardNonFuctional.md "SnowCards funktionale Anforderungen"
