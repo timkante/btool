@@ -119,14 +119,14 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
 
 ## Built with :heart: and
 
-| logo | technology | purpose |
+| | technology | purpose |
 |---|---|---|
-|![C++](https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/612px-ISO_C%2B%2B_Logo.svg.png)| C++ | speed |
-|![Travis-CI](https://travis-ci.org/images/logos/TravisCI-Mascot-1.png)| Travis-CI | CI/CD |
-|![SonarCloud](https://pbs.twimg.com/profile_images/955394530806829056/LC7DAYM3_400x400.jpg)| SonarQube/SonarCloud | Code-Quality |
-|![CMake](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cmake.svg/2072px-Cmake.svg.png)| CMake | builds |
-|![Netlify](https://cdn.worldvectorlogo.com/logos/netlify.svg)| Netlify | documentation |
-|![GitHub](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png)| GitHub | version-control |
+|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/612px-ISO_C%2B%2B_Logo.svg.png" width="60" /> | C++ | speed |
+|<img src="https://travis-ci.org/images/logos/TravisCI-Mascot-1.png" width="60" />| Travis-CI | CI/CD |
+|<img src="https://pbs.twimg.com/profile_images/955394530806829056/LC7DAYM3_400x400.jpg" width="60" /> | SonarQube/SonarCloud | Code-Quality |
+|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cmake.svg/2072px-Cmake.svg.png" width="60" /> | CMake | builds |
+|<img src="https://cdn.worldvectorlogo.com/logos/netlify.svg" width="60" /> | Netlify | documentation |
+|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" width="60" /> | GitHub | version-control |
 
 ## Team :busts_in_silhouette:
 
