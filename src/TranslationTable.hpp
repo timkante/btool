@@ -25,14 +25,14 @@ private:
      * @param style the json-pointer to the style
      * @return the parsed style-properties
      */
-    [[nodiscard]] static auto parseStyle(const boost::property_tree::ptree &style) -> StyleProperties;
+    [[nodiscard]] static auto parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties;
 
     /**
      * Parses Styles of a top-level json-pointer (tree according to proposed structure)
      *
      * @return all the parsed style properties
      */
-    [[nodiscard]] auto parseStyles() const -> std::vector<StyleProperties>;
+    [[nodiscard]] auto parseStyles() const noexcept -> std::vector<StyleProperties>;
 
 public:
     /**
@@ -40,14 +40,14 @@ public:
      *
      * @param file contents of a file
      */
-    explicit TranslationTable(std::stringstream file);
+    explicit TranslationTable(std::stringstream file) noexcept;
 
     /**
      * Constructor.
      *
      * @param path path to a translation-table json-file
      */
-    explicit TranslationTable(const boost::filesystem::path &path);
+    explicit TranslationTable(const boost::filesystem::path &path) noexcept;
 
     /**
      * Prints the content of contents
@@ -61,7 +61,7 @@ public:
      *
      * @return all parsed style-properties
      */
-    [[nodiscard]] auto getStyleProperties() const -> const std::vector<StyleProperties> &;
+    [[nodiscard]] auto getStyleProperties() const noexcept -> const std::vector<StyleProperties> &;
 
     /**
      * Provides style-properties for a specific style
@@ -69,7 +69,7 @@ public:
      * @param name the style name to get properties for
      * @return (maybe) the properties for the style - None if there are none
      */
-    [[nodiscard]] auto stylePropertiesOf(const std::string &name) const -> std::optional<StyleProperties>;
+    [[nodiscard]] auto stylePropertiesOf(const std::string &name) const noexcept -> std::optional<StyleProperties>;
 };
 
 #endif
