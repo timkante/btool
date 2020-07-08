@@ -39,6 +39,7 @@ public:
      * Constructor.
      *
      * @param file contents of a file
+     * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
      */
     explicit TranslationTable(std::stringstream file) noexcept;
 
@@ -46,13 +47,14 @@ public:
      * Constructor.
      *
      * @param path path to a translation-table json-file
+     * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
      */
     explicit TranslationTable(const boost::filesystem::path &path) noexcept;
 
     /**
      * Prints the content of contents
      *
-     * @param out the ostream to print into
+     * @param[out] out the ostream to print into
      */
     auto printAll(std::ostream &out = std::cout) const -> void;
 

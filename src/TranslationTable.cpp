@@ -6,7 +6,7 @@
 #include <iterator>
 #include <spdlog/spdlog.h>
 
-TranslationTable::TranslationTable(std::stringstream file) {
+TranslationTable::TranslationTable(std::stringstream file) noexcept {
     try {
         boost::property_tree::read_json(file, contents);
         styleProperties = parseStyles();
@@ -16,7 +16,7 @@ TranslationTable::TranslationTable(std::stringstream file) {
     }
 }
 
-TranslationTable::TranslationTable(const boost::filesystem::path &path) {
+TranslationTable::TranslationTable(const boost::filesystem::path &path) noexcept {
     if (!boost::filesystem::exists(path)){
         spdlog::critical("No such file. [translationTablePath={}]", path.string());
         styleProperties = {};
@@ -38,7 +38,7 @@ auto TranslationTable::printAll(std::ostream &out) const -> void {
     boost::property_tree::json_parser::write_json(out, contents);
 }
 
-auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) -> StyleProperties {
+auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties {
     const auto parseConstraintNode = [](const boost::property_tree::ptree &node) {
         std::vector<std::string> fields;
         std::for_each(std::cbegin(node),
@@ -66,7 +66,7 @@ auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) -> S
                                               : std::vector<std::string>{});
 }
 
-auto TranslationTable::parseStyles() const -> std::vector<StyleProperties> {
+auto TranslationTable::parseStyles() const noexcept -> std::vector<StyleProperties> {
     std::vector<StyleProperties> props;
     const boost::optional<const boost::property_tree::ptree &> styles =
             contents.get_child_optional("styles");
@@ -83,11 +83,11 @@ auto TranslationTable::parseStyles() const -> std::vector<StyleProperties> {
     return props;
 }
 
-auto TranslationTable::getStyleProperties() const -> const std::vector<StyleProperties> & {
+auto TranslationTable::getStyleProperties() const noexcept -> const std::vector<StyleProperties> & {
     return styleProperties;
 }
 
-auto TranslationTable::stylePropertiesOf(const std::string &name) const -> std::optional<StyleProperties> {
+auto TranslationTable::stylePropertiesOf(const std::string &name) const noexcept -> std::optional<StyleProperties> {
     const auto propItr = std::find_if(std::cbegin(styleProperties), std::cend(styleProperties),
                                       [&name](const StyleProperties &prop) { return prop.name == name; });
     return (propItr != std::cend(styleProperties)) ? std::optional(*propItr) : std::nullopt;
