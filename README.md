@@ -142,7 +142,7 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" width="60" /> | [GitHub](https://github.com/timkante/bibParser) | version-control |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="60" /> | [googletest](https://github.com/google/googletest) | testing |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png" width="60" /> | [Markdown](https://markdown.de/) | non-code-documentation
-| <img src="https://commons.wikimedia.org/wiki/File:Doxygen.png#/media/Datei:Doxygen.png" width="60" /> | [Doxygen](https://www.doxygen.nl/index.html) | documentation |
+| | [Doxygen](https://www.doxygen.nl/index.html) | documentation |
 | | [spdlog](https://github.com/gabime/spdlog) | logging |
 
 ## Team :busts_in_silhouette:
