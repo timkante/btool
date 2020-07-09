@@ -15,7 +15,7 @@
     + Donnerstag, 20.08.2020
 + Weiterführung der Implementierungen der Klassen
   + Tim: TranslationTable
-    + Status: Parser wurde weiter implementiert.
+    + Status: TranslationTable wurde weiter implementiert.
   + Saskia, Valeri, Rashid:  FileGenerator, XML
     + Status: FileGenerator wurde weiter implementiert. Einigung, dass Ausgabeformat nur auf XML zu beschränken. Keine PDF-Implementierung, weil keine passenden Bibliotheken auffindbar.
   + Kevin, Tom, Martin: Parser
