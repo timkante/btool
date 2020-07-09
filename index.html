@@ -82,6 +82,25 @@ Builds :construction_worker: and Deployments :rocket:</h3>
 Code-Quality :art::nail_care:</h3>
 <p><a href="https://sonarcloud.io/dashboard?id=timkante_bibParser"><img src="https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&amp;metric=alert_status" alt="Quality Gate Status" class="inline"/></a> <a href="https://sonarcloud.io/dashboard?id=timkante_bibParser"><img src="https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&amp;metric=sqale_index" alt="Technical Debt" class="inline"/></a> <a href="https://sonarcloud.io/dashboard?id=timkante_bibParser"><img src="https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&amp;metric=bugs" alt="Bugs" class="inline"/></a> <a href="https://sonarcloud.io/dashboard?id=timkante_bibParser"><img src="https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&amp;metric=reliability_rating" alt="Reliability Rating" class="inline"/></a> <a href="https://sonarcloud.io/dashboard?id=timkante_bibParser"><img src="https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&amp;metric=sqale_rating" alt="Maintainability Rating" class="inline"/></a></p>
 <h2><a class="anchor" id="autotoc_md3"></a>
+Table of contents</h2>
+<ul>
+<li><a href="#project-description-pencil">What is this Repo?</a></li>
+<li><a href="#installation-rocket">How to use the Code</a><ul>
+<li><a href="#prerequisites-seedling">Prerequisites</a><ul>
+<li><a href="#boost-library">Boost</a></li>
+<li><a href="#cmake">CMake</a></li>
+</ul>
+</li>
+<li><a href="#build-construction_worker">Build the Source</a></li>
+</ul>
+</li>
+<li><a href="#built-with-heart-and">What is this project built with?</a></li>
+<li><a href="#team-busts_in_silhouette">Contributors</a></li>
+<li><a href="#milestones-triangular_flag_on_post">Milestones</a></li>
+<li><a href="#reports-pencil">Reports</a></li>
+<li><a href="#links-link">Resources and Tools</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Project-Description :pencil:</h2>
 <p>A Tool to process <code>.bib</code>-Files like:</p>
 <div class="fragment"><div class="line">@inproceedings{someID,</div>
@@ -108,19 +127,19 @@ Project-Description :pencil:</h2>
 </div><!-- fragment --><p>Takes the name of a style (article, inproceedings, book, etc.), a collection of <a href="https://de.wikipedia.org/wiki/BibTeX"><code>.bib</code>-Files</a> and a Property (title, author, year, etc.) to sort after, and produces a nicely formatted HTML-File with an overview over all the Publications in the given files matching the given style, ordered by the given ordering. <br  />
  The Tool uses a JSON-File with rules containing names of known styles and their required and optional fields. :wrench: <br  />
  The rule-table is easily editable and adding styles or fields will be a breeze. :sparkles:</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Installation :rocket:</h2>
-<h3><a class="anchor" id="autotoc_md5"></a>
+<h3><a class="anchor" id="autotoc_md6"></a>
 Prerequisites :seedling:</h3>
-<h4><a class="anchor" id="autotoc_md6"></a>
+<h4><a class="anchor" id="autotoc_md7"></a>
 Boost-Library</h4>
 <p><b>Boost with a minimum version of <code>1.50</code></b> <br  />
  Follow the official boost instructions for <a href="https://www.boost.org/doc/libs/1_73_0/more/getting_started/unix-variants.html">linux/mac</a> or <a href="https://www.boost.org/doc/libs/1_73_0/more/getting_started/windows.html">windows</a> to install and compile it on your machine. <br  />
 </p>
-<h4><a class="anchor" id="autotoc_md7"></a>
+<h4><a class="anchor" id="autotoc_md8"></a>
 CMake</h4>
 <p><b>CMake with a minimum version of <code>3.15</code></b> Follow the <a href="https://cmake.org/download/">official cmake instructions</a> to get yourself a running version of cmake.</p>
-<h3><a class="anchor" id="autotoc_md8"></a>
+<h3><a class="anchor" id="autotoc_md9"></a>
 Build :construction_worker:</h3>
 <ol type="1">
 <li><p class="startli"><b>Clone the Repo and Submodules:</b></p>
@@ -148,7 +167,7 @@ Build :construction_worker:</h3>
 <p class="startli">```bash $ ./bibParserRun &lt;YOUR_ARGUMENTS&gt; ```</p>
 </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Built with :heart: and</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -166,7 +185,7 @@ Built with :heart: and</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="" width="60" class="inline"/> </td><td class="markdownTableBodyNone">GitHub </td><td class="markdownTableBodyNone">version-control  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Team :busts_in_silhouette:</h2>
 <p>Group-Members of Group 1:</p><ul>
 <li>Valeri Fitz (Project-Manager)</li>
@@ -177,13 +196,13 @@ Team :busts_in_silhouette:</h2>
 <li>Tom Seidel</li>
 <li>Martin Zeidler</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Milestones :triangular_flag_on_post:</h2>
 <p>Milestone 1 - KW 18 <br  />
  Milestone 2 - KW 19 <br  />
  Milestone 3 - KW 20 <br  />
  Milestone 4 - KW 21</p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Reports :pencil:</h2>
 <p>Report - KW 22 <br  />
  Report - KW 23 <br  />
@@ -192,7 +211,7 @@ Reports :pencil:</h2>
  Report - KW 26 <br  />
  Report - KW 27 <br  />
  Report - KW 28</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Links :link:</h2>
 <p>For the current CI-Status/Report <a href="https://travis-ci.com/github/timkante/bibParser" title="TravisCI">TravisCI</a> <br  />
  For Code-Analysis: <a href="https://sonarcloud.io/dashboard?id=timkante_bibParser" title="SonarCloud">SonarCloud</a> <br  />
