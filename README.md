@@ -18,6 +18,19 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=timkante_bibParser&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=timkante_bibParser)
 
+## Table of contents
++ [What is this Repo?](#project-description-pencil)
++ [How to use the Code](#installation-rocket)
+  + [Prerequisites](#prerequisites-seedling)
+    + [Boost](#boost-library)
+    + [CMake](#cmake)
+  + [Build the Source](#build-construction_worker)
++ [What is this project built with?](#built-with-heart-and)
++ [Contributors](#team-busts_in_silhouette)
++ [Milestones](#milestones-triangular_flag_on_post)
++ [Reports](#reports-pencil)
++ [Resources and Tools](#links-link)
+
 ## Project-Description :pencil:
 
 A Tool to process `.bib`-Files like:
