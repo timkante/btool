@@ -15,12 +15,13 @@
     + Donnerstag, 20.08.2020
 + Weiterführung der Implementierungen der Klassen
   + Tim: TranslationTable
-    + Status: ...
+    + Status: TranslationTable wurde weiter implementiert.
   + Saskia, Valeri, Rashid:  FileGenerator, XML
     + Status: FileGenerator wurde weiter implementiert. Einigung, dass Ausgabeformat nur auf XML zu beschränken. Keine PDF-Implementierung, weil keine passenden Bibliotheken auffindbar.
   + Kevin, Tom, Martin: Parser
-    + Status: ...
+    + Status: Parser wurde weiter implementiert. Bib - Dateien werden eingelesen und anhand des übergebenen Stils in Objekte geparst. Dabei wird darauf geachtet, dass alle benötigten Felder des Stils in dem Eintrag der Bib-Datei gesetzt sind. Es wurde sich darauf geeinigt, dass bei jeder Abweichung (also die Bib-Datei kann nicht geparst werden) der Abbruch des Parsing-Vorgangs erfolgt. Der Parser erkennt in Texten automatisch Umlaute (bsp. Bib-Umlaut für ein ä: `{/"a}`) und ersetzt diese durch das entsprechende Pendant.
 + Implementierung von Kommentaren im Code mittels Doxygen
++ README inhaltlich aktualisiert und erweitert --> Tim
 
 ## 10.2 Was waren die Herausforderungen und Probleme? Wie wurden sie gelöst
 
