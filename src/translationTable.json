@@ -52,6 +52,185 @@
         "organization",
         "publisher"
       ]
+    },
+    {
+      "name": "booklet",
+      "requiredFields": [
+        "title",
+        "author"
+      ],
+      "optionalFields": [
+        "author",
+        "howpublished",
+        "address",
+        "month",
+        "year",
+        "note"
+      ]
+    },
+    {
+      "name": "conference",
+      "requiredFields": [
+        "author",
+        "title",
+        "booktitle",
+        "year"
+      ],
+      "optionalFields": [
+        "editor",
+        "volume",
+        "series",
+        "pages",
+        "address",
+        "month",
+        "organization",
+        "publisher",
+        "note"
+      ]
+    },
+    {
+      "name": "inbook",
+      "requiredFields": [
+       "author",
+        "title",
+        "chapter",
+        "publisher",
+        "year"
+      ],
+      "optionalFields": [
+        "volume ",
+        "series",
+        "type",
+        "edition",
+        "month",
+        "note"
+      ]
+    },
+    {
+      "name": "incollection",
+      "requiredFields": [
+        "author",
+        "title",
+        "booktitle",
+        "publisher",
+        "year"
+      ],
+      "optionalFields": [
+        "editor",
+        "volume",
+        "series",
+        "type",
+        "chapter",
+        "pages",
+        "address",
+        "edition",
+        "month",
+        "note"
+      ]
+    },
+    {
+      "name": "inproceedings",
+      "requiredFields": [
+        "author",
+        "title",
+        "booktitle",
+        "year"
+      ],
+      "optionalFields": [
+          "editor",
+          "volume",
+          "series",
+          "pages",
+          "address",
+          "month",
+          "organization",
+          "publisher",
+          "note"
+      ]
+    },
+    {
+      "name": "manual",
+      "requiredFields": [
+        "address",
+        "title",
+        "year"
+      ],
+      "optionalFields": [
+          "author",
+          "organization",
+          "edition",
+          "month",
+          "note"
+      ]
+    },
+    {
+      "name": "mastersthesis",
+      "requiredFields": [
+        "author",
+          "title",
+          "school",
+          "year"
+      ],
+      "optionalFields": [
+        "type",
+        "address",
+        "month",
+        "note"
+      ]
+    },
+    {
+      "name": "misc",
+      "optionalFields": [
+        "author",
+        "title",
+        "howpublished",
+        "month",
+        "year",
+         "note"
+      ]
+    },
+    {
+      "name": "phdthesis",
+      "requiredFields": [
+        "author",
+        "title",
+        "school",
+        "year"
+      ],
+      "optionalFields": [
+        "type",
+        "address",
+        "month",
+        "note"
+      ]
+    },
+    {
+      "name": "techreport",
+      "requiredFields": [
+        "author",
+        "title",
+        "institution",
+        "year"
+      ],
+      "optionalFields": [
+        "type",
+        "number",
+        "address",
+        "month",
+        "note"
+      ]
+    },
+    {
+      "name": "unpublished",
+      "requiredFields": [
+        "author",
+        "title",
+        "note"
+      ],
+      "optionalFields": [
+        "month",
+        "year"
+      ]
     }
   ]
 }
