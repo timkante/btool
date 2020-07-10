@@ -1,14 +1,25 @@
-#include "Parser.hpp"
-#include <iostream>
 #include <boost/algorithm/string.hpp>
+#include <boost/filesystem/path.hpp>
+#include <Parser.hpp>
+#include <iostream>
+#include <sstream>
 #include <regex>
-//#include "FileGenerator.hpp"
 
-Parser::Parser(std::string ruleFile, const std::string targetStyle, TranslationTable translationTable)
-        : ruleFile(std::move(ruleFile)), targetStyle(std::move(targetStyle)), translationTable(translationTable) {};
+Parser::Parser(const boost::filesystem::path &ruleFilePath, std::string targetStyle) noexcept
+        : targetStyle(std::move(targetStyle)), translationTable(TranslationTable(ruleFilePath)) {}
 
-void Parser::generate(const std::string sorting, const std::string format) {
-    //FileGenerator outputfile = new FileGenerator(parsedElements, format, sorting);
+Parser::Parser(std::stringstream ruleFileContents, std::string targetStyle) noexcept
+        : targetStyle(std::move(targetStyle)), translationTable(TranslationTable(std::move(ruleFileContents))) {}
+
+auto Parser::generate(const boost::filesystem::path &inputPath,
+                      const std::string &sorting) const noexcept -> std::vector<BibElement> {
+    return std::vector<BibElement>();
+}
+
+auto Parser::generate(std::stringstream &inputFileContent,
+                      const std::string &sorting) const noexcept -> std::vector<BibElement> {
+    const std::optional<StyleProperties> targetStructure = translationTable.stylePropertiesOf(targetStyle);
+    return std::vector<BibElement>();
 }
 
 std::vector<BibElement> Parser::parseFile(boost::filesystem::ifstream &fsStream) {
@@ -51,8 +62,6 @@ std::vector<BibElement> Parser::parseFile(boost::filesystem::ifstream &fsStream)
 }
 
 void Parser::parseFiles(const boost::filesystem::path &path) {
-    checkFolder(path);
-
     boost::filesystem::directory_iterator it{path};
     bool bibFound = false;
     while (it != boost::filesystem::directory_iterator{}) {
@@ -70,7 +79,7 @@ void Parser::parseFiles(const boost::filesystem::path &path) {
     }
 }
 
-Field Parser::parseField(std::string field, std::optional<StyleProperties> targetStructure, int& requiredFieldSize) {
+Field Parser::parseField(std::string field, std::optional<StyleProperties> targetStructure, int &requiredFieldSize) {
     std::regex fieldExpr{"^\\s*(.*)\\s+=\\s+\\{*(.*?)\\}*\\,?$"};
     std::smatch group;
     if (std::regex_search(field, group, fieldExpr)) {
@@ -79,12 +88,12 @@ Field Parser::parseField(std::string field, std::optional<StyleProperties> targe
         boost::trim(fieldName);
 
         if (std::find(targetStructure->requiredFields.begin(), targetStructure->requiredFields.end(), fieldName) !=
-            targetStructure->requiredFields.end()){
+            targetStructure->requiredFields.end()) {
             requiredFieldSize--;
             return Field(fieldName, replaceUmlaut(group[2]));
         }
-            if(std::find(targetStructure->optionalFields.begin(), targetStructure->optionalFields.end(), fieldName) !=
-               targetStructure->optionalFields.end()) {
+        if (std::find(targetStructure->optionalFields.begin(), targetStructure->optionalFields.end(), fieldName) !=
+            targetStructure->optionalFields.end()) {
             return Field(fieldName, replaceUmlaut(group[2]));
         }
     }
@@ -102,13 +111,6 @@ BibElement Parser::parseElement(std::string style, std::string id, StyleProperti
     }
     return BibElement("", "", fields);
 }
-
-void Parser::checkFolder(const boost::filesystem::path &path) {
-    if (!boost::filesystem::is_directory(path)) {
-        throw std::invalid_argument("No Folder!");
-    }
-}
-
 
 std::string Parser::replaceUmlaut(std::string line) {
     std::regex expr{"(\\{.*?\\})"};

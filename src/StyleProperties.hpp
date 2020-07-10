@@ -36,7 +36,7 @@ struct StyleProperties {
      * @param other style-properties to compare with
      * @return weather the two style-properties are deeply equal
      */
-    auto operator==(const StyleProperties &other) const -> bool;
+    auto operator==(const StyleProperties &other) const noexcept -> bool;
 };
 
 #endif

@@ -19,6 +19,14 @@ struct Field {
      * @param value Value of the Field
      */
     Field(std::string name, std::string value);
+
+    /**
+     * Equality-Operator for two fields
+     *
+     * @param other field to compare with
+     * @return weather the two fields are deeply equal
+     */
+    auto operator==(const Field &other) const noexcept -> bool;
 };
 
 #endif

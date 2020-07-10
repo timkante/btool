@@ -17,3 +17,7 @@ auto BibElement::isCompliantTo(const StyleProperties &props) const -> bool {
                                                }) != std::cend(this->attributes);
                        });
 }
+
+auto BibElement::operator==(const BibElement &other) const noexcept -> bool {
+    return id == other.id && style == other.style && attributes == other.attributes;
+}

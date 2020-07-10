@@ -9,18 +9,15 @@
 #include <vector>
 #include <string>
 
+/**
+ * Handles interaction with the bib-files and does parsing of it
+ *
+ * @brief interface to interact with bib-files
+ */
 class Parser {
 private:
-    std::vector<BibElement> parsedElements;
-    std::string ruleFile;
-    std::string targetStyle;
-    TranslationTable translationTable;
-public:
-    Parser(std::string ruleFile, std::string targetStyle, TranslationTable translationTable);
-
-    void generate(std::string sorting, std::string format);
-
-    void checkFolder(const boost::filesystem::path &path);
+    std::string targetStyle; ///< @property the target-style of the generated files
+    TranslationTable translationTable; ///< @property translation-Table handler
 
     std::string convertUmlaut(std::string toConvert);
 
@@ -30,9 +27,20 @@ public:
 
     void parseFiles(const boost::filesystem::path &path);
 
-    Field parseField(std::string field, std::optional<StyleProperties> targetStructure, int& requiredFieldSize);
+    Field parseField(std::string field, std::optional<StyleProperties> targetStructure, int &requiredFieldSize);
 
     BibElement parseElement(std::string style, std::string id, StyleProperties styleProps);
+
+public:
+    Parser(const boost::filesystem::path &ruleFilePath, std::string targetStyle) noexcept;
+
+    Parser(std::stringstream ruleFileContents, std::string targetStyle) noexcept;
+
+    [[nodiscard]] auto generate(const boost::filesystem::path &inputPath,
+                                const std::string &sorting) const noexcept -> std::vector<BibElement>;
+
+    [[nodiscard]] auto generate(std::stringstream &inputFileContent,
+                                const std::string &sorting) const noexcept -> std::vector<BibElement>;
 };
 
 #endif
