@@ -8,7 +8,9 @@
 struct TranslationTableFixtureTest : public ::testing::Test {
     TranslationTable sample;
 
-    TranslationTableFixtureTest() : sample{std::stringstream{R"(
+    TranslationTableFixtureTest() : sample{
+            // language=json
+            std::stringstream{R"(
         {
             "sortableFields": [],
             "styles": [
@@ -167,7 +169,7 @@ TEST(TranslationTableTest, parsingInvalidStylesTest) {
     ASSERT_EQ(table.getStyleProperties(), expected);
 }
 
-TEST(TranslationTableTest, parsingInvalidFileContent){
+TEST(TranslationTableTest, parsingInvalidFileContent) {
     auto invalidContent = std::stringstream{R"(
         {,
             "some": [
@@ -182,14 +184,14 @@ TEST(TranslationTableTest, parsingInvalidFileContent){
     ASSERT_EQ(table.getStyleProperties(), expected);
 }
 
-TEST(TranslationTableTest, parsingInvalidFile){
+TEST(TranslationTableTest, parsingInvalidFile) {
     auto invalidFile = boost::filesystem::path("./someUnExistingFile.json");
     const auto table = TranslationTable(invalidFile);
     const auto expected = std::vector<StyleProperties>{};
     ASSERT_EQ(table.getStyleProperties(), expected);
 }
 
-TEST(TranslationTableTest, parsingDirectory){
+TEST(TranslationTableTest, parsingDirectory) {
     auto invalidFile = boost::filesystem::path(".");
     const auto table = TranslationTable(invalidFile);
     const auto expected = std::vector<StyleProperties>{};

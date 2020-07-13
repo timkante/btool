@@ -56,18 +56,6 @@ private:
     std::string targetStyle; ///< @property the target-style of the generated files
     TranslationTable translationTable; ///< @property translation-Table handler
 
-    std::string convertUmlaut(std::string toConvert);
-
-    std::string replaceUmlaut(std::string line);
-
-    std::vector<BibElement> parseFile(boost::filesystem::ifstream &fsStream);
-
-    void parseFiles(const boost::filesystem::path &path);
-
-    Field parseField(std::string field, std::optional<StyleProperties> targetStructure, int &requiredFieldSize);
-
-    BibElement parseElement(std::string style, std::string id, StyleProperties styleProps);
-
 public:
     Parser(const boost::filesystem::path &ruleFilePath, std::string targetStyle) noexcept;
 
