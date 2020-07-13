@@ -42,4 +42,6 @@ struct BibElement {
     auto operator==(const BibElement &other) const noexcept -> bool;
 };
 
+auto operator<<(std::ostream &os, BibElement const &elem) -> std::ostream &;
+
 #endif

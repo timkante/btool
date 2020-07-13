@@ -1,10 +1,19 @@
 #include <gtest/gtest.h>
 #include <Parser.hpp>
+#include <spdlog/spdlog.h>
+
+#include <string>
+#include <string_view>
+
+using namespace std::literals::string_literals;
+using namespace std::literals::string_view_literals;
 
 struct ParserFixtureTest : public ::testing::Test {
     Parser sample;
 
-    ParserFixtureTest() : sample{std::stringstream{R"(
+    ParserFixtureTest() : sample{
+            // language=json
+            std::stringstream{R"(
         {
             "sortableFields": [],
             "styles": [
@@ -45,12 +54,11 @@ struct ParserFixtureTest : public ::testing::Test {
 };
 
 TEST_F(ParserFixtureTest, parseEmptyFileContents) {
-    std::stringstream input{""};
-    ASSERT_EQ(sample.generate(input, "year"), std::vector<BibElement>());
+    ASSERT_EQ(sample.generate(""sv, "year"s), std::vector<BibElement>());
 }
 
 TEST_F(ParserFixtureTest, parseCorrectContent) {
-    std::stringstream input{R"(@article{FeigenspanSiFr11,
+    auto const input = R"(@article{FeigenspanSiFr11,
     author = {Janet Feigenspan and Norbert Siegmund and Jana Fruth},
     title = {{On the Role of Program Comprehension in Embedded Systems}},
     journal = {Softwaretechnik-Trends},
@@ -59,21 +67,22 @@ TEST_F(ParserFixtureTest, parseCorrectContent) {
     number = {2},
     month = May,
     url = {http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}
-})"};
+})"sv;
 
     const std::vector<BibElement> expected{{
-            "FeigenspanSiFr11",
-            "article",
-            {
-                    {"author", "Janet Feigenspan and Norbert Siegmund and Jana Fruth"},
-                    {"title", "On the Role of Program Comprehension in Embedded Systems"},
-                    {"journal", "Softwaretechnik-Trends"},
-                    {"year", "2011"},
-                    {"volume", "31"},
-                    {"number", "2"},
-                    {"month", "May"},
-                    {"url",
-                     "http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf"}
-            }}};
-    ASSERT_EQ(sample.generate(input, "year"), expected);
+                                                   "FeigenspanSiFr11",
+                                                   "article",
+                                                   {
+                                                           {"author", " {Janet Feigenspan and Norbert Siegmund and Jana Fruth}"},
+                                                           {"title", " {{On the Role of Program Comprehension in Embedded Systems}}"},
+                                                           {"journal", " {Softwaretechnik-Trends}"},
+                                                           {"year", " {2011}"},
+                                                           {"volume", " {31}"},
+                                                           {"number", " {2}"},
+                                                           {"month", " May"},
+                                                           {"url",
+                                                                   " {http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}"}
+                                                   }}};
+    auto const actual = sample.generate(input, "year"s);
+    ASSERT_EQ(actual, expected);
 }

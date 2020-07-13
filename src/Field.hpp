@@ -2,6 +2,7 @@
 #define BIBPARSER_FIELD_HPP
 
 #include <string>
+#include <iostream>
 
 /**
  * Stores information of a Field of a bib-element
@@ -28,5 +29,7 @@ struct Field {
      */
     auto operator==(const Field &other) const noexcept -> bool;
 };
+
+auto operator<<(std::ostream &os, Field const &field) -> std::ostream &;
 
 #endif
