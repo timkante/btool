@@ -84,23 +84,24 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="struct_parser_context.html">ParserContext</a> &amp;context; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::vector&lt;BibElement&gt; &amp;result; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    [[noreturn]] <span class="keyword">auto</span> <a class="code" href="class_abstract_parser_state.html#ad06e4f1075b0f6d4f0a5c7bc9186317c">fail</a>(<span class="keyword">const</span> std::string &amp;message) -&gt; void;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> <a class="code" href="class_abstract_parser_state.html#a2a06ae7a6e5e4f8e03e76db7a260ceae">handleCharacter</a>(<span class="keywordtype">char</span> c) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_abstract_parser_state.html#aaf7cec0ffd09aba20219b413c6811f85">AbstractParserState</a>(<a class="code" href="struct_parser_context.html">ParserContext</a> &amp;context, std::vector&lt;BibElement&gt; &amp;result) noexcept;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    [[noreturn]] <span class="keyword">auto</span> <a class="code" href="class_abstract_parser_state.html#ad06e4f1075b0f6d4f0a5c7bc9186317c">fail</a>(<span class="keyword">const</span> std::string &amp;message) -&gt; void;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">auto</span> <a class="code" href="class_abstract_parser_state.html#a2a06ae7a6e5e4f8e03e76db7a260ceae">handleCharacter</a>(<span class="keywordtype">char</span> c) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_abstract_parser_state.html#aaf7cec0ffd09aba20219b413c6811f85">AbstractParserState</a>(<a class="code" href="struct_parser_context.html">ParserContext</a> &amp;context, std::vector&lt;BibElement&gt; &amp;result) noexcept;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astruct_parser_state_html"><div class="ttname"><a href="struct_parser_state.html">ParserState</a></div><div class="ttdef"><b>Definition:</b> ParserState.hpp:7</div></div>
 <div class="ttc" id="aclass_abstract_parser_state_html"><div class="ttname"><a href="class_abstract_parser_state.html">AbstractParserState</a></div><div class="ttdef"><b>Definition:</b> AbstractParserState.hpp:13</div></div>
 <div class="ttc" id="astruct_parser_context_html"><div class="ttname"><a href="struct_parser_context.html">ParserContext</a></div><div class="ttdef"><b>Definition:</b> ParserContext.hpp:10</div></div>
-<div class="ttc" id="aclass_abstract_parser_state_html_a2a06ae7a6e5e4f8e03e76db7a260ceae"><div class="ttname"><a href="class_abstract_parser_state.html#a2a06ae7a6e5e4f8e03e76db7a260ceae">AbstractParserState::handleCharacter</a></div><div class="ttdeci">auto handleCharacter(char c) -&gt; ParserState *override</div><div class="ttdef"><b>Definition:</b> AbstractParserState.cpp:11</div></div>
-<div class="ttc" id="aclass_abstract_parser_state_html_aaf7cec0ffd09aba20219b413c6811f85"><div class="ttname"><a href="class_abstract_parser_state.html#aaf7cec0ffd09aba20219b413c6811f85">AbstractParserState::AbstractParserState</a></div><div class="ttdeci">AbstractParserState(ParserContext &amp;context, std::vector&lt; BibElement &gt; &amp;result) noexcept</div><div class="ttdef"><b>Definition:</b> AbstractParserState.cpp:4</div></div>
-<div class="ttc" id="aclass_abstract_parser_state_html_ad06e4f1075b0f6d4f0a5c7bc9186317c"><div class="ttname"><a href="class_abstract_parser_state.html#ad06e4f1075b0f6d4f0a5c7bc9186317c">AbstractParserState::fail</a></div><div class="ttdeci">auto fail(const std::string &amp;message) -&gt; void</div><div class="ttdef"><b>Definition:</b> AbstractParserState.cpp:7</div></div>
+<div class="ttc" id="aclass_abstract_parser_state_html_a2a06ae7a6e5e4f8e03e76db7a260ceae"><div class="ttname"><a href="class_abstract_parser_state.html#a2a06ae7a6e5e4f8e03e76db7a260ceae">AbstractParserState::handleCharacter</a></div><div class="ttdeci">auto handleCharacter(char c) -&gt; ParserState *override</div><div class="ttdef"><b>Definition:</b> AbstractParserState.cpp:26</div></div>
+<div class="ttc" id="astruct_parser_exception_html"><div class="ttname"><a href="struct_parser_exception.html">ParserException</a></div><div class="ttdef"><b>Definition:</b> ParserException.hpp:12</div></div>
+<div class="ttc" id="aclass_abstract_parser_state_html_aaf7cec0ffd09aba20219b413c6811f85"><div class="ttname"><a href="class_abstract_parser_state.html#aaf7cec0ffd09aba20219b413c6811f85">AbstractParserState::AbstractParserState</a></div><div class="ttdeci">AbstractParserState(ParserContext &amp;context, std::vector&lt; BibElement &gt; &amp;result) noexcept</div><div class="ttdef"><b>Definition:</b> AbstractParserState.cpp:9</div></div>
+<div class="ttc" id="aclass_abstract_parser_state_html_ad06e4f1075b0f6d4f0a5c7bc9186317c"><div class="ttname"><a href="class_abstract_parser_state.html#ad06e4f1075b0f6d4f0a5c7bc9186317c">AbstractParserState::fail</a></div><div class="ttdeci">auto fail(const std::string &amp;message) -&gt; void</div><div class="ttdef"><b>Definition:</b> AbstractParserState.cpp:17</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

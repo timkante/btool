@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['translationtable_57',['TranslationTable',['../class_translation_table.html#af7361e99fd42653b98b913daee8394f3',1,'TranslationTable::TranslationTable(std::stringstream file) noexcept'],['../class_translation_table.html#ac82ac6d032d1f9fb9db0df5abdfbab21',1,'TranslationTable::TranslationTable(const boost::filesystem::path &amp;path) noexcept']]]
+  ['styleparserstate_60',['StyleParserState',['../class_style_parser_state.html#a28048d0fc131a10a2a60f42f4b686645',1,'StyleParserState']]],
+  ['styleproperties_61',['StyleProperties',['../struct_style_properties.html#a7af3a43e3d4131780ada6c7d93f36f77',1,'StyleProperties::StyleProperties()=default'],['../struct_style_properties.html#a724c27a8ff97d42d9700e0e7e4d4d94b',1,'StyleProperties::StyleProperties(std::string name, std::vector&lt; std::string &gt; requiredFields, std::vector&lt; std::string &gt; optionalFields)']]],
+  ['stylepropertiesof_62',['stylePropertiesOf',['../class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a',1,'TranslationTable']]]
 ];

@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="class_parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Parser Class Reference</div>  </div>
@@ -85,6 +86,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6433b1d7a350e3890e359869ff58da20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee21df11a2740e7af754c2e717b76f80"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#aee21df11a2740e7af754c2e717b76f80">generate</a> (std::string_view inputFileContent, const std::string &amp;sorting, const std::string &amp;filename) const noexcept -&gt; std::vector&lt; <a class="el" href="struct_bib_element.html">BibElement</a> &gt;</td></tr>
 <tr class="separator:aee21df11a2740e7af754c2e717b76f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a65dae52513e7a6bdce66581c9cbb52ea"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">elementsOf</a> (std::string_view input, const std::string &amp;filename) noexcept -&gt; std::vector&lt; <a class="el" href="struct_bib_element.html">BibElement</a> &gt;</td></tr>
+<tr class="separator:a65dae52513e7a6bdce66581c9cbb52ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>interface to interact with bib-files </p>
@@ -177,6 +183,73 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a65dae52513e7a6bdce66581c9cbb52ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65dae52513e7a6bdce66581c9cbb52ea">&#9670;&nbsp;</a></span>elementsOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::elementsOf </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::vector&lt;<a class="el" href="struct_bib_element.html">BibElement</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Parse Bib-Elements from a source-file </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>the contents of the source-file </td></tr>
+    <tr><td class="paramname">filename</td><td>name or path of the parsed file (for logging errors) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>collection of parsed bib-elements </dd></dl>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_parser_a65dae52513e7a6bdce66581c9cbb52ea_cgraph.png" border="0" usemap="#class_parser_a65dae52513e7a6bdce66581c9cbb52ea_cgraph" alt=""/></div>
+<map name="class_parser_a65dae52513e7a6bdce66581c9cbb52ea_cgraph" id="class_parser_a65dae52513e7a6bdce66581c9cbb52ea_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,172,57"/>
+<area shape="rect" href="struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4" title=" " alt="" coords="220,5,467,32"/>
+<area shape="rect" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d" title=" " alt="" coords="248,56,439,83"/>
+</map>
+</div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_parser_a65dae52513e7a6bdce66581c9cbb52ea_icgraph.png" border="0" usemap="#class_parser_a65dae52513e7a6bdce66581c9cbb52ea_icgraph" alt=""/></div>
+<map name="class_parser_a65dae52513e7a6bdce66581c9cbb52ea_icgraph" id="class_parser_a65dae52513e7a6bdce66581c9cbb52ea_icgraph">
+<area shape="rect" title=" " alt="" coords="204,5,371,32"/>
+<area shape="rect" href="class_parser.html#aee21df11a2740e7af754c2e717b76f80" title=" " alt="" coords="5,5,156,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a6433b1d7a350e3890e359869ff58da20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6433b1d7a350e3890e359869ff58da20">&#9670;&nbsp;</a></span>generate() <span class="overload">[1/2]</span></h2>
 
@@ -269,6 +342,19 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>collection of parsed, sorted and filtered bib-elements </dd></dl>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_parser_aee21df11a2740e7af754c2e717b76f80_cgraph.png" border="0" usemap="#class_parser_aee21df11a2740e7af754c2e717b76f80_cgraph" alt=""/></div>
+<map name="class_parser_aee21df11a2740e7af754c2e717b76f80_cgraph" id="class_parser_aee21df11a2740e7af754c2e717b76f80_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea" title=" " alt="" coords="204,31,371,57"/>
+<area shape="rect" href="struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4" title=" " alt="" coords="419,5,665,32"/>
+<area shape="rect" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d" title=" " alt="" coords="447,56,637,83"/>
+</map>
+</div>
 
 </div>
 </div>

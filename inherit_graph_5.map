@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$struct_parser_state.html" title=" " alt="" coords="5,107,116,133"/>
+<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="164,107,339,133"/>
+<area shape="rect" id="node3" href="$class_global_parser_state.html" title="Global Parser State." alt="" coords="403,5,561,32"/>
+<area shape="rect" id="node4" href="$class_identifier_parser_state.html" title="Identifier Parser State." alt="" coords="387,56,577,83"/>
+<area shape="rect" id="node5" href="$class_key_parser_state.html" title="Key Parser State." alt="" coords="415,107,549,133"/>
+<area shape="rect" id="node6" href="$class_style_parser_state.html" title="Style Parser State." alt="" coords="407,157,557,184"/>
+<area shape="rect" id="node7" href="$class_value_parser_state.html" title="Key Parser State." alt="" coords="407,208,557,235"/>
+</map>

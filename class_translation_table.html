@@ -64,6 +64,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="class_translation_table-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TranslationTable Class Reference</div>  </div>
@@ -87,6 +89,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae624b58ca1e2170035ad0c6978fab8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ccdf6ed0cffbfdf8030da2d2be8be7a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a">stylePropertiesOf</a> (const std::string &amp;name) const noexcept -&gt; std::optional&lt; <a class="el" href="struct_style_properties.html">StyleProperties</a> &gt;</td></tr>
 <tr class="separator:a3ccdf6ed0cffbfdf8030da2d2be8be7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abd2cb79eff79d7a11ce088a4ca8592af"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#abd2cb79eff79d7a11ce088a4ca8592af">parseStyles</a> () const noexcept -&gt; std::vector&lt; <a class="el" href="struct_style_properties.html">StyleProperties</a> &gt;</td></tr>
+<tr class="separator:abd2cb79eff79d7a11ce088a4ca8592af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a0d59fafb3f20e03734c2274a0d2bfcb3"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#a0d59fafb3f20e03734c2274a0d2bfcb3">parseStyle</a> (const boost::property_tree::ptree &amp;style) noexcept -&gt; <a class="el" href="struct_style_properties.html">StyleProperties</a></td></tr>
+<tr class="separator:a0d59fafb3f20e03734c2274a0d2bfcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>api to interact with translation-table resource </p>
@@ -182,6 +194,65 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Provides all parsed style-properties </p><dl class="section return"><dt>Returns</dt><dd>all parsed style-properties </dd></dl>
+
+</div>
+</div>
+<a id="a0d59fafb3f20e03734c2274a0d2bfcb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d59fafb3f20e03734c2274a0d2bfcb3">&#9670;&nbsp;</a></span>parseStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto TranslationTable::parseStyle </td>
+          <td>(</td>
+          <td class="paramtype">const boost::property_tree::ptree &amp;&#160;</td>
+          <td class="paramname"><em>style</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="struct_style_properties.html">StyleProperties</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Parses a style from the styles json-pointer </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">style</td><td>the json-pointer to the style </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the parsed style-properties </dd></dl>
+
+</div>
+</div>
+<a id="abd2cb79eff79d7a11ce088a4ca8592af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2cb79eff79d7a11ce088a4ca8592af">&#9670;&nbsp;</a></span>parseStyles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto TranslationTable::parseStyles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::vector&lt;<a class="el" href="struct_style_properties.html">StyleProperties</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Parses Styles of a top-level json-pointer (tree according to proposed structure) </p><dl class="section return"><dt>Returns</dt><dd>all the parsed style properties </dd></dl>
 
 </div>
 </div>
