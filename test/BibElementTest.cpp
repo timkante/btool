@@ -2,24 +2,26 @@
 #include <BibElement.hpp>
 #include <StyleProperties.hpp>
 
+using namespace std::literals::string_literals;
+
 struct BibElementFixtureTest : public ::testing::Test {
     const StyleProperties props;
     const BibElement completeElement;
     const BibElement incompleteElement;
 
     BibElementFixtureTest()
-            : props{"style", {"reqField", "reqField2"}, {"optField"}},
-              completeElement{"id",
-                              "style",
+            : props{"style"s, {"reqField"s, "reqField2"s}, {"optField"s}},
+              completeElement{"id"s,
+                              "style"s,
                               {
-                                      {"reqField", "a value"},
-                                      {"someOtherField", "a value"},
-                                      {"reqField2", "a value"}
+                                      {"reqField"s, "a value"s},
+                                      {"someOtherField"s, "a value"s},
+                                      {"reqField2"s, "a value"s}
                               }},
-              incompleteElement{"id",
-                                "style",
+              incompleteElement{"id"s,
+                                "style"s,
                                 {
-                                        {"reqField2", "value"}
+                                        {"reqField2"s, "value"s}
                                 }} {}
 
 };
@@ -34,9 +36,9 @@ TEST_F(BibElementFixtureTest, incompleteElementTest) {
 
 TEST(BibelementTests, constructionTest) {
     std::vector<Field> fields = {
-            Field("name", "value"),
-            Field("another name", "another value")
+            Field("name"s, "value"s),
+            Field("another name"s, "another value"s)
     };
-    ASSERT_NO_THROW(BibElement("an id", "a style", fields));
-    ASSERT_NO_THROW(BibElement("another id", "another style", fields));
+    ASSERT_NO_THROW(BibElement("an id"s, "a style"s, fields));
+    ASSERT_NO_THROW(BibElement("another id"s, "another style"s, fields));
 }

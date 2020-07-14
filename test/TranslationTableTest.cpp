@@ -5,6 +5,8 @@
 #include <sstream>
 #include <vector>
 
+using namespace std::literals::string_literals;
+
 struct TranslationTableFixtureTest : public ::testing::Test {
     TranslationTable sample;
 
@@ -51,58 +53,58 @@ struct TranslationTableFixtureTest : public ::testing::Test {
 
 TEST_F(TranslationTableFixtureTest, getAllStylesTest) {
     const auto expectedStyles = std::vector<StyleProperties>{
-            {"article",
+            {"article"s,
                     {
-                            "author",
-                            "title",
+                            "author"s,
+                            "title"s,
                     },
                     {
-                            "some",
-                            "other",
-                            "field"
+                            "some"s,
+                            "other"s,
+                            "field"s
                     }},
-            {"book",
+            {"book"s,
                     {
-                            "author",
-                            "title",
-                            "year",
-                            "publisher"
+                            "author"s,
+                            "title"s,
+                            "year"s,
+                            "publisher"s
                     },
                     {
-                            "volume",
-                            "series",
-                            "address",
-                            "edition",
-                            "month",
-                            "note",
-                            "isbn"
+                            "volume"s,
+                            "series"s,
+                            "address"s,
+                            "edition"s,
+                            "month"s,
+                            "note"s,
+                            "isbn"s
                     }}
     };
     ASSERT_EQ(sample.getStyleProperties(), expectedStyles);
 }
 
 TEST_F(TranslationTableFixtureTest, getStyleTest) {
-    ASSERT_EQ(sample.stylePropertiesOf("book"),
-              StyleProperties("book",
+    ASSERT_EQ(sample.stylePropertiesOf("book"s),
+              StyleProperties("book"s,
                               {
-                                      "author",
-                                      "title",
-                                      "year",
-                                      "publisher"
+                                      "author"s,
+                                      "title"s,
+                                      "year"s,
+                                      "publisher"s
                               },
                               {
-                                      "volume",
-                                      "series",
-                                      "address",
-                                      "edition",
-                                      "month",
-                                      "note",
-                                      "isbn"
+                                      "volume"s,
+                                      "series"s,
+                                      "address"s,
+                                      "edition"s,
+                                      "month"s,
+                                      "note"s,
+                                      "isbn"s
                               }));
 }
 
 TEST_F(TranslationTableFixtureTest, getInvalidStyleTest) {
-    ASSERT_EQ(sample.stylePropertiesOf("invalid style"), std::nullopt);
+    ASSERT_EQ(sample.stylePropertiesOf("invalid style"s), std::nullopt);
 }
 
 TEST(TranslationTableTest, constructorTestFromPath) {

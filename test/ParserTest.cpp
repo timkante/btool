@@ -54,7 +54,7 @@ struct ParserFixtureTest : public ::testing::Test {
 };
 
 TEST_F(ParserFixtureTest, parseEmptyFileContents) {
-    ASSERT_EQ(sample.generate(""sv, "year"s), std::vector<BibElement>());
+    ASSERT_EQ(sample.generate(""sv, "year"s, "someFile.bib"s), std::vector<BibElement>());
 }
 
 TEST_F(ParserFixtureTest, parseCorrectContent) {
@@ -70,19 +70,19 @@ TEST_F(ParserFixtureTest, parseCorrectContent) {
 })"sv;
 
     const std::vector<BibElement> expected{{
-                                                   "FeigenspanSiFr11",
-                                                   "article",
-                                                   {
-                                                           {"author", " {Janet Feigenspan and Norbert Siegmund and Jana Fruth}"},
-                                                           {"title", " {{On the Role of Program Comprehension in Embedded Systems}}"},
-                                                           {"journal", " {Softwaretechnik-Trends}"},
-                                                           {"year", " {2011}"},
-                                                           {"volume", " {31}"},
-                                                           {"number", " {2}"},
-                                                           {"month", " May"},
-                                                           {"url",
-                                                                   " {http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}"}
-                                                   }}};
-    auto const actual = sample.generate(input, "year"s);
+        "FeigenspanSiFr11",
+        "article",
+        {
+            {"author", "{Janet Feigenspan and Norbert Siegmund and Jana Fruth}"},
+            {"title", "{{On the Role of Program Comprehension in Embedded Systems}}"},
+            {"journal", "{Softwaretechnik-Trends}"},
+            {"year", "{2011}"},
+            {"volume", "{31}"},
+            {"number", "{2}"},
+            {"month", "May"},
+            {"url",
+             "{http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}"}
+        }}};
+    auto const actual = sample.generate(input, "year"s, "someFile.bib"s);
     ASSERT_EQ(actual, expected);
 }
