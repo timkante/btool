@@ -1,7 +1,3 @@
-//
-// Created by Tim Kante on 14.07.20.
-//
-
 #ifndef BIBPARSER_IDENTIFIERPARSERSTATE_HPP
 #define BIBPARSER_IDENTIFIERPARSERSTATE_HPP
 
@@ -11,15 +7,33 @@
 #include <vector>
 #include <string>
 
+/**
+ * Identifier State of the Parser, parsing the identifier of the Bib-Element
+ *
+ * @brief Identifier Parser State
+ * @extends AbstractParserState
+ */
 class IdentifierParserState : public AbstractParserState {
-    std::string identifier;
+    std::string identifier; ///< @property a accumulator for identifier-characters while parsing it
 
 public:
+
+    /**
+     * Constructor.
+     * @param context of the parser
+     * @param result accumulator of parsing-results
+     */
     IdentifierParserState(
             ParserContext &context,
             std::vector<BibElement> &result
     ) noexcept;
 
+    /**
+     * Handles the next character in identifier-state
+     * @param c the next character to parse
+     * @return a new parser-state
+     * @throws ParserException on parsing-error (invalid input)
+     */
     auto handleCharacter(char c) -> ParserState * override;
 };
 

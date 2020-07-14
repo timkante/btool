@@ -1,7 +1,3 @@
-//
-// Created by Tim Kante on 13.07.20.
-//
-
 #include "ParserException.hpp"
 #include <string>
 

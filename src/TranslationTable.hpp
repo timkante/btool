@@ -11,17 +11,16 @@
 
 /**
  * Handles interaction with the translation-table-file and does parsing of it
- *
  * @brief interface to interact with translation-table resource
  */
 class TranslationTable {
-private:
     boost::property_tree::ptree contents; ///< @property pointer to parsed json-tree
     std::vector<StyleProperties> styleProperties; ///< @property parsed style-properties
 
+private:
+
     /**
      * Parses a style from the styles json-pointer
-     *
      * @param style the json-pointer to the style
      * @return the parsed style-properties
      */
@@ -29,15 +28,14 @@ private:
 
     /**
      * Parses Styles of a top-level json-pointer (tree according to proposed structure)
-     *
      * @return all the parsed style properties
      */
     [[nodiscard]] auto parseStyles() const noexcept -> std::vector<StyleProperties>;
 
 public:
+
     /**
      * Constructor.
-     *
      * @param file contents of a file
      * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
      */
@@ -45,7 +43,6 @@ public:
 
     /**
      * Constructor.
-     *
      * @param path path to a translation-table json-file
      * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
      */
@@ -53,21 +50,18 @@ public:
 
     /**
      * Prints the content of contents
-     *
      * @param[out] out the ostream to print into
      */
     auto printAll(std::ostream &out = std::cout) const -> void;
 
     /**
      * Provides all parsed style-properties
-     *
      * @return all parsed style-properties
      */
     [[nodiscard]] auto getStyleProperties() const noexcept -> const std::vector<StyleProperties> &;
 
     /**
      * Provides style-properties for a specific style
-     *
      * @param name the style name to get properties for
      * @return (maybe) the properties for the style - None if there are none
      */

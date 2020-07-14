@@ -14,6 +14,7 @@ Parser::Parser(std::stringstream ruleFileContents, std::string targetStyle) noex
 
 auto Parser::generate(const boost::filesystem::path &inputPath,
                       const std::string &sorting) const noexcept -> std::vector<BibElement> {
+    //TODO: Add handling for multiple files + existence check
     std::ifstream inFile{inputPath.string()};
     std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
     return generate(std::string_view(inContent), sorting, inputPath.string());
@@ -26,7 +27,7 @@ auto Parser::generate(std::string_view inputFileContent,
     return Parser::elementsOf(inputFileContent, filename);
 }
 
-auto Parser::elementsOf(std::string_view input, const std::string &filename) -> std::vector<BibElement> {
+auto Parser::elementsOf(std::string_view input, const std::string &filename) noexcept -> std::vector<BibElement> {
     ParserContext context(filename);
     std::vector<BibElement> result;
     try {

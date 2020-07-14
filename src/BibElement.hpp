@@ -8,7 +8,6 @@
 
 /**
  * Stores information of a bib-element
- *
  * @brief bib-element-Container
  */
 struct BibElement {
@@ -18,7 +17,6 @@ struct BibElement {
 
     /**
      * Constructor.
-     *
      * @param id (unique) id
      * @param style name of the elements style
      * @param attributes attributes of the element
@@ -27,7 +25,6 @@ struct BibElement {
 
     /**
      * Checks if the bib-element is compliant to given style-properties
-     *
      * @param props style-properties to check compliance against
      * @return weather the element is compliant or not
      */
@@ -35,13 +32,18 @@ struct BibElement {
 
     /**
      * Equality-Operator for two bib-elements
-     *
      * @param other bib-element to compare with
      * @return weather the two bib-elements are deeply equal
      */
     auto operator==(const BibElement &other) const noexcept -> bool;
 };
 
+/**
+ * Overload of ostream-operator for BibElement
+ * @param os ostream reference
+ * @param elem the element to stream to os
+ * @return the ostream reference after streaming elem into it
+ */
 auto operator<<(std::ostream &os, BibElement const &elem) -> std::ostream &;
 
 #endif

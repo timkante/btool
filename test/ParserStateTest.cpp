@@ -1,4 +1,3 @@
-
 #include <gtest/gtest.h>
 #include <ParserState.hpp>
 #include <BibElement.hpp>

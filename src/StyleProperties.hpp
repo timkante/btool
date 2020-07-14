@@ -6,7 +6,6 @@
 
 /**
  * Stores information of a styles properties
- *
  * @brief style-properties-container
  */
 struct StyleProperties {
@@ -21,7 +20,6 @@ struct StyleProperties {
 
     /**
      * Constructor.
-     *
      * @param name name of the style
      * @param requiredFields all the required fields
      * @param optionalFields all the optional fields
@@ -32,7 +30,6 @@ struct StyleProperties {
 
     /**
      * Equality-Operator for two style-properties
-     *
      * @param other style-properties to compare with
      * @return weather the two style-properties are deeply equal
      */
