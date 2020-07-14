@@ -31,7 +31,13 @@ set(MAIN_SOURCES
         src/BibElement.cpp
         src/StyleProperties.cpp
         src/Parser.cpp
-        src/AbstractParserState.cpp)
+        src/AbstractParserState.cpp
+        src/ParserException.hpp
+        src/StyleParserState.hpp
+        src/GlobalParserState.hpp
+        src/IdentifierParserState.hpp
+        src/KeyParserState.hpp
+        src/ValueParserState.hpp)
 
 set(MAIN_HEADERS
         src/TranslationTable.hpp
@@ -41,7 +47,14 @@ set(MAIN_HEADERS
         src/Parser.hpp
         src/AbstractParserState.hpp
         src/ParserState.hpp
-        src/ParserContext.hpp src/ParserException.cpp src/ParserException.hpp src/StyleParserState.cpp src/StyleParserState.hpp src/GlobalParserState.cpp src/GlobalParserState.hpp src/IdentifierParserState.cpp src/IdentifierParserState.hpp src/KeyParserState.cpp src/KeyParserState.hpp src/ValueParserState.cpp src/ValueParserState.hpp src/ParserContext.cpp)
+        src/ParserContext.hpp
+        src/ParserException.cpp
+        src/StyleParserState.cpp
+        src/GlobalParserState.cpp
+        src/IdentifierParserState.cpp
+        src/KeyParserState.cpp
+        src/ValueParserState.cpp
+        src/ParserContext.cpp)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
