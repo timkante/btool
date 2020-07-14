@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <string>
 
-struct ParserException : public std::runtime_error {
+struct ParserException : std::runtime_error {
     ParserState * state;
     const ParserContext context;
     const std::string message;
