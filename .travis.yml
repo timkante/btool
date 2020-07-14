@@ -9,15 +9,10 @@ compiler:
   - gcc
 
 before_script:
-  - export CC=gcc-10
-  - export CXX=g++-10
+  - export CC=gcc-7
+  - export CXX=g++-7
 
 addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-10
   sonarcloud:
     organization: "timkante"
     token:
