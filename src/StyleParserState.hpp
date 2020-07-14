@@ -9,7 +9,6 @@
 
 /**
  * Style State of the Parser, parsing the style of the Bib-Element
- *
  * @brief Style Parser State
  */
 class StyleParserState : public AbstractParserState {
@@ -17,22 +16,11 @@ class StyleParserState : public AbstractParserState {
 
 public:
 
-    /**
-     * Constructor.
-     * @param context of the parser
-     * @param result accumulator of parsing-results
-     */
     StyleParserState(
             ParserContext &context,
             std::vector<BibElement> &result
     ) noexcept;
 
-    /**
-     * Handles the next character in style-state
-     * @param c the next character to parse
-     * @return a new parser-state
-     * @throws ParserException on parsing-error (invalid input)
-     */
     auto handleCharacter(char c) -> ParserState * override;
 };
 

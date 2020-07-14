@@ -6,6 +6,11 @@
 #include <iterator>
 #include <spdlog/spdlog.h>
 
+/**
+ * Constructor.
+ * @param file contents of a file
+ * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
+ */
 TranslationTable::TranslationTable(std::stringstream file) noexcept {
     try {
         boost::property_tree::read_json(file, contents);
@@ -16,11 +21,16 @@ TranslationTable::TranslationTable(std::stringstream file) noexcept {
     }
 }
 
+/**
+ * Constructor.
+ * @param path path to a translation-table json-file
+ * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
+ */
 TranslationTable::TranslationTable(const boost::filesystem::path &path) noexcept {
-    if (!boost::filesystem::exists(path)){
+    if (!boost::filesystem::exists(path)) {
         spdlog::critical("No such file. [translationTablePath={}]", path.string());
         styleProperties = {};
-    } else if (!boost::filesystem::is_regular_file(path)){
+    } else if (!boost::filesystem::is_regular_file(path)) {
         spdlog::critical("Translation-Table is not a file. [translationTablePath={}]", path.string());
         styleProperties = {};
     } else {
@@ -34,10 +44,19 @@ TranslationTable::TranslationTable(const boost::filesystem::path &path) noexcept
     }
 }
 
+/**
+ * Prints the content of contents
+ * @param[out] out the ostream to print into
+ */
 auto TranslationTable::printAll(std::ostream &out) const -> void {
     boost::property_tree::json_parser::write_json(out, contents);
 }
 
+/**
+ * Parses a style from the styles json-pointer
+ * @param style the json-pointer to the style
+ * @return the parsed style-properties
+ */
 auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties {
     const auto parseConstraintNode = [](const boost::property_tree::ptree &node) {
         std::vector<std::string> fields;
@@ -66,6 +85,10 @@ auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) noex
                                               : std::vector<std::string>{});
 }
 
+/**
+ * Parses Styles of a top-level json-pointer (tree according to proposed structure)
+ * @return all the parsed style properties
+ */
 auto TranslationTable::parseStyles() const noexcept -> std::vector<StyleProperties> {
     std::vector<StyleProperties> props;
     const boost::optional<const boost::property_tree::ptree &> styles =
@@ -83,10 +106,19 @@ auto TranslationTable::parseStyles() const noexcept -> std::vector<StyleProperti
     return props;
 }
 
+/**
+ * Provides all parsed style-properties
+ * @return all parsed style-properties
+ */
 auto TranslationTable::getStyleProperties() const noexcept -> const std::vector<StyleProperties> & {
     return styleProperties;
 }
 
+/**
+ * Provides style-properties for a specific style
+ * @param name the style name to get properties for
+ * @return (maybe) the properties for the style - None if there are none
+ */
 auto TranslationTable::stylePropertiesOf(const std::string &name) const noexcept -> std::optional<StyleProperties> {
     const auto propItr = std::find_if(std::cbegin(styleProperties), std::cend(styleProperties),
                                       [&name](const StyleProperties &prop) { return prop.name == name; });

@@ -1,4 +1,4 @@
-#include "ValueParserState.hpp"
+#include <ValueParserState.hpp>
 #include <boost/algorithm/string.hpp>
 #include <GlobalParserState.hpp>
 #include <ParserException.hpp>
@@ -8,9 +8,20 @@
 
 using namespace std::literals::string_literals;
 
+/**
+ * Constructor.
+ * @param context of the parser
+ * @param result accumulator of parsing-results
+ */
 ValueParserState::ValueParserState(ParserContext &context, std::vector<BibElement> &result) noexcept
         : AbstractParserState{context, result} {}
 
+/**
+ * Handles the next character in value-state
+ * @param c the next character to parse
+ * @return a new parser-state
+ * @throws ParserException on parsing-error (invalid input)
+ */
 auto ValueParserState::handleCharacter(const char c) -> ParserState * {
     if (c == ',') {
         if (value.empty()) {
@@ -27,7 +38,7 @@ auto ValueParserState::handleCharacter(const char c) -> ParserState * {
         value += c;
         braces.push(std::make_pair(context.line, context.column));
     } else if (c == '}') {
-        if (braces.empty()){
+        if (braces.empty()) {
             result.back().attributes.back().value = boost::trim_copy(value);
             const auto keyState = new GlobalParserState{context, result};
             delete this;

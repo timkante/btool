@@ -1,4 +1,4 @@
-#include "IdentifierParserState.hpp"
+#include <IdentifierParserState.hpp>
 #include <boost/algorithm/string.hpp>
 #include <KeyParserState.hpp>
 #include <string>
@@ -6,9 +6,21 @@
 
 using namespace std::literals::string_literals;
 
+/**
+ * Constructor.
+ * @param context of the parser
+ * @param result accumulator of parsing-results
+ */
 IdentifierParserState::IdentifierParserState(ParserContext &context, std::vector<BibElement> &result) noexcept
         : AbstractParserState{context, result} {}
 
+
+/**
+ * Handles the next character in identifier-state
+ * @param c the next character to parse
+ * @return a new parser-state
+ * @throws ParserException on parsing-error (invalid input)
+ */
 auto IdentifierParserState::handleCharacter(const char c) -> ParserState * {
     if (c == ',') {
         if (identifier.empty()) {

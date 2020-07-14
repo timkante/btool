@@ -11,7 +11,6 @@
 
 /**
  * Value State of the Parser, parsing the value of the last Bib-Elements properties key
- *
  * @brief Key Parser State
  */
 class ValueParserState : public AbstractParserState {
@@ -20,22 +19,11 @@ class ValueParserState : public AbstractParserState {
 
 public:
 
-    /**
-     * Constructor.
-     * @param context of the parser
-     * @param result accumulator of parsing-results
-     */
     ValueParserState(
             ParserContext &context,
             std::vector<BibElement> &result
     ) noexcept;
 
-    /**
-     * Handles the next character in value-state
-     * @param c the next character to parse
-     * @return a new parser-state
-     * @throws ParserException on parsing-error (invalid input)
-     */
     auto handleCharacter(char c) -> ParserState * override;
 };
 

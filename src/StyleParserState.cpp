@@ -1,4 +1,4 @@
-#include "StyleParserState.hpp"
+#include <StyleParserState.hpp>
 #include <boost/algorithm/string.hpp>
 #include <IdentifierParserState.hpp>
 #include <string>
@@ -6,9 +6,20 @@
 
 using namespace std::literals::string_literals;
 
+/**
+ * Constructor.
+ * @param context of the parser
+ * @param result accumulator of parsing-results
+ */
 StyleParserState::StyleParserState(ParserContext &context, std::vector<BibElement> &result) noexcept
         : AbstractParserState{context, result} {}
 
+/**
+ * Handles the next character in style-state
+ * @param c the next character to parse
+ * @return a new parser-state
+ * @throws ParserException on parsing-error (invalid input)
+ */
 auto StyleParserState::handleCharacter(const char c) -> ParserState * {
     if (c == '{') {
         if (style.empty()) {
