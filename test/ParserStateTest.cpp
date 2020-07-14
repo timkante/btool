@@ -4,6 +4,8 @@
 #include <ParserException.hpp>
 #include <GlobalParserState.hpp>
 #include <StyleParserState.hpp>
+#include <KeyParserState.hpp>
+#include <ValueParserState.hpp>
 #include <IdentifierParserState.hpp>
 
 using namespace std::literals::string_literals;
@@ -94,6 +96,7 @@ TEST_F(ParserStateTest, styleParserStateSwitchesToIdentifierStateOnBrace) {
         }
     }());
 
+    ASSERT_EQ(result.front().style, "thisIsAValidStyle"s);
     ASSERT_FALSE(isType<StyleParserState>(state));
     ASSERT_TRUE(isType<IdentifierParserState>(state));
     delete state;
@@ -109,6 +112,66 @@ TEST_F(ParserStateTest, globalStateCanGoToIdentifierState) {
         }
     }());
 
+    ASSERT_EQ(result.front().style, "thisIsAValidStyle"s);
     ASSERT_TRUE(isType<IdentifierParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, identifierCantContainWhitespace) {
+    const auto file = R"(identifier with whitespace)"s;
+    ParserState *state = new IdentifierParserState{context, result};
+
+    ASSERT_ANY_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    delete state;
+}
+
+TEST_F(ParserStateTest, identifierEndsAtCommaAndIsSaved) {
+    const auto file = R"(identifier,)"s;
+    result.push_back({"", "", {}});
+    ParserState *state = new IdentifierParserState{context, result};
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_EQ(result.front().id, "identifier"s);
+    ASSERT_TRUE(isType<KeyParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, keyStateIgnoresTrailingWhitespace) {
+    const auto file = R"(    this is a key    )"s;
+    ParserState *state = new KeyParserState{context, result};
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_TRUE(isType<KeyParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, keyStateExitsOnEqualSignAndTrimsKey) {
+    const auto file = R"(    this is a key    =)"s;
+    result.push_back({"", "", {}});
+    ParserState *state = new KeyParserState{context, result};
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_EQ(result.front().attributes.front().name, "this is a key"s);
+    ASSERT_TRUE(isType<ValueParserState>(state));
     delete state;
 }

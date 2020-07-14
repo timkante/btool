@@ -24,9 +24,9 @@ auto KeyParserState::handleCharacter(const char c) -> ParserState * {
         const auto globalState = new GlobalParserState{context, result};
         delete this;
         return globalState;
-    } else if (std::isgraph(c)) {
+    } else if (std::isgraph(c) || std::isspace(c)) {
         key += c;
-    } else if (!std::isspace(c)) {
+    } else {
         fail("Invalid Character in Key, got so far: ["s + key + "]"s);
     }
     return this;
