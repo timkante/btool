@@ -76,7 +76,7 @@
   + [Sequenzdiagramm 1][seq1]
   + [Sequenzdiagramm 2][seq2]
 
-[state1]: ./../mileStone4/statediagram/Zustandsdia2.jpg "erstes neues Zustandsdiagramm"
-[state2]: ./../mileStone4/statediagram/Zustandsdia3.jpg "zweites neues Zustandsdiagramm"
-[seq1]: ./../mileStone4/sequenzdiagram/SequenzDia2.jpg "erstes neues Sequenzdiagramm"
-[seq2]: ./../mileStone4/sequenzdiagram/SequenzDia3.jpg "zweites neues Sequenzdiagramm"
+[state1]: ./../milestone4/statediagram/Zustandsdia2.jpg "erstes neues Zustandsdiagramm"
+[state2]: ./../milestone4/statediagram/Zustandsdia3.jpg "zweites neues Zustandsdiagramm"
+[seq1]: ./../milestone4/sequenzdiagram/SequenzDia2.jpg "erstes neues Sequenzdiagramm"
+[seq2]: ./../milestone4/sequenzdiagram/SequenzDia3.jpg "zweites neues Sequenzdiagramm"
