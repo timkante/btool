@@ -173,6 +173,10 @@ Group-Members of Group 1:
 [Report - KW 27](doc/Berichte/berichtGroup1KW27.md "Report of KW 27")  
 [Report - KW 28](doc/Berichte/berichtGroup1KW28.md "Report of KW 28")
 
+## Required tasks :pencil:
+
+[list of all tasks](doc/Bestandteile_Abgabe "list of all tasks")
+
 ## Links :link:
 
 For the current CI-Status/Report [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")  
