@@ -1,5 +1,6 @@
 #include "ValueParserState.hpp"
 #include <boost/algorithm/string.hpp>
+#include <GlobalParserState.hpp>
 #include <ParserException.hpp>
 #include <KeyParserState.hpp>
 #include <string>
@@ -28,7 +29,7 @@ auto ValueParserState::handleCharacter(const char c) -> ParserState * {
     } else if (c == '}') {
         if (braces.empty()){
             result.back().attributes.back().value = boost::trim_copy(value);
-            const auto keyState = new KeyParserState{context, result};
+            const auto keyState = new GlobalParserState{context, result};
             delete this;
             return keyState;
         } else {

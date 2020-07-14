@@ -1,6 +1,7 @@
 
 #include <gtest/gtest.h>
 #include <ParserState.hpp>
+#include <BibElement.hpp>
 #include <ParserException.hpp>
 #include <GlobalParserState.hpp>
 #include <StyleParserState.hpp>
@@ -173,5 +174,149 @@ TEST_F(ParserStateTest, keyStateExitsOnEqualSignAndTrimsKey) {
 
     ASSERT_EQ(result.front().attributes.front().name, "this is a key"s);
     ASSERT_TRUE(isType<ValueParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, valueStateTrimsWhitespaceAndExitsToKeyState) {
+    const auto file = R"(    this is a key    ,)"s;
+    result.push_back({"", "", {{"", ""}}});
+    ParserState *state = new ValueParserState{context, result};
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_EQ(result.front().attributes.front().value, "this is a key"s);
+    ASSERT_TRUE(isType<KeyParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, valueStateExitsOnCommaAndMatchingBraces) {
+    const auto file = R"(   {{   this, is a key  }}  ,)"s;
+    result.push_back({"", "", {{"", ""}}});
+    ParserState *state = new ValueParserState{context, result};
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_EQ(result.front().attributes.front().value, "{{   this, is a key  }}"s);
+    ASSERT_TRUE(isType<KeyParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, keyStateExitsToGlobalStateOnClosingBrace) {
+    const auto file = R"(} )"s;
+    ParserState *state = new KeyParserState{context, result};
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_TRUE(isType<GlobalParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, valueStateExitsToGlobalStateOnClosingBrace) {
+    const auto file = R"(} )"s;
+    result.push_back({"", "", {{"", ""}}});
+    ParserState *state = new ValueParserState{context, result};
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_TRUE(isType<GlobalParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, canParseFullElement) {
+    const auto file = R"(@inproceedings{Feigenspan11,
+    author = {Janet Feigenspan},
+    title = {{Program Comprehension of Feature-Oriented Software Development}},
+    booktitle = {International Doctoral Symposium on Empirical Software Engineering (IDoESE)},
+    year = {2011},
+    month = Sep,
+    url = {http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf}
+})"s;
+    ParserState *state = new GlobalParserState{context, result};
+
+    BibElement expected = BibElement("Feigenspan11", "inproceedings", {
+            {"author", "{Janet Feigenspan}"},
+            {"title", "{{Program Comprehension of Feature-Oriented Software Development}}"},
+            {"booktitle", "{International Doctoral Symposium on Empirical Software Engineering (IDoESE)}"},
+            {"year", "{2011}"},
+            {"month", "Sep"},
+            {"url", "{http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf}"}
+    });
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_EQ(result.front(), expected);
+    ASSERT_TRUE(isType<GlobalParserState>(state));
+    delete state;
+}
+
+TEST_F(ParserStateTest, canParseMultipleElements) {
+    const auto file = R"(
+@inproceedings{Feigenspan11,
+    author = {Janet Feigenspan},
+    title = {{Program Comprehension of Feature-Oriented Software Development}},
+    booktitle = {International Doctoral Symposium on Empirical Software Engineering (IDoESE)},
+    year = {2011},
+    month = Sep,
+    url = {http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf}
+}
+@article{FeigenspanSiFr11,
+    author = {Janet Feigenspan and Norbert Siegmund and Jana Fruth},
+    title = {{On the Role of Program Comprehension in Embedded Systems}},
+    journal = {Softwaretechnik-Trends},
+    year = {2011},
+    volume = {31},
+    number = {2},
+    month = May,
+    url = {http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}
+})"s;
+    ParserState *state = new GlobalParserState{context, result};
+
+    std::vector<BibElement> expected = {
+            {"Feigenspan11", "inproceedings", {
+                {"author", "{Janet Feigenspan}"},
+                {"title", "{{Program Comprehension of Feature-Oriented Software Development}}"},
+                {"booktitle", "{International Doctoral Symposium on Empirical Software Engineering (IDoESE)}"},
+                {"year", "{2011}"},
+                {"month", "Sep"},
+                {"url", "{http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf}"}
+            }}, {"FeigenspanSiFr11", "article", {
+                {"author", "{Janet Feigenspan and Norbert Siegmund and Jana Fruth}"},
+                {"title", "{{On the Role of Program Comprehension in Embedded Systems}}"},
+                {"journal", "{Softwaretechnik-Trends}"},
+                {"year", "{2011}"},
+                {"volume", "{31}"},
+                {"number", "{2}"},
+                {"month", "May"},
+                {"url",
+                 "{http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}"}
+            }}};
+
+    ASSERT_NO_THROW([&]() {
+        for (const auto c : file) {
+            state = state->handleCharacter(c);
+        }
+    }());
+
+    ASSERT_EQ(result, expected);
     delete state;
 }
