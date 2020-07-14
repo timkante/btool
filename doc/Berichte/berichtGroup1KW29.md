@@ -70,3 +70,13 @@
 
 + Code (siehe Master-Branch und Neben-Branches, SonarCloud und TravisCI)
 + Dokumentation: [Netlify](https://bibparser.timkante.dev "Doxygen")
++ Diagramme:
+  + [Zustandsdiagramm 1][state1]
+  + [Zustandsdiagramm 2][state2]
+  + [Sequenzdiagramm 1][seq1]
+  + [Sequenzdiagramm 2][seq2]
+
+[state1]: ./../mileStone4/statediagram/Zustandsdia2.jpg "erstes neues Zustandsdiagramm"
+[state2]: ./../mileStone4/statediagram/Zustandsdia3.jpg "zweites neues Zustandsdiagramm"
+[seq1]: ./../mileStone4/sequenzdiagram/SequenzDia2.jpg "erstes neues Sequenzdiagramm"
+[seq2]: ./../mileStone4/sequenzdiagram/SequenzDia3.jpg "zweites neues Sequenzdiagramm"
