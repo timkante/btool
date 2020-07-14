@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <Parser.hpp>
+#include <BibElement.hpp>
 #include <spdlog/spdlog.h>
-
 #include <string>
 #include <string_view>
 
@@ -85,4 +85,12 @@ TEST_F(ParserFixtureTest, parseCorrectContent) {
         }}};
     auto const actual = sample.generate(input, "year"s, "someFile.bib"s);
     ASSERT_EQ(actual, expected);
+}
+
+TEST_F(ParserFixtureTest, parseDummyFile) {
+    boost::filesystem::path target = boost::filesystem::path("../../test/res/publications.bib");
+    ASSERT_NO_THROW( [&](){
+        const auto elements = sample.generate(target, "author"s);
+        ASSERT_EQ(elements.size(), 62u);
+    }());
 }
