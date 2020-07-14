@@ -70,11 +70,11 @@ $(function() {
 <div class="title">BibElement.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BIBPARSER_BIBELEMENT_HPP</span></div>
+<a href="_bib_element_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BIBPARSER_BIBELEMENT_HPP</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BIBPARSER_BIBELEMENT_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;StyleProperties.hpp&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Field.hpp&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_style_properties_8hpp.html">StyleProperties.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_field_8hpp.html">Field.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
@@ -90,15 +90,20 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">auto</span> <a class="code" href="struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b">operator==</a>(<span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;other) <span class="keyword">const</span> noexcept -&gt; bool;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">auto</span> operator&lt;&lt;(std::ostream &amp;os, <a class="code" href="struct_bib_element.html">BibElement</a> <span class="keyword">const</span> &amp;elem) -&gt; std::ostream &amp;;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">auto</span> <a class="code" href="_bib_element_8hpp.html#a856e45ca46c0f4db39e9f614ffc5c97c">operator&lt;&lt;</a>(std::ostream &amp;os, <a class="code" href="struct_bib_element.html">BibElement</a> <span class="keyword">const</span> &amp;elem) -&gt; std::ostream &amp;;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astruct_style_properties_html"><div class="ttname"><a href="struct_style_properties.html">StyleProperties</a></div><div class="ttdoc">style-properties-container</div><div class="ttdef"><b>Definition:</b> StyleProperties.hpp:11</div></div>
+<div class="ttc" id="a_bib_element_8cpp_html_a856e45ca46c0f4db39e9f614ffc5c97c"><div class="ttname"><a href="_bib_element_8cpp.html#a856e45ca46c0f4db39e9f614ffc5c97c">operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(std::ostream &amp;os, BibElement const &amp;elem) -&gt; std::ostream &amp;</div><div class="ttdef"><b>Definition:</b> BibElement.cpp:48</div></div>
 <div class="ttc" id="astruct_bib_element_html_a2fd69e4fbd9943c7f92d39041af1183b"><div class="ttname"><a href="struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b">BibElement::operator==</a></div><div class="ttdeci">auto operator==(const BibElement &amp;other) const noexcept -&gt; bool</div><div class="ttdef"><b>Definition:</b> BibElement.cpp:38</div></div>
 <div class="ttc" id="astruct_field_html"><div class="ttname"><a href="struct_field.html">Field</a></div><div class="ttdoc">Field-Container.</div><div class="ttdef"><b>Definition:</b> Field.hpp:11</div></div>
 <div class="ttc" id="astruct_bib_element_html_a92a0d0a9429d2a7b6ba031db226e779a"><div class="ttname"><a href="struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a">BibElement::isCompliantTo</a></div><div class="ttdeci">auto isCompliantTo(const StyleProperties &amp;props) const -&gt; bool</div><div class="ttdef"><b>Definition:</b> BibElement.cpp:21</div></div>
 <div class="ttc" id="astruct_bib_element_html_afe28c2771802ba90fc4dfc1b57aa4a62"><div class="ttname"><a href="struct_bib_element.html#afe28c2771802ba90fc4dfc1b57aa4a62">BibElement::BibElement</a></div><div class="ttdeci">BibElement(std::string id, std::string style, std::vector&lt; Field &gt; attributes)</div><div class="ttdef"><b>Definition:</b> BibElement.cpp:13</div></div>
+<div class="ttc" id="a_field_8hpp_html"><div class="ttname"><a href="_field_8hpp.html">Field.hpp</a></div></div>
+<div class="ttc" id="a_bib_element_8hpp_html_a856e45ca46c0f4db39e9f614ffc5c97c"><div class="ttname"><a href="_bib_element_8hpp.html#a856e45ca46c0f4db39e9f614ffc5c97c">operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(std::ostream &amp;os, BibElement const &amp;elem) -&gt; std::ostream &amp;</div><div class="ttdef"><b>Definition:</b> BibElement.cpp:48</div></div>
+<div class="ttc" id="a_style_properties_8hpp_html"><div class="ttname"><a href="_style_properties_8hpp.html">StyleProperties.hpp</a></div></div>
+<div class="ttc" id="a_bib_element_8hpp_html"><div class="ttname"><a href="_bib_element_8hpp.html">BibElement.hpp</a></div></div>
 <div class="ttc" id="astruct_bib_element_html"><div class="ttname"><a href="struct_bib_element.html">BibElement</a></div><div class="ttdoc">bib-element-Container</div><div class="ttdef"><b>Definition:</b> BibElement.hpp:13</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

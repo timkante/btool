@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fail_3',['fail',['../class_abstract_parser_state.html#ad06e4f1075b0f6d4f0a5c7bc9186317c',1,'AbstractParserState']]],
-  ['field_4',['Field',['../struct_field.html',1,'Field'],['../struct_field.html#a01de4b97166b9f1e0934430688c33455',1,'Field::Field()']]]
+  ['elementsof_8',['elementsOf',['../class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea',1,'Parser']]]
 ];
