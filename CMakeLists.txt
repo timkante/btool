@@ -10,6 +10,7 @@ set(Boost_DEBUG 1)
 find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
 
 option(SONAR "Build all profiling-files." OFF)
+add_compile_options(-std=c++17)
 
 if (SONAR)
     add_compile_options(-Wall -Wextra -Wpedantic)
