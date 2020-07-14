@@ -9,8 +9,8 @@
  * @brief Field-Container
  */
 struct Field {
-    std::string name; ///< @property the name of the Field
-    std::string value; ///< @property the value of the Field
+    std::string name; ///< the name of the Field
+    std::string value; ///< the value of the Field
 
     Field(std::string name, std::string value);
 

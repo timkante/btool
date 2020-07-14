@@ -14,8 +14,8 @@
  * @brief Key Parser State
  */
 class ValueParserState : public AbstractParserState {
-    std::string value; ///< @property a accumulator for value-characters while parsing it
-    std::stack<std::pair<std::size_t, std::size_t>> braces; ///< @property a stack for counting delimiting braces
+    std::string value; ///< a accumulator for value-characters while parsing it
+    std::stack<std::pair<std::size_t, std::size_t>> braces; ///< a stack for counting delimiting braces
 
 public:
 

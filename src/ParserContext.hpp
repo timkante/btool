@@ -8,9 +8,9 @@
  * Context of a Parser-State
  */
 struct ParserContext {
-    std::string filename{}; ///< @property the filename of the currently parsed-file
-    std::size_t line{1U}; ///< @property the current line the parser is parsing
-    std::size_t column{0U}; ///< @property the current column the parser is parsing
+    std::string filename{}; ///< the filename of the currently parsed-file
+    std::size_t line{1U}; ///< the current line the parser is parsing
+    std::size_t column{0U}; ///< the current column the parser is parsing
 
     explicit ParserContext(std::string filename);
 };

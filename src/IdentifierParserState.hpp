@@ -12,7 +12,7 @@
  * @brief Identifier Parser State
  */
 class IdentifierParserState : public AbstractParserState {
-    std::string identifier; ///< @property a accumulator for identifier-characters while parsing it
+    std::string identifier; ///< a accumulator for identifier-characters while parsing it
 
 public:
 

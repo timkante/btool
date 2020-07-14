@@ -14,8 +14,8 @@
  * @brief api to interact with translation-table resource
  */
 class TranslationTable {
-    boost::property_tree::ptree contents; ///< @property pointer to parsed json-tree
-    std::vector<StyleProperties> styleProperties; ///< @property parsed style-properties
+    boost::property_tree::ptree contents; ///< pointer to parsed json-tree
+    std::vector<StyleProperties> styleProperties; ///< parsed style-properties
 
 private:
 

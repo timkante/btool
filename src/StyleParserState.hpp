@@ -12,7 +12,7 @@
  * @brief Style Parser State
  */
 class StyleParserState : public AbstractParserState {
-    std::string style; ///< @property a accumulator for style-characters while parsing it
+    std::string style; ///< a accumulator for style-characters while parsing it
 
 public:
 

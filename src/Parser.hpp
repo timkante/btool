@@ -15,8 +15,8 @@
  * @brief interface to interact with bib-files
  */
 class Parser {
-    std::string targetStyle; ///< @property the target-style of the generated files
-    TranslationTable translationTable; ///< @property translation-Table handler
+    std::string targetStyle; ///< the target-style of the generated files
+    TranslationTable translationTable; ///< translation-Table handler
 
 public:
 

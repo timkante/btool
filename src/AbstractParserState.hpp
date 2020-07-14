@@ -12,8 +12,8 @@
  */
 class AbstractParserState : public ParserState {
 protected:
-    ParserContext &context; ///< @property Context of the State
-    std::vector<BibElement> &result; ///< @property Container for accumulating Parsing-Results
+    ParserContext &context; ///< Context of the State
+    std::vector<BibElement> &result; ///< Container for accumulating Parsing-Results
 
     [[noreturn]] auto fail(const std::string &message) -> void;
 

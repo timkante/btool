@@ -9,9 +9,9 @@
  * @brief style-properties-container
  */
 struct StyleProperties {
-    std::string name = ""; ///< @property name of the style
-    std::vector<std::string> requiredFields = {}; ///< @property all the required fields
-    std::vector<std::string> optionalFields = {}; ///< @property all the optional fields
+    std::string name = ""; ///< name of the style
+    std::vector<std::string> requiredFields = {}; ///< all the required fields
+    std::vector<std::string> optionalFields = {}; ///< all the optional fields
 
     /**
      * Default constructor.

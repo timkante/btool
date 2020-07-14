@@ -12,7 +12,7 @@
  * @brief Key Parser State
  */
 class KeyParserState : public AbstractParserState {
-    std::string key; ///< @property a accumulator for key-characters while parsing it
+    std::string key; ///< a accumulator for key-characters while parsing it
 
 public:
 

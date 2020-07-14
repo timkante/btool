@@ -11,9 +11,9 @@
  * @brief bib-element-Container
  */
 struct BibElement {
-    std::string id; ///< @property the elements (unique) id
-    std::string style; ///< @property the style-name of the element
-    std::vector<Field> attributes; ///< @property the attributes of the element
+    std::string id; ///< the elements (unique) id
+    std::string style; ///< the style-name of the element
+    std::vector<Field> attributes; ///< the attributes of the element
 
     BibElement(std::string id, std::string style, std::vector<Field> attributes);
 
