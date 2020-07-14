@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3d_3d_4',['operator==',['../struct_style_properties.html#ac92c8336d49a1d1e628c0073f8d4e792',1,'StyleProperties']]]
+  ['identifierparserstate_5',['IdentifierParserState',['../class_identifier_parser_state.html',1,'']]],
+  ['iscompliantto_6',['isCompliantTo',['../struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a',1,'BibElement']]]
 ];

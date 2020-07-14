@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getstyleproperties_2',['getStyleProperties',['../class_translation_table.html#ae624b58ca1e2170035ad0c6978fab8da',1,'TranslationTable']]]
+  ['field_2',['Field',['../struct_field.html',1,'Field'],['../struct_field.html#a01de4b97166b9f1e0934430688c33455',1,'Field::Field()']]]
 ];

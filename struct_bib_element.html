@@ -81,6 +81,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afe28c2771802ba90fc4dfc1b57aa4a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92a0d0a9429d2a7b6ba031db226e779a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a">isCompliantTo</a> (const <a class="el" href="struct_style_properties.html">StyleProperties</a> &amp;props) const -&gt; bool</td></tr>
 <tr class="separator:a92a0d0a9429d2a7b6ba031db226e779a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd69e4fbd9943c7f92d39041af1183b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b">operator==</a> (const <a class="el" href="struct_bib_element.html">BibElement</a> &amp;other) const noexcept -&gt; bool</td></tr>
+<tr class="separator:a2fd69e4fbd9943c7f92d39041af1183b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>bib-element-Container </p>
@@ -153,6 +155,40 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weather the element is compliant or not </dd></dl>
+
+</div>
+</div>
+<a id="a2fd69e4fbd9943c7f92d39041af1183b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fd69e4fbd9943c7f92d39041af1183b">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto BibElement::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_bib_element.html">BibElement</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Equality-Operator for two bib-elements</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>bib-element to compare with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>weather the two bib-elements are deeply equal </dd></dl>
 
 </div>
 </div>
