@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['translationtable_41',['TranslationTable',['../class_translation_table.html#af7361e99fd42653b98b913daee8394f3',1,'TranslationTable::TranslationTable(std::stringstream file) noexcept'],['../class_translation_table.html#ac82ac6d032d1f9fb9db0df5abdfbab21',1,'TranslationTable::TranslationTable(const boost::filesystem::path &amp;path) noexcept']]]
+  ['operator_3d_3d_51',['operator==',['../struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b',1,'BibElement::operator==()'],['../struct_field.html#a8357e2110b633c63659612a147880486',1,'Field::operator==()'],['../struct_style_properties.html#ad1644141edb4d3c751e4e55ff890c7e9',1,'StyleProperties::operator==()']]]
 ];

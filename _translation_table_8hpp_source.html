@@ -81,34 +81,36 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_translation_table.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_translation_table.html">TranslationTable</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    boost::property_tree::ptree contents; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::vector&lt;StyleProperties&gt; styleProperties; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_translation_table.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_translation_table.html">TranslationTable</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    boost::property_tree::ptree contents; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt;StyleProperties&gt; styleProperties; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> parseStyle(<span class="keyword">const</span> boost::property_tree::ptree &amp;style) noexcept -&gt; <a class="code" href="struct_style_properties.html">StyleProperties</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    [[nodiscard]] <span class="keyword">auto</span> parseStyles() <span class="keyword">const</span> noexcept -&gt; std::vector&lt;StyleProperties&gt;;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> parseStyle(<span class="keyword">const</span> boost::property_tree::ptree &amp;style) noexcept -&gt; <a class="code" href="struct_style_properties.html">StyleProperties</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    [[nodiscard]] <span class="keyword">auto</span> parseStyles() <span class="keyword">const</span> noexcept -&gt; std::vector&lt;StyleProperties&gt;;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_translation_table.html#af7361e99fd42653b98b913daee8394f3">TranslationTable</a>(std::stringstream file) noexcept;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_translation_table.html#af7361e99fd42653b98b913daee8394f3">TranslationTable</a>(<span class="keyword">const</span> boost::filesystem::path &amp;path) noexcept;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">auto</span> <a class="code" href="class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a">printAll</a>(std::ostream &amp;out = std::cout) <span class="keyword">const</span> -&gt; void;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    [[nodiscard]] <span class="keyword">auto</span> <a class="code" href="class_translation_table.html#ae624b58ca1e2170035ad0c6978fab8da">getStyleProperties</a>() <span class="keyword">const</span> noexcept -&gt; <span class="keyword">const</span> std::vector&lt;StyleProperties&gt; &amp;;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    [[nodiscard]] <span class="keyword">auto</span> <a class="code" href="class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a">stylePropertiesOf</a>(<span class="keyword">const</span> std::string &amp;name) <span class="keyword">const</span> noexcept -&gt; std::optional&lt;StyleProperties&gt;;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_translation_table.html#af7361e99fd42653b98b913daee8394f3">TranslationTable</a>(std::stringstream file) noexcept;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_translation_table.html#af7361e99fd42653b98b913daee8394f3">TranslationTable</a>(<span class="keyword">const</span> boost::filesystem::path &amp;path) noexcept;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> <a class="code" href="class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a">printAll</a>(std::ostream &amp;out = std::cout) <span class="keyword">const</span> -&gt; void;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    [[nodiscard]] <span class="keyword">auto</span> <a class="code" href="class_translation_table.html#ae624b58ca1e2170035ad0c6978fab8da">getStyleProperties</a>() <span class="keyword">const</span> noexcept -&gt; <span class="keyword">const</span> std::vector&lt;StyleProperties&gt; &amp;;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    [[nodiscard]] <span class="keyword">auto</span> <a class="code" href="class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a">stylePropertiesOf</a>(<span class="keyword">const</span> std::string &amp;name) <span class="keyword">const</span> noexcept -&gt; std::optional&lt;StyleProperties&gt;;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astruct_style_properties_html"><div class="ttname"><a href="struct_style_properties.html">StyleProperties</a></div><div class="ttdoc">style-properties-container</div><div class="ttdef"><b>Definition:</b> StyleProperties.hpp:12</div></div>
+<div class="ttc" id="astruct_style_properties_html"><div class="ttname"><a href="struct_style_properties.html">StyleProperties</a></div><div class="ttdoc">style-properties-container</div><div class="ttdef"><b>Definition:</b> StyleProperties.hpp:11</div></div>
 <div class="ttc" id="aclass_translation_table_html_af7361e99fd42653b98b913daee8394f3"><div class="ttname"><a href="class_translation_table.html#af7361e99fd42653b98b913daee8394f3">TranslationTable::TranslationTable</a></div><div class="ttdeci">TranslationTable(std::stringstream file) noexcept</div><div class="ttdef"><b>Definition:</b> TranslationTable.cpp:9</div></div>
 <div class="ttc" id="aclass_translation_table_html_a3ccdf6ed0cffbfdf8030da2d2be8be7a"><div class="ttname"><a href="class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a">TranslationTable::stylePropertiesOf</a></div><div class="ttdeci">auto stylePropertiesOf(const std::string &amp;name) const noexcept -&gt; std::optional&lt; StyleProperties &gt;</div><div class="ttdef"><b>Definition:</b> TranslationTable.cpp:90</div></div>
 <div class="ttc" id="aclass_translation_table_html_ae624b58ca1e2170035ad0c6978fab8da"><div class="ttname"><a href="class_translation_table.html#ae624b58ca1e2170035ad0c6978fab8da">TranslationTable::getStyleProperties</a></div><div class="ttdeci">auto getStyleProperties() const noexcept -&gt; const std::vector&lt; StyleProperties &gt; &amp;</div><div class="ttdef"><b>Definition:</b> TranslationTable.cpp:86</div></div>
-<div class="ttc" id="aclass_translation_table_html"><div class="ttname"><a href="class_translation_table.html">TranslationTable</a></div><div class="ttdoc">interface to interact with translation-table resource</div><div class="ttdef"><b>Definition:</b> TranslationTable.hpp:17</div></div>
+<div class="ttc" id="aclass_translation_table_html"><div class="ttname"><a href="class_translation_table.html">TranslationTable</a></div><div class="ttdoc">interface to interact with translation-table resource</div><div class="ttdef"><b>Definition:</b> TranslationTable.hpp:16</div></div>
 <div class="ttc" id="aclass_translation_table_html_a7e1a27368a0becda3e6ce4ba6129b17a"><div class="ttname"><a href="class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a">TranslationTable::printAll</a></div><div class="ttdeci">auto printAll(std::ostream &amp;out=std::cout) const -&gt; void</div><div class="ttdef"><b>Definition:</b> TranslationTable.cpp:37</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

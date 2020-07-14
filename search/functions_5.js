@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['printall_38',['printAll',['../class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a',1,'TranslationTable']]]
+  ['identifierparserstate_48',['IdentifierParserState',['../class_identifier_parser_state.html#afdd08b7824033845c43fa297c4cc2288',1,'IdentifierParserState']]],
+  ['iscompliantto_49',['isCompliantTo',['../struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a',1,'BibElement']]]
 ];

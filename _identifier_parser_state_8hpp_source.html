@@ -70,37 +70,36 @@ $(function() {
 <div class="title">IdentifierParserState.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by Tim Kante on 14.07.20.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef BIBPARSER_IDENTIFIERPARSERSTATE_HPP</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define BIBPARSER_IDENTIFIERPARSERSTATE_HPP</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;AbstractParserState.hpp&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;ParserContext.hpp&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;BibElement.hpp&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_identifier_parser_state.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_identifier_parser_state.html">IdentifierParserState</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_parser_state.html">AbstractParserState</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::string identifier;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_identifier_parser_state.html">IdentifierParserState</a>(</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="struct_parser_context.html">ParserContext</a> &amp;context,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            std::vector&lt;BibElement&gt; &amp;result</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    ) noexcept;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">auto</span> handleCharacter(<span class="keywordtype">char</span> c) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BIBPARSER_IDENTIFIERPARSERSTATE_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BIBPARSER_IDENTIFIERPARSERSTATE_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AbstractParserState.hpp&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ParserContext.hpp&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;BibElement.hpp&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_identifier_parser_state.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_identifier_parser_state.html">IdentifierParserState</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_parser_state.html">AbstractParserState</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::string identifier; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_identifier_parser_state.html#afdd08b7824033845c43fa297c4cc2288">IdentifierParserState</a>(</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="struct_parser_context.html">ParserContext</a> &amp;context,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            std::vector&lt;BibElement&gt; &amp;result</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ) noexcept;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">auto</span> <a class="code" href="class_identifier_parser_state.html#ae5b6295196d986c79a01c8e11cdd6663">handleCharacter</a>(<span class="keywordtype">char</span> c) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astruct_parser_state_html"><div class="ttname"><a href="struct_parser_state.html">ParserState</a></div><div class="ttdef"><b>Definition:</b> ParserState.hpp:4</div></div>
-<div class="ttc" id="aclass_abstract_parser_state_html"><div class="ttname"><a href="class_abstract_parser_state.html">AbstractParserState</a></div><div class="ttdef"><b>Definition:</b> AbstractParserState.hpp:10</div></div>
-<div class="ttc" id="astruct_parser_context_html"><div class="ttname"><a href="struct_parser_context.html">ParserContext</a></div><div class="ttdef"><b>Definition:</b> ParserContext.hpp:7</div></div>
-<div class="ttc" id="aclass_identifier_parser_state_html"><div class="ttname"><a href="class_identifier_parser_state.html">IdentifierParserState</a></div><div class="ttdef"><b>Definition:</b> IdentifierParserState.hpp:14</div></div>
+<div class="ttc" id="astruct_parser_state_html"><div class="ttname"><a href="struct_parser_state.html">ParserState</a></div><div class="ttdef"><b>Definition:</b> ParserState.hpp:8</div></div>
+<div class="ttc" id="aclass_abstract_parser_state_html"><div class="ttname"><a href="class_abstract_parser_state.html">AbstractParserState</a></div><div class="ttdef"><b>Definition:</b> AbstractParserState.hpp:14</div></div>
+<div class="ttc" id="aclass_identifier_parser_state_html_ae5b6295196d986c79a01c8e11cdd6663"><div class="ttname"><a href="class_identifier_parser_state.html#ae5b6295196d986c79a01c8e11cdd6663">IdentifierParserState::handleCharacter</a></div><div class="ttdeci">auto handleCharacter(char c) -&gt; ParserState *override</div><div class="ttdef"><b>Definition:</b> IdentifierParserState.cpp:12</div></div>
+<div class="ttc" id="astruct_parser_context_html"><div class="ttname"><a href="struct_parser_context.html">ParserContext</a></div><div class="ttdef"><b>Definition:</b> ParserContext.hpp:10</div></div>
+<div class="ttc" id="aclass_identifier_parser_state_html"><div class="ttname"><a href="class_identifier_parser_state.html">IdentifierParserState</a></div><div class="ttdoc">Identifier Parser State.</div><div class="ttdef"><b>Definition:</b> IdentifierParserState.hpp:16</div></div>
+<div class="ttc" id="aclass_identifier_parser_state_html_afdd08b7824033845c43fa297c4cc2288"><div class="ttname"><a href="class_identifier_parser_state.html#afdd08b7824033845c43fa297c4cc2288">IdentifierParserState::IdentifierParserState</a></div><div class="ttdeci">IdentifierParserState(ParserContext &amp;context, std::vector&lt; BibElement &gt; &amp;result) noexcept</div><div class="ttdef"><b>Definition:</b> IdentifierParserState.cpp:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

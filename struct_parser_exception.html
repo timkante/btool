@@ -64,12 +64,13 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_parser_exception-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ParserException Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_parser_exception_8hpp_source.html">ParserException.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ParserException:</div>
 <div class="dyncontent">
@@ -79,25 +80,83 @@ Inheritance diagram for ParserException:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a01837b3f67eeb3045df6a29dff3cbec0"><td class="memItemLeft" align="right" valign="top"><a id="a01837b3f67eeb3045df6a29dff3cbec0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ParserException</b> (<a class="el" href="class_abstract_parser_state.html">AbstractParserState</a> *state, const <a class="el" href="struct_parser_context.html">ParserContext</a> &amp;context, const std::string &amp;message)</td></tr>
+<tr class="memitem:a01837b3f67eeb3045df6a29dff3cbec0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0">ParserException</a> (<a class="el" href="class_abstract_parser_state.html">AbstractParserState</a> *state, const <a class="el" href="struct_parser_context.html">ParserContext</a> &amp;context, const std::string &amp;message)</td></tr>
 <tr class="separator:a01837b3f67eeb3045df6a29dff3cbec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb92ebe08d65960ecc78c37c5e150d5d"><td class="memItemLeft" align="right" valign="top"><a id="adb92ebe08d65960ecc78c37c5e150d5d"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () const noexcept -&gt; const char *override</td></tr>
+<tr class="memitem:adb92ebe08d65960ecc78c37c5e150d5d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">what</a> () const noexcept -&gt; const char *override</td></tr>
 <tr class="separator:adb92ebe08d65960ecc78c37c5e150d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a8c55a3af81ec0ed9e78be0bc1697ac2d"><td class="memItemLeft" align="right" valign="top"><a id="a8c55a3af81ec0ed9e78be0bc1697ac2d"></a>
-<a class="el" href="struct_parser_state.html">ParserState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>state</b></td></tr>
-<tr class="separator:a8c55a3af81ec0ed9e78be0bc1697ac2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39cd595ea591d51e5a050a8b412b08f5"><td class="memItemLeft" align="right" valign="top"><a id="a39cd595ea591d51e5a050a8b412b08f5"></a>
-const <a class="el" href="struct_parser_context.html">ParserContext</a>&#160;</td><td class="memItemRight" valign="bottom"><b>context</b></td></tr>
-<tr class="separator:a39cd595ea591d51e5a050a8b412b08f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa2ba019c914f4c5bd737249ef9f1863"><td class="memItemLeft" align="right" valign="top"><a id="afa2ba019c914f4c5bd737249ef9f1863"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>message</b></td></tr>
-<tr class="separator:afa2ba019c914f4c5bd737249ef9f1863"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A Parsing-Exception </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a01837b3f67eeb3045df6a29dff3cbec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01837b3f67eeb3045df6a29dff3cbec0">&#9670;&nbsp;</a></span>ParserException()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParserException::ParserException </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_parser_state.html">AbstractParserState</a> *&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_parser_context.html">ParserContext</a> &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>the state of the parser </td></tr>
+    <tr><td class="paramname">context</td><td>the context of the parser </td></tr>
+    <tr><td class="paramname">message</td><td>the message to throw </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="adb92ebe08d65960ecc78c37c5e150d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb92ebe08d65960ecc78c37c5e150d5d">&#9670;&nbsp;</a></span>what()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ParserException::what </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const char *</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Exception-Message </p><dl class="section return"><dt>Returns</dt><dd>the exception-message </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/<a class="el" href="_parser_exception_8hpp_source.html">ParserException.hpp</a></li>
 <li>src/ParserException.cpp</li>

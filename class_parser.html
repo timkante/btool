@@ -77,23 +77,202 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0211748cb9bf0d0f82b841fcda0a54f0"><td class="memItemLeft" align="right" valign="top"><a id="a0211748cb9bf0d0f82b841fcda0a54f0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Parser</b> (const boost::filesystem::path &amp;ruleFilePath, std::string targetStyle) noexcept</td></tr>
+<tr class="memitem:a0211748cb9bf0d0f82b841fcda0a54f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a0211748cb9bf0d0f82b841fcda0a54f0">Parser</a> (const boost::filesystem::path &amp;ruleFilePath, std::string targetStyle) noexcept</td></tr>
 <tr class="separator:a0211748cb9bf0d0f82b841fcda0a54f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9a0133c1a90bc925224301464e15475"><td class="memItemLeft" align="right" valign="top"><a id="aa9a0133c1a90bc925224301464e15475"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Parser</b> (std::stringstream ruleFileContents, std::string targetStyle) noexcept</td></tr>
+<tr class="memitem:aa9a0133c1a90bc925224301464e15475"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#aa9a0133c1a90bc925224301464e15475">Parser</a> (std::stringstream ruleFileContents, std::string targetStyle) noexcept</td></tr>
 <tr class="separator:aa9a0133c1a90bc925224301464e15475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6433b1d7a350e3890e359869ff58da20"><td class="memItemLeft" align="right" valign="top"><a id="a6433b1d7a350e3890e359869ff58da20"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>generate</b> (const boost::filesystem::path &amp;inputPath, const std::string &amp;sorting) const noexcept -&gt; std::vector&lt; <a class="el" href="struct_bib_element.html">BibElement</a> &gt;</td></tr>
+<tr class="memitem:a6433b1d7a350e3890e359869ff58da20"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a6433b1d7a350e3890e359869ff58da20">generate</a> (const boost::filesystem::path &amp;inputPath, const std::string &amp;sorting) const noexcept -&gt; std::vector&lt; <a class="el" href="struct_bib_element.html">BibElement</a> &gt;</td></tr>
 <tr class="separator:a6433b1d7a350e3890e359869ff58da20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee21df11a2740e7af754c2e717b76f80"><td class="memItemLeft" align="right" valign="top"><a id="aee21df11a2740e7af754c2e717b76f80"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>generate</b> (std::string_view inputFileContent, const std::string &amp;sorting, const std::string &amp;filename) const noexcept -&gt; std::vector&lt; <a class="el" href="struct_bib_element.html">BibElement</a> &gt;</td></tr>
+<tr class="memitem:aee21df11a2740e7af754c2e717b76f80"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#aee21df11a2740e7af754c2e717b76f80">generate</a> (std::string_view inputFileContent, const std::string &amp;sorting, const std::string &amp;filename) const noexcept -&gt; std::vector&lt; <a class="el" href="struct_bib_element.html">BibElement</a> &gt;</td></tr>
 <tr class="separator:aee21df11a2740e7af754c2e717b76f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>interface to interact with bib-files </p>
 <p>Handles interaction with the bib-files and does parsing of it </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0211748cb9bf0d0f82b841fcda0a54f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0211748cb9bf0d0f82b841fcda0a54f0">&#9670;&nbsp;</a></span>Parser() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::Parser </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>ruleFilePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>targetStyle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruleFilePath</td><td>filepath to the translation-table </td></tr>
+    <tr><td class="paramname">targetStyle</td><td>the style name to filter parse-results for </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9a0133c1a90bc925224301464e15475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a0133c1a90bc925224301464e15475">&#9670;&nbsp;</a></span>Parser() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::Parser </td>
+          <td>(</td>
+          <td class="paramtype">std::stringstream&#160;</td>
+          <td class="paramname"><em>ruleFileContents</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>targetStyle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruleFileContents</td><td>contents of the translation-table </td></tr>
+    <tr><td class="paramname">targetStyle</td><td>the style name to filter parse-results for </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6433b1d7a350e3890e359869ff58da20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6433b1d7a350e3890e359869ff58da20">&#9670;&nbsp;</a></span>generate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::generate </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>inputPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sorting</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; std::vector&lt;<a class="el" href="struct_bib_element.html">BibElement</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Generate bib-elements and Filter them for a Style </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputPath</td><td>filepath to a directory of bib-Files or a single bib-File </td></tr>
+    <tr><td class="paramname">sorting</td><td>the style name to sort parsing-results for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>collection of parsed bib-elements </dd></dl>
+
+</div>
+</div>
+<a id="aee21df11a2740e7af754c2e717b76f80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee21df11a2740e7af754c2e717b76f80">&#9670;&nbsp;</a></span>generate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Parser::generate </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>inputFileContent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sorting</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; std::vector&lt;<a class="el" href="struct_bib_element.html">BibElement</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Generate bib-elements and Filter them for a Style </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputFileContent</td><td>content of a input-file </td></tr>
+    <tr><td class="paramname">sorting</td><td>the style name to sort parsing-results for </td></tr>
+    <tr><td class="paramname">filename</td><td>name or path of the parsed file (for logging errors) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>collection of parsed, sorted and filtered bib-elements </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="_parser_8hpp_source.html">Parser.hpp</a></li>
 <li>src/Parser.cpp</li>
 </ul>
