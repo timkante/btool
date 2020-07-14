@@ -30,6 +30,7 @@
 + [Milestones](#milestones-triangular_flag_on_post)
 + [Reports](#reports-pencil)
 + [Resources and Tools](#links-link)
++ [Required tasks](#Required-tasks-pencil)
 
 ## Project-Description :pencil:
 
@@ -171,35 +172,36 @@ Group-Members of Group 1:
 [Report - KW 25](doc/Berichte/Zwischenbericht.md "Report of KW 25")  
 [Report - KW 26](doc/Berichte/berichtGroup1KW26.md "Report of KW 26")  
 [Report - KW 27](doc/Berichte/berichtGroup1KW27.md "Report of KW 27")  
-[Report - KW 28](doc/Berichte/berichtGroup1KW28.md "Report of KW 28")
+[Report - KW 28](doc/Berichte/berichtGroup1KW28.md "Report of KW 28")  
+[Report - KW 29](doc/Berichte/berichtGroup1KW29.md "Report of KW 29")
 
 ## Required tasks :pencil:
 
 + Volere SnowCards
     + functional:
-        + [SnowCard 001](doc/Bestandteile_Abgabe/snowCards/functional/snowCardFunctional001.md)
-        + [SnowCard 002](doc/Bestandteile_Abgabe/snowCards/functional/snowCardFunctional002.md)
-        + [SnowCard 003](doc/Bestandteile_Abgabe/snowCards/functional/snowCardFunctional003.md)
-        + [SnowCard 004](doc/Bestandteile_Abgabe/snowCards/functional/snowCardFunctional004.md)
-        + [SnowCard 005](doc/Bestandteile_Abgabe/snowCards/functional/snowCardFunctional005.md)
+        + [SnowCard 001](doc/snowCards/functional/snowCardFunctional001.md)
+        + [SnowCard 002](doc/snowCards/functional/snowCardFunctional002.md)
+        + [SnowCard 003](doc/snowCards/functional/snowCardFunctional003.md)
+        + [SnowCard 004](doc/snowCards/functional/snowCardFunctional004.md)
+        + [SnowCard 005](doc/snowCards/functional/snowCardFunctional005.md)
     + nonfunctional:
-        + [SnowCard 006](doc/Bestandteile_Abgabe/snowCards/nonfunctional/snowCardNonFuctional006.md)
-        + [SnowCard 007](doc/Bestandteile_Abgabe/snowCards/nonfunctional/snowCardNonFuctional007.md)
-        + [SnowCard 008](doc/Bestandteile_Abgabe/snowCards/nonfunctional/snowCardNonFuctional008.md)
-        + [SnowCard 009](doc/Bestandteile_Abgabe/snowCards/nonfunctional/snowCardNonFuctional009.md)
-        + [SnowCard 010](doc/Bestandteile_Abgabe/snowCards/nonfunctional/snowCardNonFuctional010.md)
-        + [SnowCard 011](doc/Bestandteile_Abgabe/snowCards/nonfunctional/snowCardNonFuctional011.md)
+        + [SnowCard 006](doc/snowCards/nonfunctional/snowCardNonFuctional006.md)
+        + [SnowCard 007](doc/snowCards/nonfunctional/snowCardNonFuctional007.md)
+        + [SnowCard 008](doc/snowCards/nonfunctional/snowCardNonFuctional008.md)
+        + [SnowCard 009](doc/snowCards/nonfunctional/snowCardNonFuctional009.md)
+        + [SnowCard 010](doc/snowCards/nonfunctional/snowCardNonFuctional010.md)
+        + [SnowCard 011](doc/snowCards/nonfunctional/snowCardNonFuctional011.md)
 + [CRC-Cards](doc/CRC_Cards/crcCards.md)
-+ [class diagram](doc/Bestandteile_Abgabe/Klassendiagramm.vpd.png)
++ [class diagram](doc/Klassendiagramm.vpd.png)
 + use-case diagrams
 + sequence diagrams
-    + [sequence diagram 001](doc/Bestandteile_Abgabe/sequenzdiagram/SequenzDia.jpg)
-    + [sequence diagram 002](doc/Bestandteile_Abgabe/sequenzdiagram/SequenzDia2.jpg)
-    + [Sequence diagram 003](doc/Bestandteile_Abgabe/sequenzdiagram/SequenzDia3.jpg)
+    + [sequence diagram 001](doc/milestone4/sequenzdiagram/SequenzDia.jpg)
+    + [sequence diagram 002](doc/milestone4/sequenzdiagram/SequenzDia2.jpg)
+    + [sequence diagram 003](doc/milestone4/sequenzdiagram/SequenzDia3.jpg)
 + state diagrams
-    + [state diagram 001](doc/Bestandteile_Abgabe/statediagram/Zustandsdia.png)
-    + [state diagram 002](doc/Bestandteile_Abgabe/statediagram/Zustandsdia2.jpg)
-    + [state diagram 003](doc/Bestandteile_Abgabe/statediagram/Zustandsdia3.jpg)
+    + [state diagram 001](doc/milestone4/statediagram/Zustandsdia.png)
+    + [state diagram 002](doc/milestone4/statediagram/Zustandsdia2.jpg)
+    + [state diagram 003](doc/milestone4/statediagram/Zustandsdia3.jpg)
 
 ## Links :link:
 
