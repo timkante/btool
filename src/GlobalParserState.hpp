@@ -11,7 +11,6 @@
  * Global State of the Parser, looking for the next Element to parse (beginning with an '@')
  *
  * @brief Global Parser State
- * @extends AbstractParserState
  */
 class GlobalParserState : public AbstractParserState {
 public:

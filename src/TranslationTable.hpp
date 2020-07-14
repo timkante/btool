@@ -11,7 +11,7 @@
 
 /**
  * Handles interaction with the translation-table-file and does parsing of it
- * @brief interface to interact with translation-table resource
+ * @brief api to interact with translation-table resource
  */
 class TranslationTable {
     boost::property_tree::ptree contents; ///< @property pointer to parsed json-tree

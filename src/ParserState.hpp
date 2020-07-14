@@ -3,7 +3,6 @@
 
 /**
  * A parser state
- * @interface of a parser state
  */
 struct ParserState {
 

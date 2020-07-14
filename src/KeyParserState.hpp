@@ -11,7 +11,6 @@
  * Key State of the Parser, parsing the next key of the Bib-Elements properties
  *
  * @brief Key Parser State
- * @extends AbstractParserState
  */
 class KeyParserState : public AbstractParserState {
     std::string key; ///< @property a accumulator for key-characters while parsing it

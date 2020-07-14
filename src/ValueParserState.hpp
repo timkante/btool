@@ -13,7 +13,6 @@
  * Value State of the Parser, parsing the value of the last Bib-Elements properties key
  *
  * @brief Key Parser State
- * @extends AbstractParserState
  */
 class ValueParserState : public AbstractParserState {
     std::string value; ///< @property a accumulator for value-characters while parsing it

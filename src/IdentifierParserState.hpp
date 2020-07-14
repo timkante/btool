@@ -11,7 +11,6 @@
  * Identifier State of the Parser, parsing the identifier of the Bib-Element
  *
  * @brief Identifier Parser State
- * @extends AbstractParserState
  */
 class IdentifierParserState : public AbstractParserState {
     std::string identifier; ///< @property a accumulator for identifier-characters while parsing it

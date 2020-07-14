@@ -11,7 +11,6 @@
  * Style State of the Parser, parsing the style of the Bib-Element
  *
  * @brief Style Parser State
- * @extends AbstractParserState
  */
 class StyleParserState : public AbstractParserState {
     std::string style; ///< @property a accumulator for style-characters while parsing it

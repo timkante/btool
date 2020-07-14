@@ -9,7 +9,6 @@
 
 /**
  * Abstract Class with default-implementation of a ParserState
- * @implements ParserState
  */
 class AbstractParserState : public ParserState {
 protected:
