@@ -8,6 +8,6 @@ StyleProperties::StyleProperties(std::string name,
           requiredFields{std::move(requiredFields)},
           optionalFields{std::move(optionalFields)} {}
 
-auto StyleProperties::operator==(const StyleProperties &other) const -> bool {
+auto StyleProperties::operator==(const StyleProperties &other) const noexcept -> bool {
     return name == other.name && requiredFields == other.requiredFields && optionalFields == other.optionalFields;
 }

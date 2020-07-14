@@ -32,6 +32,16 @@ struct BibElement {
      * @return weather the element is compliant or not
      */
     [[nodiscard]] auto isCompliantTo(const StyleProperties &props) const -> bool;
+
+    /**
+     * Equality-Operator for two bib-elements
+     *
+     * @param other bib-element to compare with
+     * @return weather the two bib-elements are deeply equal
+     */
+    auto operator==(const BibElement &other) const noexcept -> bool;
 };
+
+auto operator<<(std::ostream &os, BibElement const &elem) -> std::ostream &;
 
 #endif

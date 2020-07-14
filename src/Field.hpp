@@ -2,6 +2,7 @@
 #define BIBPARSER_FIELD_HPP
 
 #include <string>
+#include <iostream>
 
 /**
  * Stores information of a Field of a bib-element
@@ -19,6 +20,16 @@ struct Field {
      * @param value Value of the Field
      */
     Field(std::string name, std::string value);
+
+    /**
+     * Equality-Operator for two fields
+     *
+     * @param other field to compare with
+     * @return weather the two fields are deeply equal
+     */
+    auto operator==(const Field &other) const noexcept -> bool;
 };
+
+auto operator<<(std::ostream &os, Field const &field) -> std::ostream &;
 
 #endif

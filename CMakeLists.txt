@@ -10,6 +10,7 @@ set(Boost_DEBUG 1)
 find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
 
 option(SONAR "Build all profiling-files." OFF)
+add_compile_options(-std=c++17)
 
 if (SONAR)
     add_compile_options(-Wall -Wextra -Wpedantic)
@@ -28,13 +29,32 @@ set(MAIN_SOURCES
         src/TranslationTable.cpp
         src/Field.cpp
         src/BibElement.cpp
-        src/StyleProperties.cpp)
+        src/StyleProperties.cpp
+        src/Parser.cpp
+        src/AbstractParserState.cpp
+        src/ParserException.hpp
+        src/StyleParserState.hpp
+        src/GlobalParserState.hpp
+        src/IdentifierParserState.hpp
+        src/KeyParserState.hpp
+        src/ValueParserState.hpp)
 
 set(MAIN_HEADERS
         src/TranslationTable.hpp
         src/Field.hpp
         src/BibElement.hpp
-        src/StyleProperties.hpp)
+        src/StyleProperties.hpp
+        src/Parser.hpp
+        src/AbstractParserState.hpp
+        src/ParserState.hpp
+        src/ParserContext.hpp
+        src/ParserException.cpp
+        src/StyleParserState.cpp
+        src/GlobalParserState.cpp
+        src/IdentifierParserState.cpp
+        src/KeyParserState.cpp
+        src/ValueParserState.cpp
+        src/ParserContext.cpp)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
