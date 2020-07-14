@@ -25,90 +25,90 @@ protected:
 };
 
 TEST_F(ParserStateTest, globalStateIgnoresEverythingButAt) {
-    auto file = R"(some
+    const auto file = R"(some
 non
 
 at_ characters)"s;
 
-    ParserState *globalState = new GlobalParserState{context, result};
+    ParserState *state = new GlobalParserState{context, result};
 
     ASSERT_NO_THROW([&]() {
         for (const auto c : file) {
-            globalState = globalState->handleCharacter(c);
+            state = state->handleCharacter(c);
         }
     }());
-    ASSERT_TRUE(isType<GlobalParserState>(globalState));
+    ASSERT_TRUE(isType<GlobalParserState>(state));
 
-    delete globalState;
+    delete state;
 }
 
 TEST_F(ParserStateTest, globalStateSwitchesToStyleAtAt) {
-    auto file = R"(some@)"s;
-    ParserState *globalState = new GlobalParserState{context, result};
+    const auto file = R"(some@)"s;
+    ParserState *state = new GlobalParserState{context, result};
 
     ASSERT_NO_THROW([&]() {
         for (const auto c : file) {
-            globalState = globalState->handleCharacter(c);
+            state = state->handleCharacter(c);
         }
     }());
-    ASSERT_FALSE(isType<GlobalParserState>(globalState));
-    ASSERT_TRUE(isType<StyleParserState>(globalState));
+    ASSERT_FALSE(isType<GlobalParserState>(state));
+    ASSERT_TRUE(isType<StyleParserState>(state));
 
-    delete globalState;
+    delete state;
 }
 
 TEST_F(ParserStateTest, styleParserStateFailsWithWhitespace) {
-    auto file = R"(here are spaces)"s;
-    ParserState *styleState = new StyleParserState{context, result};
+    const auto file = R"(here are spaces)"s;
+    ParserState *state = new StyleParserState{context, result};
 
     ASSERT_ANY_THROW([&]() {
         for (const auto c : file) {
-            styleState = styleState->handleCharacter(c);
+            state = state->handleCharacter(c);
         }
     }());
 
-    delete styleState;
+    delete state;
 }
 
 TEST_F(ParserStateTest, styleParserStateDontFailOnCorrectStyle) {
-    auto file = R"(thisIsAValidStyle)"s;
-    ParserState *styleState = new StyleParserState{context, result};
+    const auto file = R"(thisIsAValidStyle)"s;
+    ParserState *state = new StyleParserState{context, result};
 
     ASSERT_NO_THROW([&]() {
         for (const auto c : file) {
-            styleState = styleState->handleCharacter(c);
+            state = state->handleCharacter(c);
         }
     }());
 
-    ASSERT_TRUE(isType<StyleParserState>(styleState));
-    delete styleState;
+    ASSERT_TRUE(isType<StyleParserState>(state));
+    delete state;
 }
 
 TEST_F(ParserStateTest, styleParserStateSwitchesToIdentifierStateOnBrace) {
-    auto file = R"(thisIsAValidStyle{)"s;
-    ParserState *styleState = new StyleParserState{context, result};
+    const auto file = R"(thisIsAValidStyle{)"s;
+    ParserState *state = new StyleParserState{context, result};
 
     ASSERT_NO_THROW([&]() {
         for (const auto c : file) {
-            styleState = styleState->handleCharacter(c);
+            state = state->handleCharacter(c);
         }
     }());
 
-    ASSERT_FALSE(isType<StyleParserState>(styleState));
-    ASSERT_TRUE(isType<IdentifierParserState>(styleState));
-    delete styleState;
+    ASSERT_FALSE(isType<StyleParserState>(state));
+    ASSERT_TRUE(isType<IdentifierParserState>(state));
+    delete state;
 }
 
 TEST_F(ParserStateTest, globalStateCanGoToIdentifierState) {
-    auto file = R"(someUselessStuff @thisIsAValidStyle{)"s;
-    ParserState *styleState = new GlobalParserState{context, result};
+    const auto file = R"(someUselessStuff @thisIsAValidStyle{)"s;
+    ParserState *state = new GlobalParserState{context, result};
 
     ASSERT_NO_THROW([&]() {
         for (const auto c : file) {
-            styleState = styleState->handleCharacter(c);
+            state = state->handleCharacter(c);
         }
     }());
 
-    ASSERT_TRUE(isType<IdentifierParserState>(styleState));
-    delete styleState;
+    ASSERT_TRUE(isType<IdentifierParserState>(state));
+    delete state;
 }
