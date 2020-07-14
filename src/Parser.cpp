@@ -30,7 +30,7 @@ auto Parser::elementsOf(std::string_view input, const std::string &filename) -> 
     ParserContext context(filename);
     std::vector<BibElement> result;
     try {
-        delete std::reduce<std::string_view::iterator, ParserState *>(
+        delete std::accumulate<std::string_view::iterator, ParserState *>(
                 std::cbegin(input),
                 std::cend(input),
                 new GlobalParserState{context, result},
