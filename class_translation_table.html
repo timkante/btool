@@ -66,6 +66,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_translation_table-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TranslationTable Class Reference</div>  </div>
@@ -83,7 +84,13 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_translation_table__coll__graph.png" border="0" usemap="#_translation_table_coll__map" alt="Collaboration graph"/></div>
 <map name="_translation_table_coll__map" id="_translation_table_coll__map">
-<area shape="rect" title="api to interact with translation&#45;table resource" alt="" coords="5,5,204,171"/>
+<area shape="rect" title="api to interact with translation&#45;table resource" alt="" coords="131,751,329,916"/>
+<area shape="rect" title=" " alt="" coords="5,611,268,688"/>
+<area shape="rect" href="struct_style_properties.html" title="style&#45;properties&#45;container" alt="" coords="49,441,224,548"/>
+<area shape="rect" title="STL class." alt="" coords="81,147,192,224"/>
+<area shape="rect" title=" " alt="" coords="189,287,420,364"/>
+<area shape="rect" title="STL class." alt="" coords="53,5,220,97"/>
+<area shape="rect" title=" " alt="" coords="292,611,355,688"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -109,6 +116,15 @@ Private Member Functions</h2></td></tr>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a0d59fafb3f20e03734c2274a0d2bfcb3"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#a0d59fafb3f20e03734c2274a0d2bfcb3">parseStyle</a> (const boost::property_tree::ptree &amp;style) noexcept -&gt; <a class="el" href="struct_style_properties.html">StyleProperties</a></td></tr>
 <tr class="separator:a0d59fafb3f20e03734c2274a0d2bfcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a610fe9b196089c8c9b08499837b6be27"><td class="memItemLeft" align="right" valign="top">boost::property_tree::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#a610fe9b196089c8c9b08499837b6be27">contents</a></td></tr>
+<tr class="memdesc:a610fe9b196089c8c9b08499837b6be27"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to parsed json-tree  <a href="class_translation_table.html#a610fe9b196089c8c9b08499837b6be27">More...</a><br /></td></tr>
+<tr class="separator:a610fe9b196089c8c9b08499837b6be27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08201d7b4380b7276de749d0917f01f5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_style_properties.html">StyleProperties</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#a08201d7b4380b7276de749d0917f01f5">styleProperties</a></td></tr>
+<tr class="memdesc:a08201d7b4380b7276de749d0917f01f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">parsed style-properties  <a href="class_translation_table.html#a08201d7b4380b7276de749d0917f01f5">More...</a><br /></td></tr>
+<tr class="separator:a08201d7b4380b7276de749d0917f01f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>api to interact with translation-table resource </p>
@@ -320,6 +336,55 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>(maybe) the properties for the style - None if there are none </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a610fe9b196089c8c9b08499837b6be27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a610fe9b196089c8c9b08499837b6be27">&#9670;&nbsp;</a></span>contents</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::property_tree::ptree TranslationTable::contents</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>pointer to parsed json-tree </p>
+
+</div>
+</div>
+<a id="a08201d7b4380b7276de749d0917f01f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08201d7b4380b7276de749d0917f01f5">&#9670;&nbsp;</a></span>styleProperties</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="struct_style_properties.html">StyleProperties</a>&gt; TranslationTable::styleProperties</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>parsed style-properties </p>
 
 </div>
 </div>

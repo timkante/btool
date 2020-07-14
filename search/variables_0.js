@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['not_137',['not',['../_l_i_c_e_n_s_e_8txt.html#a794d8ac15036e587c40267629fb767ec',1,'LICENSE.txt']]]
+  ['attributes_156',['attributes',['../struct_bib_element.html#a2d735d0621a36f8e88cb1d785c08adbb',1,'BibElement']]]
 ];

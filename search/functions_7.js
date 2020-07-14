@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['identifierparserstate_118',['IdentifierParserState',['../class_identifier_parser_state.html#afdd08b7824033845c43fa297c4cc2288',1,'IdentifierParserState']]],
-  ['iscompliantto_119',['isCompliantTo',['../struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a',1,'BibElement']]]
+  ['identifierparserstate_137',['IdentifierParserState',['../class_identifier_parser_state.html#afdd08b7824033845c43fa297c4cc2288',1,'IdentifierParserState']]],
+  ['iscompliantto_138',['isCompliantTo',['../struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a',1,'BibElement']]]
 ];

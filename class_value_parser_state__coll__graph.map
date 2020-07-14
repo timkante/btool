@@ -1,5 +1,15 @@
 <map id="ValueParserState" name="ValueParserState">
-<area shape="rect" id="node1" title="Key Parser State." alt="" coords="17,300,200,392"/>
-<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="5,145,212,252"/>
-<area shape="rect" id="node3" href="$struct_parser_state.html" title=" " alt="" coords="21,5,196,97"/>
+<area shape="rect" id="node1" title="Key Parser State." alt="" coords="278,1104,461,1196"/>
+<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="266,935,473,1041"/>
+<area shape="rect" id="node3" href="$struct_parser_state.html" title=" " alt="" coords="289,780,463,872"/>
+<area shape="rect" id="node4" title=" " alt="" coords="42,787,265,865"/>
+<area shape="rect" id="node5" href="$struct_bib_element.html" title="bib&#45;element&#45;Container" alt="" coords="87,611,246,717"/>
+<area shape="rect" id="node6" title=" " alt="" coords="54,471,237,548"/>
+<area shape="rect" id="node7" href="$struct_field.html" title="Field&#45;Container." alt="" coords="94,301,229,393"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="181,147,291,224"/>
+<area shape="rect" id="node10" href="$struct_parser_context.html" title=" " alt="" coords="387,309,546,386"/>
+<area shape="rect" id="node9" title="STL class." alt="" coords="153,5,319,97"/>
+<area shape="rect" id="node11" title=" " alt="" coords="431,147,502,224"/>
+<area shape="rect" id="node12" title=" " alt="" coords="497,942,759,1034"/>
+<area shape="rect" id="node13" title=" " alt="" coords="545,780,711,872"/>
 </map>

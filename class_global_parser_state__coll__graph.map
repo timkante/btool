@@ -1,5 +1,13 @@
 <map id="GlobalParserState" name="GlobalParserState">
-<area shape="rect" id="node1" title="Global Parser State." alt="" coords="13,300,204,392"/>
-<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="5,145,212,252"/>
-<area shape="rect" id="node3" href="$struct_parser_state.html" title=" " alt="" coords="21,5,196,97"/>
+<area shape="rect" id="node1" title="Global Parser State." alt="" coords="123,1091,313,1183"/>
+<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="115,935,321,1041"/>
+<area shape="rect" id="node3" href="$struct_parser_state.html" title=" " alt="" coords="5,780,180,872"/>
+<area shape="rect" id="node4" title=" " alt="" coords="269,787,492,865"/>
+<area shape="rect" id="node5" href="$struct_bib_element.html" title="bib&#45;element&#45;Container" alt="" coords="316,611,475,717"/>
+<area shape="rect" id="node6" title=" " alt="" coords="407,471,589,548"/>
+<area shape="rect" id="node7" href="$struct_field.html" title="Field&#45;Container." alt="" coords="419,301,553,393"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="313,147,424,224"/>
+<area shape="rect" id="node10" href="$struct_parser_context.html" title=" " alt="" coords="139,309,297,386"/>
+<area shape="rect" id="node9" title="STL class." alt="" coords="285,5,452,97"/>
+<area shape="rect" id="node11" title=" " alt="" coords="136,147,207,224"/>
 </map>

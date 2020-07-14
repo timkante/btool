@@ -1,3 +1,10 @@
 <map id="Parser" name="Parser">
-<area shape="rect" id="node1" title="interface to interact with bib&#45;files" alt="" coords="5,5,140,141"/>
+<area shape="rect" id="node1" title="interface to interact with bib&#45;files" alt="" coords="5,979,140,1115"/>
+<area shape="rect" id="node2" href="$class_translation_table.html" title="api to interact with translation&#45;table resource" alt="" coords="121,751,320,916"/>
+<area shape="rect" id="node3" title=" " alt="" coords="89,611,352,688"/>
+<area shape="rect" id="node4" href="$struct_style_properties.html" title="style&#45;properties&#45;container" alt="" coords="133,441,308,548"/>
+<area shape="rect" id="node5" title="STL class." alt="" coords="57,147,168,224"/>
+<area shape="rect" id="node7" title=" " alt="" coords="187,287,417,364"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="29,5,196,97"/>
+<area shape="rect" id="node8" title=" " alt="" coords="376,611,439,688"/>
 </map>
