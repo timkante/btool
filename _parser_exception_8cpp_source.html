@@ -99,22 +99,25 @@ $(document).ready(function(){initNavTree('_parser_exception_8cpp_source.html',''
 <a href="_parser_exception_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_parser_exception_8hpp.html">ParserException.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0">   10</a></span>&#160;<a class="code" href="struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0">ParserException::ParserException</a>(<a class="code" href="class_abstract_parser_state.html">AbstractParserState</a> *state, <span class="keyword">const</span> <a class="code" href="struct_parser_context.html">ParserContext</a> &amp;context, <span class="keyword">const</span> std::string &amp;message)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    : std::runtime_error{<span class="stringliteral">&quot;&quot;</span>},</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;      state{state},</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      context{context},</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      message{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;          context.filename + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(context.line)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;              + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(context.column) + <span class="stringliteral">&quot; - &quot;</span> + message</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      } {}</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">   23</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">ParserException::what</a>() const noexcept -&gt; const <span class="keywordtype">char</span> * {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="struct_parser_exception.html#afa2ba019c914f4c5bd737249ef9f1863">message</a>.c_str();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0">   10</a></span>&#160;<a class="code" href="struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0">ParserException::ParserException</a>(</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_abstract_parser_state.html">AbstractParserState</a> *state,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">const</span> <a class="code" href="struct_parser_context.html">ParserContext</a> &amp;context,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">const</span> std::string &amp;message</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;) : std::runtime_error{<span class="stringliteral">&quot;&quot;</span>},</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    state{state},</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    context{context},</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    message{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        context.filename + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(context.line)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(context.column) + <span class="stringliteral">&quot; - &quot;</span> + message</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    } {}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">   26</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">ParserException::what</a>() const noexcept -&gt; const <span class="keywordtype">char</span> * {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="struct_parser_exception.html#afa2ba019c914f4c5bd737249ef9f1863">message</a>.c_str();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_abstract_parser_state_html"><div class="ttname"><a href="class_abstract_parser_state.html">AbstractParserState</a></div><div class="ttdef"><b>Definition:</b> <a href="_abstract_parser_state_8hpp_source.html#l00013">AbstractParserState.hpp:13</a></div></div>
-<div class="ttc" id="astruct_parser_exception_html_adb92ebe08d65960ecc78c37c5e150d5d"><div class="ttname"><a href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">ParserException::what</a></div><div class="ttdeci">auto what() const noexcept -&gt; const char *override</div><div class="ttdef"><b>Definition:</b> <a href="_parser_exception_8cpp_source.html#l00023">ParserException.cpp:23</a></div></div>
+<div class="ttc" id="astruct_parser_exception_html_adb92ebe08d65960ecc78c37c5e150d5d"><div class="ttname"><a href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">ParserException::what</a></div><div class="ttdeci">auto what() const noexcept -&gt; const char *override</div><div class="ttdef"><b>Definition:</b> <a href="_parser_exception_8cpp_source.html#l00026">ParserException.cpp:26</a></div></div>
 <div class="ttc" id="astruct_parser_context_html"><div class="ttname"><a href="struct_parser_context.html">ParserContext</a></div><div class="ttdef"><b>Definition:</b> <a href="_parser_context_8hpp_source.html#l00010">ParserContext.hpp:10</a></div></div>
 <div class="ttc" id="a_parser_exception_8hpp_html"><div class="ttname"><a href="_parser_exception_8hpp.html">ParserException.hpp</a></div></div>
 <div class="ttc" id="astruct_parser_exception_html_a01837b3f67eeb3045df6a29dff3cbec0"><div class="ttname"><a href="struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0">ParserException::ParserException</a></div><div class="ttdeci">ParserException(AbstractParserState *state, const ParserContext &amp;context, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_parser_exception_8cpp_source.html#l00010">ParserException.cpp:10</a></div></div>

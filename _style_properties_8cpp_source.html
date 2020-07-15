@@ -99,8 +99,10 @@ $(document).ready(function(){initNavTree('_style_properties_8cpp_source.html',''
 <a href="_style_properties_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_style_properties_8hpp.html">StyleProperties.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="struct_style_properties.html#ad1644141edb4d3c751e4e55ff890c7e9">    8</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_style_properties.html#ad1644141edb4d3c751e4e55ff890c7e9">StyleProperties::operator==</a>(<span class="keyword">const</span> <a class="code" href="struct_style_properties.html">StyleProperties</a> &amp;other) <span class="keyword">const</span> noexcept -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">return</span> name == other.name &amp;&amp; requiredFields == other.requiredFields &amp;&amp; optionalFields == other.optionalFields;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">return</span> name == other.name</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;      &amp;&amp; requiredFields == other.requiredFields</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;      &amp;&amp; optionalFields == other.optionalFields;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astruct_style_properties_html"><div class="ttname"><a href="struct_style_properties.html">StyleProperties</a></div><div class="ttdoc">style-properties-container</div><div class="ttdef"><b>Definition:</b> <a href="_style_properties_8hpp_source.html#l00011">StyleProperties.hpp:11</a></div></div>
