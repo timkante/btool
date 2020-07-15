@@ -59,13 +59,13 @@ auto TranslationTable::printAll(std::ostream &out) const -> void {
  */
 auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties {
   const auto parseConstraintNode = [](const boost::property_tree::ptree &node) {
-    std::vector<std::string> fields;
+    std::unordered_set<std::string> fields;
     std::for_each(std::cbegin(node),
                   std::cend(node),
                   [&fields](const boost::property_tree::ptree::value_type &field) {
                     const std::string title = field.second.data();
                     if (!title.empty()) {
-                      fields.emplace_back(title);
+                      fields.insert(title);
                     }
                   });
     return fields;
@@ -80,9 +80,9 @@ auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) noex
 
   return {name ? std::string{name.value().data()} : "",
           requiredFieldsNode ? parseConstraintNode(requiredFieldsNode.value())
-                             : std::vector<std::string>{},
+                             : std::unordered_set<std::string>{},
           optionalFieldsNode ? parseConstraintNode(optionalFieldsNode.value())
-                             : std::vector<std::string>{}};
+                             : std::unordered_set<std::string>{}};
 }
 
 /**

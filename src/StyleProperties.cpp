@@ -1,5 +1,4 @@
 #include <StyleProperties.hpp>
-#include <utility>
 
 /**
  * Equality-Operator for two style-properties

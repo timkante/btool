@@ -9,19 +9,21 @@ TEST(StylePropertiesTests, noArgConstructionTest) {
 }
 
 TEST(StylePropertiesTests, constructionTest) {
-  std::vector<std::string> required = {
+  std::unordered_set<std::string> required = {
       "first name"s,
       "second name"s
   };
-  std::vector<std::string> optional = {
+  std::unordered_set<std::string> optional = {
       "first name"s,
       "second name"s
   };
-  ASSERT_NO_THROW((StyleProperties{"a name"s, required, optional}));
+  ASSERT_NO_THROW(([&](){
+    const StyleProperties a{"a name"s, required, optional};
+  }()));
 }
 
 TEST(StylePropertiesTests, equalityOperatorTest) {
   const auto first = StyleProperties{"name"s, {"a"s, "b"s, "c"s}, {"a"s, "b"s, "c"s}};
-  const auto second = StyleProperties{"name"s, {"a"s, "b"s, "c"s}, {"a"s, "b"s, "c"s}};
+  const auto second = StyleProperties{"name"s, {"a"s, "c"s, "b"s}, {"c"s, "b"s, "a"s}};
   ASSERT_NO_THROW(ASSERT_EQ(first, second));
 }
