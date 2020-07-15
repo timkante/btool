@@ -1,10 +1,10 @@
 <map id="ParserException" name="ParserException">
-<area shape="rect" id="node1" title=" " alt="" coords="188,456,363,548"/>
-<area shape="rect" id="node2" title="STL class." alt="" coords="5,309,172,386"/>
-<area shape="rect" id="node3" title="STL class." alt="" coords="21,147,156,224"/>
-<area shape="rect" id="node4" href="$struct_parser_context.html" title=" " alt="" coords="319,309,477,386"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="204,147,315,224"/>
-<area shape="rect" id="node6" title="STL class." alt="" coords="176,5,343,97"/>
-<area shape="rect" id="node7" title=" " alt="" coords="363,147,433,224"/>
-<area shape="rect" id="node8" href="$struct_parser_state.html" title=" " alt="" coords="501,301,676,393"/>
+<area shape="rect" id="node1" title=" " alt="" coords="157,456,291,548"/>
+<area shape="rect" id="node2" title="STL class." alt="" coords="5,309,128,386"/>
+<area shape="rect" id="node3" title="STL class." alt="" coords="16,147,117,224"/>
+<area shape="rect" id="node4" href="$struct_parser_context.html" title=" " alt="" coords="265,309,388,386"/>
+<area shape="rect" id="node5" title="STL class." alt="" coords="169,147,247,224"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="146,5,270,97"/>
+<area shape="rect" id="node7" title=" " alt="" coords="299,147,355,224"/>
+<area shape="rect" id="node8" href="$struct_parser_state.html" title=" " alt="" coords="413,301,547,393"/>
 </map>

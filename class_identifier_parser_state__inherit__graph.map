@@ -1,5 +1,5 @@
 <map id="IdentifierParserState" name="IdentifierParserState">
-<area shape="rect" id="node1" title="Identifier Parser State." alt="" coords="5,315,228,407"/>
-<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="13,145,220,267"/>
-<area shape="rect" id="node3" href="$struct_parser_state.html" title=" " alt="" coords="29,5,204,97"/>
+<area shape="rect" id="node1" title="Identifier Parser State." alt="" coords="5,315,164,407"/>
+<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="5,145,164,267"/>
+<area shape="rect" id="node3" href="$struct_parser_state.html" title=" " alt="" coords="17,5,152,97"/>
 </map>

@@ -1,11 +1,11 @@
 <map id="src/BibElement.cpp" name="src/BibElement.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="324,5,491,32"/>
-<area shape="rect" id="node2" href="$_style_properties_8hpp.html" title=" " alt="" coords="24,155,199,181"/>
-<area shape="rect" id="node5" href="$_bib_element_8hpp.html" title=" " alt="" coords="170,80,304,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="330,229,416,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="446,80,540,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="564,80,643,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="202,229,272,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="14,229,84,256"/>
-<area shape="rect" id="node6" href="$_field_8hpp.html" title=" " alt="" coords="275,155,370,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="279,5,414,32"/>
+<area shape="rect" id="node2" href="$_style_properties_8hpp.html" title=" " alt="" coords="25,155,159,181"/>
+<area shape="rect" id="node5" href="$_bib_element_8hpp.html" title=" " alt="" coords="141,80,253,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="280,229,352,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="384,80,459,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="483,80,535,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="170,229,225,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="11,229,69,256"/>
+<area shape="rect" id="node6" href="$_field_8hpp.html" title=" " alt="" coords="235,155,309,181"/>
 </map>

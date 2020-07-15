@@ -1,6 +1,6 @@
 <map id="Parser::generate" name="Parser::generate">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,156,57"/>
-<area shape="rect" id="node2" href="$class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea" title=" " alt="" coords="204,31,371,57"/>
-<area shape="rect" id="node3" href="$struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4" title=" " alt="" coords="419,5,665,32"/>
-<area shape="rect" id="node4" href="$struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d" title=" " alt="" coords="447,56,637,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,121,57"/>
+<area shape="rect" id="node2" href="$class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea" title=" " alt="" coords="169,31,303,57"/>
+<area shape="rect" id="node3" href="$struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4" title=" " alt="" coords="351,5,541,32"/>
+<area shape="rect" id="node4" href="$struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d" title=" " alt="" coords="371,56,521,83"/>
 </map>

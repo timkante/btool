@@ -1,7 +1,7 @@
 <map id="BibElement" name="BibElement">
-<area shape="rect" id="node1" title="bib&#45;element&#45;Container" alt="" coords="9,611,168,717"/>
-<area shape="rect" id="node2" title=" " alt="" coords="105,471,288,548"/>
-<area shape="rect" id="node3" href="$struct_field.html" title="Field&#45;Container." alt="" coords="117,301,252,393"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="33,147,144,224"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="5,5,172,97"/>
+<area shape="rect" id="node1" title="bib&#45;element&#45;Container" alt="" coords="5,611,129,717"/>
+<area shape="rect" id="node2" title=" " alt="" coords="84,471,216,548"/>
+<area shape="rect" id="node3" href="$struct_field.html" title="Field&#45;Container." alt="" coords="90,301,194,393"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="28,147,107,224"/>
+<area shape="rect" id="node5" title="STL class." alt="" coords="5,5,129,97"/>
 </map>

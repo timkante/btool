@@ -1,9 +1,9 @@
 <map id="AbstractParserState" name="AbstractParserState">
-<area shape="rect" id="node1" title=" " alt="" coords="451,145,657,267"/>
-<area shape="rect" id="node3" href="$class_global_parser_state.html" title="Global Parser State." alt="" coords="5,322,196,414"/>
-<area shape="rect" id="node4" href="$class_identifier_parser_state.html" title="Identifier Parser State." alt="" coords="220,322,443,414"/>
-<area shape="rect" id="node5" href="$class_key_parser_state.html" title="Key Parser State." alt="" coords="467,322,641,414"/>
-<area shape="rect" id="node6" href="$class_style_parser_state.html" title="Style Parser State." alt="" coords="665,322,848,414"/>
-<area shape="rect" id="node7" href="$class_value_parser_state.html" title="Key Parser State." alt="" coords="872,315,1055,421"/>
-<area shape="rect" id="node2" href="$struct_parser_state.html" title=" " alt="" coords="467,5,641,97"/>
+<area shape="rect" id="node1" title=" " alt="" coords="347,145,506,267"/>
+<area shape="rect" id="node3" href="$class_global_parser_state.html" title="Global Parser State." alt="" coords="5,322,152,414"/>
+<area shape="rect" id="node4" href="$class_identifier_parser_state.html" title="Identifier Parser State." alt="" coords="177,322,335,414"/>
+<area shape="rect" id="node5" href="$class_key_parser_state.html" title="Key Parser State." alt="" coords="359,322,494,414"/>
+<area shape="rect" id="node6" href="$class_style_parser_state.html" title="Style Parser State." alt="" coords="519,322,657,414"/>
+<area shape="rect" id="node7" href="$class_value_parser_state.html" title="Key Parser State." alt="" coords="682,315,825,421"/>
+<area shape="rect" id="node2" href="$struct_parser_state.html" title=" " alt="" coords="359,5,494,97"/>
 </map>
