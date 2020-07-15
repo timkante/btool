@@ -140,7 +140,7 @@ var NAVTREEINDEX0 =
 "struct_bib_element.html#a33e781d95e3e494f31f6dfd2b5f61613":[0,10,1,4],
 "struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a":[0,10,1,1],
 "struct_bib_element.html#ab93dff716574c52a57b094c4b698a479":[0,10,1,5],
-"struct_bib_element.html#affebc06e40b9539ee6c8c130a6327f6f":[0,10,1,0],
+"struct_bib_element.html#ae3974beaa2bd5264a02427602fc2a623":[0,10,1,0],
 "struct_field.html":[0,10,2],
 "struct_field.html#a70997ea8176bc81041379bec3962f8e7":[0,10,2,2],
 "struct_field.html#a8357e2110b633c63659612a147880486":[0,10,2,0],

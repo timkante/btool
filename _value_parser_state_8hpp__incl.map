@@ -1,16 +1,17 @@
 <map id="src/ValueParserState.hpp" name="src/ValueParserState.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="427,5,597,32"/>
-<area shape="rect" id="node2" href="$_abstract_parser_state_8hpp.html" title=" " alt="" coords="287,80,451,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,229,64,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="365,304,419,331"/>
-<area shape="rect" id="node5" href="$_bib_element_8hpp.html" title=" " alt="" coords="123,155,235,181"/>
-<area shape="rect" id="node11" href="$_parser_context_8hpp.html" title=" " alt="" coords="448,155,576,181"/>
-<area shape="rect" id="node13" title=" " alt="" coords="651,80,711,107"/>
-<area shape="rect" id="node14" title=" " alt="" coords="735,80,790,107"/>
-<area shape="rect" id="node10" href="$_parser_state_8hpp.html" title=" " alt="" coords="259,155,373,181"/>
-<area shape="rect" id="node6" href="$_style_properties_8hpp.html" title=" " alt="" coords="89,229,223,256"/>
-<area shape="rect" id="node8" href="$_field_8hpp.html" title=" " alt="" coords="248,229,323,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="104,304,208,331"/>
-<area shape="rect" id="node9" title=" " alt="" coords="249,304,321,331"/>
-<area shape="rect" id="node12" title=" " alt="" coords="449,229,514,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="536,5,707,32"/>
+<area shape="rect" id="node2" href="$_abstract_parser_state_8hpp.html" title=" " alt="" coords="318,80,482,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="456,229,515,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="366,304,421,331"/>
+<area shape="rect" id="node5" href="$_bib_element_8hpp.html" title=" " alt="" coords="131,155,243,181"/>
+<area shape="rect" id="node12" href="$_parser_context_8hpp.html" title=" " alt="" coords="557,155,685,181"/>
+<area shape="rect" id="node14" title=" " alt="" coords="761,80,821,107"/>
+<area shape="rect" id="node15" title=" " alt="" coords="845,80,899,107"/>
+<area shape="rect" id="node11" href="$_parser_state_8hpp.html" title=" " alt="" coords="267,155,381,181"/>
+<area shape="rect" id="node6" href="$_style_properties_8hpp.html" title=" " alt="" coords="195,229,330,256"/>
+<area shape="rect" id="node8" href="$_field_8hpp.html" title=" " alt="" coords="96,229,171,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="5,229,72,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="211,304,315,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="97,304,169,331"/>
+<area shape="rect" id="node13" title=" " alt="" coords="590,229,655,256"/>
 </map>

@@ -126,8 +126,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a92a0d0a9429d2a7b6ba031db226e779a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fd69e4fbd9943c7f92d39041af1183b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b">operator==</a> (const <a class="el" href="struct_bib_element.html">BibElement</a> &amp;other) const noexcept -&gt; bool</td></tr>
 <tr class="separator:a2fd69e4fbd9943c7f92d39041af1183b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affebc06e40b9539ee6c8c130a6327f6f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#affebc06e40b9539ee6c8c130a6327f6f">findAttribute</a> (const std::string &amp;key) const noexcept -&gt; std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt;::const_iterator</td></tr>
-<tr class="separator:affebc06e40b9539ee6c8c130a6327f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3974beaa2bd5264a02427602fc2a623"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#ae3974beaa2bd5264a02427602fc2a623">findAttribute</a> (const std::string &amp;key) const noexcept -&gt; std::optional&lt; <a class="el" href="struct_field.html">Field</a> &gt;</td></tr>
+<tr class="separator:ae3974beaa2bd5264a02427602fc2a623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -145,10 +145,10 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>bib-element-Container </p>
 <p>Stores information of a bib-element </p>
 
-<p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00013">13</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00014">14</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="affebc06e40b9539ee6c8c130a6327f6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affebc06e40b9539ee6c8c130a6327f6f">&#9670;&nbsp;</a></span>findAttribute()</h2>
+<a id="ae3974beaa2bd5264a02427602fc2a623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3974beaa2bd5264a02427602fc2a623">&#9670;&nbsp;</a></span>findAttribute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +161,7 @@ Public Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const -&gt; std::vector&lt;<a class="el" href="struct_field.html">Field</a>&gt;::const_iterator</td>
+          <td> const -&gt; std::optional&lt;<a class="el" href="struct_field.html">Field</a>&gt;</td>
         </tr>
       </table>
   </td>
@@ -176,18 +176,18 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>iterator to the found field (or attributes.end() if not found) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the field (or none if not found) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_bib_element_8cpp_source.html#l00042">42</a> of file <a class="el" href="_bib_element_8cpp_source.html">BibElement.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_parser_8cpp_source.html#l00048">Parser::generate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_parser_8cpp_source.html#l00050">Parser::generate()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="struct_bib_element_affebc06e40b9539ee6c8c130a6327f6f_icgraph.png" border="0" usemap="#struct_bib_element_affebc06e40b9539ee6c8c130a6327f6f_icgraph" alt=""/></div>
-<map name="struct_bib_element_affebc06e40b9539ee6c8c130a6327f6f_icgraph" id="struct_bib_element_affebc06e40b9539ee6c8c130a6327f6f_icgraph">
+<div class="center"><img src="struct_bib_element_ae3974beaa2bd5264a02427602fc2a623_icgraph.png" border="0" usemap="#struct_bib_element_ae3974beaa2bd5264a02427602fc2a623_icgraph" alt=""/></div>
+<map name="struct_bib_element_ae3974beaa2bd5264a02427602fc2a623_icgraph" id="struct_bib_element_ae3974beaa2bd5264a02427602fc2a623_icgraph">
 <area shape="rect" title=" " alt="" coords="169,5,332,32"/>
 <area shape="rect" href="class_parser.html#aee21df11a2740e7af754c2e717b76f80" title=" " alt="" coords="5,5,121,32"/>
 </map>
@@ -272,9 +272,7 @@ Public Attributes</h2></td></tr>
 
 <p>the attributes of the element </p>
 
-<p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00016">16</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_parser_8cpp_source.html#l00048">Parser::generate()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00017">17</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
 
 </div>
 </div>
@@ -292,7 +290,7 @@ Public Attributes</h2></td></tr>
 
 <p>the elements (unique) id </p>
 
-<p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00014">14</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00015">15</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
 
 </div>
 </div>
@@ -310,9 +308,9 @@ Public Attributes</h2></td></tr>
 
 <p>the style-name of the element </p>
 
-<p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00015">15</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00016">16</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_parser_8cpp_source.html#l00048">Parser::generate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_parser_8cpp_source.html#l00050">Parser::generate()</a>.</p>
 
 </div>
 </div>

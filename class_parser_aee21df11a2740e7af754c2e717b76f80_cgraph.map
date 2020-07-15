@@ -1,7 +1,7 @@
 <map id="Parser::generate" name="Parser::generate">
 <area shape="rect" id="node1" title=" " alt="" coords="5,56,121,83"/>
 <area shape="rect" id="node2" href="$class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea" title=" " alt="" coords="184,31,317,57"/>
-<area shape="rect" id="node5" href="$struct_bib_element.html#affebc06e40b9539ee6c8c130a6327f6f" title=" " alt="" coords="169,81,332,108"/>
+<area shape="rect" id="node5" href="$struct_bib_element.html#ae3974beaa2bd5264a02427602fc2a623" title=" " alt="" coords="169,81,332,108"/>
 <area shape="rect" id="node3" href="$struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4" title=" " alt="" coords="380,5,571,32"/>
 <area shape="rect" id="node4" href="$struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d" title=" " alt="" coords="400,56,551,83"/>
 </map>
