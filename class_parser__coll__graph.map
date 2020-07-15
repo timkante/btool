@@ -1,10 +1,10 @@
 <map id="Parser" name="Parser">
-<area shape="rect" id="node1" title="interface to interact with bib&#45;files" alt="" coords="5,949,109,1085"/>
-<area shape="rect" id="node2" href="$class_translation_table.html" title="api to interact with translation&#45;table resource" alt="" coords="96,721,243,887"/>
-<area shape="rect" id="node3" title=" " alt="" coords="73,581,265,659"/>
-<area shape="rect" id="node4" href="$struct_style_properties.html" title="style&#45;properties&#45;container" alt="" coords="114,441,225,519"/>
+<area shape="rect" id="node1" title="interface to interact with bib&#45;files" alt="" coords="5,964,109,1100"/>
+<area shape="rect" id="node2" href="$class_translation_table.html" title="api to interact with translation&#45;table resource" alt="" coords="96,736,243,901"/>
+<area shape="rect" id="node3" title=" " alt="" coords="73,596,265,673"/>
+<area shape="rect" id="node4" href="$struct_style_properties.html" title="style&#45;properties&#45;container" alt="" coords="114,456,225,533"/>
 <area shape="rect" id="node5" title="STL class." alt="" coords="58,147,137,224"/>
-<area shape="rect" id="node7" title=" " alt="" coords="165,287,325,364"/>
+<area shape="rect" id="node7" title=" " alt="" coords="165,287,293,379"/>
 <area shape="rect" id="node6" title="STL class." alt="" coords="35,5,159,97"/>
-<area shape="rect" id="node8" title=" " alt="" coords="289,581,340,659"/>
+<area shape="rect" id="node8" title=" " alt="" coords="289,596,340,673"/>
 </map>

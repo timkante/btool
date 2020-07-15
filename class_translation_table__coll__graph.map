@@ -1,9 +1,9 @@
 <map id="TranslationTable" name="TranslationTable">
-<area shape="rect" id="node1" title="api to interact with translation&#45;table resource" alt="" coords="111,721,257,887"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,581,197,659"/>
-<area shape="rect" id="node3" href="$struct_style_properties.html" title="style&#45;properties&#45;container" alt="" coords="46,441,157,519"/>
+<area shape="rect" id="node1" title="api to interact with translation&#45;table resource" alt="" coords="111,736,257,901"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,596,197,673"/>
+<area shape="rect" id="node3" href="$struct_style_properties.html" title="style&#45;properties&#45;container" alt="" coords="46,456,157,533"/>
 <area shape="rect" id="node4" title="STL class." alt="" coords="62,147,141,224"/>
-<area shape="rect" id="node6" title=" " alt="" coords="148,287,308,364"/>
+<area shape="rect" id="node6" title=" " alt="" coords="148,287,276,379"/>
 <area shape="rect" id="node5" title="STL class." alt="" coords="39,5,163,97"/>
-<area shape="rect" id="node7" title=" " alt="" coords="221,581,272,659"/>
+<area shape="rect" id="node7" title=" " alt="" coords="221,596,272,673"/>
 </map>

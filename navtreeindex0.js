@@ -161,7 +161,7 @@ var NAVTREEINDEX0 =
 "struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4":[0,10,9,1],
 "struct_style_properties.html":[0,10,11],
 "struct_style_properties.html#a0f6d8f962c2e59059f255737980a9aa4":[0,10,11,1],
-"struct_style_properties.html#a4be04c469a31eb8ca9492d5cffe68094":[0,10,11,3],
-"struct_style_properties.html#a660b16d0e82e8cc17b1e166edd542c54":[0,10,11,2],
+"struct_style_properties.html#a548cf8be3a9b65478e2da7dde22b63af":[0,10,11,2],
+"struct_style_properties.html#a7c845cb6b6f3401424db9652ebbdd066":[0,10,11,3],
 "struct_style_properties.html#ad1644141edb4d3c751e4e55ff890c7e9":[0,10,11,0]
 };

@@ -138,13 +138,13 @@ $(document).ready(function(){initNavTree('_translation_table_8cpp_source.html','
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_translation_table.html#a0d59fafb3f20e03734c2274a0d2bfcb3">   60</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="class_translation_table.html#a0d59fafb3f20e03734c2274a0d2bfcb3">TranslationTable::parseStyle</a>(<span class="keyword">const</span> boost::property_tree::ptree &amp;style) noexcept -&gt; <a class="code" href="struct_style_properties.html">StyleProperties</a> {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> parseConstraintNode = [](<span class="keyword">const</span> boost::property_tree::ptree &amp;node) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::vector&lt;std::string&gt; fields;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::unordered_set&lt;std::string&gt; fields;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::for_each(std::cbegin(node),</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                  std::cend(node),</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                  [&amp;fields](<span class="keyword">const</span> boost::property_tree::ptree::value_type &amp;field) {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keyword">const</span> std::string title = field.second.data();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="keywordflow">if</span> (!title.empty()) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                      fields.emplace_back(title);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                      fields.insert(title);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                  });</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> fields;</div>
@@ -159,9 +159,9 @@ $(document).ready(function(){initNavTree('_translation_table_8cpp_source.html','
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> {name ? std::string{name.value().data()} : <span class="stringliteral">&quot;&quot;</span>,</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          requiredFieldsNode ? parseConstraintNode(requiredFieldsNode.value())</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                             : std::vector&lt;std::string&gt;{},</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                             : std::unordered_set&lt;std::string&gt;{},</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          optionalFieldsNode ? parseConstraintNode(optionalFieldsNode.value())</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                             : std::vector&lt;std::string&gt;{}};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                             : std::unordered_set&lt;std::string&gt;{}};</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_translation_table.html#abd2cb79eff79d7a11ce088a4ca8592af">   92</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="class_translation_table.html#abd2cb79eff79d7a11ce088a4ca8592af">TranslationTable::parseStyles</a>() const noexcept -&gt; std::vector&lt;<a class="code" href="struct_style_properties.html">StyleProperties</a>&gt; {</div>

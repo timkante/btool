@@ -112,9 +112,9 @@ $(document).ready(function(){initNavTree('struct_style_properties.html',''); ini
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_style_properties__coll__graph.png" border="0" usemap="#_style_properties_coll__map" alt="Collaboration graph"/></div>
 <map name="_style_properties_coll__map" id="_style_properties_coll__map">
-<area shape="rect" title="style&#45;properties&#45;container" alt="" coords="12,441,123,519"/>
+<area shape="rect" title="style&#45;properties&#45;container" alt="" coords="12,456,123,533"/>
 <area shape="rect" title="STL class." alt="" coords="28,147,107,224"/>
-<area shape="rect" title=" " alt="" coords="114,287,274,364"/>
+<area shape="rect" title=" " alt="" coords="114,287,242,379"/>
 <area shape="rect" title="STL class." alt="" coords="5,5,129,97"/>
 </map>
 </div>
@@ -126,15 +126,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a0f6d8f962c2e59059f255737980a9aa4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_style_properties.html#a0f6d8f962c2e59059f255737980a9aa4">name</a> = &quot;&quot;</td></tr>
+<tr class="memitem:a0f6d8f962c2e59059f255737980a9aa4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_style_properties.html#a0f6d8f962c2e59059f255737980a9aa4">name</a> {}</td></tr>
 <tr class="memdesc:a0f6d8f962c2e59059f255737980a9aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of the style  <a href="struct_style_properties.html#a0f6d8f962c2e59059f255737980a9aa4">More...</a><br /></td></tr>
 <tr class="separator:a0f6d8f962c2e59059f255737980a9aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4be04c469a31eb8ca9492d5cffe68094"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_style_properties.html#a4be04c469a31eb8ca9492d5cffe68094">requiredFields</a> = {}</td></tr>
-<tr class="memdesc:a4be04c469a31eb8ca9492d5cffe68094"><td class="mdescLeft">&#160;</td><td class="mdescRight">all the required fields  <a href="struct_style_properties.html#a4be04c469a31eb8ca9492d5cffe68094">More...</a><br /></td></tr>
-<tr class="separator:a4be04c469a31eb8ca9492d5cffe68094"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a660b16d0e82e8cc17b1e166edd542c54"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_style_properties.html#a660b16d0e82e8cc17b1e166edd542c54">optionalFields</a> = {}</td></tr>
-<tr class="memdesc:a660b16d0e82e8cc17b1e166edd542c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">all the optional fields  <a href="struct_style_properties.html#a660b16d0e82e8cc17b1e166edd542c54">More...</a><br /></td></tr>
-<tr class="separator:a660b16d0e82e8cc17b1e166edd542c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c845cb6b6f3401424db9652ebbdd066"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_style_properties.html#a7c845cb6b6f3401424db9652ebbdd066">requiredFields</a> {}</td></tr>
+<tr class="memdesc:a7c845cb6b6f3401424db9652ebbdd066"><td class="mdescLeft">&#160;</td><td class="mdescRight">all the required fields  <a href="struct_style_properties.html#a7c845cb6b6f3401424db9652ebbdd066">More...</a><br /></td></tr>
+<tr class="separator:a7c845cb6b6f3401424db9652ebbdd066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a548cf8be3a9b65478e2da7dde22b63af"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_style_properties.html#a548cf8be3a9b65478e2da7dde22b63af">optionalFields</a> {}</td></tr>
+<tr class="memdesc:a548cf8be3a9b65478e2da7dde22b63af"><td class="mdescLeft">&#160;</td><td class="mdescRight">all the optional fields  <a href="struct_style_properties.html#a548cf8be3a9b65478e2da7dde22b63af">More...</a><br /></td></tr>
+<tr class="separator:a548cf8be3a9b65478e2da7dde22b63af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>style-properties-container </p>
@@ -173,7 +173,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weather the two style-properties are deeply equal </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_style_properties_8cpp_source.html#l00009">9</a> of file <a class="el" href="_style_properties_8cpp_source.html">StyleProperties.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_style_properties_8cpp_source.html#l00008">8</a> of file <a class="el" href="_style_properties_8cpp_source.html">StyleProperties.cpp</a>.</p>
 
 </div>
 </div>
@@ -185,7 +185,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string StyleProperties::name = &quot;&quot;</td>
+          <td class="memname">std::string StyleProperties::name {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -198,14 +198,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a660b16d0e82e8cc17b1e166edd542c54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a660b16d0e82e8cc17b1e166edd542c54">&#9670;&nbsp;</a></span>optionalFields</h2>
+<a id="a548cf8be3a9b65478e2da7dde22b63af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a548cf8be3a9b65478e2da7dde22b63af">&#9670;&nbsp;</a></span>optionalFields</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::string&gt; StyleProperties::optionalFields = {}</td>
+          <td class="memname">std::unordered_set&lt;std::string&gt; StyleProperties::optionalFields {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -216,14 +216,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4be04c469a31eb8ca9492d5cffe68094"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4be04c469a31eb8ca9492d5cffe68094">&#9670;&nbsp;</a></span>requiredFields</h2>
+<a id="a7c845cb6b6f3401424db9652ebbdd066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c845cb6b6f3401424db9652ebbdd066">&#9670;&nbsp;</a></span>requiredFields</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::string&gt; StyleProperties::requiredFields = {}</td>
+          <td class="memname">std::unordered_set&lt;std::string&gt; StyleProperties::requiredFields {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
