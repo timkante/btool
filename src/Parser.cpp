@@ -34,10 +34,29 @@ auto Parser::generate(
     const boost::filesystem::path &inputPath,
     const std::string &sorting
 ) const noexcept -> std::vector<BibElement> {
-  //TODO: Add handling for multiple files + existence check
-  std::ifstream inFile{inputPath.string()};
-  std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
-  return generate(std::string_view(inContent), sorting, inputPath.string());
+  if (!boost::filesystem::exists(inputPath)) {
+    spdlog::critical("No such file or directory. [input={}]", inputPath.string());
+    return {};
+  } else if (boost::filesystem::is_directory(inputPath)) {
+    std::vector<BibElement> collector{};
+    for (const auto &file : boost::filesystem::directory_iterator(inputPath)){
+      spdlog::info("Parsing File: {} ...", file.path().string());
+      std::ifstream inFile{file.path().string()};
+      std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
+      for (const auto &element : generate(std::string_view(inContent), sorting, inputPath.string())){
+        collector.push_back(element);
+      }
+    }
+    return collector;
+  } else if (boost::filesystem::is_regular_file(inputPath)) {
+    spdlog::info("Parsing File: {} ...", inputPath.string());
+    std::ifstream inFile{inputPath.string()};
+    std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
+    return generate(std::string_view(inContent), sorting, inputPath.string());
+  } else {
+    spdlog::critical("Unexpected file-descriptor. [input={}]", inputPath.string());
+    return {};
+  }
 }
 
 /**
@@ -63,8 +82,8 @@ auto Parser::generate(
   std::sort(std::begin(filteredElements),
             std::end(filteredElements),
             [&sorting](const BibElement &l, const BibElement &r) {
-              return l.findAttribute(sorting).value_or<Field>({"", ""}).value
-                  < r.findAttribute(sorting).value_or<Field>({"", ""}).value;
+              return l.findAttribute(sorting).value_or<Field>({""s, ""s}).value
+                  < r.findAttribute(sorting).value_or<Field>({""s, ""s}).value;
             });
   return filteredElements;
 }
