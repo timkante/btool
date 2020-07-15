@@ -15,25 +15,25 @@
  * @brief interface to interact with bib-files
  */
 class Parser {
-    std::string targetStyle; ///< the target-style of the generated files
-    TranslationTable translationTable; ///< translation-Table handler
+  std::string targetStyle; ///< the target-style of the generated files
+  TranslationTable translationTable; ///< translation-Table handler
 
-public:
+ public:
 
-    Parser(const boost::filesystem::path &ruleFilePath, std::string targetStyle) noexcept;
+  Parser(const boost::filesystem::path &ruleFilePath, std::string targetStyle) noexcept;
 
-    Parser(std::stringstream ruleFileContents, std::string targetStyle) noexcept;
+  Parser(std::stringstream ruleFileContents, std::string targetStyle) noexcept;
 
-    [[nodiscard]] auto generate(const boost::filesystem::path &inputPath,
-                                const std::string &sorting) const noexcept -> std::vector<BibElement>;
+  [[nodiscard]] auto generate(const boost::filesystem::path &inputPath,
+                              const std::string &sorting) const noexcept -> std::vector<BibElement>;
 
-    [[nodiscard]] auto generate(std::string_view inputFileContent,
-                                const std::string &sorting,
-                                const std::string &filename) const noexcept -> std::vector<BibElement>;
+  [[nodiscard]] auto generate(std::string_view inputFileContent,
+                              const std::string &sorting,
+                              const std::string &filename) const noexcept -> std::vector<BibElement>;
 
-private:
+ private:
 
-    static auto elementsOf(std::string_view input, const std::string &filename) noexcept -> std::vector<BibElement>;
+  static auto elementsOf(std::string_view input, const std::string &filename) noexcept -> std::vector<BibElement>;
 };
 
 #endif

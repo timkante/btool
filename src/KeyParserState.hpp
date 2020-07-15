@@ -12,16 +12,16 @@
  * @brief Key Parser State
  */
 class KeyParserState : public AbstractParserState {
-    std::string key; ///< a accumulator for key-characters while parsing it
+  std::string key; ///< a accumulator for key-characters while parsing it
 
-public:
+ public:
 
-    KeyParserState(
-            ParserContext &context,
-            std::vector<BibElement> &result
-    ) noexcept;
+  KeyParserState(
+      ParserContext &context,
+      std::vector<BibElement> &result
+  ) noexcept;
 
-    auto handleCharacter(char c) -> ParserState * override;
+  auto handleCharacter(char c) -> ParserState * override;
 };
 
 #endif

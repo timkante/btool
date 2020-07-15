@@ -12,14 +12,14 @@
  * @brief Global Parser State
  */
 class GlobalParserState : public AbstractParserState {
-public:
+ public:
 
-    GlobalParserState(
-            ParserContext &context,
-            std::vector<BibElement> &result
-    ) noexcept;
+  GlobalParserState(
+      ParserContext &context,
+      std::vector<BibElement> &result
+  ) noexcept;
 
-    auto handleCharacter(char c) -> ParserState * override;
+  auto handleCharacter(char c) -> ParserState * override;
 };
 
 #endif

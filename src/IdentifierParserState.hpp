@@ -12,16 +12,16 @@
  * @brief Identifier Parser State
  */
 class IdentifierParserState : public AbstractParserState {
-    std::string identifier; ///< a accumulator for identifier-characters while parsing it
+  std::string identifier; ///< a accumulator for identifier-characters while parsing it
 
-public:
+ public:
 
-    IdentifierParserState(
-            ParserContext &context,
-            std::vector<BibElement> &result
-    ) noexcept;
+  IdentifierParserState(
+      ParserContext &context,
+      std::vector<BibElement> &result
+  ) noexcept;
 
-    auto handleCharacter(char c) -> ParserState * override;
+  auto handleCharacter(char c) -> ParserState * override;
 };
 
 #endif

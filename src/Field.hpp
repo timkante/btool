@@ -9,12 +9,10 @@
  * @brief Field-Container
  */
 struct Field {
-    std::string name; ///< the name of the Field
-    std::string value; ///< the value of the Field
+  std::string name; ///< the name of the Field
+  std::string value; ///< the value of the Field
 
-    Field(std::string name, std::string value);
-
-    auto operator==(const Field &other) const noexcept -> bool;
+  auto operator==(const Field &other) const noexcept -> bool;
 };
 
 auto operator<<(std::ostream &os, Field const &field) -> std::ostream &;

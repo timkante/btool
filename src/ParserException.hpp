@@ -10,13 +10,13 @@
  * A Parsing-Exception
  */
 struct ParserException : std::runtime_error {
-    ParserState *state; ///< the state of the parser
-    const ParserContext context; ///< the context of the parser
-    const std::string message; ///< the message to throw
+  ParserState *state; ///< the state of the parser
+  const ParserContext context; ///< the context of the parser
+  const std::string message; ///< the message to throw
 
-    ParserException(AbstractParserState *state, const ParserContext &context, const std::string &message);
+  ParserException(AbstractParserState *state, const ParserContext &context, const std::string &message);
 
-    [[nodiscard]] auto what() const noexcept -> const char * override;
+  [[nodiscard]] auto what() const noexcept -> const char * override;
 };
 
 #endif

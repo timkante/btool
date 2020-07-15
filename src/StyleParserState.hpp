@@ -12,16 +12,16 @@
  * @brief Style Parser State
  */
 class StyleParserState : public AbstractParserState {
-    std::string style; ///< a accumulator for style-characters while parsing it
+  std::string style; ///< a accumulator for style-characters while parsing it
 
-public:
+ public:
 
-    StyleParserState(
-            ParserContext &context,
-            std::vector<BibElement> &result
-    ) noexcept;
+  StyleParserState(
+      ParserContext &context,
+      std::vector<BibElement> &result
+  ) noexcept;
 
-    auto handleCharacter(char c) -> ParserState * override;
+  auto handleCharacter(char c) -> ParserState * override;
 };
 
 #endif

@@ -14,17 +14,17 @@
  * @brief Key Parser State
  */
 class ValueParserState : public AbstractParserState {
-    std::string value; ///< a accumulator for value-characters while parsing it
-    std::stack<std::pair<std::size_t, std::size_t>> braces; ///< a stack for counting delimiting braces
+  std::string value; ///< a accumulator for value-characters while parsing it
+  std::stack<std::pair<std::size_t, std::size_t>> braces; ///< a stack for counting delimiting braces
 
-public:
+ public:
 
-    ValueParserState(
-            ParserContext &context,
-            std::vector<BibElement> &result
-    ) noexcept;
+  ValueParserState(
+      ParserContext &context,
+      std::vector<BibElement> &result
+  ) noexcept;
 
-    auto handleCharacter(char c) -> ParserState * override;
+  auto handleCharacter(char c) -> ParserState * override;
 };
 
 #endif
