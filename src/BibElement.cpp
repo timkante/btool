@@ -37,14 +37,19 @@ auto BibElement::operator==(const BibElement &other) const noexcept -> bool {
 /**
  * Finds an attribute for a given Key in the Elements attribute
  * @param key the key for the attribute to look for
- * @return iterator to the found field (or attributes.end() if not found)
+ * @return the field (or none if not found)
  */
 [[nodiscard]] auto BibElement::findAttribute(
     const std::string &key
-) const noexcept -> std::vector<Field>::const_iterator {
-  return std::find_if(std::cbegin(attributes), std::cend(attributes), [&key](const auto &field) {
-    return field.name == key;
-  });
+) const noexcept -> std::optional<Field> {
+  const auto itr = std::find_if(
+      std::cbegin(attributes),
+      std::cend(attributes),
+      [&key](const auto &field) {
+        return field.name == key;
+      }
+  );
+  return itr == std::cend(attributes) ? std::nullopt : std::optional(*itr);
 }
 
 /**

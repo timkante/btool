@@ -3,6 +3,7 @@
 
 #include <StyleProperties.hpp>
 #include <Field.hpp>
+#include <optional>
 #include <string>
 #include <vector>
 
@@ -19,7 +20,7 @@ struct BibElement {
 
   auto operator==(const BibElement &other) const noexcept -> bool;
 
-  [[nodiscard]] auto findAttribute(const std::string &key) const noexcept -> std::vector<Field>::const_iterator;
+  [[nodiscard]] auto findAttribute(const std::string &key) const noexcept -> std::optional<Field>;
 };
 
 auto operator<<(std::ostream &os, BibElement const &elem) -> std::ostream &;

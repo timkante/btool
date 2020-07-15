@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <numeric>
 
+using namespace std::literals::string_literals;
+
 /**
  * Constructor.
  * @param ruleFilePath filepath to the translation-table
@@ -61,11 +63,8 @@ auto Parser::generate(
   std::sort(std::begin(filteredElements),
             std::end(filteredElements),
             [&sorting](const BibElement &l, const BibElement &r) {
-              const auto lItr = l.findAttribute(sorting);
-              const auto rItr = r.findAttribute(sorting);
-              const std::string left = lItr == std::cend(l.attributes) ? "" : lItr->value;
-              const std::string right = rItr == std::cend(r.attributes) ? "" : rItr->value;
-              return left < right;
+              return l.findAttribute(sorting).value_or<Field>({"", ""}).value
+                  < r.findAttribute(sorting).value_or<Field>({"", ""}).value;
             });
   return filteredElements;
 }

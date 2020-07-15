@@ -39,6 +39,10 @@ TEST(BibelementTests, constructionTest) {
       Field{"name"s, "value"s},
       Field{"another name"s, "another value"s}
   };
-  ASSERT_NO_THROW((BibElement{"an id"s, "a style"s, fields}));
-  ASSERT_NO_THROW((BibElement{"another id"s, "another style"s, fields}));
+  ASSERT_NO_THROW(([&](){
+    const auto a = BibElement{"an id"s, "a style"s, fields};
+  }()));
+  ASSERT_NO_THROW(([&](){
+    const auto a = BibElement{"another id"s, "another style"s, fields};
+  }()));
 }
