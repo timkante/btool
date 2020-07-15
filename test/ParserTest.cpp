@@ -98,3 +98,19 @@ TEST_F(ParserFixtureTest, parseDummyFile) {
     ASSERT_EQ(elements.size(), 13u);
   }());
 }
+
+TEST_F(ParserFixtureTest, parseDummyFileInDirectory) {
+  boost::filesystem::path target = boost::filesystem::path("../../test/res");
+  ASSERT_NO_THROW([&]() {
+    const auto elements = sample.generate(target, "author"s);
+    ASSERT_EQ(elements.size(), 13u);
+  }());
+}
+
+TEST_F(ParserFixtureTest, parseDummyFileThatDoesNotExist) {
+  boost::filesystem::path target = boost::filesystem::path("../../test/res/someFileThatDoesNotExist.something");
+  ASSERT_NO_THROW([&]() {
+    const auto elements = sample.generate(target, "author"s);
+    ASSERT_EQ(elements.size(), 0u);
+  }());
+}
