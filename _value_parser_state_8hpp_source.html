@@ -108,17 +108,17 @@ $(document).ready(function(){initNavTree('_value_parser_state_8hpp_source.html',
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_value_parser_state.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_value_parser_state.html">ValueParserState</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_parser_state.html">AbstractParserState</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_value_parser_state.html#a411965755e3978fd0a12b7d632970826">   17</a></span>&#160;    std::string <a class="code" href="class_value_parser_state.html#a411965755e3978fd0a12b7d632970826">value</a>; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_value_parser_state.html#a5c04b8000a24b99761fd29d87b5ea409">   18</a></span>&#160;    std::stack&lt;std::pair&lt;std::size_t, std::size_t&gt;&gt; <a class="code" href="class_value_parser_state.html#a5c04b8000a24b99761fd29d87b5ea409">braces</a>; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_value_parser_state.html#a411965755e3978fd0a12b7d632970826">   17</a></span>&#160;  std::string <a class="code" href="class_value_parser_state.html#a411965755e3978fd0a12b7d632970826">value</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_value_parser_state.html#a5c04b8000a24b99761fd29d87b5ea409">   18</a></span>&#160;  std::stack&lt;std::pair&lt;std::size_t, std::size_t&gt;&gt; <a class="code" href="class_value_parser_state.html#a5c04b8000a24b99761fd29d87b5ea409">braces</a>; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_value_parser_state.html#af0736dce22362e615cc15bfacb71dbd7">ValueParserState</a>(</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="struct_parser_context.html">ParserContext</a> &amp;<a class="code" href="class_abstract_parser_state.html#a0c4e1d34bc1b07feaa38dac18d55a27f">context</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            std::vector&lt;BibElement&gt; &amp;<a class="code" href="class_abstract_parser_state.html#a438be8aea0882824574a1b31205ebb36">result</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ) noexcept;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="class_value_parser_state.html#af0736dce22362e615cc15bfacb71dbd7">ValueParserState</a>(</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <a class="code" href="struct_parser_context.html">ParserContext</a> &amp;<a class="code" href="class_abstract_parser_state.html#a0c4e1d34bc1b07feaa38dac18d55a27f">context</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      std::vector&lt;BibElement&gt; &amp;<a class="code" href="class_abstract_parser_state.html#a438be8aea0882824574a1b31205ebb36">result</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ) noexcept;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">auto</span> <a class="code" href="class_value_parser_state.html#a82574c12b2fd11984045c4ba8c2c6091">handleCharacter</a>(<span class="keywordtype">char</span> c) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">auto</span> <a class="code" href="class_value_parser_state.html#a82574c12b2fd11984045c4ba8c2c6091">handleCharacter</a>(<span class="keywordtype">char</span> c) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>

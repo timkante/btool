@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bibelement_128',['BibElement',['../struct_bib_element.html#afe28c2771802ba90fc4dfc1b57aa4a62',1,'BibElement']]]
+  ['copyright_129',['Copyright',['../_l_i_c_e_n_s_e_8txt.html#aa3ed601dee313116393d6e5efc58d658',1,'LICENSE.txt']]]
 ];

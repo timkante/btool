@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['translationtable_152',['TranslationTable',['../class_translation_table.html#af7361e99fd42653b98b913daee8394f3',1,'TranslationTable::TranslationTable(std::stringstream file) noexcept'],['../class_translation_table.html#ac82ac6d032d1f9fb9db0df5abdfbab21',1,'TranslationTable::TranslationTable(const boost::filesystem::path &amp;path) noexcept']]]
+  ['valueparserstate_152',['ValueParserState',['../class_value_parser_state.html#af0736dce22362e615cc15bfacb71dbd7',1,'ValueParserState']]]
 ];

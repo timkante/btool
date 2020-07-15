@@ -106,28 +106,28 @@ $(document).ready(function(){initNavTree('_key_parser_state_8cpp_source.html',''
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std::literals::string_literals;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_key_parser_state.html#a40084aadabc7953c594cc5055019de0e">   15</a></span>&#160;<a class="code" href="class_key_parser_state.html#a40084aadabc7953c594cc5055019de0e">KeyParserState::KeyParserState</a>(<a class="code" href="struct_parser_context.html">ParserContext</a> &amp;context, std::vector&lt;BibElement&gt; &amp;result) noexcept</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        : <a class="code" href="class_abstract_parser_state.html">AbstractParserState</a>{context, result} {}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    : <a class="code" href="class_abstract_parser_state.html">AbstractParserState</a>{context, result} {}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_key_parser_state.html#a1eb8ffd16a751d322eb8cd8d1e4ee8bd">   24</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="class_key_parser_state.html#a1eb8ffd16a751d322eb8cd8d1e4ee8bd">KeyParserState::handleCharacter</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> c) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;=&#39;</span>) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (key.empty()) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            fail(<span class="stringliteral">&quot;Key must not be empty&quot;</span>s);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            result.back().attributes.emplace_back(boost::trim_copy(key), <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> valueState = <span class="keyword">new</span> <a class="code" href="class_value_parser_state.html">ValueParserState</a>{context, result};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> valueState;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;}&#39;</span>) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> globalState = <span class="keyword">new</span> <a class="code" href="class_global_parser_state.html">GlobalParserState</a>{context, result};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> globalState;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::isgraph(c) || std::isspace(c)) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        key += c;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        fail(<span class="stringliteral">&quot;Invalid Character in Key, got so far: [&quot;</span>s + key + <span class="stringliteral">&quot;]&quot;</span>s);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;=&#39;</span>) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (key.empty()) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      fail(<span class="stringliteral">&quot;Key must not be empty&quot;</span>s);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      result.back().attributes.push_back({boost::trim_copy(key), <span class="stringliteral">&quot;&quot;</span>});</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> valueState = <span class="keyword">new</span> <a class="code" href="class_value_parser_state.html">ValueParserState</a>{context, result};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="keywordflow">return</span> valueState;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;}&#39;</span>) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> globalState = <span class="keyword">new</span> <a class="code" href="class_global_parser_state.html">GlobalParserState</a>{context, result};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> globalState;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::isgraph(c) || std::isspace(c)) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    key += c;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    fail(<span class="stringliteral">&quot;Invalid Character in Key, got so far: [&quot;</span>s + key + <span class="stringliteral">&quot;]&quot;</span>s);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

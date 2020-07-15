@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['copyright_129',['Copyright',['../_l_i_c_e_n_s_e_8txt.html#aa3ed601dee313116393d6e5efc58d658',1,'LICENSE.txt']]]
+  ['elementsof_130',['elementsOf',['../class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea',1,'Parser']]]
 ];

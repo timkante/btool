@@ -112,9 +112,9 @@ $(document).ready(function(){initNavTree('struct_bib_element.html',''); initResi
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="struct_bib_element__coll__graph.png" border="0" usemap="#_bib_element_coll__map" alt="Collaboration graph"/></div>
 <map name="_bib_element_coll__map" id="_bib_element_coll__map">
-<area shape="rect" title="bib&#45;element&#45;Container" alt="" coords="5,611,129,717"/>
-<area shape="rect" title=" " alt="" coords="84,471,216,548"/>
-<area shape="rect" href="struct_field.html" title="Field&#45;Container." alt="" coords="90,301,194,393"/>
+<area shape="rect" title="bib&#45;element&#45;Container" alt="" coords="5,596,129,703"/>
+<area shape="rect" title=" " alt="" coords="84,456,216,533"/>
+<area shape="rect" href="struct_field.html" title="Field&#45;Container." alt="" coords="90,301,194,379"/>
 <area shape="rect" title="STL class." alt="" coords="28,147,107,224"/>
 <area shape="rect" title="STL class." alt="" coords="5,5,129,97"/>
 </map>
@@ -122,12 +122,12 @@ $(document).ready(function(){initNavTree('struct_bib_element.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afe28c2771802ba90fc4dfc1b57aa4a62"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#afe28c2771802ba90fc4dfc1b57aa4a62">BibElement</a> (std::string <a class="el" href="struct_bib_element.html#a33e781d95e3e494f31f6dfd2b5f61613">id</a>, std::string <a class="el" href="struct_bib_element.html#ab93dff716574c52a57b094c4b698a479">style</a>, std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt; <a class="el" href="struct_bib_element.html#a2d735d0621a36f8e88cb1d785c08adbb">attributes</a>)</td></tr>
-<tr class="separator:afe28c2771802ba90fc4dfc1b57aa4a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92a0d0a9429d2a7b6ba031db226e779a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a">isCompliantTo</a> (const <a class="el" href="struct_style_properties.html">StyleProperties</a> &amp;props) const -&gt; bool</td></tr>
 <tr class="separator:a92a0d0a9429d2a7b6ba031db226e779a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fd69e4fbd9943c7f92d39041af1183b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b">operator==</a> (const <a class="el" href="struct_bib_element.html">BibElement</a> &amp;other) const noexcept -&gt; bool</td></tr>
 <tr class="separator:a2fd69e4fbd9943c7f92d39041af1183b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affebc06e40b9539ee6c8c130a6327f6f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bib_element.html#affebc06e40b9539ee6c8c130a6327f6f">findAttribute</a> (const std::string &amp;key) const noexcept -&gt; std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt;::const_iterator</td></tr>
+<tr class="separator:affebc06e40b9539ee6c8c130a6327f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -146,52 +146,55 @@ Public Attributes</h2></td></tr>
 <p>Stores information of a bib-element </p>
 
 <p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00013">13</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afe28c2771802ba90fc4dfc1b57aa4a62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe28c2771802ba90fc4dfc1b57aa4a62">&#9670;&nbsp;</a></span>BibElement()</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="affebc06e40b9539ee6c8c130a6327f6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affebc06e40b9539ee6c8c130a6327f6f">&#9670;&nbsp;</a></span>findAttribute()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BibElement::BibElement </td>
+          <td class="memname">auto BibElement::findAttribute </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>style</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt;&#160;</td>
-          <td class="paramname"><em>attributes</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const -&gt; std::vector&lt;<a class="el" href="struct_field.html">Field</a>&gt;::const_iterator</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Finds an attribute for a given Key in the Elements attribute </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>(unique) id </td></tr>
-    <tr><td class="paramname">style</td><td>name of the elements style </td></tr>
-    <tr><td class="paramname">attributes</td><td>attributes of the element </td></tr>
+    <tr><td class="paramname">key</td><td>the key for the attribute to look for </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the found field (or attributes.end() if not found) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bib_element_8cpp_source.html#l00013">13</a> of file <a class="el" href="_bib_element_8cpp_source.html">BibElement.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bib_element_8cpp_source.html#l00042">42</a> of file <a class="el" href="_bib_element_8cpp_source.html">BibElement.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_parser_8cpp_source.html#l00046">Parser::generate()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="struct_bib_element_affebc06e40b9539ee6c8c130a6327f6f_icgraph.png" border="0" usemap="#struct_bib_element_affebc06e40b9539ee6c8c130a6327f6f_icgraph" alt=""/></div>
+<map name="struct_bib_element_affebc06e40b9539ee6c8c130a6327f6f_icgraph" id="struct_bib_element_affebc06e40b9539ee6c8c130a6327f6f_icgraph">
+<area shape="rect" title=" " alt="" coords="169,5,332,32"/>
+<area shape="rect" href="class_parser.html#aee21df11a2740e7af754c2e717b76f80" title=" " alt="" coords="5,5,121,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a92a0d0a9429d2a7b6ba031db226e779a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92a0d0a9429d2a7b6ba031db226e779a">&#9670;&nbsp;</a></span>isCompliantTo()</h2>
 
@@ -215,7 +218,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weather the element is compliant or not </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bib_element_8cpp_source.html#l00021">21</a> of file <a class="el" href="_bib_element_8cpp_source.html">BibElement.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bib_element_8cpp_source.html#l00012">12</a> of file <a class="el" href="_bib_element_8cpp_source.html">BibElement.cpp</a>.</p>
 
 </div>
 </div>
@@ -250,7 +253,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weather the two bib-elements are deeply equal </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bib_element_8cpp_source.html#l00038">38</a> of file <a class="el" href="_bib_element_8cpp_source.html">BibElement.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bib_element_8cpp_source.html#l00033">33</a> of file <a class="el" href="_bib_element_8cpp_source.html">BibElement.cpp</a>.</p>
 
 </div>
 </div>
@@ -270,6 +273,8 @@ Public Attributes</h2></td></tr>
 <p>the attributes of the element </p>
 
 <p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00016">16</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_parser_8cpp_source.html#l00046">Parser::generate()</a>.</p>
 
 </div>
 </div>
@@ -306,6 +311,8 @@ Public Attributes</h2></td></tr>
 <p>the style-name of the element </p>
 
 <p class="definition">Definition at line <a class="el" href="_bib_element_8hpp_source.html#l00015">15</a> of file <a class="el" href="_bib_element_8hpp_source.html">BibElement.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_parser_8cpp_source.html#l00046">Parser::generate()</a>.</p>
 
 </div>
 </div>
