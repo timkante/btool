@@ -8,12 +8,13 @@
   + Terminvorschlag für Endpräsentation:
     + Terminvorschlag wurde angenommen
 + Weiterführung der Implementierungen der Klassen
-  + Tim: TranslationTable
-    + Status: TranslationTable wurde weiter implementiert.
+  + Tim: 
+    + TranslationTable
+        + Status: TranslationTable wurde weiter implementiert.
+    + Parser
+        + Status: Parser wurde weiter implementiert.
   + Saskia, Valeri, Rashid:  FileGenerator, XML
     + Status: FileGenerator wurde weiter implementiert, Ausgabeformat XML wurde implementiert. 
-  + Kevin, Tom, Martin: Parser
-    + Status: Parser wurde weiter implementiert. Bib - Dateien werden eingelesen und anhand des übergebenen Stils in Objekte geparst. Dabei wird darauf geachtet, dass alle benötigten Felder des Stils in dem Eintrag der Bib-Datei gesetzt sind. Es wurde sich darauf geeinigt, dass bei jeder Abweichung (also die Bib-Datei kann nicht geparst werden) der Abbruch des Parsing-Vorgangs erfolgt. Der Parser erkennt in Texten automatisch Umlaute (bsp. Bib-Umlaut für ein ä: `{/"a}`) und ersetzt diese durch das entsprechende Pendant.
 + Implementierung von Kommentaren im Code mittels Doxygen
 + Weiterführung der Bearbeitung der Bestandteile für die Abgabe:
     + Erstellung des Sequenz-, Zustands- und Use-Case-Diagramms
@@ -66,17 +67,26 @@
 + Berichterstellung:
   + Tom, Saskia
 
-## 11.6 Anlagen zum Bericht vom 08.07.2020
+## 11.6 Anlagen zum Bericht vom 15.07.2020
 
 + Code (siehe Master-Branch und Neben-Branches, SonarCloud und TravisCI)
 + Dokumentation: [Netlify](https://bibparser.timkante.dev "Doxygen")
 + Diagramme:
-  + [Zustandsdiagramm 1][state1]
-  + [Zustandsdiagramm 2][state2]
-  + [Sequenzdiagramm 1][seq1]
-  + [Sequenzdiagramm 2][seq2]
+    + Zustand:
+        + [Zustandsdiagramm 1][state1]
+        + [Zustandsdiagramm 2][state2]
+    + Sequenz:
+        + [Sequenzdiagramm 1][seq1]
+        + [Sequenzdiagramm 2][seq2]
+    + Use-Cases:
+        + [Use-Case 1: Start des Programms][ucStart]
+        + [Use-Case 2: Aufruf der Hilfe des Programms][ucHilfe]
+        + [Use-Case 3: Sortieren der Einträge][ucSort]
 
 [state1]: ./../milestone4/statediagram/Zustandsdia2.jpg "erstes neues Zustandsdiagramm"
 [state2]: ./../milestone4/statediagram/Zustandsdia3.jpg "zweites neues Zustandsdiagramm"
 [seq1]: ./../milestone4/sequenzdiagram/SequenzDia2.jpg "erstes neues Sequenzdiagramm"
 [seq2]: ./../milestone4/sequenzdiagram/SequenzDia3.jpg "zweites neues Sequenzdiagramm"
+[ucStart]: ./../milestone4/usecases/uc-start.png "Use-Case zum Start/Aufruf des Programms"
+[ucHilfe]: ./../milestone4/usecases/uc-hilfe.png "Use-Case zum Aufruf der Hilfe des Programms"
+[ucSort]: ./../milestone4/usecases/uc-sort.png "Use-Case zum Sortieren"
