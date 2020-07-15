@@ -116,65 +116,84 @@ $(document).ready(function(){initNavTree('_parser_8cpp_source.html',''); initRes
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> boost::filesystem::path &amp;inputPath,</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> std::string &amp;sorting</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;) <span class="keyword">const</span> noexcept -&gt; std::vector&lt;BibElement&gt; {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">//TODO: Add handling for multiple files + existence check</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  std::ifstream inFile{inputPath.string()};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  std::string inContent{std::istream_iterator&lt;char&gt;{inFile}, std::istream_iterator&lt;char&gt;{}};</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">return</span> generate(std::string_view(inContent), sorting, inputPath.string());</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_parser.html#aee21df11a2740e7af754c2e717b76f80">   50</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="class_parser.html#a6433b1d7a350e3890e359869ff58da20">Parser::generate</a>(</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::string_view inputFileContent,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> std::string &amp;sorting,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> std::string &amp;filename</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;) <span class="keyword">const</span> noexcept -&gt; std::vector&lt;BibElement&gt; {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> targetStructure = translationTable.stylePropertiesOf(targetStyle);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> parsedElements = <a class="code" href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">Parser::elementsOf</a>(inputFileContent, filename);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  std::vector&lt;BibElement&gt; filteredElements{};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  std::copy_if(std::cbegin(parsedElements),</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;               std::cend(parsedElements),</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;               std::back_inserter(filteredElements),</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;               [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;element) { <span class="keywordflow">return</span> element.<a class="code" href="struct_bib_element.html#ab93dff716574c52a57b094c4b698a479">style</a> == targetStyle; }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  );</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::sort(std::begin(filteredElements),</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::end(filteredElements),</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            [&amp;sorting](<span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;l, <span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;r) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;              <span class="keywordflow">return</span> l.<a class="code" href="struct_bib_element.html#ae3974beaa2bd5264a02427602fc2a623">findAttribute</a>(sorting).value_or&lt;Field&gt;({<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>}).value</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                  &lt; r.<a class="code" href="struct_bib_element.html#ae3974beaa2bd5264a02427602fc2a623">findAttribute</a>(sorting).value_or&lt;<a class="code" href="struct_field.html">Field</a>&gt;({<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>}).<a class="code" href="struct_field.html#a70997ea8176bc81041379bec3962f8e7">value</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            });</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> filteredElements;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">   78</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">Parser::elementsOf</a>(</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::string_view input,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> std::string &amp;filename</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;) noexcept -&gt; std::vector&lt;BibElement&gt; {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="struct_parser_context.html">ParserContext</a> context(filename);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  std::vector&lt;BibElement&gt; result;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">delete</span> std::accumulate&lt;std::string_view::iterator, ParserState *&gt;(</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::cbegin(input),</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::cend(input),</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">new</span> <a class="code" href="class_global_parser_state.html">GlobalParserState</a>{context, result},</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        [&amp;context](<a class="code" href="struct_parser_state.html">ParserState</a> *<span class="keyword">const</span> acc, <span class="keyword">const</span> <span class="keywordtype">char</span> it) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          ++context.<a class="code" href="struct_parser_context.html#aeefc99d05a655024242c160df1ff9c14">column</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;          <span class="keywordflow">if</span> (it == <span class="charliteral">&#39;\n&#39;</span>) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            ++context.<a class="code" href="struct_parser_context.html#a6c34e07e32049ced091d9af2a033ba7e">line</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            context.<a class="code" href="struct_parser_context.html#aeefc99d05a655024242c160df1ff9c14">column</a> = 0;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">return</span> acc;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;          }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;          <span class="keywordflow">return</span> acc-&gt;<a class="code" href="struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4">handleCharacter</a>(it);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        });</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  } <span class="keywordflow">catch</span> (<a class="code" href="struct_parser_exception.html">ParserException</a> &amp;e) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    spdlog::critical(<span class="stringliteral">&quot;Parsing failed: {}&quot;</span>, e.<a class="code" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">what</a>());</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">delete</span> e.<a class="code" href="struct_parser_exception.html#a8c55a3af81ec0ed9e78be0bc1697ac2d">state</a>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">if</span> (!boost::filesystem::exists(inputPath)) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    spdlog::critical(<span class="stringliteral">&quot;No such file or directory. [input={}]&quot;</span>, inputPath.string());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (boost::filesystem::is_directory(inputPath)) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::vector&lt;BibElement&gt; collector{};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;file : boost::filesystem::directory_iterator(inputPath)){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      spdlog::info(<span class="stringliteral">&quot;Parsing File: {} ...&quot;</span>, file.path().string());</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      std::ifstream inFile{file.path().string()};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      std::string inContent{std::istream_iterator&lt;char&gt;{inFile}, std::istream_iterator&lt;char&gt;{}};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;element : generate(std::string_view(inContent), sorting, inputPath.string())){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        collector.push_back(element);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> collector;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (boost::filesystem::is_regular_file(inputPath)) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    spdlog::info(<span class="stringliteral">&quot;Parsing File: {} ...&quot;</span>, inputPath.string());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::ifstream inFile{inputPath.string()};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::string inContent{std::istream_iterator&lt;char&gt;{inFile}, std::istream_iterator&lt;char&gt;{}};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> generate(std::string_view(inContent), sorting, inputPath.string());</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    spdlog::critical(<span class="stringliteral">&quot;Unexpected file-descriptor. [input={}]&quot;</span>, inputPath.string());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_parser.html#aee21df11a2740e7af754c2e717b76f80">   69</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="class_parser.html#a6433b1d7a350e3890e359869ff58da20">Parser::generate</a>(</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::string_view inputFileContent,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> std::string &amp;sorting,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> std::string &amp;filename</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;) <span class="keyword">const</span> noexcept -&gt; std::vector&lt;BibElement&gt; {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> targetStructure = translationTable.stylePropertiesOf(targetStyle);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> parsedElements = <a class="code" href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">Parser::elementsOf</a>(inputFileContent, filename);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  std::vector&lt;BibElement&gt; filteredElements{};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::copy_if(std::cbegin(parsedElements),</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;               std::cend(parsedElements),</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;               std::back_inserter(filteredElements),</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;               [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;element) { <span class="keywordflow">return</span> element.<a class="code" href="struct_bib_element.html#ab93dff716574c52a57b094c4b698a479">style</a> == targetStyle; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  std::sort(std::begin(filteredElements),</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            std::end(filteredElements),</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            [&amp;sorting](<span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;l, <span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;r) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;              <span class="keywordflow">return</span> l.<a class="code" href="struct_bib_element.html#ae3974beaa2bd5264a02427602fc2a623">findAttribute</a>(sorting).value_or&lt;Field&gt;({<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s}).value</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                  &lt; r.<a class="code" href="struct_bib_element.html#ae3974beaa2bd5264a02427602fc2a623">findAttribute</a>(sorting).value_or&lt;<a class="code" href="struct_field.html">Field</a>&gt;({<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s}).<a class="code" href="struct_field.html#a70997ea8176bc81041379bec3962f8e7">value</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            });</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> filteredElements;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">   97</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">Parser::elementsOf</a>(</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::string_view input,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> std::string &amp;filename</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;) noexcept -&gt; std::vector&lt;BibElement&gt; {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="struct_parser_context.html">ParserContext</a> context(filename);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  std::vector&lt;BibElement&gt; result;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">delete</span> std::accumulate&lt;std::string_view::iterator, ParserState *&gt;(</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        std::cbegin(input),</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        std::cend(input),</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">new</span> <a class="code" href="class_global_parser_state.html">GlobalParserState</a>{context, result},</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        [&amp;context](<a class="code" href="struct_parser_state.html">ParserState</a> *<span class="keyword">const</span> acc, <span class="keyword">const</span> <span class="keywordtype">char</span> it) -&gt; <a class="code" href="struct_parser_state.html">ParserState</a> * {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;          ++context.<a class="code" href="struct_parser_context.html#aeefc99d05a655024242c160df1ff9c14">column</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;          <span class="keywordflow">if</span> (it == <span class="charliteral">&#39;\n&#39;</span>) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            ++context.<a class="code" href="struct_parser_context.html#a6c34e07e32049ced091d9af2a033ba7e">line</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            context.<a class="code" href="struct_parser_context.html#aeefc99d05a655024242c160df1ff9c14">column</a> = 0;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">return</span> acc;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;          }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;          <span class="keywordflow">return</span> acc-&gt;<a class="code" href="struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4">handleCharacter</a>(it);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        });</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  } <span class="keywordflow">catch</span> (<a class="code" href="struct_parser_exception.html">ParserException</a> &amp;e) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    spdlog::critical(<span class="stringliteral">&quot;Parsing failed: {}&quot;</span>, e.<a class="code" href="struct_parser_exception.html#adb92ebe08d65960ecc78c37c5e150d5d">what</a>());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">delete</span> e.<a class="code" href="struct_parser_exception.html#a8c55a3af81ec0ed9e78be0bc1697ac2d">state</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_global_parser_state_8hpp_html"><div class="ttname"><a href="_global_parser_state_8hpp.html">GlobalParserState.hpp</a></div></div>
-<div class="ttc" id="aclass_parser_html_a65dae52513e7a6bdce66581c9cbb52ea"><div class="ttname"><a href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">Parser::elementsOf</a></div><div class="ttdeci">static auto elementsOf(std::string_view input, const std::string &amp;filename) noexcept -&gt; std::vector&lt; BibElement &gt;</div><div class="ttdef"><b>Definition:</b> <a href="_parser_8cpp_source.html#l00078">Parser.cpp:78</a></div></div>
+<div class="ttc" id="aclass_parser_html_a65dae52513e7a6bdce66581c9cbb52ea"><div class="ttname"><a href="class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea">Parser::elementsOf</a></div><div class="ttdeci">static auto elementsOf(std::string_view input, const std::string &amp;filename) noexcept -&gt; std::vector&lt; BibElement &gt;</div><div class="ttdef"><b>Definition:</b> <a href="_parser_8cpp_source.html#l00097">Parser.cpp:97</a></div></div>
 <div class="ttc" id="astruct_parser_state_html"><div class="ttname"><a href="struct_parser_state.html">ParserState</a></div><div class="ttdef"><b>Definition:</b> <a href="_parser_state_8hpp_source.html#l00007">ParserState.hpp:7</a></div></div>
 <div class="ttc" id="astruct_field_html"><div class="ttname"><a href="struct_field.html">Field</a></div><div class="ttdoc">Field-Container.</div><div class="ttdef"><b>Definition:</b> <a href="_field_8hpp_source.html#l00011">Field.hpp:11</a></div></div>
 <div class="ttc" id="aclass_parser_html_a6433b1d7a350e3890e359869ff58da20"><div class="ttname"><a href="class_parser.html#a6433b1d7a350e3890e359869ff58da20">Parser::generate</a></div><div class="ttdeci">auto generate(const boost::filesystem::path &amp;inputPath, const std::string &amp;sorting) const noexcept -&gt; std::vector&lt; BibElement &gt;</div><div class="ttdef"><b>Definition:</b> <a href="_parser_8cpp_source.html#l00033">Parser.cpp:33</a></div></div>
