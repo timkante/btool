@@ -11,17 +11,17 @@
  * Abstract Class with default-implementation of a ParserState
  */
 class AbstractParserState : public ParserState {
-protected:
-    ParserContext &context; ///< Context of the State
-    std::vector<BibElement> &result; ///< Container for accumulating Parsing-Results
+ protected:
+  ParserContext &context; ///< Context of the State
+  std::vector<BibElement> &result; ///< Container for accumulating Parsing-Results
 
-    [[noreturn]] auto fail(const std::string &message) -> void;
+  [[noreturn]] auto fail(const std::string &message) -> void;
 
-    auto handleCharacter(char c) -> ParserState * override;
+  auto handleCharacter(char c) -> ParserState * override;
 
-public:
+ public:
 
-    AbstractParserState(ParserContext &context, std::vector<BibElement> &result) noexcept;
+  AbstractParserState(ParserContext &context, std::vector<BibElement> &result) noexcept;
 };
 
 #endif

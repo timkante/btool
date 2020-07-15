@@ -6,17 +6,17 @@
  */
 struct ParserState {
 
-    /**
-     * default destructor.
-     */
-    virtual ~ParserState() = default;
+  /**
+   * default destructor.
+   */
+  virtual ~ParserState() = default;
 
-    /**
-     * Behaviour of a State to handle next character to parse
-     * @param c the next character to parse
-     * @return a new parser-state
-     */
-    virtual auto handleCharacter(char c) -> ParserState * = 0;
+  /**
+   * Behaviour of a State to handle next character to parse
+   * @param c the next character to parse
+   * @return a new parser-state
+   */
+  virtual auto handleCharacter(char c) -> ParserState * = 0;
 };
 
 #endif

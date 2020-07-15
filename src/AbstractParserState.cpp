@@ -7,7 +7,7 @@
  * @param result an accumulator for results
  */
 AbstractParserState::AbstractParserState(ParserContext &context, std::vector<BibElement> &result) noexcept
-        : context{context}, result{result} {}
+    : context{context}, result{result} {}
 
 /**
  * Error handling on parsing-error
@@ -15,7 +15,7 @@ AbstractParserState::AbstractParserState(ParserContext &context, std::vector<Bib
  * @throws ParserException (always)
  */
 [[noreturn]] auto AbstractParserState::fail(const std::string &message) -> void {
-    throw ParserException{this, context, message};
+  throw ParserException{this, context, message};
 }
 
 /**
@@ -24,5 +24,5 @@ AbstractParserState::AbstractParserState(ParserContext &context, std::vector<Bib
  * @return a new Parser-State
  */
 auto AbstractParserState::handleCharacter(char c) -> ParserState * {
-    return this;
+  return this;
 }

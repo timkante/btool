@@ -7,7 +7,7 @@
  * @param result accumulator of parsing-results
  */
 GlobalParserState::GlobalParserState(ParserContext &context, std::vector<BibElement> &result) noexcept
-        : AbstractParserState{context, result} {}
+    : AbstractParserState{context, result} {}
 
 /**
  * Handles the next character in global-state
@@ -16,11 +16,11 @@ GlobalParserState::GlobalParserState(ParserContext &context, std::vector<BibElem
  * @throws ParserException on parsing-error (invalid input)
  */
 ParserState *GlobalParserState::handleCharacter(const char c) {
-    if (c == '@') {
-        auto const nextState = new StyleParserState{context, result};
-        delete this;
-        return nextState;
-    } else {
-        return this;
-    }
+  if (c == '@') {
+    auto const nextState = new StyleParserState{context, result};
+    delete this;
+    return nextState;
+  } else {
+    return this;
+  }
 }

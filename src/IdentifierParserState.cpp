@@ -12,8 +12,7 @@ using namespace std::literals::string_literals;
  * @param result accumulator of parsing-results
  */
 IdentifierParserState::IdentifierParserState(ParserContext &context, std::vector<BibElement> &result) noexcept
-        : AbstractParserState{context, result} {}
-
+    : AbstractParserState{context, result} {}
 
 /**
  * Handles the next character in identifier-state
@@ -22,19 +21,19 @@ IdentifierParserState::IdentifierParserState(ParserContext &context, std::vector
  * @throws ParserException on parsing-error (invalid input)
  */
 auto IdentifierParserState::handleCharacter(const char c) -> ParserState * {
-    if (c == ',') {
-        if (identifier.empty()) {
-            fail("Identifier must not be empty"s);
-        } else {
-            result.back().id = boost::trim_copy(identifier);
-            const auto keyState = new KeyParserState{context, result};
-            delete this;
-            return keyState;
-        }
-    } else if (std::isgraph(c)) {
-        identifier += c;
-        return this;
+  if (c == ',') {
+    if (identifier.empty()) {
+      fail("Identifier must not be empty"s);
     } else {
-        fail("Invalid Character in Identifier, got so far: ["s + identifier + "]"s);
+      result.back().id = boost::trim_copy(identifier);
+      const auto keyState = new KeyParserState{context, result};
+      delete this;
+      return keyState;
     }
+  } else if (std::isgraph(c)) {
+    identifier += c;
+    return this;
+  } else {
+    fail("Invalid Character in Identifier, got so far: ["s + identifier + "]"s);
+  }
 }

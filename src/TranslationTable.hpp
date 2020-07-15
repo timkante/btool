@@ -14,26 +14,26 @@
  * @brief api to interact with translation-table resource
  */
 class TranslationTable {
-    boost::property_tree::ptree contents; ///< pointer to parsed json-tree
-    std::vector<StyleProperties> styleProperties; ///< parsed style-properties
+  boost::property_tree::ptree contents; ///< pointer to parsed json-tree
+  std::vector<StyleProperties> styleProperties; ///< parsed style-properties
 
-private:
+ private:
 
-    [[nodiscard]] static auto parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties;
+  [[nodiscard]] static auto parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties;
 
-    [[nodiscard]] auto parseStyles() const noexcept -> std::vector<StyleProperties>;
+  [[nodiscard]] auto parseStyles() const noexcept -> std::vector<StyleProperties>;
 
-public:
+ public:
 
-    explicit TranslationTable(std::stringstream file) noexcept;
+  explicit TranslationTable(std::stringstream file) noexcept;
 
-    explicit TranslationTable(const boost::filesystem::path &path) noexcept;
+  explicit TranslationTable(const boost::filesystem::path &path) noexcept;
 
-    auto printAll(std::ostream &out = std::cout) const -> void;
+  auto printAll(std::ostream &out = std::cout) const -> void;
 
-    [[nodiscard]] auto getStyleProperties() const noexcept -> const std::vector<StyleProperties> &;
+  [[nodiscard]] auto getStyleProperties() const noexcept -> const std::vector<StyleProperties> &;
 
-    [[nodiscard]] auto stylePropertiesOf(const std::string &name) const noexcept -> std::optional<StyleProperties>;
+  [[nodiscard]] auto stylePropertiesOf(const std::string &name) const noexcept -> std::optional<StyleProperties>;
 };
 
 #endif

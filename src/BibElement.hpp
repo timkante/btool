@@ -11,15 +11,15 @@
  * @brief bib-element-Container
  */
 struct BibElement {
-    std::string id; ///< the elements (unique) id
-    std::string style; ///< the style-name of the element
-    std::vector<Field> attributes; ///< the attributes of the element
+  std::string id; ///< the elements (unique) id
+  std::string style; ///< the style-name of the element
+  std::vector<Field> attributes; ///< the attributes of the element
 
-    BibElement(std::string id, std::string style, std::vector<Field> attributes);
+  [[nodiscard]] auto isCompliantTo(const StyleProperties &props) const -> bool;
 
-    [[nodiscard]] auto isCompliantTo(const StyleProperties &props) const -> bool;
+  auto operator==(const BibElement &other) const noexcept -> bool;
 
-    auto operator==(const BibElement &other) const noexcept -> bool;
+  [[nodiscard]] auto findAttribute(const std::string &key) const noexcept -> std::vector<Field>::const_iterator;
 };
 
 auto operator<<(std::ostream &os, BibElement const &elem) -> std::ostream &;

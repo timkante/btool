@@ -12,7 +12,7 @@
  * @param targetStyle the style name to filter parse-results for
  */
 Parser::Parser(const boost::filesystem::path &ruleFilePath, std::string targetStyle) noexcept
-        : targetStyle(std::move(targetStyle)), translationTable(TranslationTable(ruleFilePath)) {}
+    : targetStyle(std::move(targetStyle)), translationTable(TranslationTable(ruleFilePath)) {}
 
 /**
  * Constructor.
@@ -20,7 +20,7 @@ Parser::Parser(const boost::filesystem::path &ruleFilePath, std::string targetSt
  * @param targetStyle the style name to filter parse-results for
  */
 Parser::Parser(std::stringstream ruleFileContents, std::string targetStyle) noexcept
-        : targetStyle(std::move(targetStyle)), translationTable(TranslationTable(std::move(ruleFileContents))) {}
+    : targetStyle(std::move(targetStyle)), translationTable(TranslationTable(std::move(ruleFileContents))) {}
 
 /**
  * Generate bib-elements and Filter them for a Style
@@ -30,10 +30,10 @@ Parser::Parser(std::stringstream ruleFileContents, std::string targetStyle) noex
  */
 auto Parser::generate(const boost::filesystem::path &inputPath,
                       const std::string &sorting) const noexcept -> std::vector<BibElement> {
-    //TODO: Add handling for multiple files + existence check
-    std::ifstream inFile{inputPath.string()};
-    std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
-    return generate(std::string_view(inContent), sorting, inputPath.string());
+  //TODO: Add handling for multiple files + existence check
+  std::ifstream inFile{inputPath.string()};
+  std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
+  return generate(std::string_view(inContent), sorting, inputPath.string());
 }
 
 /**
@@ -43,11 +43,29 @@ auto Parser::generate(const boost::filesystem::path &inputPath,
  * @param filename name or path of the parsed file (for logging errors)
  * @return collection of parsed, sorted and filtered bib-elements
  */
-auto Parser::generate(std::string_view inputFileContent,
-                      const std::string &sorting,
-                      const std::string &filename) const noexcept -> std::vector<BibElement> {
-    const std::optional<StyleProperties> targetStructure = translationTable.stylePropertiesOf(targetStyle);
-    return Parser::elementsOf(inputFileContent, filename);
+auto Parser::generate(
+    std::string_view inputFileContent,
+    const std::string &sorting,
+    const std::string &filename
+) const noexcept -> std::vector<BibElement> {
+  const auto targetStructure = translationTable.stylePropertiesOf(targetStyle);
+  const auto parsedElements = Parser::elementsOf(inputFileContent, filename);
+  std::vector<BibElement> filteredElements{};
+  std::copy_if(std::cbegin(parsedElements),
+               std::cend(parsedElements),
+               std::back_inserter(filteredElements),
+               [this](const BibElement &element) { return element.style == targetStyle; }
+  );
+  std::sort(std::begin(filteredElements),
+            std::end(filteredElements),
+            [&sorting](const BibElement &l, const BibElement &r) {
+              const auto lItr = l.findAttribute(sorting);
+              const auto rItr = r.findAttribute(sorting);
+              const std::string left = lItr == std::cend(l.attributes) ? "" : lItr->value;
+              const std::string right = rItr == std::cend(r.attributes) ? "" : rItr->value;
+              return left < right;
+            });
+  return filteredElements;
 }
 
 /**
@@ -57,26 +75,26 @@ auto Parser::generate(std::string_view inputFileContent,
  * @return collection of parsed bib-elements
  */
 auto Parser::elementsOf(std::string_view input, const std::string &filename) noexcept -> std::vector<BibElement> {
-    ParserContext context(filename);
-    std::vector<BibElement> result;
-    try {
-        delete std::accumulate<std::string_view::iterator, ParserState *>(
-                std::cbegin(input),
-                std::cend(input),
-                new GlobalParserState{context, result},
-                [&context](ParserState *const acc, const char it) -> ParserState * {
-                    ++context.column;
-                    if (it == '\n') {
-                        ++context.line;
-                        context.column = 0;
-                        return acc;
-                    }
-                    return acc->handleCharacter(it);
-                });
-        return result;
-    } catch (ParserException &e) {
-        spdlog::critical("Parsing failed: {}", e.what());
-        delete e.state;
-        return {};
-    }
+  ParserContext context(filename);
+  std::vector<BibElement> result;
+  try {
+    delete std::accumulate<std::string_view::iterator, ParserState *>(
+        std::cbegin(input),
+        std::cend(input),
+        new GlobalParserState{context, result},
+        [&context](ParserState *const acc, const char it) -> ParserState * {
+          ++context.column;
+          if (it == '\n') {
+            ++context.line;
+            context.column = 0;
+            return acc;
+          }
+          return acc->handleCharacter(it);
+        });
+    return result;
+  } catch (ParserException &e) {
+    spdlog::critical("Parsing failed: {}", e.what());
+    delete e.state;
+    return {};
+  }
 }

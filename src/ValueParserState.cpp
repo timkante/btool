@@ -14,7 +14,7 @@ using namespace std::literals::string_literals;
  * @param result accumulator of parsing-results
  */
 ValueParserState::ValueParserState(ParserContext &context, std::vector<BibElement> &result) noexcept
-        : AbstractParserState{context, result} {}
+    : AbstractParserState{context, result} {}
 
 /**
  * Handles the next character in value-state
@@ -23,34 +23,34 @@ ValueParserState::ValueParserState(ParserContext &context, std::vector<BibElemen
  * @throws ParserException on parsing-error (invalid input)
  */
 auto ValueParserState::handleCharacter(const char c) -> ParserState * {
-    if (c == ',') {
-        if (value.empty()) {
-            fail("Key must not be empty"s);
-        } else if (braces.empty()) {
-            result.back().attributes.back().value = boost::trim_copy(value);
-            const auto keyState = new KeyParserState{context, result};
-            delete this;
-            return keyState;
-        } else {
-            value += c;
-        }
-    } else if (c == '{') {
-        value += c;
-        braces.push(std::make_pair(context.line, context.column));
-    } else if (c == '}') {
-        if (braces.empty()) {
-            result.back().attributes.back().value = boost::trim_copy(value);
-            const auto keyState = new GlobalParserState{context, result};
-            delete this;
-            return keyState;
-        } else {
-            value += c;
-            braces.pop();
-        }
-    } else if (std::isgraph(c) || std::isspace(c)) {
-        value += c;
+  if (c == ',') {
+    if (value.empty()) {
+      fail("Key must not be empty"s);
+    } else if (braces.empty()) {
+      result.back().attributes.back().value = boost::trim_copy(value);
+      const auto keyState = new KeyParserState{context, result};
+      delete this;
+      return keyState;
     } else {
-        fail("Invalid Character in Value, got so far: ["s + value + "]"s);
+      value += c;
     }
-    return this;
+  } else if (c == '{') {
+    value += c;
+    braces.push(std::make_pair(context.line, context.column));
+  } else if (c == '}') {
+    if (braces.empty()) {
+      result.back().attributes.back().value = boost::trim_copy(value);
+      const auto keyState = new GlobalParserState{context, result};
+      delete this;
+      return keyState;
+    } else {
+      value += c;
+      braces.pop();
+    }
+  } else if (std::isgraph(c) || std::isspace(c)) {
+    value += c;
+  } else {
+    fail("Invalid Character in Value, got so far: ["s + value + "]"s);
+  }
+  return this;
 }
