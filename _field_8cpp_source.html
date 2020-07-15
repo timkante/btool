@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>bibParser: src/Field.hpp Source File</title>
+<title>bibParser: src/Field.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,33 +67,28 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Field.hpp</div>  </div>
+<div class="title">Field.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_field_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BIBPARSER_FIELD_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BIBPARSER_FIELD_HPP</span></div>
+<a href="_field_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_field_8hpp.html">Field.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_field.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_field.html">Field</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_field.html#afc2a9e34c4b26240fef110edb1e6d04b">   12</a></span>&#160;    std::string <a class="code" href="struct_field.html#afc2a9e34c4b26240fef110edb1e6d04b">name</a>; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_field.html#a70997ea8176bc81041379bec3962f8e7">   13</a></span>&#160;    std::string <a class="code" href="struct_field.html#a70997ea8176bc81041379bec3962f8e7">value</a>; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="struct_field.html#a1928ca9d2dd7a15e077f90c453d2454c">Field</a>(std::string <a class="code" href="struct_field.html#afc2a9e34c4b26240fef110edb1e6d04b">name</a>, std::string <a class="code" href="struct_field.html#a70997ea8176bc81041379bec3962f8e7">value</a>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">auto</span> <a class="code" href="struct_field.html#a8357e2110b633c63659612a147880486">operator==</a>(<span class="keyword">const</span> <a class="code" href="struct_field.html">Field</a> &amp;other) <span class="keyword">const</span> noexcept -&gt; bool;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">auto</span> <a class="code" href="_field_8hpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda">operator&lt;&lt;</a>(std::ostream &amp;os, <a class="code" href="struct_field.html">Field</a> <span class="keyword">const</span> &amp;field) -&gt; std::ostream &amp;;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct_field.html#a1928ca9d2dd7a15e077f90c453d2454c">    9</a></span>&#160;<a class="code" href="struct_field.html#a1928ca9d2dd7a15e077f90c453d2454c">Field::Field</a>(std::string name, std::string value)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        : name{std::move(<a class="code" href="struct_field.html#afc2a9e34c4b26240fef110edb1e6d04b">name</a>)}, value{std::move(value)} {}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_field.html#a8357e2110b633c63659612a147880486">   17</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_field.html#a8357e2110b633c63659612a147880486">Field::operator==</a>(<span class="keyword">const</span> <a class="code" href="struct_field.html">Field</a> &amp;other) <span class="keyword">const</span> noexcept -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> name == other.name &amp;&amp; value == other.value;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="_field_8hpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda">   27</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="_field_8cpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda">operator&lt;&lt;</a>(std::ostream &amp;os, <a class="code" href="struct_field.html">Field</a> <span class="keyword">const</span> &amp;field) -&gt; std::ostream &amp; {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;(name=&quot;</span> &lt;&lt; field.name &lt;&lt; <span class="stringliteral">&quot;, value=&quot;</span> &lt;&lt; field.value &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astruct_field_html_afc2a9e34c4b26240fef110edb1e6d04b"><div class="ttname"><a href="struct_field.html#afc2a9e34c4b26240fef110edb1e6d04b">Field::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">the name of the Field</div><div class="ttdef"><b>Definition:</b> <a href="_field_8hpp_source.html#l00012">Field.hpp:12</a></div></div>
 <div class="ttc" id="astruct_field_html"><div class="ttname"><a href="struct_field.html">Field</a></div><div class="ttdoc">Field-Container.</div><div class="ttdef"><b>Definition:</b> <a href="_field_8hpp_source.html#l00011">Field.hpp:11</a></div></div>
-<div class="ttc" id="astruct_field_html_a70997ea8176bc81041379bec3962f8e7"><div class="ttname"><a href="struct_field.html#a70997ea8176bc81041379bec3962f8e7">Field::value</a></div><div class="ttdeci">std::string value</div><div class="ttdoc">the value of the Field</div><div class="ttdef"><b>Definition:</b> <a href="_field_8hpp_source.html#l00013">Field.hpp:13</a></div></div>
+<div class="ttc" id="a_field_8cpp_html_a935ec8b0d6ed0d67a5ee78cbfb303dda"><div class="ttname"><a href="_field_8cpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda">operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(std::ostream &amp;os, Field const &amp;field) -&gt; std::ostream &amp;</div><div class="ttdef"><b>Definition:</b> <a href="_field_8cpp_source.html#l00027">Field.cpp:27</a></div></div>
 <div class="ttc" id="astruct_field_html_a1928ca9d2dd7a15e077f90c453d2454c"><div class="ttname"><a href="struct_field.html#a1928ca9d2dd7a15e077f90c453d2454c">Field::Field</a></div><div class="ttdeci">Field(std::string name, std::string value)</div><div class="ttdef"><b>Definition:</b> <a href="_field_8cpp_source.html#l00009">Field.cpp:9</a></div></div>
-<div class="ttc" id="a_field_8hpp_html_a935ec8b0d6ed0d67a5ee78cbfb303dda"><div class="ttname"><a href="_field_8hpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda">operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(std::ostream &amp;os, Field const &amp;field) -&gt; std::ostream &amp;</div><div class="ttdef"><b>Definition:</b> <a href="_field_8cpp_source.html#l00027">Field.cpp:27</a></div></div>
+<div class="ttc" id="a_field_8hpp_html"><div class="ttname"><a href="_field_8hpp.html">Field.hpp</a></div></div>
 <div class="ttc" id="astruct_field_html_a8357e2110b633c63659612a147880486"><div class="ttname"><a href="struct_field.html#a8357e2110b633c63659612a147880486">Field::operator==</a></div><div class="ttdeci">auto operator==(const Field &amp;other) const noexcept -&gt; bool</div><div class="ttdef"><b>Definition:</b> <a href="_field_8cpp_source.html#l00017">Field.cpp:17</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
