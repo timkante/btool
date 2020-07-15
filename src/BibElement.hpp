@@ -3,35 +3,26 @@
 
 #include <StyleProperties.hpp>
 #include <Field.hpp>
+#include <optional>
 #include <string>
 #include <vector>
 
 /**
  * Stores information of a bib-element
- *
  * @brief bib-element-Container
  */
 struct BibElement {
-    std::string id; ///< @property the elements (unique) id
-    std::string style; ///< @property the style-name of the element
-    std::vector<Field> attributes; ///< @property the attributes of the element
+  std::string id; ///< the elements (unique) id
+  std::string style; ///< the style-name of the element
+  std::vector<Field> attributes; ///< the attributes of the element
 
-    /**
-     * Constructor.
-     *
-     * @param id (unique) id
-     * @param style name of the elements style
-     * @param attributes attributes of the element
-     */
-    BibElement(std::string id, std::string style, std::vector<Field> attributes);
+  [[nodiscard]] auto isCompliantTo(const StyleProperties &props) const -> bool;
 
-    /**
-     * Checks if the bib-element is compliant to given style-properties
-     *
-     * @param props style-properties to check compliance against
-     * @return weather the element is compliant or not
-     */
-    [[nodiscard]] auto isCompliantTo(const StyleProperties &props) const -> bool;
+  auto operator==(const BibElement &other) const noexcept -> bool;
+
+  [[nodiscard]] auto findAttribute(const std::string &key) const noexcept -> std::optional<Field>;
 };
+
+auto operator<<(std::ostream &os, BibElement const &elem) -> std::ostream &;
 
 #endif

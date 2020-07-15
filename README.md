@@ -194,6 +194,9 @@ Group-Members of Group 1:
 + [CRC-Cards](doc/CRC_Cards/crcCards.md)
 + [class diagram](doc/milestone3/Klassendiagramm.vpd.png)
 + use-case diagrams
+    + [Start of bib-Parse](doc/milestone4/usecases/uc-start.png)
+    + [Print help of bib-Parser](doc/milestone4/usecases/uc-hilfe.png)
+    + [Sort entries](doc/milestone4/usecases/uc-sort.png)
 + sequence diagrams
     + [sequence diagram 001](doc/milestone4/sequenzdiagram/SequenzDia.jpg)
     + [sequence diagram 002](doc/milestone4/sequenzdiagram/SequenzDia2.jpg)

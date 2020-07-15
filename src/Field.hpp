@@ -2,23 +2,19 @@
 #define BIBPARSER_FIELD_HPP
 
 #include <string>
+#include <iostream>
 
 /**
  * Stores information of a Field of a bib-element
- *
  * @brief Field-Container
  */
 struct Field {
-    std::string name; ///< @property the name of the Field
-    std::string value; ///< @property the value of the Field
+  std::string name; ///< the name of the Field
+  std::string value; ///< the value of the Field
 
-    /**
-     * Constructor.
-     *
-     * @param name Name of the Field
-     * @param value Value of the Field
-     */
-    Field(std::string name, std::string value);
+  auto operator==(const Field &other) const noexcept -> bool;
 };
+
+auto operator<<(std::ostream &os, Field const &field) -> std::ostream &;
 
 #endif
