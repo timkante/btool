@@ -192,7 +192,7 @@ Group-Members of Group 1:
         + [SnowCard 010](doc/snowCards/nonfunctional/snowCardNonFuctional010.md)
         + [SnowCard 011](doc/snowCards/nonfunctional/snowCardNonFuctional011.md)
 + [CRC-Cards](doc/CRC_Cards/crcCards.md)
-+ [class diagram](doc/Klassendiagramm.vpd.png)
++ [class diagram](doc/milestone3/Klassendiagramm.vpd.png)
 + use-case diagrams
 + sequence diagrams
     + [sequence diagram 001](doc/milestone4/sequenzdiagram/SequenzDia.jpg)
