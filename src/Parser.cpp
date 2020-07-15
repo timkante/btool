@@ -28,8 +28,10 @@ Parser::Parser(std::stringstream ruleFileContents, std::string targetStyle) noex
  * @param sorting the style name to sort parsing-results for
  * @return collection of parsed bib-elements
  */
-auto Parser::generate(const boost::filesystem::path &inputPath,
-                      const std::string &sorting) const noexcept -> std::vector<BibElement> {
+auto Parser::generate(
+    const boost::filesystem::path &inputPath,
+    const std::string &sorting
+) const noexcept -> std::vector<BibElement> {
   //TODO: Add handling for multiple files + existence check
   std::ifstream inFile{inputPath.string()};
   std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
@@ -74,7 +76,10 @@ auto Parser::generate(
  * @param filename name or path of the parsed file (for logging errors)
  * @return collection of parsed bib-elements
  */
-auto Parser::elementsOf(std::string_view input, const std::string &filename) noexcept -> std::vector<BibElement> {
+auto Parser::elementsOf(
+    std::string_view input,
+    const std::string &filename
+) noexcept -> std::vector<BibElement> {
   ParserContext context(filename);
   std::vector<BibElement> result;
   try {

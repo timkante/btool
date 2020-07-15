@@ -57,7 +57,9 @@ auto TranslationTable::printAll(std::ostream &out) const -> void {
  * @param style the json-pointer to the style
  * @return the parsed style-properties
  */
-auto TranslationTable::parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties {
+auto TranslationTable::parseStyle(
+    const boost::property_tree::ptree &style
+) noexcept -> StyleProperties {
   const auto parseConstraintNode = [](const boost::property_tree::ptree &node) {
     std::unordered_set<std::string> fields;
     std::for_each(std::cbegin(node),
@@ -119,7 +121,9 @@ auto TranslationTable::getStyleProperties() const noexcept -> const std::vector<
  * @param name the style name to get properties for
  * @return (maybe) the properties for the style - None if there are none
  */
-auto TranslationTable::stylePropertiesOf(const std::string &name) const noexcept -> std::optional<StyleProperties> {
+auto TranslationTable::stylePropertiesOf(
+    const std::string &name
+) const noexcept -> std::optional<StyleProperties> {
   const auto propItr = std::find_if(std::cbegin(styleProperties), std::cend(styleProperties),
                                     [&name](const StyleProperties &prop) { return prop.name == name; });
   return (propItr != std::cend(styleProperties)) ? std::optional(*propItr) : std::nullopt;
