@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "bibParser", "index.html", [
+    [ "Test List", "test.html", null ],
     [ "Classes", "annotated.html", [
       [ "Project Status :octocat:", "index.html#autotoc_md0", [
         [ "Builds :construction_worker: and Deployments :rocket:", "index.html#autotoc_md1", null ],
@@ -61,13 +62,14 @@ var NAVTREE =
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_abstract_parser_state_8cpp.html"
+"_2github_2workspace_2test_2_bib_element_test_8cpp-example.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

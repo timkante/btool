@@ -1,23 +1,27 @@
 <map id="src/Field.hpp" name="src/Field.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="803,5,899,32"/>
-<area shape="rect" id="node2" href="$_bib_element_8hpp.html" title=" " alt="" coords="784,80,919,107"/>
-<area shape="rect" id="node19" href="$_parser_8hpp.html" title=" " alt="" coords="215,155,322,181"/>
-<area shape="rect" id="node21" href="$_field_8cpp.html" title=" " alt="" coords="943,80,1039,107"/>
-<area shape="rect" id="node3" href="$_abstract_parser_state_8hpp.html" title=" " alt="" coords="758,155,945,181"/>
-<area shape="rect" id="node6" href="$_global_parser_state_8hpp.html" title=" " alt="" coords="628,304,803,331"/>
-<area shape="rect" id="node10" href="$_identifier_parser_state_8hpp.html" title=" " alt="" coords="945,229,1131,256"/>
-<area shape="rect" id="node13" href="$_key_parser_state_8hpp.html" title=" " alt="" coords="1156,229,1315,256"/>
-<area shape="rect" id="node16" href="$_style_parser_state_8hpp.html" title=" " alt="" coords="753,229,920,256"/>
-<area shape="rect" id="node17" href="$_value_parser_state_8hpp.html" title=" " alt="" coords="1330,304,1501,331"/>
-<area shape="rect" id="node18" href="$_bib_element_8cpp.html" title=" " alt="" coords="599,155,733,181"/>
-<area shape="rect" id="node4" href="$_abstract_parser_state_8cpp.html" title=" " alt="" coords="417,304,603,331"/>
-<area shape="rect" id="node5" href="$_global_parser_state_8cpp.html" title=" " alt="" coords="476,379,651,405"/>
-<area shape="rect" id="node14" href="$_parser_exception_8hpp.html" title=" " alt="" coords="298,229,461,256"/>
-<area shape="rect" id="node7" href="$_key_parser_state_8cpp.html" title=" " alt="" coords="1213,379,1372,405"/>
-<area shape="rect" id="node8" href="$_parser_8cpp.html" title=" " alt="" coords="89,379,195,405"/>
-<area shape="rect" id="node9" href="$_value_parser_state_8cpp.html" title=" " alt="" coords="781,379,951,405"/>
-<area shape="rect" id="node11" href="$_identifier_parser_state_8cpp.html" title=" " alt="" coords="1018,304,1205,331"/>
-<area shape="rect" id="node12" href="$_style_parser_state_8cpp.html" title=" " alt="" coords="827,304,993,331"/>
-<area shape="rect" id="node15" href="$_parser_exception_8cpp.html" title=" " alt="" coords="179,304,342,331"/>
-<area shape="rect" id="node20" href="$main_8cpp.html" title=" " alt="" coords="29,229,103,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="932,5,1028,32"/>
+<area shape="rect" id="node2" href="$_bib_element_8hpp.html" title=" " alt="" coords="843,80,978,107"/>
+<area shape="rect" id="node20" href="$_parser_8hpp.html" title=" " alt="" coords="247,155,353,181"/>
+<area shape="rect" id="node24" href="$_field_8cpp.html" title=" " alt="" coords="1003,80,1099,107"/>
+<area shape="rect" id="node25" href="$_field_test_8cpp.html" title=" " alt="" coords="1123,80,1250,107"/>
+<area shape="rect" id="node3" href="$_abstract_parser_state_8hpp.html" title=" " alt="" coords="603,155,789,181"/>
+<area shape="rect" id="node6" href="$_global_parser_state_8hpp.html" title=" " alt="" coords="577,304,751,331"/>
+<area shape="rect" id="node10" href="$_parser_state_test_8cpp.html" title=" " alt="" coords="1111,379,1278,405"/>
+<area shape="rect" id="node11" href="$_identifier_parser_state_8hpp.html" title=" " alt="" coords="1012,229,1199,256"/>
+<area shape="rect" id="node14" href="$_key_parser_state_8hpp.html" title=" " alt="" coords="1389,229,1547,256"/>
+<area shape="rect" id="node17" href="$_style_parser_state_8hpp.html" title=" " alt="" coords="734,229,901,256"/>
+<area shape="rect" id="node18" href="$_value_parser_state_8hpp.html" title=" " alt="" coords="776,304,947,331"/>
+<area shape="rect" id="node19" href="$_bib_element_8cpp.html" title=" " alt="" coords="1027,155,1162,181"/>
+<area shape="rect" id="node22" href="$_parser_test_8cpp.html" title=" " alt="" coords="232,229,368,256"/>
+<area shape="rect" id="node23" href="$_bib_element_test_8cpp.html" title=" " alt="" coords="1186,155,1350,181"/>
+<area shape="rect" id="node4" href="$_abstract_parser_state_8cpp.html" title=" " alt="" coords="323,379,509,405"/>
+<area shape="rect" id="node5" href="$_global_parser_state_8cpp.html" title=" " alt="" coords="534,379,709,405"/>
+<area shape="rect" id="node15" href="$_parser_exception_8hpp.html" title=" " alt="" coords="288,304,451,331"/>
+<area shape="rect" id="node7" href="$_key_parser_state_8cpp.html" title=" " alt="" coords="929,379,1087,405"/>
+<area shape="rect" id="node8" href="$_parser_8cpp.html" title=" " alt="" coords="192,379,299,405"/>
+<area shape="rect" id="node9" href="$_value_parser_state_8cpp.html" title=" " alt="" coords="733,379,904,405"/>
+<area shape="rect" id="node12" href="$_identifier_parser_state_8cpp.html" title=" " alt="" coords="1264,304,1451,331"/>
+<area shape="rect" id="node13" href="$_style_parser_state_8cpp.html" title=" " alt="" coords="1022,304,1189,331"/>
+<area shape="rect" id="node16" href="$_parser_exception_8cpp.html" title=" " alt="" coords="5,379,168,405"/>
+<area shape="rect" id="node21" href="$main_8cpp.html" title=" " alt="" coords="83,229,157,256"/>
 </map>

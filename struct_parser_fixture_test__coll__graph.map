@@ -1,0 +1,12 @@
+<map id="ParserFixtureTest" name="ParserFixtureTest">
+<area shape="rect" id="node1" title=" " alt="" coords="5,1163,149,1240"/>
+<area shape="rect" id="node2" title=" " alt="" coords="32,993,80,1071"/>
+<area shape="rect" id="node3" href="$class_parser.html" title="interface to interact with bib&#45;files" alt="" coords="104,964,208,1100"/>
+<area shape="rect" id="node4" href="$class_translation_table.html" title="api to interact with translation&#45;table resource" alt="" coords="172,736,319,901"/>
+<area shape="rect" id="node5" title=" " alt="" coords="149,596,341,673"/>
+<area shape="rect" id="node6" href="$struct_style_properties.html" title="style&#45;properties&#45;container" alt="" coords="190,456,301,533"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="134,147,213,224"/>
+<area shape="rect" id="node9" title=" " alt="" coords="241,287,369,379"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="111,5,235,97"/>
+<area shape="rect" id="node10" title=" " alt="" coords="365,596,416,673"/>
+</map>

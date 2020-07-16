@@ -19,5 +19,11 @@ var hierarchy =
       ] ]
     ] ],
     [ "StyleProperties", "struct_style_properties.html", null ],
+    [ "Test", null, [
+      [ "BibElementFixtureTest", "struct_bib_element_fixture_test.html", null ],
+      [ "ParserFixtureTest", "struct_parser_fixture_test.html", null ],
+      [ "ParserStateTest", "class_parser_state_test.html", null ],
+      [ "TranslationTableFixtureTest", "struct_translation_table_fixture_test.html", null ]
+    ] ],
     [ "TranslationTable", "class_translation_table.html", null ]
 ];

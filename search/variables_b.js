@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['state_171',['state',['../struct_parser_exception.html#a8c55a3af81ec0ed9e78be0bc1697ac2d',1,'ParserException']]],
-  ['style_172',['style',['../struct_bib_element.html#ab93dff716574c52a57b094c4b698a479',1,'BibElement::style()'],['../class_style_parser_state.html#a25952ea7fe38686eae8bd15fb887b546',1,'StyleParserState::style()']]],
-  ['styleproperties_173',['styleProperties',['../class_translation_table.html#a08201d7b4380b7276de749d0917f01f5',1,'TranslationTable']]]
+  ['requiredfields_209',['requiredFields',['../struct_style_properties.html#a7c845cb6b6f3401424db9652ebbdd066',1,'StyleProperties']]],
+  ['result_210',['result',['../class_abstract_parser_state.html#a438be8aea0882824574a1b31205ebb36',1,'AbstractParserState::result()'],['../class_parser_state_test.html#a2f7d6ada68d10af470547fcdf37ced66',1,'ParserStateTest::result()']]]
 ];

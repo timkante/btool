@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['copyright_129',['Copyright',['../_l_i_c_e_n_s_e_8txt.html#aa3ed601dee313116393d6e5efc58d658',1,'LICENSE.txt']]]
+  ['bibelementfixturetest_158',['BibElementFixtureTest',['../struct_bib_element_fixture_test.html#ae831dd389d771f2aa3a0c95826d8445c',1,'BibElementFixtureTest']]]
 ];

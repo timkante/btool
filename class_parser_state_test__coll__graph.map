@@ -1,0 +1,12 @@
+<map id="ParserStateTest" name="ParserStateTest">
+<area shape="rect" id="node1" title=" " alt="" coords="32,905,149,983"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,765,53,843"/>
+<area shape="rect" id="node3" title=" " alt="" coords="136,765,307,843"/>
+<area shape="rect" id="node4" href="$struct_bib_element.html" title="bib&#45;element&#45;Container" alt="" coords="169,596,293,703"/>
+<area shape="rect" id="node5" title=" " alt="" coords="247,456,379,533"/>
+<area shape="rect" id="node6" href="$struct_field.html" title="Field&#45;Container." alt="" coords="253,301,357,379"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="170,147,249,224"/>
+<area shape="rect" id="node9" href="$struct_parser_context.html" title=" " alt="" coords="29,301,152,379"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="147,5,271,97"/>
+<area shape="rect" id="node10" title=" " alt="" coords="17,147,73,224"/>
+</map>

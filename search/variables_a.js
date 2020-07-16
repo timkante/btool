@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['requiredfields_169',['requiredFields',['../struct_style_properties.html#a7c845cb6b6f3401424db9652ebbdd066',1,'StyleProperties']]],
-  ['result_170',['result',['../class_abstract_parser_state.html#a438be8aea0882824574a1b31205ebb36',1,'AbstractParserState']]]
+  ['props_208',['props',['../struct_bib_element_fixture_test.html#a7bee5d510872d6e87d5b66bc8af3810d',1,'BibElementFixtureTest']]]
 ];
