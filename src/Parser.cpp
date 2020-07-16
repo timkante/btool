@@ -39,11 +39,11 @@ auto Parser::generate(
     return {};
   } else if (boost::filesystem::is_directory(inputPath)) {
     std::vector<BibElement> collector{};
-    for (const auto &file : boost::filesystem::directory_iterator(inputPath)){
+    for (const auto &file : boost::filesystem::directory_iterator(inputPath)) {
       spdlog::info("Parsing File: {} ...", file.path().string());
       std::ifstream inFile{file.path().string()};
       std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
-      for (const auto &element : generate(std::string_view(inContent), sorting, inputPath.string())){
+      for (const auto &element : generate(std::string_view(inContent), sorting, inputPath.string())) {
         collector.push_back(element);
       }
     }
@@ -72,20 +72,27 @@ auto Parser::generate(
     const std::string &filename
 ) const noexcept -> std::vector<BibElement> {
   const auto targetStructure = translationTable.stylePropertiesOf(targetStyle);
-  const auto parsedElements = Parser::elementsOf(inputFileContent, filename);
-  std::vector<BibElement> filteredElements{};
-  std::copy_if(std::cbegin(parsedElements),
-               std::cend(parsedElements),
-               std::back_inserter(filteredElements),
-               [this](const BibElement &element) { return element.style == targetStyle; }
-  );
-  std::sort(std::begin(filteredElements),
-            std::end(filteredElements),
-            [&sorting](const BibElement &l, const BibElement &r) {
-              return l.findAttribute(sorting).value_or<Field>({""s, ""s}).value
-                  < r.findAttribute(sorting).value_or<Field>({""s, ""s}).value;
-            });
-  return filteredElements;
+  if (!targetStructure) {
+    return {};
+  } else {
+    const auto parsedElements = Parser::elementsOf(inputFileContent, filename);
+    std::vector<BibElement> filteredElements{};
+    std::copy_if(std::cbegin(parsedElements),
+                 std::cend(parsedElements),
+                 std::back_inserter(filteredElements),
+                 [&](const BibElement &element) {
+                   return element.style == targetStyle
+                       && element.isCompliantTo(targetStructure.value());
+                 }
+    );
+    std::sort(std::begin(filteredElements),
+              std::end(filteredElements),
+              [&sorting](const BibElement &l, const BibElement &r) {
+                return l.findAttribute(sorting).value_or<Field>({""s, ""s}).value
+                    < r.findAttribute(sorting).value_or<Field>({""s, ""s}).value;
+              });
+    return filteredElements;
+  }
 }
 
 /**
