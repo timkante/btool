@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_parser.html" title="interface to interact with bib&#45;files" alt="" coords="5,5,65,32"/>
+<area shape="rect" id="node1" href="$struct_generator.html" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node2" href="$class_abstract_generator.html" title=" " alt="" coords="132,5,260,32"/>
+<area shape="rect" id="node3" href="$struct_html_generator.html" title=" " alt="" coords="308,5,415,32"/>
 </map>

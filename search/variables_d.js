@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['targetstyle_215',['targetStyle',['../class_parser.html#a40d20e6080b6d67817fe2b87208d2861',1,'Parser']]],
-  ['translationtable_216',['translationTable',['../class_parser.html#a393536d4b605242a331a44890a9f5011',1,'Parser']]]
+  ['requiredfields_245',['requiredFields',['../struct_style_properties.html#a7c845cb6b6f3401424db9652ebbdd066',1,'StyleProperties']]],
+  ['result_246',['result',['../class_abstract_parser_state.html#a438be8aea0882824574a1b31205ebb36',1,'AbstractParserState::result()'],['../class_parser_state_fixture_test.html#a3eab8c5d0c308f2aab488a9dc60c55df',1,'ParserStateFixtureTest::result()']]]
 ];
