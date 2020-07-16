@@ -2,7 +2,7 @@
 #define BIBPARSER_PARSERSTATE_HPP
 
 /**
- * A parser state
+ * A parser state interface
  */
 struct ParserState {
 

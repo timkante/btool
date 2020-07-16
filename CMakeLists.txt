@@ -32,12 +32,15 @@ set(MAIN_SOURCES
         src/StyleProperties.cpp
         src/Parser.cpp
         src/AbstractParserState.cpp
-        src/ParserException.hpp
-        src/StyleParserState.hpp
-        src/GlobalParserState.hpp
-        src/IdentifierParserState.hpp
-        src/KeyParserState.hpp
-        src/ValueParserState.hpp)
+        src/ParserException.cpp
+        src/StyleParserState.cpp
+        src/GlobalParserState.cpp
+        src/IdentifierParserState.cpp
+        src/KeyParserState.cpp
+        src/ValueParserState.cpp
+        src/ParserContext.cpp
+        src/AbstractFileWriter.cpp
+        src/FileWriterException.cpp)
 
 set(MAIN_HEADERS
         src/TranslationTable.hpp
@@ -48,13 +51,15 @@ set(MAIN_HEADERS
         src/AbstractParserState.hpp
         src/ParserState.hpp
         src/ParserContext.hpp
-        src/ParserException.cpp
-        src/StyleParserState.cpp
-        src/GlobalParserState.cpp
-        src/IdentifierParserState.cpp
-        src/KeyParserState.cpp
-        src/ValueParserState.cpp
-        src/ParserContext.cpp)
+        src/ParserException.hpp
+        src/StyleParserState.hpp
+        src/GlobalParserState.hpp
+        src/IdentifierParserState.hpp
+        src/KeyParserState.hpp
+        src/ValueParserState.hpp
+        src/AbstractFileWriter.hpp
+        src/FileWriter.hpp
+        src/FileWriterException.hpp)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
