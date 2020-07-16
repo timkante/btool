@@ -39,7 +39,7 @@ set(MAIN_SOURCES
         src/KeyParserState.cpp
         src/ValueParserState.cpp
         src/ParserContext.cpp
-        src/AbstractFileWriter.cpp
+        src/AbstractGenerator.cpp
         src/FileWriterException.cpp)
 
 set(MAIN_HEADERS
@@ -57,8 +57,8 @@ set(MAIN_HEADERS
         src/IdentifierParserState.hpp
         src/KeyParserState.hpp
         src/ValueParserState.hpp
-        src/AbstractFileWriter.hpp
-        src/FileWriter.hpp
+        src/AbstractGenerator.hpp
+        src/Generator.hpp
         src/FileWriterException.hpp)
 
 add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
