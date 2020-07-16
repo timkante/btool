@@ -1,12 +1,12 @@
 set(SuiteName bibParserTests)
 
 set(TEST_SOURCES
-        TranslationTableTest.cpp
+        TranslationTableFixtureTest.cpp
         FieldTest.cpp
         StylePropertiesTest.cpp
-        BibElementTest.cpp
-        ParserTest.cpp
-        ParserStateTest.cpp)
+        BibElementFixtureTest.cpp
+        ParserFixtureTest.cpp
+        ParserStateFixtureTest.cpp GeneratorFixtureTest.cpp)
 
 add_executable(${SuiteName} ${TEST_SOURCES})
 
