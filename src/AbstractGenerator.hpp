@@ -14,7 +14,7 @@ class AbstractGenerator : public Generator {
  protected:
   const std::vector<BibElement> &elements; ///< Elements to write
 
-  [[noreturn]] auto fail(const std::string &message) -> void;
+  [[noreturn]] virtual auto fail(const std::string &message, const std::string &type = "unknown") -> void;
 
   auto write() const -> std::string;
 

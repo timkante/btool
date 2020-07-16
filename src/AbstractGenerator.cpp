@@ -1,13 +1,13 @@
 #include <AbstractGenerator.hpp>
-#include <FileWriterException.hpp>
+#include <GeneratorException.hpp>
 
 /**
  * Helper Method to construct sufficient error-messages
  * @param message the message to use
  * @throws FileWriterException (always)
  */
-auto AbstractGenerator::fail(const std::string &message) -> void {
-  throw FileWriterException{"[unknown generator]: ", message};
+auto AbstractGenerator::fail(const std::string &message, const std::string &type) -> void {
+  throw GeneratorException{"[" + type + " generator]: ", message};
 }
 
 /**

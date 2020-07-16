@@ -1,5 +1,5 @@
-#ifndef BIBPARSER_SRC_FILEWRITEREXCEPTION_HPP_
-#define BIBPARSER_SRC_FILEWRITEREXCEPTION_HPP_
+#ifndef BIBPARSER_SRC_GENERATOREXCEPTION_HPP_
+#define BIBPARSER_SRC_GENERATOREXCEPTION_HPP_
 
 #include <boost/filesystem/path.hpp>
 #include <stdexcept>
@@ -8,10 +8,10 @@
 /**
  * A File-Writing exception
  */
-struct FileWriterException  : std::runtime_error {
+struct GeneratorException  : std::runtime_error {
   std::string message; ///< the message to throw
 
-  FileWriterException(const boost::filesystem::path &file, const std::string &message);
+  GeneratorException(const boost::filesystem::path &file, const std::string &message);
 
   [[nodiscard]] auto what() const noexcept -> const char * override;
 };

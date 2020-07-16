@@ -1,10 +1,10 @@
-#include <FileWriterException.hpp>
+#include <GeneratorException.hpp>
 
 /**
  * Exception-Message
  * @return the exception-message
  */
-auto FileWriterException::what() const noexcept -> const char * {
+auto GeneratorException::what() const noexcept -> const char * {
   return message.c_str();
 }
 
@@ -13,7 +13,7 @@ auto FileWriterException::what() const noexcept -> const char * {
  * @param file the file to error on
  * @param message the message to throw
  */
-FileWriterException::FileWriterException(
+GeneratorException::GeneratorException(
     const boost::filesystem::path &file,
     const std::string &message
 ) : std::runtime_error{""},
