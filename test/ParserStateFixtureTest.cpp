@@ -20,7 +20,7 @@ bool isType(const S *src) {
  * @example
  * @test ParserState Fixture Tests
  */
-class ParserStateTest : public ::testing::Test {
+class ParserStateFixtureTest : public ::testing::Test {
  protected:
   ParserContext context = ParserContext(""s);
   std::vector<BibElement> result;
@@ -31,7 +31,7 @@ class ParserStateTest : public ::testing::Test {
   }
 };
 
-TEST_F(ParserStateTest, globalStateIgnoresEverythingButAt) {
+TEST_F(ParserStateFixtureTest, globalStateIgnoresEverythingButAt) {
   const auto file = R"(some
 non
 
@@ -49,7 +49,7 @@ at_ characters)"s;
   delete state;
 }
 
-TEST_F(ParserStateTest, globalStateSwitchesToStyleAtAt) {
+TEST_F(ParserStateFixtureTest, globalStateSwitchesToStyleAtAt) {
   const auto file = R"(some@)"s;
   ParserState *state = new GlobalParserState{context, result};
 
@@ -64,7 +64,7 @@ TEST_F(ParserStateTest, globalStateSwitchesToStyleAtAt) {
   delete state;
 }
 
-TEST_F(ParserStateTest, styleParserStateFailsWithWhitespace) {
+TEST_F(ParserStateFixtureTest, styleParserStateFailsWithWhitespace) {
   const auto file = R"(here are spaces)"s;
   ParserState *state = new StyleParserState{context, result};
 
@@ -77,7 +77,7 @@ TEST_F(ParserStateTest, styleParserStateFailsWithWhitespace) {
   delete state;
 }
 
-TEST_F(ParserStateTest, styleParserStateDontFailOnCorrectStyle) {
+TEST_F(ParserStateFixtureTest, styleParserStateDontFailOnCorrectStyle) {
   const auto file = R"(thisIsAValidStyle)"s;
   ParserState *state = new StyleParserState{context, result};
 
@@ -91,7 +91,7 @@ TEST_F(ParserStateTest, styleParserStateDontFailOnCorrectStyle) {
   delete state;
 }
 
-TEST_F(ParserStateTest, styleParserStateSwitchesToIdentifierStateOnBrace) {
+TEST_F(ParserStateFixtureTest, styleParserStateSwitchesToIdentifierStateOnBrace) {
   const auto file = R"(thisIsAValidStyle{)"s;
   ParserState *state = new StyleParserState{context, result};
 
@@ -107,7 +107,7 @@ TEST_F(ParserStateTest, styleParserStateSwitchesToIdentifierStateOnBrace) {
   delete state;
 }
 
-TEST_F(ParserStateTest, globalStateCanGoToIdentifierState) {
+TEST_F(ParserStateFixtureTest, globalStateCanGoToIdentifierState) {
   const auto file = R"(someUselessStuff @thisIsAValidStyle{)"s;
   ParserState *state = new GlobalParserState{context, result};
 
@@ -122,7 +122,7 @@ TEST_F(ParserStateTest, globalStateCanGoToIdentifierState) {
   delete state;
 }
 
-TEST_F(ParserStateTest, identifierCantContainWhitespace) {
+TEST_F(ParserStateFixtureTest, identifierCantContainWhitespace) {
   const auto file = R"(identifier with whitespace)"s;
   ParserState *state = new IdentifierParserState{context, result};
 
@@ -135,7 +135,7 @@ TEST_F(ParserStateTest, identifierCantContainWhitespace) {
   delete state;
 }
 
-TEST_F(ParserStateTest, identifierEndsAtCommaAndIsSaved) {
+TEST_F(ParserStateFixtureTest, identifierEndsAtCommaAndIsSaved) {
   const auto file = R"(identifier,)"s;
   result.push_back({"", "", {}});
   ParserState *state = new IdentifierParserState{context, result};
@@ -151,7 +151,7 @@ TEST_F(ParserStateTest, identifierEndsAtCommaAndIsSaved) {
   delete state;
 }
 
-TEST_F(ParserStateTest, keyStateIgnoresTrailingWhitespace) {
+TEST_F(ParserStateFixtureTest, keyStateIgnoresTrailingWhitespace) {
   const auto file = R"(    this is a key    )"s;
   ParserState *state = new KeyParserState{context, result};
 
@@ -165,7 +165,7 @@ TEST_F(ParserStateTest, keyStateIgnoresTrailingWhitespace) {
   delete state;
 }
 
-TEST_F(ParserStateTest, keyStateExitsOnEqualSignAndTrimsKey) {
+TEST_F(ParserStateFixtureTest, keyStateExitsOnEqualSignAndTrimsKey) {
   const auto file = R"(    this is a key    =)"s;
   result.push_back({"", "", {}});
   ParserState *state = new KeyParserState{context, result};
@@ -181,7 +181,7 @@ TEST_F(ParserStateTest, keyStateExitsOnEqualSignAndTrimsKey) {
   delete state;
 }
 
-TEST_F(ParserStateTest, valueStateTrimsWhitespaceAndExitsToKeyState) {
+TEST_F(ParserStateFixtureTest, valueStateTrimsWhitespaceAndExitsToKeyState) {
   const auto file = R"(    this is a key    ,)"s;
   result.push_back({"", "", {{"", ""}}});
   ParserState *state = new ValueParserState{context, result};
@@ -197,7 +197,7 @@ TEST_F(ParserStateTest, valueStateTrimsWhitespaceAndExitsToKeyState) {
   delete state;
 }
 
-TEST_F(ParserStateTest, valueStateExitsOnCommaAndMatchingBraces) {
+TEST_F(ParserStateFixtureTest, valueStateExitsOnCommaAndMatchingBraces) {
   const auto file = R"(   {{   this, is a key  }}  ,)"s;
   result.push_back({"", "", {{"", ""}}});
   ParserState *state = new ValueParserState{context, result};
@@ -213,7 +213,7 @@ TEST_F(ParserStateTest, valueStateExitsOnCommaAndMatchingBraces) {
   delete state;
 }
 
-TEST_F(ParserStateTest, keyStateExitsToGlobalStateOnClosingBrace) {
+TEST_F(ParserStateFixtureTest, keyStateExitsToGlobalStateOnClosingBrace) {
   const auto file = R"(} )"s;
   ParserState *state = new KeyParserState{context, result};
 
@@ -227,7 +227,7 @@ TEST_F(ParserStateTest, keyStateExitsToGlobalStateOnClosingBrace) {
   delete state;
 }
 
-TEST_F(ParserStateTest, valueStateExitsToGlobalStateOnClosingBrace) {
+TEST_F(ParserStateFixtureTest, valueStateExitsToGlobalStateOnClosingBrace) {
   const auto file = R"(} )"s;
   result.push_back({"", "", {{"", ""}}});
   ParserState *state = new ValueParserState{context, result};
@@ -242,7 +242,7 @@ TEST_F(ParserStateTest, valueStateExitsToGlobalStateOnClosingBrace) {
   delete state;
 }
 
-TEST_F(ParserStateTest, canParseFullElement) {
+TEST_F(ParserStateFixtureTest, canParseFullElement) {
   const auto file = R"(@inproceedings{Feigenspan11,
     author = {Janet Feigenspan},
     title = {{Program Comprehension of Feature-Oriented Software Development}},
@@ -273,7 +273,7 @@ TEST_F(ParserStateTest, canParseFullElement) {
   delete state;
 }
 
-TEST_F(ParserStateTest, canParseMultipleElements) {
+TEST_F(ParserStateFixtureTest, canParseMultipleElements) {
   const auto file = R"(
 @inproceedings{Feigenspan11,
     author = {Janet Feigenspan},
