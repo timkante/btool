@@ -16,7 +16,7 @@ struct Generator {
    * @return success of the write-action
    * @note on success: writes a new file as side effect
    */
-  virtual auto write() const -> std::string = 0;
+  virtual auto write() -> std::string = 0;
 };
 
 #endif

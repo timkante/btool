@@ -9,7 +9,7 @@
 struct HtmlGenerator : public AbstractGenerator {
   [[noreturn]] auto fail(const std::string &message, const std::string &type = "HTML") -> void override;
 
-  auto write() const -> std::string override;
+  auto write() -> std::string override;
 
   HtmlGenerator(const std::vector<BibElement> &elements);
 };

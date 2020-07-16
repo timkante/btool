@@ -20,6 +20,6 @@ AbstractGenerator::AbstractGenerator(const std::vector<BibElement> &elements) : 
  * Default write-behaviour (do nothing)
  * @return the elements in target format
  */
-auto AbstractGenerator::write() const -> std::string {
+auto AbstractGenerator::write() -> std::string {
   return "";
 }

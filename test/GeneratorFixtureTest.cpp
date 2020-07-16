@@ -10,7 +10,7 @@ using namespace std::literals::string_literals;
  * @test Generator Fixture Tests
  */
 struct GeneratorFixtureTest : public ::testing::Test {
-  const HtmlGenerator generator{
+  HtmlGenerator generator{
       {
           {
               "FeigenspanSiFr11",
@@ -32,6 +32,12 @@ struct GeneratorFixtureTest : public ::testing::Test {
   };
 };
 
-TEST_F(GeneratorFixtureTest, htmlGeneratorTest){
+TEST_F(GeneratorFixtureTest, htmlGeneratorTest) {
   ASSERT_EQ(generator.write(), "");
+}
+
+TEST_F(GeneratorFixtureTest, htmlGeneratorThrowsOnEmptyInput) {
+  ASSERT_ANY_THROW([]() {
+    HtmlGenerator({}).write();
+  }());
 }

@@ -14,7 +14,10 @@ auto HtmlGenerator::fail(const std::string &message, const std::string &type) ->
  * @return the written document as String
  * @throws FileWriterException on error
  */
-auto HtmlGenerator::write() const -> std::string {
+auto HtmlGenerator::write() -> std::string {
+  if (elements.empty()){
+    fail("Empty-Input is not Writable");
+  }
   return AbstractGenerator::write();
 }
 

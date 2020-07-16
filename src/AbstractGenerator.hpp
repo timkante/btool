@@ -16,7 +16,7 @@ class AbstractGenerator : public Generator {
 
   [[noreturn]] virtual auto fail(const std::string &message, const std::string &type = "unknown") -> void;
 
-  auto write() const -> std::string;
+  auto write() -> std::string;
 
  public:
 
