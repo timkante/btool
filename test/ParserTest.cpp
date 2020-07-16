@@ -8,6 +8,11 @@
 using namespace std::literals::string_literals;
 using namespace std::literals::string_view_literals;
 
+/**
+ * Tests for the Parser
+ * @example
+ * @test Parser Fixture Tests
+ */
 struct ParserFixtureTest : public ::testing::Test {
   Parser sample;
 

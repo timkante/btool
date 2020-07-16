@@ -7,6 +7,11 @@
 
 using namespace std::literals::string_literals;
 
+/**
+ * Tests for the Translation-Table
+ * @example
+ * @test TranslationTable Fixture Tests
+ */
 struct TranslationTableFixtureTest : public ::testing::Test {
   TranslationTable sample;
 

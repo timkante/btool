@@ -15,6 +15,11 @@ bool isType(const S *src) {
   return dynamic_cast<const D *>(src) != nullptr;
 }
 
+/**
+ * Tests for the Parser-States
+ * @example
+ * @test ParserState Fixture Tests
+ */
 class ParserStateTest : public ::testing::Test {
  protected:
   ParserContext context = ParserContext(""s);

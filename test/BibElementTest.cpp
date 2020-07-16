@@ -4,6 +4,11 @@
 
 using namespace std::literals::string_literals;
 
+/**
+ * Tests for Bib-Elements
+ * @example
+ * @test BibElement Fixture Tests
+ */
 struct BibElementFixtureTest : public ::testing::Test {
   const StyleProperties props;
   const BibElement completeElement;
