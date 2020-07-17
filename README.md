@@ -143,8 +143,10 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" width="60" /> | [GitHub](https://github.com/timkante/bibParser) | version-control |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="60" /> | [googletest](https://github.com/google/googletest) | testing |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png" width="60" /> | [Markdown](https://markdown.de/) | non-code-documentation
+| <img src="https://www.seo-denda.de/wp-content/uploads/2019/07/bootstrap-logo.png" width="60" /> | [Bootstrap](https://getbootstrap.com/) | HTML-Beautification
 | | [Doxygen](https://www.doxygen.nl/index.html) | documentation |
 | | [spdlog](https://github.com/gabime/spdlog) | logging |
+| | [CTML](https://github.com/tinfoilboy/CTML) | HTML-Generation |
 
 ## Team :busts_in_silhouette:
 
