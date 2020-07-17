@@ -67,9 +67,10 @@ add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
 add_subdirectory(dependencies/spdlog)
 add_subdirectory(dependencies/googletest)
+add_subdirectory(dependencies/ctml)
 
 message(STATUS "Boost version: ${Boost_VERSION}")
-target_link_libraries(${PROJECT_NAME} Boost::system Boost::filesystem spdlog::spdlog)
+target_link_libraries(${PROJECT_NAME} Boost::system Boost::filesystem spdlog::spdlog CTML)
 
 target_include_directories(${PROJECT_NAME} PUBLIC src)
 

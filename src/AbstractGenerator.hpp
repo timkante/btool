@@ -4,6 +4,7 @@
 #include <boost/filesystem/path.hpp>
 #include <BibElement.hpp>
 #include <Generator.hpp>
+#include <unordered_set>
 #include <string>
 #include <vector>
 
@@ -12,7 +13,7 @@
  */
 class AbstractGenerator : public Generator {
  protected:
-  const std::vector<BibElement> &elements; ///< Elements to write
+  std::vector<BibElement> elements; ///< Elements to write
 
   [[noreturn]] virtual auto fail(const std::string &message, const std::string &type = "unknown") -> void;
 
@@ -21,6 +22,8 @@ class AbstractGenerator : public Generator {
  public:
 
   AbstractGenerator(const std::vector<BibElement> &elements);
+
+  static auto uniqueFieldsOf(const std::vector<BibElement> &values) noexcept -> std::unordered_set<std::string>;
 };
 
 #endif
