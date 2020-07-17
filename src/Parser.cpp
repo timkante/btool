@@ -42,6 +42,7 @@ auto Parser::generate(
     for (const auto &file : boost::filesystem::directory_iterator(inputPath)) {
       spdlog::info("Parsing File: {} ...", file.path().string());
       std::ifstream inFile{file.path().string()};
+      inFile >> std::noskipws;
       std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
       for (const auto &element : generate(std::string_view(inContent), sorting, inputPath.string())) {
         collector.push_back(element);

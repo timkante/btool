@@ -79,15 +79,15 @@ TEST_F(ParserFixtureTest, parseCorrectContent) {
           "FeigenspanSiFr11",
           "article",
           {
-              {"author", "{Janet Feigenspan and Norbert Siegmund and Jana Fruth}"},
-              {"title", "{{On the Role of Program Comprehension in Embedded Systems}}"},
-              {"journal", "{Softwaretechnik-Trends}"},
-              {"year", "{2011}"},
-              {"volume", "{31}"},
-              {"number", "{2}"},
+              {"author", "Janet Feigenspan and Norbert Siegmund and Jana Fruth"},
+              {"title", "On the Role of Program Comprehension in Embedded Systems"},
+              {"journal", "Softwaretechnik-Trends"},
+              {"year", "2011"},
+              {"volume", "31"},
+              {"number", "2"},
               {"month", "May"},
               {"url",
-               "{http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}"
+               "http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf"
               }
           }
       }
@@ -158,23 +158,23 @@ TEST_F(ParserFixtureTest, sortingWorks) {
 
   std::vector<BibElement> expected{
       {"FeigenspanSiFr11", "article", {
-          {"author", "{Janet Feigenspan and Norbert Siegmund and Jana Fruth}"},
-          {"title", "{{On the Role of Program Comprehension in Embedded Systems}}"},
-          {"journal", "{Softwaretechnik-Trends}"},
-          {"year", "{2011}"},
-          {"volume", "{31}"},
-          {"number", "{2}"},
+          {"author", "Janet Feigenspan and Norbert Siegmund and Jana Fruth"},
+          {"title", "On the Role of Program Comprehension in Embedded Systems"},
+          {"journal", "Softwaretechnik-Trends"},
+          {"year", "2011"},
+          {"volume", "31"},
+          {"number", "2"},
           {"month", "May"},
           {"url",
-           "{http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}"}
+           "http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf"}
       }},
       {"Feigenspan11", "article", {
-          {"author", "{Janet Feigenspan}"},
-          {"title", "{{Program Comprehension of Feature-Oriented Software Development}}"},
-          {"booktitle", "{International Doctoral Symposium on Empirical Software Engineering (IDoESE)}"},
-          {"year", "{2011}"},
+          {"author", "Janet Feigenspan"},
+          {"title", "Program Comprehension of Feature-Oriented Software Development"},
+          {"booktitle", "International Doctoral Symposium on Empirical Software Engineering (IDoESE)"},
+          {"year", "2011"},
           {"month", "Sep"},
-          {"url", "{http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf}"}
+          {"url", "http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf"}
       }}};
 
   ASSERT_EQ(sample.generate(file, "title", "testfile.bib"), expected);

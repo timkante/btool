@@ -1,5 +1,6 @@
 #include <ValueParserState.hpp>
 #include <boost/algorithm/string.hpp>
+#include <boost/algorithm/string/predicate.hpp>
 #include <GlobalParserState.hpp>
 #include <ParserException.hpp>
 #include <KeyParserState.hpp>
@@ -35,16 +36,15 @@ auto ValueParserState::handleCharacter(const char c) -> ParserState * {
       value += c;
     }
   } else if (c == '{') {
-    value += c;
     braces.push(std::make_pair(context.line, context.column));
   } else if (c == '}') {
+    replaceSpecialCharacter(value);
     if (braces.empty()) {
       result.back().attributes.back().value = boost::trim_copy(value);
       const auto keyState = new GlobalParserState{context, result};
       delete this;
       return keyState;
     } else {
-      value += c;
       braces.pop();
     }
   } else if (std::isgraph(c) || std::isspace(c)) {
@@ -53,4 +53,20 @@ auto ValueParserState::handleCharacter(const char c) -> ParserState * {
     fail("Invalid Character in Value, got so far: ["s + value + "]"s);
   }
   return this;
+}
+
+auto ValueParserState::replaceSpecialCharacter(std::string &s) -> void {
+  if (boost::algorithm::ends_with(s, R"(\"a)")) {
+    boost::algorithm::replace_last(s, R"(\"a)", "ä");
+  } else if (boost::algorithm::ends_with(s, R"(\"o)")) {
+    boost::algorithm::replace_last(s, R"(\"o)", "ö");
+  } else if (boost::algorithm::ends_with(s, R"(\"u)")) {
+    boost::algorithm::replace_last(s, R"(\"u)", "ü");
+  } else if (boost::algorithm::ends_with(s, R"(\ss)")) {
+    boost::algorithm::replace_last(s, R"(\ss)", "ß");
+  } else if (boost::algorithm::ends_with(s, R"(\'a)")) {
+    boost::algorithm::replace_last(s, R"(\'a)", "á");
+  } else if (boost::algorithm::ends_with(s, R"(\'e)")) {
+    boost::algorithm::replace_last(s, R"(\'e)", "é");
+  }
 }

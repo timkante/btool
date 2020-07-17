@@ -208,7 +208,7 @@ TEST_F(ParserStateFixtureTest, valueStateExitsOnCommaAndMatchingBraces) {
     }
   }());
 
-  ASSERT_EQ(result.front().attributes.front().value, "{{   this, is a key  }}"s);
+  ASSERT_EQ(result.front().attributes.front().value, "this, is a key"s);
   ASSERT_TRUE(isType<KeyParserState>(state));
   delete state;
 }
@@ -254,12 +254,12 @@ TEST_F(ParserStateFixtureTest, canParseFullElement) {
   ParserState *state = new GlobalParserState{context, result};
 
   BibElement expected{"Feigenspan11", "inproceedings", {
-      {"author", "{Janet Feigenspan}"},
-      {"title", "{{Program Comprehension of Feature-Oriented Software Development}}"},
-      {"booktitle", "{International Doctoral Symposium on Empirical Software Engineering (IDoESE)}"},
-      {"year", "{2011}"},
+      {"author", "Janet Feigenspan"},
+      {"title", "Program Comprehension of Feature-Oriented Software Development"},
+      {"booktitle", "International Doctoral Symposium on Empirical Software Engineering (IDoESE)"},
+      {"year", "2011"},
       {"month", "Sep"},
-      {"url", "{http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf}"}
+      {"url", "http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf"}
   }};
 
   ASSERT_NO_THROW([&]() {
@@ -297,22 +297,22 @@ TEST_F(ParserStateFixtureTest, canParseMultipleElements) {
 
   std::vector<BibElement> expected{
       {"Feigenspan11", "inproceedings", {
-          {"author", "{Janet Feigenspan}"},
-          {"title", "{{Program Comprehension of Feature-Oriented Software Development}}"},
-          {"booktitle", "{International Doctoral Symposium on Empirical Software Engineering (IDoESE)}"},
-          {"year", "{2011}"},
+          {"author", "Janet Feigenspan"},
+          {"title", "Program Comprehension of Feature-Oriented Software Development"},
+          {"booktitle", "International Doctoral Symposium on Empirical Software Engineering (IDoESE)"},
+          {"year", "2011"},
           {"month", "Sep"},
-          {"url", "{http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf}"}
+          {"url", "http://wwwiti.cs.uni-magdeburg.de/iti_db/publikationen/ps/auto/Feigenspan11.pdf"}
       }}, {"FeigenspanSiFr11", "article", {
-          {"author", "{Janet Feigenspan and Norbert Siegmund and Jana Fruth}"},
-          {"title", "{{On the Role of Program Comprehension in Embedded Systems}}"},
-          {"journal", "{Softwaretechnik-Trends}"},
-          {"year", "{2011}"},
-          {"volume", "{31}"},
-          {"number", "{2}"},
+          {"author", "Janet Feigenspan and Norbert Siegmund and Jana Fruth"},
+          {"title", "On the Role of Program Comprehension in Embedded Systems"},
+          {"journal", "Softwaretechnik-Trends"},
+          {"year", "2011"},
+          {"volume", "31"},
+          {"number", "2"},
           {"month", "May"},
           {"url",
-           "{http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}"}
+           "http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf"}
       }}};
 
   ASSERT_NO_THROW([&]() {

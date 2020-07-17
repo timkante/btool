@@ -71,53 +71,10 @@ TEST_F(GeneratorFixtureTest, uniqueFields) {
 }
 
 TEST_F(GeneratorFixtureTest, htmlGeneratorTest) {
-  const auto parser = Parser{
-          // language=json
-          std::stringstream{R"(
-        {
-            "sortableFields": [],
-            "styles": [
-                {
-                "name": "article",
-                "requiredFields": [
-                    "author",
-                    "title"
-                ],
-                "optionalFields": [
-                    "year",
-                    "volume",
-                    "number",
-                    "month",
-                    "url"
-                ]
-            },
-            {
-                "name": "book",
-                "requiredFields": [
-                    "author",
-                    "title",
-                    "year",
-                    "publisher"
-                ],
-                "optionalFields": [
-                    "volume",
-                    "series",
-                    "address",
-                    "edition",
-                    "month",
-                    "note",
-                    "isbn"
-                ]
-            }
-        ]
-    })"}, "article"};
-  const auto elements = parser.generate(boost::filesystem::path("../../test/res"), "author"s);
-  const auto file = HtmlGenerator(elements).write();
-  const auto html = generator.write();
-  std::ofstream f{"../../out.html"};
-  f << file;
-  f.close();
-  ASSERT_EQ(html, "");
+  ASSERT_NO_THROW(([&](){
+    const auto html = generator.write();
+    ASSERT_NE(html, "");
+  }()));
 }
 
 TEST_F(GeneratorFixtureTest, htmlGeneratorThrowsOnEmptyInput) {
