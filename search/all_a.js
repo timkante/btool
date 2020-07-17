@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_58',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_59',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['message_60',['message',['../struct_generator_exception.html#aa5aa1d68bac3a96dcbf0809ae76182eb',1,'GeneratorException::message()'],['../struct_parser_exception.html#afa2ba019c914f4c5bd737249ef9f1863',1,'ParserException::message()']]]
+  ['license_2etxt_64',['LICENSE.txt',['../_l_i_c_e_n_s_e_8txt.html',1,'']]],
+  ['line_65',['line',['../struct_parser_context.html#a6c34e07e32049ced091d9af2a033ba7e',1,'ParserContext']]],
+  ['link_66',['LINK',['../struct_html_generator.html#afefa37a5b7fd7d29a3df0a2e21120366a58c0a0e97e6d2f615bc264c2775fda44',1,'HtmlGenerator']]]
 ];

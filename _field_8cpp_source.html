@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('_field_8cpp_source.html',''); initResi
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct_field.html#a8357e2110b633c63659612a147880486">    9</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_field.html#a8357e2110b633c63659612a147880486">Field::operator==</a>(<span class="keyword">const</span> <a class="code" href="struct_field.html">Field</a> &amp;other) <span class="keyword">const</span> noexcept -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">return</span> name == other.name &amp;&amp; value == other.value;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="_html_generator_8hpp.html#a69b637c5ea42540ab9c4a77b6a2a632b">name</a> == other.name &amp;&amp; value == other.value;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_field_8hpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda">   19</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="_field_8cpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda">operator&lt;&lt;</a>(std::ostream &amp;os, <a class="code" href="struct_field.html">Field</a> <span class="keyword">const</span> &amp;field) -&gt; std::ostream &amp; {</div>
@@ -112,6 +112,7 @@ $(document).ready(function(){initNavTree('_field_8cpp_source.html',''); initResi
 <div class="ttc" id="a_field_8cpp_html_a935ec8b0d6ed0d67a5ee78cbfb303dda"><div class="ttname"><a href="_field_8cpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda">operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(std::ostream &amp;os, Field const &amp;field) -&gt; std::ostream &amp;</div><div class="ttdef"><b>Definition:</b> <a href="_field_8cpp_source.html#l00019">Field.cpp:19</a></div></div>
 <div class="ttc" id="a_field_8hpp_html"><div class="ttname"><a href="_field_8hpp.html">Field.hpp</a></div></div>
 <div class="ttc" id="astruct_field_html_a8357e2110b633c63659612a147880486"><div class="ttname"><a href="struct_field.html#a8357e2110b633c63659612a147880486">Field::operator==</a></div><div class="ttdeci">auto operator==(const Field &amp;other) const noexcept -&gt; bool</div><div class="ttdef"><b>Definition:</b> <a href="_field_8cpp_source.html#l00009">Field.cpp:9</a></div></div>
+<div class="ttc" id="a_html_generator_8hpp_html_a69b637c5ea42540ab9c4a77b6a2a632b"><div class="ttname"><a href="_html_generator_8hpp.html#a69b637c5ea42540ab9c4a77b6a2a632b">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> <a href="_html_generator_8hpp_source.html#l00055">HtmlGenerator.hpp:55</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

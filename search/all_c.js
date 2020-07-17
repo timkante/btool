@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c_63',['operator&lt;&lt;',['../_bib_element_8cpp.html#a856e45ca46c0f4db39e9f614ffc5c97c',1,'operator&lt;&lt;(std::ostream &amp;os, BibElement const &amp;elem) -&gt; std::ostream &amp;:&#160;BibElement.cpp'],['../_bib_element_8hpp.html#a856e45ca46c0f4db39e9f614ffc5c97c',1,'operator&lt;&lt;(std::ostream &amp;os, BibElement const &amp;elem) -&gt; std::ostream &amp;:&#160;BibElement.cpp'],['../_field_8cpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda',1,'operator&lt;&lt;(std::ostream &amp;os, Field const &amp;field) -&gt; std::ostream &amp;:&#160;Field.cpp'],['../_field_8hpp.html#a935ec8b0d6ed0d67a5ee78cbfb303dda',1,'operator&lt;&lt;(std::ostream &amp;os, Field const &amp;field) -&gt; std::ostream &amp;:&#160;Field.cpp']]],
-  ['operator_3d_3d_64',['operator==',['../struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b',1,'BibElement::operator==()'],['../struct_field.html#a8357e2110b633c63659612a147880486',1,'Field::operator==()'],['../struct_style_properties.html#ad1644141edb4d3c751e4e55ff890c7e9',1,'StyleProperties::operator==()']]],
-  ['optionalfields_65',['optionalFields',['../struct_style_properties.html#a548cf8be3a9b65478e2da7dde22b63af',1,'StyleProperties']]]
+  ['name_71',['name',['../struct_field.html#afc2a9e34c4b26240fef110edb1e6d04b',1,'Field::name()'],['../struct_style_properties.html#a0f6d8f962c2e59059f255737980a9aa4',1,'StyleProperties::name()'],['../_html_generator_8hpp.html#a69b637c5ea42540ab9c4a77b6a2a632b',1,'name():&#160;HtmlGenerator.hpp']]],
+  ['not_72',['not',['../_l_i_c_e_n_s_e_8txt.html#a794d8ac15036e587c40267629fb767ec',1,'LICENSE.txt']]]
 ];

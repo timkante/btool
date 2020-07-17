@@ -1,5 +1,5 @@
 <map id="ValueParserState" name="ValueParserState">
-<area shape="rect" id="node1" title="Key Parser State." alt="" coords="13,315,156,421"/>
-<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="5,145,164,267"/>
-<area shape="rect" id="node3" href="$struct_parser_state.html" title=" " alt="" coords="17,5,152,97"/>
+<area shape="rect" id="node1" title="Key Parser State." alt="" coords="5,315,188,436"/>
+<area shape="rect" id="node2" href="$class_abstract_parser_state.html" title=" " alt="" coords="17,145,176,267"/>
+<area shape="rect" id="node3" href="$struct_parser_state.html" title=" " alt="" coords="29,5,164,97"/>
 </map>

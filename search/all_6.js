@@ -1,7 +1,15 @@
 var searchData=
 [
-  ['handlecharacter_40',['handleCharacter',['../class_abstract_parser_state.html#a2a06ae7a6e5e4f8e03e76db7a260ceae',1,'AbstractParserState::handleCharacter()'],['../class_global_parser_state.html#a5eca5b8f7b06502c3acdc5a57b03d479',1,'GlobalParserState::handleCharacter()'],['../class_identifier_parser_state.html#ae5b6295196d986c79a01c8e11cdd6663',1,'IdentifierParserState::handleCharacter()'],['../class_key_parser_state.html#a1eb8ffd16a751d322eb8cd8d1e4ee8bd',1,'KeyParserState::handleCharacter()'],['../struct_parser_state.html#acfe006c05634fe9dd47c4c4f816935d4',1,'ParserState::handleCharacter()'],['../class_style_parser_state.html#a79ca5f6cf53b009169193e37a82350d0',1,'StyleParserState::handleCharacter()'],['../class_value_parser_state.html#a82574c12b2fd11984045c4ba8c2c6091',1,'ValueParserState::handleCharacter()']]],
-  ['htmlgenerator_41',['HtmlGenerator',['../struct_html_generator.html',1,'HtmlGenerator'],['../struct_html_generator.html#a2b7b96c1eaa30ea007083f5539cca476',1,'HtmlGenerator::HtmlGenerator()']]],
-  ['htmlgenerator_2ecpp_42',['HtmlGenerator.cpp',['../_html_generator_8cpp.html',1,'']]],
-  ['htmlgenerator_2ehpp_43',['HtmlGenerator.hpp',['../_html_generator_8hpp.html',1,'']]]
+  ['generate_33',['generate',['../class_parser.html#a6433b1d7a350e3890e359869ff58da20',1,'Parser::generate(const boost::filesystem::path &amp;inputPath, const std::string &amp;sorting) const noexcept -&gt; std::vector&lt; BibElement &gt;'],['../class_parser.html#aee21df11a2740e7af754c2e717b76f80',1,'Parser::generate(std::string_view inputFileContent, const std::string &amp;sorting, const std::string &amp;filename) const noexcept -&gt; std::vector&lt; BibElement &gt;']]],
+  ['generator_34',['Generator',['../struct_generator.html',1,'Generator'],['../struct_generator_fixture_test.html#ad2f0d5e6e421666ddd955ed54cf3d5ef',1,'GeneratorFixtureTest::generator()']]],
+  ['generator_2ehpp_35',['Generator.hpp',['../_generator_8hpp.html',1,'']]],
+  ['generatorexception_36',['GeneratorException',['../struct_generator_exception.html',1,'GeneratorException'],['../struct_generator_exception.html#ae5501ffd46fee428f04c5828e053e6d7',1,'GeneratorException::GeneratorException()']]],
+  ['generatorexception_2ecpp_37',['GeneratorException.cpp',['../_generator_exception_8cpp.html',1,'']]],
+  ['generatorexception_2ehpp_38',['GeneratorException.hpp',['../_generator_exception_8hpp.html',1,'']]],
+  ['generatorfixturetest_39',['GeneratorFixtureTest',['../struct_generator_fixture_test.html',1,'']]],
+  ['generatorfixturetest_2ecpp_40',['GeneratorFixtureTest.cpp',['../_generator_fixture_test_8cpp.html',1,'']]],
+  ['getstyleproperties_41',['getStyleProperties',['../class_translation_table.html#ae624b58ca1e2170035ad0c6978fab8da',1,'TranslationTable']]],
+  ['globalparserstate_42',['GlobalParserState',['../class_global_parser_state.html',1,'GlobalParserState'],['../class_global_parser_state.html#ac50d848d59802426bed688bd065c364f',1,'GlobalParserState::GlobalParserState()']]],
+  ['globalparserstate_2ecpp_43',['GlobalParserState.cpp',['../_global_parser_state_8cpp.html',1,'']]],
+  ['globalparserstate_2ehpp_44',['GlobalParserState.hpp',['../_global_parser_state_8hpp.html',1,'']]]
 ];

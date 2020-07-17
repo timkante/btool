@@ -93,12 +93,15 @@ $(document).ready(function(){initNavTree('_html_generator_8hpp.html',''); initRe
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">HtmlGenerator.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="_abstract_generator_8hpp_source.html">AbstractGenerator.hpp</a>&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;ctml.hpp&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for HtmlGenerator.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -106,18 +109,20 @@ $(document).ready(function(){initNavTree('_html_generator_8hpp.html',''); initRe
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_html_generator_8hpp__incl.png" border="0" usemap="#src_2_html_generator_8hpp" alt=""/></div>
 <map name="src_2_html_generator_8hpp" id="src_2_html_generator_8hpp">
-<area shape="rect" title=" " alt="" coords="401,5,555,32"/>
-<area shape="rect" href="_abstract_generator_8hpp.html" title=" " alt="" coords="402,80,554,107"/>
+<area shape="rect" title=" " alt="" coords="652,5,805,32"/>
+<area shape="rect" href="_abstract_generator_8hpp.html" title=" " alt="" coords="497,80,649,107"/>
+<area shape="rect" title=" " alt="" coords="673,80,784,107"/>
+<area shape="rect" title=" " alt="" coords="808,80,879,107"/>
 <area shape="rect" title=" " alt="" coords="5,155,175,181"/>
-<area shape="rect" href="_bib_element_8hpp.html" title=" " alt="" coords="422,155,534,181"/>
-<area shape="rect" title=" " alt="" coords="435,304,489,331"/>
+<area shape="rect" href="_bib_element_8hpp.html" title=" " alt="" coords="441,155,553,181"/>
+<area shape="rect" title=" " alt="" coords="236,304,291,331"/>
+<area shape="rect" title=" " alt="" coords="554,304,658,331"/>
 <area shape="rect" title=" " alt="" coords="650,229,709,256"/>
-<area shape="rect" href="_generator_8hpp.html" title=" " alt="" coords="609,155,712,181"/>
-<area shape="rect" href="_style_properties_8hpp.html" title=" " alt="" coords="251,229,385,256"/>
-<area shape="rect" href="_field_8hpp.html" title=" " alt="" coords="551,229,626,256"/>
-<area shape="rect" title=" " alt="" coords="410,229,477,256"/>
-<area shape="rect" title=" " alt="" coords="266,304,370,331"/>
-<area shape="rect" title=" " alt="" coords="553,304,625,331"/>
+<area shape="rect" href="_generator_8hpp.html" title=" " alt="" coords="784,155,887,181"/>
+<area shape="rect" href="_style_properties_8hpp.html" title=" " alt="" coords="400,229,535,256"/>
+<area shape="rect" href="_field_8hpp.html" title=" " alt="" coords="301,229,375,256"/>
+<area shape="rect" title=" " alt="" coords="559,229,626,256"/>
+<area shape="rect" title=" " alt="" coords="315,304,387,331"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -139,7 +144,42 @@ $(document).ready(function(){initNavTree('_html_generator_8hpp.html',''); initRe
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_html_generator.html">HtmlGenerator</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a69b637c5ea42540ab9c4a77b6a2a632b"><td class="memTemplParams" colspan="2">template&lt;HtmlGenerator::HtmlTag &gt; </td></tr>
+<tr class="memitem:a69b637c5ea42540ab9c4a77b6a2a632b"><td class="memTemplItemLeft" align="right" valign="top">const char *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_html_generator_8hpp.html#a69b637c5ea42540ab9c4a77b6a2a632b">name</a> = &quot;Invalid HTML-Tag&quot;</td></tr>
+<tr class="separator:a69b637c5ea42540ab9c4a77b6a2a632b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a69b637c5ea42540ab9c4a77b6a2a632b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b637c5ea42540ab9c4a77b6a2a632b">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;HtmlGenerator::HtmlTag &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* name = &quot;Invalid HTML-Tag&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_html_generator_8hpp_source.html#l00055">55</a> of file <a class="el" href="_html_generator_8hpp_source.html">HtmlGenerator.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_field_8cpp_source.html#l00009">Field::operator==()</a>, <a class="el" href="_style_properties_8cpp_source.html#l00008">StyleProperties::operator==()</a>, <a class="el" href="_translation_table_8cpp_source.html#l00060">TranslationTable::parseStyle()</a>, and <a class="el" href="_translation_table_8cpp_source.html#l00124">TranslationTable::stylePropertiesOf()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

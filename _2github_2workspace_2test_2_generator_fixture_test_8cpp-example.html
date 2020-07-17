@@ -101,6 +101,8 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_generator_
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_bib_element_8hpp.html">BibElement.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_html_generator_8hpp.html">HtmlGenerator.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_parser_8hpp.html">Parser.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std::literals::string_literals;</div>
 <div class="line"> </div>
@@ -127,8 +129,47 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_generator_
 <div class="line">  };</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a name="a2"></a><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, htmlGeneratorTest) {</div>
-<div class="line">  ASSERT_EQ(generator.write(), <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="a2"></a><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, uniqueFields) {</div>
+<div class="line">  <span class="keyword">const</span> std::vector&lt;BibElement&gt; el{</div>
+<div class="line">      {</div>
+<div class="line">          {</div>
+<div class="line">              <span class="stringliteral">&quot;FeigenspanSiFr11&quot;</span>,</div>
+<div class="line">              <span class="stringliteral">&quot;article&quot;</span>,</div>
+<div class="line">              {</div>
+<div class="line">                  {<span class="stringliteral">&quot;author&quot;</span>, <span class="stringliteral">&quot;{Janet Feigenspan and Norbert Siegmund and Jana Fruth}&quot;</span>},</div>
+<div class="line">                  {<span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;{{On the Role of Program Comprehension in Embedded Systems}}&quot;</span>},</div>
+<div class="line">                  {<span class="stringliteral">&quot;journal&quot;</span>, <span class="stringliteral">&quot;{Softwaretechnik-Trends}&quot;</span>},</div>
+<div class="line">                  {<span class="stringliteral">&quot;year&quot;</span>, <span class="stringliteral">&quot;{2011}&quot;</span>},</div>
+<div class="line">                  {<span class="stringliteral">&quot;volume&quot;</span>, <span class="stringliteral">&quot;{31}&quot;</span>},</div>
+<div class="line">                  {<span class="stringliteral">&quot;number&quot;</span>, <span class="stringliteral">&quot;{2}&quot;</span>},</div>
+<div class="line">                  {<span class="stringliteral">&quot;month&quot;</span>, <span class="stringliteral">&quot;May&quot;</span>},</div>
+<div class="line">                  {<span class="stringliteral">&quot;url&quot;</span>,</div>
+<div class="line">                   <span class="stringliteral">&quot;{http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}&quot;</span></div>
+<div class="line">                  }</div>
+<div class="line">              }</div>
+<div class="line">          }</div>
+<div class="line">      }</div>
+<div class="line">  };</div>
+<div class="line"> </div>
+<div class="line">  std::unordered_set&lt;std::string&gt; expected{</div>
+<div class="line">    <span class="stringliteral">&quot;author&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;title&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;journal&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;year&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;volume&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;number&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;month&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;url&quot;</span></div>
+<div class="line">  };</div>
+<div class="line"> </div>
+<div class="line">  ASSERT_EQ(<a name="a3"></a><a class="code" href="class_abstract_generator.html#a264b078ed1b37f0cb6de71ea89db30da">AbstractGenerator::uniqueFieldsOf</a>(el), expected);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, htmlGeneratorTest) {</div>
+<div class="line">  ASSERT_NO_THROW(([&amp;](){</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> html = generator.write();</div>
+<div class="line">    ASSERT_NE(html, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line">  }()));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, htmlGeneratorThrowsOnEmptyInput) {</div>
@@ -138,11 +179,13 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_generator_
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astruct_html_generator_html"><div class="ttname"><a href="struct_html_generator.html">HtmlGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="_html_generator_8hpp_source.html#l00009">HtmlGenerator.hpp:9</a></div></div>
+<div class="ttc" id="astruct_html_generator_html"><div class="ttname"><a href="struct_html_generator.html">HtmlGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="_html_generator_8hpp_source.html#l00011">HtmlGenerator.hpp:11</a></div></div>
 <div class="ttc" id="a_html_generator_8hpp_html"><div class="ttname"><a href="_html_generator_8hpp.html">HtmlGenerator.hpp</a></div></div>
+<div class="ttc" id="aclass_abstract_generator_html_a264b078ed1b37f0cb6de71ea89db30da"><div class="ttname"><a href="class_abstract_generator.html#a264b078ed1b37f0cb6de71ea89db30da">AbstractGenerator::uniqueFieldsOf</a></div><div class="ttdeci">static auto uniqueFieldsOf(const std::vector&lt; BibElement &gt; &amp;values) noexcept -&gt; std::unordered_set&lt; std::string &gt;</div><div class="ttdef"><b>Definition:</b> <a href="_abstract_generator_8cpp_source.html#l00029">AbstractGenerator.cpp:29</a></div></div>
 <div class="ttc" id="a_bib_element_fixture_test_8cpp_html_a0a671a080601a8bdfa1558cb66c80b25"><div class="ttname"><a href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a></div><div class="ttdeci">TEST_F(BibElementFixtureTest, completeElementTest)</div><div class="ttdef"><b>Definition:</b> <a href="_bib_element_fixture_test_8cpp_source.html#l00034">BibElementFixtureTest.cpp:34</a></div></div>
+<div class="ttc" id="a_parser_8hpp_html"><div class="ttname"><a href="_parser_8hpp.html">Parser.hpp</a></div></div>
 <div class="ttc" id="a_bib_element_8hpp_html"><div class="ttname"><a href="_bib_element_8hpp.html">BibElement.hpp</a></div></div>
-<div class="ttc" id="astruct_generator_fixture_test_html"><div class="ttname"><a href="struct_generator_fixture_test.html">GeneratorFixtureTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_generator_fixture_test_8cpp_source.html#l00012">GeneratorFixtureTest.cpp:12</a></div></div>
+<div class="ttc" id="astruct_generator_fixture_test_html"><div class="ttname"><a href="struct_generator_fixture_test.html">GeneratorFixtureTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_generator_fixture_test_8cpp_source.html#l00014">GeneratorFixtureTest.cpp:14</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

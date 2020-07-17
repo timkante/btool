@@ -24,9 +24,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "GlobalParserState", "class_global_parser_state.html", "class_global_parser_state" ]
     ] ],
     [ "HtmlGenerator.cpp", "_html_generator_8cpp.html", null ],
-    [ "HtmlGenerator.hpp", "_html_generator_8hpp.html", [
-      [ "HtmlGenerator", "struct_html_generator.html", "struct_html_generator" ]
-    ] ],
+    [ "HtmlGenerator.hpp", "_html_generator_8hpp.html", "_html_generator_8hpp" ],
     [ "IdentifierParserState.cpp", "_identifier_parser_state_8cpp.html", null ],
     [ "IdentifierParserState.hpp", "_identifier_parser_state_8hpp.html", [
       [ "IdentifierParserState", "class_identifier_parser_state.html", "class_identifier_parser_state" ]
