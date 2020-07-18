@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
     option_dependency(vm, "xml", "table");
     option_dependency(vm, "pdf", "table");
 
-    const Parser parser{vm["table"].as<boost::filesystem::path>(), vm["filter"].as<std::vector<std::string>>().front()};
+    const Parser parser{vm["table"].as<boost::filesystem::path>(), vm["filter"].as<std::vector<std::string>>()};
     std::vector<BibElement> parsedElements;
     std::for_each(
         std::cbegin(vm["input"].as<std::vector<boost::filesystem::path>>()),
