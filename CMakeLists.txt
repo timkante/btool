@@ -7,7 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_DEBUG 1)
-find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem)
+find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem program_options)
 
 option(SONAR "Build all profiling-files." OFF)
 add_compile_options(-std=c++17)
@@ -70,7 +70,7 @@ add_subdirectory(dependencies/googletest)
 add_subdirectory(dependencies/ctml)
 
 message(STATUS "Boost version: ${Boost_VERSION}")
-target_link_libraries(${PROJECT_NAME}_lib Boost::system Boost::filesystem spdlog::spdlog CTML)
+target_link_libraries(${PROJECT_NAME}_lib Boost::system Boost::filesystem Boost::program_options spdlog::spdlog CTML)
 
 target_include_directories(${PROJECT_NAME}_lib PUBLIC src)
 
