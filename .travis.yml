@@ -27,10 +27,10 @@ script:
   - cd ..
   # Wraps the compilation with the Build Wrapper to generate configuration (used
   # later by the SonarScanner) into the "bw-output" folder
-  - build-wrapper-linux-x86-64 --out-dir bw-output cmake-3.17.0-Linux-x86_64/bin/cmake --build cmake-build-debug/ --target bibParserTests -- -j $(nproc)
+  - build-wrapper-linux-x86-64 --out-dir bw-output cmake-3.17.0-Linux-x86_64/bin/cmake --build cmake-build-debug/ --target btoolTest -- -j $(nproc)
   # Run tests
   - cd cmake-build-debug/test
-  - ./bibParserTests
+  - ./btoolTest
   - cd ../..
   # Generate the coverage - files
   - cd ./coverage
