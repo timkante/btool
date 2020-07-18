@@ -20,7 +20,7 @@ auto BibElement::isCompliantTo(const StyleProperties &props) const -> bool {
             [&requiredFieldName](const Field &actualField) {
               return requiredFieldName == actualField.name;
             }
-        ) != std::cend(attributes);
+        ) != std::cend(attributes) && style == props.name;
       }
   );
 }

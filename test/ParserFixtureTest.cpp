@@ -55,7 +55,7 @@ struct ParserFixtureTest : public ::testing::Test {
                 ]
             }
         ]
-    })"}, "article"} {};
+    })"}, {"article"}} {};
 };
 
 TEST_F(ParserFixtureTest, parseEmptyFileContents) {

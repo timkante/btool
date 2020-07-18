@@ -13,16 +13,16 @@ using namespace std::literals::string_literals;
  * @param ruleFilePath filepath to the translation-table
  * @param targetStyle the style name to filter parse-results for
  */
-Parser::Parser(const boost::filesystem::path &ruleFilePath, std::string targetStyle) noexcept
-    : targetStyle(std::move(targetStyle)), translationTable(TranslationTable(ruleFilePath)) {}
+Parser::Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles) noexcept
+    : targetStyles(std::move(targetStyles)), translationTable(TranslationTable(ruleFilePath)) {}
 
 /**
  * Constructor.
  * @param ruleFileContents contents of the translation-table
  * @param targetStyle the style name to filter parse-results for
  */
-Parser::Parser(std::stringstream ruleFileContents, std::string targetStyle) noexcept
-    : targetStyle(std::move(targetStyle)), translationTable(TranslationTable(std::move(ruleFileContents))) {}
+Parser::Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyles) noexcept
+    : targetStyles(std::move(targetStyles)), translationTable(TranslationTable(std::move(ruleFileContents))) {}
 
 /**
  * Generate bib-elements and Filter them for a Style
@@ -72,19 +72,25 @@ auto Parser::generate(
     const std::string &sorting,
     const std::string &filename
 ) const noexcept -> std::vector<BibElement> {
-  const auto targetStructure = translationTable.stylePropertiesOf(targetStyle);
-  if (!targetStructure) {
+  const std::vector<StyleProperties> targetStructures = translationTable.stylePropertiesOf(targetStyles);
+  if (targetStructures.empty()) {
     return {};
   } else {
     const auto parsedElements = Parser::elementsOf(inputFileContent, filename);
     std::vector<BibElement> filteredElements{};
-    std::copy_if(std::cbegin(parsedElements),
-                 std::cend(parsedElements),
-                 std::back_inserter(filteredElements),
-                 [&](const BibElement &element) {
-                   return element.style == targetStyle
-                       && element.isCompliantTo(targetStructure.value());
-                 }
+    std::copy_if(
+        std::cbegin(parsedElements),
+        std::cend(parsedElements),
+        std::back_inserter(filteredElements),
+        [&](const BibElement &element) {
+          return std::find_if(
+              std::cbegin(targetStructures),
+              std::cend(targetStructures),
+              [&](const StyleProperties &prop) {
+                return element.isCompliantTo(prop);
+              }
+          ) != std::cend(targetStructures);
+        }
     );
     std::sort(std::begin(filteredElements),
               std::end(filteredElements),

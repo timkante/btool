@@ -34,6 +34,10 @@ class TranslationTable {
   [[nodiscard]] auto getStyleProperties() const noexcept -> const std::vector<StyleProperties> &;
 
   [[nodiscard]] auto stylePropertiesOf(const std::string &name) const noexcept -> std::optional<StyleProperties>;
+
+  [[nodiscard]] auto stylePropertiesOf(
+      const std::vector<std::string> &names
+  ) const noexcept -> std::vector<StyleProperties>;
 };
 
 #endif

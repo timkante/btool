@@ -15,14 +15,14 @@
  * @brief interface to interact with bib-files
  */
 class Parser {
-  std::string targetStyle; ///< the target-style of the generated files
+  std::vector<std::string> targetStyles; ///< the target-styles of the generated files
   TranslationTable translationTable; ///< translation-Table handler
 
  public:
 
-  Parser(const boost::filesystem::path &ruleFilePath, std::string targetStyle) noexcept;
+  Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles) noexcept;
 
-  Parser(std::stringstream ruleFileContents, std::string targetStyle) noexcept;
+  Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyle) noexcept;
 
   [[nodiscard]] auto generate(
       const boost::filesystem::path &inputPath,

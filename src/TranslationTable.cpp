@@ -128,3 +128,19 @@ auto TranslationTable::stylePropertiesOf(
                                     [&name](const StyleProperties &prop) { return prop.name == name; });
   return (propItr != std::cend(styleProperties)) ? std::optional(*propItr) : std::nullopt;
 }
+
+/**
+ * Provides style-properties for a collection of styles
+ * @param names the style names to get properties for
+ * @return collection of properties
+ */
+auto TranslationTable::stylePropertiesOf(
+    const std::vector<std::string> &names
+) const noexcept -> std::vector<StyleProperties> {
+  std::vector<StyleProperties> result;
+  for (const auto &style : names){
+    const auto props = stylePropertiesOf(style);
+    if (props) result.push_back(props.value());
+  }
+  return result;
+}
