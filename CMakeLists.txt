@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(bibParser)
+project(btool)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -63,19 +63,19 @@ set(MAIN_HEADERS
         src/GeneratorException.hpp
         src/HtmlGenerator.hpp)
 
-add_library(${PROJECT_NAME} STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
+add_library(${PROJECT_NAME}_lib STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
 add_subdirectory(dependencies/spdlog)
 add_subdirectory(dependencies/googletest)
 add_subdirectory(dependencies/ctml)
 
 message(STATUS "Boost version: ${Boost_VERSION}")
-target_link_libraries(${PROJECT_NAME} Boost::system Boost::filesystem spdlog::spdlog CTML)
+target_link_libraries(${PROJECT_NAME}_lib Boost::system Boost::filesystem spdlog::spdlog CTML)
 
-target_include_directories(${PROJECT_NAME} PUBLIC src)
+target_include_directories(${PROJECT_NAME}_lib PUBLIC src)
 
 enable_testing()
 add_subdirectory(test)
 
-add_executable(${PROJECT_NAME}Run main.cpp)
-target_link_libraries(${PROJECT_NAME}Run PUBLIC ${PROJECT_NAME})
+add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${PROJECT_NAME}_lib)

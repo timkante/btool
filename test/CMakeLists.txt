@@ -1,4 +1,4 @@
-set(SuiteName bibParserTests)
+set(SuiteName btoolTest)
 
 set(TEST_SOURCES
         TranslationTableFixtureTest.cpp
@@ -12,6 +12,6 @@ add_executable(${SuiteName} ${TEST_SOURCES})
 
 target_link_libraries(${SuiteName} PUBLIC
         gtest_main
-        ${PROJECT_NAME})
+        ${PROJECT_NAME}_lib)
 
 add_test(NAME ${SuiteName} COMMAND ${SuiteName})
