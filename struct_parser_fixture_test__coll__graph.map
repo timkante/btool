@@ -1,7 +1,7 @@
 <map id="ParserFixtureTest" name="ParserFixtureTest">
-<area shape="rect" id="node1" title=" " alt="" coords="111,1225,255,1303"/>
-<area shape="rect" id="node2" title=" " alt="" coords="137,1056,185,1133"/>
-<area shape="rect" id="node3" href="$class_parser.html" title="interface to interact with bib&#45;files" alt="" coords="209,1027,313,1163"/>
+<area shape="rect" id="node1" title=" " alt="" coords="105,1255,249,1332"/>
+<area shape="rect" id="node2" title=" " alt="" coords="132,1071,180,1148"/>
+<area shape="rect" id="node3" href="$class_parser.html" title="interface to interact with bib&#45;files" alt="" coords="205,1027,318,1192"/>
 <area shape="rect" id="node4" href="$class_translation_table.html" title="api to interact with translation&#45;table resource" alt="" coords="128,784,275,964"/>
 <area shape="rect" id="node5" title=" " alt="" coords="5,644,197,721"/>
 <area shape="rect" id="node6" href="$struct_style_properties.html" title="style&#45;properties&#45;container" alt="" coords="51,504,162,581"/>

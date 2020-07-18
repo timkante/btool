@@ -1,6 +1,7 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,56,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,56,108"/>
 <area shape="rect" id="node2" href="$main_8cpp.html#aa6a64ccd9c6b7bf07a05a27d0298e0be" title=" " alt="" coords="110,5,239,32"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#abba901604461ce3f4ec72dee1b8951fc" title=" " alt="" coords="108,56,241,83"/>
-<area shape="rect" id="node4" href="$struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7" title=" " alt="" coords="104,107,245,133"/>
+<area shape="rect" id="node3" href="$class_parser.html#a7563d76387b215b734de64270a11d528" title=" " alt="" coords="117,56,233,83"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#abba901604461ce3f4ec72dee1b8951fc" title=" " alt="" coords="108,107,241,133"/>
+<area shape="rect" id="node5" href="$struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7" title=" " alt="" coords="104,157,245,184"/>
 </map>

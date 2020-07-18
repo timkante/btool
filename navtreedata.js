@@ -71,7 +71,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_2github_2workspace_2test_2_bib_element_fixture_test_8cpp-example.html",
-"struct_generator_exception.html"
+"struct_generator.html#a175792ff2622a6ce48bf2adab7e09e58"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

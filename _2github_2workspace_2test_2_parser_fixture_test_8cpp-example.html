@@ -209,7 +209,7 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_parser_fix
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_parser_fixture_test.html">ParserFixtureTest</a>, parseDummyFile) {</div>
 <div class="line">  boost::filesystem::path target = boost::filesystem::path(<span class="stringliteral">&quot;../../test/res/publications.bib&quot;</span>);</div>
 <div class="line">  ASSERT_NO_THROW([&amp;]() {</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(target, <span class="stringliteral">&quot;author&quot;</span>s);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(std::vector&lt;boost::filesystem::path&gt;{target}, <span class="stringliteral">&quot;author&quot;</span>s);</div>
 <div class="line">    ASSERT_EQ(elements.size(), 13u);</div>
 <div class="line">  }());</div>
 <div class="line">}</div>
@@ -217,7 +217,7 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_parser_fix
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_parser_fixture_test.html">ParserFixtureTest</a>, parseDummyFileInDirectory) {</div>
 <div class="line">  boost::filesystem::path target = boost::filesystem::path(<span class="stringliteral">&quot;../../test/res&quot;</span>);</div>
 <div class="line">  ASSERT_NO_THROW([&amp;]() {</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(target, <span class="stringliteral">&quot;author&quot;</span>s);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(std::vector&lt;boost::filesystem::path&gt;{target}, <span class="stringliteral">&quot;author&quot;</span>s);</div>
 <div class="line">    ASSERT_EQ(elements.size(), 13u);</div>
 <div class="line">  }());</div>
 <div class="line">}</div>
@@ -225,7 +225,7 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_parser_fix
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_parser_fixture_test.html">ParserFixtureTest</a>, parseDummyFileThatDoesNotExist) {</div>
 <div class="line">  boost::filesystem::path target = boost::filesystem::path(<span class="stringliteral">&quot;../../test/res/someFileThatDoesNotExist.something&quot;</span>);</div>
 <div class="line">  ASSERT_NO_THROW([&amp;]() {</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(target, <span class="stringliteral">&quot;author&quot;</span>s);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(std::vector&lt;boost::filesystem::path&gt;{target}, <span class="stringliteral">&quot;author&quot;</span>s);</div>
 <div class="line">    ASSERT_EQ(elements.size(), 0u);</div>
 <div class="line">  }());</div>
 <div class="line">}</div>

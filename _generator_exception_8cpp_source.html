@@ -97,22 +97,22 @@ $(document).ready(function(){initNavTree('_generator_exception_8cpp_source.html'
 </div><!--header-->
 <div class="contents">
 <a href="_generator_exception_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_generator_exception_8hpp.html">GeneratorException.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="struct_generator_exception.html#a6ea3944e270e8c38a88a474aac22cc58">    7</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_generator_exception.html#a6ea3944e270e8c38a88a474aac22cc58">GeneratorException::what</a>() const noexcept -&gt; const <span class="keywordtype">char</span> * {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="struct_generator_exception.html#aa5aa1d68bac3a96dcbf0809ae76182eb">message</a>.c_str();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_generator_exception.html#ae5501ffd46fee428f04c5828e053e6d7">   16</a></span>&#160;<a class="code" href="struct_generator_exception.html#ae5501ffd46fee428f04c5828e053e6d7">GeneratorException::GeneratorException</a>(</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> boost::filesystem::path &amp;file,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> std::string &amp;message</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="struct_generator_exception.html#a6ea3944e270e8c38a88a474aac22cc58">    8</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_generator_exception.html#a6ea3944e270e8c38a88a474aac22cc58">GeneratorException::what</a>() const noexcept -&gt; const <span class="keywordtype">char</span> * {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="struct_generator_exception.html#aa5aa1d68bac3a96dcbf0809ae76182eb">message</a>.c_str();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_generator_exception.html#aa63391d5e3ccb62f46b1aa60859b74da">   17</a></span>&#160;<a class="code" href="struct_generator_exception.html#aa63391d5e3ccb62f46b1aa60859b74da">GeneratorException::GeneratorException</a>(</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::string message</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;) : std::runtime_error{<span class="stringliteral">&quot;&quot;</span>},</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    message{file.string() + <span class="stringliteral">&quot;: &quot;</span> + message} {}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    message{std::move(message)} {}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astruct_generator_exception_html_aa5aa1d68bac3a96dcbf0809ae76182eb"><div class="ttname"><a href="struct_generator_exception.html#aa5aa1d68bac3a96dcbf0809ae76182eb">GeneratorException::message</a></div><div class="ttdeci">std::string message</div><div class="ttdoc">the message to throw</div><div class="ttdef"><b>Definition:</b> <a href="_generator_exception_8hpp_source.html#l00012">GeneratorException.hpp:12</a></div></div>
-<div class="ttc" id="astruct_generator_exception_html_a6ea3944e270e8c38a88a474aac22cc58"><div class="ttname"><a href="struct_generator_exception.html#a6ea3944e270e8c38a88a474aac22cc58">GeneratorException::what</a></div><div class="ttdeci">auto what() const noexcept -&gt; const char *override</div><div class="ttdef"><b>Definition:</b> <a href="_generator_exception_8cpp_source.html#l00007">GeneratorException.cpp:7</a></div></div>
+<div class="ttc" id="astruct_generator_exception_html_aa63391d5e3ccb62f46b1aa60859b74da"><div class="ttname"><a href="struct_generator_exception.html#aa63391d5e3ccb62f46b1aa60859b74da">GeneratorException::GeneratorException</a></div><div class="ttdeci">GeneratorException(std::string message)</div><div class="ttdef"><b>Definition:</b> <a href="_generator_exception_8cpp_source.html#l00017">GeneratorException.cpp:17</a></div></div>
+<div class="ttc" id="astruct_generator_exception_html_a6ea3944e270e8c38a88a474aac22cc58"><div class="ttname"><a href="struct_generator_exception.html#a6ea3944e270e8c38a88a474aac22cc58">GeneratorException::what</a></div><div class="ttdeci">auto what() const noexcept -&gt; const char *override</div><div class="ttdef"><b>Definition:</b> <a href="_generator_exception_8cpp_source.html#l00008">GeneratorException.cpp:8</a></div></div>
 <div class="ttc" id="a_generator_exception_8hpp_html"><div class="ttname"><a href="_generator_exception_8hpp.html">GeneratorException.hpp</a></div></div>
-<div class="ttc" id="astruct_generator_exception_html_ae5501ffd46fee428f04c5828e053e6d7"><div class="ttname"><a href="struct_generator_exception.html#ae5501ffd46fee428f04c5828e053e6d7">GeneratorException::GeneratorException</a></div><div class="ttdeci">GeneratorException(const boost::filesystem::path &amp;file, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_generator_exception_8cpp_source.html#l00016">GeneratorException.cpp:16</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
