@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"struct_generator_exception.html":[1,10,6],
+"struct_generator_exception.html#a6ea3944e270e8c38a88a474aac22cc58":[1,10,6,1],
+"struct_generator_exception.html#aa5aa1d68bac3a96dcbf0809ae76182eb":[1,10,6,2],
 "struct_generator_exception.html#ae5501ffd46fee428f04c5828e053e6d7":[1,10,6,0],
 "struct_generator_fixture_test.html":[1,10,7],
 "struct_generator_fixture_test.html#ad2f0d5e6e421666ddd955ed54cf3d5ef":[1,10,7,0],

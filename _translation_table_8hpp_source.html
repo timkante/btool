@@ -128,9 +128,13 @@ $(document).ready(function(){initNavTree('_translation_table_8hpp_source.html','
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  [[nodiscard]] auto <a class="code" href="class_translation_table.html#ae624b58ca1e2170035ad0c6978fab8da">getStyleProperties</a>() const noexcept -&gt; const std::vector&lt;<a class="code" href="struct_style_properties.html">StyleProperties</a>&gt; &amp;;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  [[nodiscard]] auto <a class="code" href="class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a">stylePropertiesOf</a>(const std::<span class="keywordtype">string</span> &amp;<a class="code" href="_html_generator_8hpp.html#a69b637c5ea42540ab9c4a77b6a2a632b">name</a>) const noexcept -&gt; std::optional&lt;<a class="code" href="struct_style_properties.html">StyleProperties</a>&gt;;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  [[nodiscard]] auto <a class="code" href="class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a">stylePropertiesOf</a>(</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      const std::vector&lt;std::<span class="keywordtype">string</span>&gt; &amp;names</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ) const noexcept -&gt; std::vector&lt;<a class="code" href="struct_style_properties.html">StyleProperties</a>&gt;;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astruct_style_properties_html"><div class="ttname"><a href="struct_style_properties.html">StyleProperties</a></div><div class="ttdoc">style-properties-container</div><div class="ttdef"><b>Definition:</b> <a href="_style_properties_8hpp_source.html#l00011">StyleProperties.hpp:11</a></div></div>

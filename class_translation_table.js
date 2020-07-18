@@ -7,6 +7,7 @@ var class_translation_table =
     [ "parseStyles", "class_translation_table.html#abd2cb79eff79d7a11ce088a4ca8592af", null ],
     [ "printAll", "class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a", null ],
     [ "stylePropertiesOf", "class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a", null ],
+    [ "stylePropertiesOf", "class_translation_table.html#aa1c4d2f0739d6e8a12d49502765deff3", null ],
     [ "contents", "class_translation_table.html#a610fe9b196089c8c9b08499837b6be27", null ],
     [ "styleProperties", "class_translation_table.html#a08201d7b4380b7276de749d0917f01f5", null ]
 ];
