@@ -82,13 +82,13 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
 1. __Clone the Repo and Submodules:__
 
     ```bash
-    $ git clone --recursive git@github.com:timkante/bibParser.git
+    $ git clone --recursive git@github.com:timkante/btool.git
     ```
 
 2. __cd into the project:__
 
     ```bash
-    $ cd bibParser
+    $ cd btool
     ```
 
 3. __Create a build directory and cd into it:__
@@ -108,13 +108,13 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
     5.1. __For building the Tests:__
     
     ```bash
-    $ make bibParserTests
+    $ make btoolTest
     ```
    
     5.2. __For building the Executable:__
    
     ```bash
-    $ make bibParserRun
+    $ make btool
     ```
 
 6. __Run a target:__
@@ -122,13 +122,13 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
     6.1. __For running the Tests:__
     
     ```bash
-    $ ./test/bibParserTests
+    $ ./test/btoolTest
     ```
    
     6.2. __For running the Executable:__
    
     ```bash
-    $ ./bibParserRun <YOUR_ARGUMENTS>
+    $ ./btool <YOUR_ARGUMENTS>
     ```
 
 ## Built with :heart: and
@@ -212,4 +212,4 @@ Group-Members of Group 1:
 
 For the current CI-Status/Report [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")  
 For Code-Analysis: [SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser "SonarCloud")  
-Documentation: [Netlify](https://bibparser.timkante.dev "Doxygen")
+Documentation: [Netlify](https://btool.timkante.dev "Doxygen")
