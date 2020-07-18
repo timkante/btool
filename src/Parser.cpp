@@ -52,8 +52,8 @@ auto Parser::generate(
   } else if (boost::filesystem::is_regular_file(inputPath)) {
     spdlog::info("Parsing File: {} ...", inputPath.string());
     std::ifstream inFile{inputPath.string()};
-    std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
     inFile >> std::noskipws;
+    std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
     return generate(std::string_view(inContent), sorting, inputPath.string());
   } else {
     spdlog::critical("Unexpected file-descriptor. [input={}]", inputPath.string());
