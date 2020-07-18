@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "bibParser", "index.html", [
+  [ "btool", "index.html", [
     [ "Test List", "test.html", null ],
     [ "Classes", "annotated.html", [
       [ "Project Status :octocat:", "index.html#autotoc_md0", [
