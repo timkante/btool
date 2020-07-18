@@ -1,4 +1,5 @@
 #include <GeneratorException.hpp>
+#include <utility>
 
 /**
  * Exception-Message
@@ -14,7 +15,6 @@ auto GeneratorException::what() const noexcept -> const char * {
  * @param message the message to throw
  */
 GeneratorException::GeneratorException(
-    const boost::filesystem::path &file,
-    const std::string &message
+    std::string message
 ) : std::runtime_error{""},
-    message{file.string() + ": " + message} {}
+    message{std::move(message)} {}

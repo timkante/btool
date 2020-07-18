@@ -19,19 +19,23 @@ class Parser {
   TranslationTable translationTable; ///< translation-Table handler
 
  public:
-
   Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles) noexcept;
 
   Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyle) noexcept;
 
   [[nodiscard]] auto generate(
+      const std::vector<boost::filesystem::path> &inputPaths,
+      const std::optional<std::string> &sorting
+  ) const noexcept -> std::vector<BibElement>;
+
+  [[nodiscard]] auto generate(
       const boost::filesystem::path &inputPath,
-      const std::string &sorting
+      const std::optional<std::string> &sorting
   ) const noexcept -> std::vector<BibElement>;
 
   [[nodiscard]] auto generate(
       std::string_view inputFileContent,
-      const std::string &sorting,
+      const std::optional<std::string> &sorting,
       const std::string &filename
   ) const noexcept -> std::vector<BibElement>;
 
@@ -41,6 +45,11 @@ class Parser {
       std::string_view input,
       const std::string &filename
   ) noexcept -> std::vector<BibElement>;
+
+  static auto sortElements(
+      std::vector<BibElement> &elements,
+      const std::string &sorting
+  ) noexcept -> void;
 };
 
 #endif

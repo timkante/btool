@@ -3,9 +3,13 @@
 #include <vector>
 #include <Parser.hpp>
 #include <fstream>
+#include <GeneratorException.hpp>
+#include <string>
+#include <AbstractGenerator.hpp>
 #include <BibElement.hpp>
 #include <HtmlGenerator.hpp>
 
+using namespace std::literals::string_literals;
 namespace po = boost::program_options;
 
 void conflicting_options(
@@ -15,7 +19,7 @@ void conflicting_options(
   if (vm.count(opt1) && !vm[opt1].defaulted()
       && vm.count(opt2) && !vm[opt2].defaulted())
     throw std::logic_error(
-        std::string("Conflicting options '")
+        "Conflicting options '"s
             + opt1 + "' and '" + opt2 + "'."
     );
 }
@@ -68,28 +72,24 @@ int main(int argc, char **argv) {
     option_dependency(vm, "pdf", "table");
 
     const Parser parser{vm["table"].as<boost::filesystem::path>(), vm["filter"].as<std::vector<std::string>>()};
-    std::vector<BibElement> parsedElements;
-    std::for_each(
-        std::cbegin(vm["input"].as<std::vector<boost::filesystem::path>>()),
-        std::cend(vm["input"].as<std::vector<boost::filesystem::path>>()),
-        [&](const boost::filesystem::path &p) {
-          const auto elements = parser.generate(p, vm["sort"].as<std::string>());
-          parsedElements.insert(std::end(parsedElements), std::cbegin(elements), std::cend(elements));
-        }
+    const auto elements = parser.generate(
+        vm["input"].as<std::vector<boost::filesystem::path>>(),
+        vm["sort"].as<std::string>()
     );
+
     std::string output;
-    if (vm["html"].as<bool>()) output = HtmlGenerator(parsedElements).write();
+    if (vm["html"].as<bool>()) output = HtmlGenerator(elements).write();
+    else throw std::logic_error("No output-generator specified"s);
 
     std::ofstream f{vm["output"].as<boost::filesystem::path>().string()};
     if (f.is_open()) {
       f << output;
       f.close();
     } else {
-      std::cout << "No Filestream\n";
+      throw GeneratorException(
+          "Could not write to file: " + vm["output"].as<boost::filesystem::path>().string()
+      );
     }
-
-    std::cout << "html = " << vm["html"].as<bool>() << "\n";
-    std::cout << "output to = " << vm["output"].as<boost::filesystem::path>().string() << "\n";
   }
   catch (std::exception &e) {
     std::cerr << e.what() << "\n";

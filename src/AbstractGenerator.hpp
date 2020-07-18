@@ -21,7 +21,7 @@ class AbstractGenerator : public Generator {
 
  public:
 
-  AbstractGenerator(const std::vector<BibElement> &elements);
+  AbstractGenerator(std::vector<BibElement> elements);
 
   static auto uniqueFieldsOf(const std::vector<BibElement> &values) noexcept -> std::unordered_set<std::string>;
 };

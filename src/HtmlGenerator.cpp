@@ -1,5 +1,4 @@
 #include <HtmlGenerator.hpp>
-#include <sstream>
 #include <string>
 
 /**
@@ -7,7 +6,7 @@
  * @param message the message to append
  */
 auto HtmlGenerator::fail(const std::string &message, const std::string &type) -> void {
-  AbstractGenerator::fail(message, type);
+  AbstractGenerator::fail(message, "HTML");
 }
 
 /**

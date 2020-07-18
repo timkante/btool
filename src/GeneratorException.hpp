@@ -11,7 +11,7 @@
 struct GeneratorException  : std::runtime_error {
   std::string message; ///< the message to throw
 
-  GeneratorException(const boost::filesystem::path &file, const std::string &message);
+  GeneratorException(std::string message);
 
   [[nodiscard]] auto what() const noexcept -> const char * override;
 };

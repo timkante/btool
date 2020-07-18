@@ -32,7 +32,7 @@ Parser::Parser(std::stringstream ruleFileContents, std::vector<std::string> targ
  */
 auto Parser::generate(
     const boost::filesystem::path &inputPath,
-    const std::string &sorting
+    const std::optional<std::string> &sorting
 ) const noexcept -> std::vector<BibElement> {
   if (!boost::filesystem::exists(inputPath)) {
     spdlog::critical("No such file or directory. [input={}]", inputPath.string());
@@ -48,13 +48,16 @@ auto Parser::generate(
         collector.push_back(element);
       }
     }
+    if (sorting) sortElements(collector, sorting.value());
     return collector;
   } else if (boost::filesystem::is_regular_file(inputPath)) {
     spdlog::info("Parsing File: {} ...", inputPath.string());
     std::ifstream inFile{inputPath.string()};
     inFile >> std::noskipws;
     std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
-    return generate(std::string_view(inContent), sorting, inputPath.string());
+    auto elements = generate(std::string_view(inContent), sorting, inputPath.string());
+    if (sorting) sortElements(elements, sorting.value());
+    return elements;
   } else {
     spdlog::critical("Unexpected file-descriptor. [input={}]", inputPath.string());
     return {};
@@ -70,7 +73,7 @@ auto Parser::generate(
  */
 auto Parser::generate(
     std::string_view inputFileContent,
-    const std::string &sorting,
+    const std::optional<std::string> &sorting,
     const std::string &filename
 ) const noexcept -> std::vector<BibElement> {
   const std::vector<StyleProperties> targetStructures = translationTable.stylePropertiesOf(targetStyles);
@@ -93,12 +96,7 @@ auto Parser::generate(
           ) != std::cend(targetStructures);
         }
     );
-    std::sort(std::begin(filteredElements),
-              std::end(filteredElements),
-              [&sorting](const BibElement &l, const BibElement &r) {
-                return l.findAttribute(sorting).value_or<Field>({""s, ""s}).value
-                    < r.findAttribute(sorting).value_or<Field>({""s, ""s}).value;
-              });
+    if (sorting) sortElements(filteredElements, sorting.value());
     return filteredElements;
   }
 }
@@ -135,4 +133,37 @@ auto Parser::elementsOf(
     delete e.state;
     return {};
   }
+}
+
+/**
+ * Sorts a vector of bibElements
+ * @param elements[out] the vector of bibElements
+ * @param sorting the attribute to sort for
+ */
+auto Parser::sortElements(std::vector<BibElement> &elements, const std::string &sorting) noexcept -> void {
+  std::sort(
+      std::begin(elements),
+      std::end(elements),
+      [&sorting](const BibElement &l, const BibElement &r) {
+        return l.findAttribute(sorting).value_or<Field>({""s, ""s}).value
+            < r.findAttribute(sorting).value_or<Field>({""s, ""s}).value;
+      }
+  );
+}
+
+auto Parser::generate(
+    const std::vector<boost::filesystem::path> &inputPaths,
+    const std::optional<std::string> &sorting
+) const noexcept -> std::vector<BibElement> {
+  std::vector<BibElement> parsedElements;
+  std::for_each(
+      std::cbegin(inputPaths),
+      std::cend(inputPaths),
+      [&](const boost::filesystem::path &p) {
+        const auto elements = generate(p, sorting);
+        parsedElements.insert(std::end(parsedElements), std::cbegin(elements), std::cend(elements));
+      }
+  );
+  if (sorting) sortElements(parsedElements, sorting.value());
+  return parsedElements;
 }
