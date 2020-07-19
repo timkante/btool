@@ -85,7 +85,7 @@ HtmlGenerator::HtmlGenerator(const std::vector<BibElement> &elements) : Abstract
  */
 void HtmlGenerator::fillContainer(
     CTML::Node &parent,
-    const std::vector<std::string> keys
+    const std::vector<std::string> &keys
 ) noexcept {
   auto accordion = CTML::Node(name<HtmlTag::DIV>).SetAttribute("id", "accordion");
   for (const auto &element: elements) {
@@ -103,7 +103,7 @@ void HtmlGenerator::fillContainer(
 auto HtmlGenerator::appendCard(
     CTML::Node &parent,
     const BibElement &element,
-    std::vector<std::string> keys
+    const std::vector<std::string> &keys
 ) noexcept -> void {
   auto card = CTML::Node(name<HtmlTag::DIV>).ToggleClass("card");
 

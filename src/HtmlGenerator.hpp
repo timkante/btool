@@ -33,18 +33,21 @@ struct HtmlGenerator : public AbstractGenerator {
 
   auto write() -> std::string override;
 
-  auto fillContainer(CTML::Node &parent, const std::vector<std::string> keys) noexcept -> void;
+  auto fillContainer(
+      CTML::Node &parent,
+      const std::vector<std::string> &keys
+  ) noexcept -> void;
 
   auto appendCard(
       CTML::Node &parent,
       const BibElement &element,
-      const std::vector<std::string> keys
+      const std::vector<std::string> &keys
   ) noexcept -> void;
 
   auto appendTable(
       CTML::Node &parent,
       const BibElement &element,
-      const std::vector<std::string>& keys
+      const std::vector<std::string> &keys
   ) noexcept -> void;
 
   explicit HtmlGenerator(const std::vector<BibElement> &elements);

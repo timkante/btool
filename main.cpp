@@ -9,6 +9,7 @@
 
 using namespace std::literals::string_literals;
 namespace po = boost::program_options;
+namespace fs = boost::filesystem;
 
 void conflicting_options(
     const po::variables_map &vm,
@@ -40,13 +41,12 @@ int main(int argc, char **argv) {
     po::options_description desc("Allowed options");
     desc.add_options()
         ("help,h", "print usage message")
-        ("output,o", po::value<boost::filesystem::path>()->required()->default_value(""), "pathname for output")
-        ("table,t", po::value<boost::filesystem::path>()->required(), "full pathname of translation-table")
-        ("input,i", po::value<std::vector<boost::filesystem::path>>()->multitoken(), "file(s) to handle")
+        ("output,o", po::value<fs::path>()->required()->default_value(""), "pathname for output (default is stdout)")
+        ("table,t", po::value<fs::path>()->required(), "full pathname of translation-table")
+        ("input,i", po::value<std::vector<fs::path>>()->multitoken(), "file(s) to handle")
         ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
         ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
         ("pdf,P", po::bool_switch()->default_value(false), "set output-type to xml")
-        ("console,C", po::bool_switch()->default_value(false), "set output-type to plain-text (printed to stdout)")
         ("filter,f", po::value<std::vector<std::string>>()->multitoken(), "filter output for a style-name(s)")
         ("sort,s", po::value<std::string>()->default_value(""), "sort output for a field");
 
