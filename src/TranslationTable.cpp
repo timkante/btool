@@ -133,10 +133,12 @@ auto TranslationTable::stylePropertiesOf(
  * Provides style-properties for a collection of styles
  * @param names the style names to get properties for
  * @return collection of properties
+ * @note if names is empty, returns all properties
  */
 auto TranslationTable::stylePropertiesOf(
     const std::vector<std::string> &names
 ) const noexcept -> std::vector<StyleProperties> {
+  if (names.empty()) return getStyleProperties();
   std::vector<StyleProperties> result;
   for (const auto &style : names){
     const auto props = stylePropertiesOf(style);

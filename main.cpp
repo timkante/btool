@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
     po::options_description desc("Allowed options");
     desc.add_options()
         ("help,h", "print usage message")
-        ("output,o", po::value<fs::path>()->required()->default_value(""), "pathname for output (default is stdout)")
+        ("output,o", po::value<fs::path>()->required()->default_value("stdout"), "pathname for output (default is stdout)")
         ("table,t", po::value<fs::path>()->required(), "full pathname of translation-table")
         ("input,i", po::value<std::vector<fs::path>>()->multitoken(), "file(s) to handle")
         ("html,H", po::bool_switch()->default_value(false), "set output-type to html")

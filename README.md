@@ -25,6 +25,10 @@
     + [Boost](#boost-library)
     + [CMake](#cmake)
   + [Build the Source](#build-construction_worker)
++ [How to use the program](#usage-sparkles)
+  + [Program options](#basic-program-options)
+  + [Usage constraints](#usage-constraints)
+  + [Examples](#examples)
 + [What is this project built with?](#built-with-heart-and)
 + [Contributors](#team-busts_in_silhouette)
 + [Milestones](#milestones-triangular_flag_on_post)
@@ -130,6 +134,43 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
     ```bash
     $ ./btool <YOUR_ARGUMENTS>
     ```
+
+## Usage :sparkles:
+
+### Basic program options:
+
++ `-h [ --help ]` print usage message
++ `-o [ --output ] arg (="stdout")` pathname for output (default is stdout)
++ `-t [ --table ] arg` full pathname of translation-table
++ `-i [ --input ] arg` file(s) to handle
++ `-H [ --html ]` set output-type to html
++ `-X [ --xml ]` set output-type to xml
++ `-P [ --pdf ]` set output-type to xml
++ `-f [ --filter ] arg` filter output for a style-name(s)
++ `-s [ --sort ] arg` sort output for a field
+
+### Usage constraints:
+
++ Only one output-type can be selected (`--html`, `--xml` or `--pdf`), if no type is given, plain-text will be used
++ Generating output always requires one or more files/directories as input (`--input`)
++ Generating output always requires a translation-table (`--table`)
+
+### Examples:
+
++ Show help message
+```
+btool --help
+```
+
++ Generating a HTML page from a given directory of `.bib`-files, sorted by author
+```
+btool -t ./tables/mytable.json -i ./files --html -s author -o index.html
+```
+
++ Print results from a given directory of `.bib`-files, sorted by author, filtered for articles and books, to stdout
+```
+btool -t ./tables/mytable.json -i ./files -s author -f article booky
+```
 
 ## Built with :heart: and
 
