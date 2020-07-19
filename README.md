@@ -167,9 +167,9 @@ btool --help
 btool -t ./tables/mytable.json -i ./files --html -s author -o index.html
 ```
 
-+ Print results from a given directory of `.bib`-files, sorted by author, filtered for articles and books, to stdout
++ Print results from a given set of of `.bib`-files, sorted by author, filtered for articles and books, to stdout
 ```
-btool -t ./tables/mytable.json -i ./files -s author -f article booky
+btool -t ./tables/mytable.json -i file1.bib file2.bib ./someMoreFiles -s author -f article booky
 ```
 
 ## Built with :heart: and
