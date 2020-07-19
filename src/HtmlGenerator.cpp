@@ -150,7 +150,7 @@ auto HtmlGenerator::appendCard(
 auto HtmlGenerator::appendTable(
     CTML::Node &parent,
     const BibElement &element,
-    std::vector<std::string> keys
+    const std::vector<std::string> &keys
 ) noexcept -> void {
   auto table = CTML::Node(name<HtmlTag::TABLE>).ToggleClass("table");
   auto tableBody = CTML::Node(name<HtmlTag::TABLE_BODY>);
@@ -166,17 +166,4 @@ auto HtmlGenerator::appendTable(
 
   table.AppendChild(tableBody);
   parent.AppendChild(table);
-}
-
-/**
- * Sorts a unordered Set of keys into a vector
- * @param set the unordered set of keys
- * @return the sorted vector of keys
- */
-auto HtmlGenerator::sortedKeys(
-    const std::unordered_set<std::string> &set
-) noexcept -> std::vector<std::string> {
-  std::vector<std::string> sortedKeys{std::cbegin(set), std::cend(set)};
-  std::sort(std::begin(sortedKeys), std::end(sortedKeys));
-  return sortedKeys;
 }

@@ -1,13 +1,11 @@
-#include <iostream>
 #include <boost/program_options.hpp>
-#include <vector>
-#include <Parser.hpp>
-#include <fstream>
 #include <GeneratorException.hpp>
-#include <string>
-#include <AbstractGenerator.hpp>
-#include <BibElement.hpp>
+#include <PlainTextGenerator.hpp>
 #include <HtmlGenerator.hpp>
+#include <Parser.hpp>
+#include <iostream>
+#include <vector>
+#include <string>
 
 using namespace std::literals::string_literals;
 namespace po = boost::program_options;
@@ -42,7 +40,7 @@ int main(int argc, char **argv) {
     po::options_description desc("Allowed options");
     desc.add_options()
         ("help,h", "print usage message")
-        ("output,o", po::value<boost::filesystem::path>()->required(), "pathname for output")
+        ("output,o", po::value<boost::filesystem::path>()->required()->default_value(""), "pathname for output")
         ("table,t", po::value<boost::filesystem::path>()->required(), "full pathname of translation-table")
         ("input,i", po::value<std::vector<boost::filesystem::path>>()->multitoken(), "file(s) to handle")
         ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
@@ -79,16 +77,18 @@ int main(int argc, char **argv) {
 
     std::string output;
     if (vm["html"].as<bool>()) output = HtmlGenerator(elements).write();
-    else throw std::logic_error("No output-generator specified"s);
+    else output = PlainTextGenerator(elements).write();
 
-    std::ofstream f{vm["output"].as<boost::filesystem::path>().string()};
-    if (f.is_open()) {
-      f << output;
-      f.close();
+    if (vm["output"].defaulted()){
+      std::cout << output << '\n';
     } else {
-      throw GeneratorException(
-          "Could not write to file: " + vm["output"].as<boost::filesystem::path>().string()
-      );
+      std::ofstream f{vm["output"].as<boost::filesystem::path>().string()};
+      if (f.is_open()) {
+        f << output;
+        f.close();
+      } else {
+        throw GeneratorException("Could not write to file: " + vm["output"].as<boost::filesystem::path>().string());
+      }
     }
   }
   catch (std::exception &e) {

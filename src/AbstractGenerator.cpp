@@ -46,3 +46,16 @@ auto AbstractGenerator::uniqueFieldsOf(
                 });
   return result;
 }
+
+/**
+ * Sorts a unordered Set of keys into a vector
+ * @param set the unordered set of keys
+ * @return the sorted vector of keys
+ */
+auto AbstractGenerator::sortedKeys(
+    const std::unordered_set<std::string> &set
+) noexcept -> std::vector<std::string> {
+  std::vector<std::string> sortedKeys{std::cbegin(set), std::cend(set)};
+  std::sort(std::begin(sortedKeys), std::end(sortedKeys));
+  return sortedKeys;
+}

@@ -24,6 +24,8 @@ class AbstractGenerator : public Generator {
   AbstractGenerator(std::vector<BibElement> elements);
 
   static auto uniqueFieldsOf(const std::vector<BibElement> &values) noexcept -> std::unordered_set<std::string>;
+
+  static auto sortedKeys(const std::unordered_set<std::string> &set) noexcept -> std::vector<std::string>;
 };
 
 #endif

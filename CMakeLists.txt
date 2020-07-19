@@ -41,7 +41,8 @@ set(MAIN_SOURCES
         src/ParserContext.cpp
         src/AbstractGenerator.cpp
         src/GeneratorException.cpp
-        src/HtmlGenerator.cpp)
+        src/HtmlGenerator.cpp
+        src/PlainTextGenerator.cpp)
 
 set(MAIN_HEADERS
         src/TranslationTable.hpp
@@ -61,7 +62,8 @@ set(MAIN_HEADERS
         src/AbstractGenerator.hpp
         src/Generator.hpp
         src/GeneratorException.hpp
-        src/HtmlGenerator.hpp)
+        src/HtmlGenerator.hpp
+        src/PlainTextGenerator.hpp)
 
 add_library(${PROJECT_NAME}_lib STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 

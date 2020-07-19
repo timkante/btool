@@ -33,8 +33,6 @@ struct HtmlGenerator : public AbstractGenerator {
 
   auto write() -> std::string override;
 
-  static auto sortedKeys(const std::unordered_set<std::string> &set) noexcept -> std::vector<std::string>;
-
   auto fillContainer(CTML::Node &parent, const std::vector<std::string> keys) noexcept -> void;
 
   auto appendCard(
@@ -46,10 +44,10 @@ struct HtmlGenerator : public AbstractGenerator {
   auto appendTable(
       CTML::Node &parent,
       const BibElement &element,
-      const std::vector<std::string> keys
+      const std::vector<std::string>& keys
   ) noexcept -> void;
 
-  HtmlGenerator(const std::vector<BibElement> &elements);
+  explicit HtmlGenerator(const std::vector<BibElement> &elements);
 };
 
 template<HtmlGenerator::HtmlTag> inline const char *name = "Invalid HTML-Tag";
