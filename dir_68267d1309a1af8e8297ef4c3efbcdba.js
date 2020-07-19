@@ -48,6 +48,10 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "ParserState.hpp", "_parser_state_8hpp.html", [
       [ "ParserState", "struct_parser_state.html", "struct_parser_state" ]
     ] ],
+    [ "PlainTextGenerator.cpp", "_plain_text_generator_8cpp.html", null ],
+    [ "PlainTextGenerator.hpp", "_plain_text_generator_8hpp.html", [
+      [ "PlainTextGenerator", "struct_plain_text_generator.html", "struct_plain_text_generator" ]
+    ] ],
     [ "StyleParserState.cpp", "_style_parser_state_8cpp.html", null ],
     [ "StyleParserState.hpp", "_style_parser_state_8hpp.html", [
       [ "StyleParserState", "class_style_parser_state.html", "class_style_parser_state" ]

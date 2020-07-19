@@ -1,5 +1,6 @@
 <map id="AbstractGenerator" name="AbstractGenerator">
-<area shape="rect" id="node1" title=" " alt="" coords="5,145,152,267"/>
-<area shape="rect" id="node3" href="$struct_html_generator.html" title=" " alt="" coords="15,315,142,480"/>
-<area shape="rect" id="node2" href="$struct_generator.html" title=" " alt="" coords="26,5,131,97"/>
+<area shape="rect" id="node1" title=" " alt="" coords="77,145,223,281"/>
+<area shape="rect" id="node3" href="$struct_html_generator.html" title=" " alt="" coords="5,329,132,480"/>
+<area shape="rect" id="node4" href="$struct_plain_text_generator.html" title=" " alt="" coords="157,351,309,458"/>
+<area shape="rect" id="node2" href="$struct_generator.html" title=" " alt="" coords="97,5,203,97"/>
 </map>

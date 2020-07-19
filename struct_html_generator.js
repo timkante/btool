@@ -17,9 +17,8 @@ var struct_html_generator =
     ] ],
     [ "HtmlGenerator", "struct_html_generator.html#a2b7b96c1eaa30ea007083f5539cca476", null ],
     [ "appendCard", "struct_html_generator.html#a00af0aa292b2bb8365c9bdbd72a005fa", null ],
-    [ "appendTable", "struct_html_generator.html#a99ca686299b294e187ed96b3afa86d9e", null ],
+    [ "appendTable", "struct_html_generator.html#a63e86bfe69f758be8927df88e3d51ef1", null ],
     [ "fail", "struct_html_generator.html#abce3218cd7398aa4fb5888eaca2240d9", null ],
     [ "fillContainer", "struct_html_generator.html#a362efa0ded2de0dff7e9cc852eaa52ee", null ],
-    [ "sortedKeys", "struct_html_generator.html#a654795e1f8826cde4417f301411f071d", null ],
     [ "write", "struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7", null ]
 ];
