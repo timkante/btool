@@ -124,6 +124,12 @@ Table of contents</h2>
 <li><a href="#build-construction_worker">Build the Source</a></li>
 </ul>
 </li>
+<li><a href="#usage-sparkles">How to use the program</a><ul>
+<li><a href="#basic-program-options">Program options</a></li>
+<li><a href="#usage-constraints">Usage constraints</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</li>
 <li><a href="#built-with-heart-and">What is this project built with?</a></li>
 <li><a href="#team-busts_in_silhouette">Contributors</a></li>
 <li><a href="#milestones-triangular_flag_on_post">Milestones</a></li>
@@ -199,6 +205,38 @@ Build :construction_worker:</h3>
 </li>
 </ol>
 <h2><a class="anchor" id="autotoc_md10"></a>
+Usage :sparkles:</h2>
+<h3><a class="anchor" id="autotoc_md11"></a>
+Basic program options:</h3>
+<ul>
+<li><code>-h [ --help ]</code> print usage message</li>
+<li><code>-o [ --output ] arg (="stdout")</code> pathname for output (default is stdout)</li>
+<li><code>-t [ --table ] arg</code> full pathname of translation-table</li>
+<li><code>-i [ --input ] arg</code> file(s) to handle</li>
+<li><code>-H [ --html ]</code> set output-type to html</li>
+<li><code>-X [ --xml ]</code> set output-type to xml</li>
+<li><code>-P [ --pdf ]</code> set output-type to xml</li>
+<li><code>-f [ --filter ] arg</code> filter output for a style-name(s)</li>
+<li><code>-s [ --sort ] arg</code> sort output for a field</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md12"></a>
+Usage constraints:</h3>
+<ul>
+<li>Only one output-type can be selected (<code>--html</code>, <code>--xml</code> or <code>--pdf</code>), if no type is given, plain-text will be used</li>
+<li>Generating output always requires one or more files/directories as input (<code>--input</code>)</li>
+<li>Generating output always requires a translation-table (<code>--table</code>)</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md13"></a>
+Examples:</h3>
+<ul>
+<li>Show help message <div class="fragment"><div class="line">btool --help</div>
+</div><!-- fragment --></li>
+<li>Generating a HTML page from a given directory of <code>.bib</code>-files, sorted by author <div class="fragment"><div class="line">btool -t ./tables/mytable.json -i ./files --html -s author -o index.html</div>
+</div><!-- fragment --></li>
+<li>Print results from a given directory of <code>.bib</code>-files, sorted by author, filtered for articles and books, to stdout <div class="fragment"><div class="line">btool -t ./tables/mytable.json -i ./files -s author -f article booky</div>
+</div><!-- fragment --></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Built with :heart: and</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -228,7 +266,7 @@ Built with :heart: and</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"><a href="https://github.com/tinfoilboy/CTML">CTML</a> </td><td class="markdownTableBodyNone">HTML-Generation  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Team :busts_in_silhouette:</h2>
 <p>Group-Members of Group 1:</p><ul>
 <li>Valeri Fitz (Project-Manager)</li>
@@ -239,13 +277,13 @@ Team :busts_in_silhouette:</h2>
 <li>Tom Seidel</li>
 <li>Martin Zeidler</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Milestones :triangular_flag_on_post:</h2>
 <p>Milestone 1 - KW 18 <br  />
  Milestone 2 - KW 19 <br  />
  Milestone 3 - KW 20 <br  />
  Milestone 4 - KW 21</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Reports :pencil:</h2>
 <p>Report - KW 22 <br  />
  Report - KW 23 <br  />
@@ -255,7 +293,7 @@ Reports :pencil:</h2>
  Report - KW 27 <br  />
  Report - KW 28 <br  />
  Report - KW 29</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Required tasks :pencil:</h2>
 <ul>
 <li>Volere SnowCards<ul>
@@ -299,7 +337,7 @@ Required tasks :pencil:</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Links :link:</h2>
 <p>For the current CI-Status/Report <a href="https://travis-ci.com/github/timkante/bibParser" title="TravisCI">TravisCI</a> <br  />
  For Code-Analysis: <a href="https://sonarcloud.io/dashboard?id=timkante_bibParser" title="SonarCloud">SonarCloud</a> <br  />

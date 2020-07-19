@@ -40,12 +40,17 @@ var NAVTREE =
         ] ],
         [ "Build :construction_worker:", "index.html#autotoc_md9", null ]
       ] ],
-      [ "Built with :heart: and", "index.html#autotoc_md10", null ],
-      [ "Team :busts_in_silhouette:", "index.html#autotoc_md11", null ],
-      [ "Milestones :triangular_flag_on_post:", "index.html#autotoc_md12", null ],
-      [ "Reports :pencil:", "index.html#autotoc_md13", null ],
-      [ "Required tasks :pencil:", "index.html#autotoc_md14", null ],
-      [ "Links :link:", "index.html#autotoc_md15", null ],
+      [ "Usage :sparkles:", "index.html#autotoc_md10", [
+        [ "Basic program options:", "index.html#autotoc_md11", null ],
+        [ "Usage constraints:", "index.html#autotoc_md12", null ],
+        [ "Examples:", "index.html#autotoc_md13", null ]
+      ] ],
+      [ "Built with :heart: and", "index.html#autotoc_md14", null ],
+      [ "Team :busts_in_silhouette:", "index.html#autotoc_md15", null ],
+      [ "Milestones :triangular_flag_on_post:", "index.html#autotoc_md16", null ],
+      [ "Reports :pencil:", "index.html#autotoc_md17", null ],
+      [ "Required tasks :pencil:", "index.html#autotoc_md18", null ],
+      [ "Links :link:", "index.html#autotoc_md19", null ],
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
@@ -71,7 +76,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_2github_2workspace_2test_2_bib_element_fixture_test_8cpp-example.html",
-"struct_field.html"
+"struct_bib_element_fixture_test.html#a7bee5d510872d6e87d5b66bc8af3810d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
