@@ -106,11 +106,11 @@ int main(int argc, char **argv) {
         ("html", "xml", "pdf");
 
     DependencyAdder{vm}
-        ("html", "input", "table")
-        ("xml", "input", "table")
-        ("pdf", "input", "table")
-        ("sort", "input", "table")
-        ("filter", "input", "table");
+        ("html", "input")
+        ("xml", "input")
+        ("pdf", "input")
+        ("sort", "input")
+        ("filter", "input");
 
     const auto tablePath = vm["table"].defaulted() ? std::nullopt : std::optional(vm["table"].as<fs::path>());
     const Parser parser{tablePath, vm["filter"].as<std::vector<std::string>>(), vm["table"].defaulted()};

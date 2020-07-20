@@ -10,13 +10,14 @@ set(Boost_DEBUG 1)
 find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem program_options)
 
 option(SONAR "Build all profiling-files." OFF)
+option(COVERAGE "Generate coverage-files." OFF)
 add_compile_options(-std=c++17)
 
 if (SONAR)
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-if(UNIX OR APPLE)
+if(SONAR OR COVERAGE)
     add_compile_options(--coverage)
     add_link_options(--coverage)
 endif()
