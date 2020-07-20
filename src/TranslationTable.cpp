@@ -10,9 +10,14 @@
  * @param file contents of a file
  * @throws boost::property_tree::json_parser_error whenever file is not JSON compliant
  */
-TranslationTable::TranslationTable(std::stringstream file) {
-  boost::property_tree::read_json(file, contents);
-  styleProperties = parseStyles();
+TranslationTable::TranslationTable(std::optional<std::stringstream> file) {
+  if (file.has_value()) {
+    boost::property_tree::read_json(file.value(), contents);
+    styleProperties = parseStyles();
+  } else {
+    contents = {};
+    styleProperties = {};
+  }
 }
 
 /**
@@ -21,14 +26,23 @@ TranslationTable::TranslationTable(std::stringstream file) {
  * @throws std::invalid_argument whenever path is no regular file or does not exist
  * @throws boost::property_tree::json_parser_error whenever file is not JSON compliant
  */
-TranslationTable::TranslationTable(const boost::filesystem::path &path) {
-  if (!boost::filesystem::exists(path)) {
-    throw std::invalid_argument("No such file. [translationTablePath=" + path.string() + "]");
-  } else if (!boost::filesystem::is_regular_file(path)) {
-    throw std::invalid_argument("Translation-Table is not a file. [translationTablePath=" + path.string() + "]");
+TranslationTable::TranslationTable(const std::optional<boost::filesystem::path> &path) {
+  if (path.has_value()) {
+    if (!boost::filesystem::exists(path.value())) {
+      throw std::invalid_argument(
+          "No such file. [translationTablePath=" + path.value().string() + "]"
+      );
+    } else if (!boost::filesystem::is_regular_file(path.value())) {
+      throw std::invalid_argument(
+          "Translation-Table is not a file. [translationTablePath=" + path.value().string() + "]"
+      );
+    } else {
+      boost::property_tree::read_json(path.value().string(), contents);
+      styleProperties = parseStyles();
+    }
   } else {
-    boost::property_tree::read_json(path.string(), contents);
-    styleProperties = parseStyles();
+    contents = {};
+    styleProperties = {};
   }
 }
 

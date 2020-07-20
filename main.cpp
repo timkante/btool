@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
             po::value<fs::path>()->required()->default_value("stdout"),
             "pathname for output (default is stdout)"
         )
-        ("table,t", po::value<fs::path>()->required(), "full pathname of translation-table")
+        ("table,t", po::value<fs::path>()->required()->default_value({}, "none"), "full pathname of translation-table")
         ("input,i", po::value<std::vector<fs::path>>()->multitoken()->required(), "file(s) to handle")
         ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
         ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
@@ -112,7 +112,8 @@ int main(int argc, char **argv) {
         ("sort", "input", "table")
         ("filter", "input", "table");
 
-    const Parser parser{vm["table"].as<fs::path>(), vm["filter"].as<std::vector<std::string>>()};
+    const auto tablePath = vm["table"].defaulted() ? std::nullopt : std::optional(vm["table"].as<fs::path>());
+    const Parser parser{tablePath, vm["filter"].as<std::vector<std::string>>(), vm["table"].defaulted()};
     const auto elements = parser.generate(
         vm["input"].as<std::vector<fs::path>>(),
         vm["sort"].as<std::string>().empty() ? std::nullopt : std::optional(vm["sort"].as<std::string>())

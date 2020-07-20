@@ -121,18 +121,19 @@ TEST_F(ParserFixtureTest, parseDummyFile) {
   }());
 }
 
-TEST_F(ParserFixtureTest, parseDummyFileInDirectory) {
+TEST_F(ParserFixtureTest, parseDummyFileInDirectoryAndAllowAllElements) {
   boost::filesystem::path target = boost::filesystem::path("../../test/res");
-  ASSERT_NO_THROW([&]() {
-    const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, std::nullopt);
-    ASSERT_EQ(elements.size(), 1u);
-  }());
+  ASSERT_NO_THROW(([&]() {
+    const auto elements = Parser{std::optional<boost::filesystem::path>(std::nullopt), {}, true}.generate(std::vector<
+        boost::filesystem::path>{target}, std::nullopt);
+    ASSERT_EQ(elements.size(), 62u);
+  }()));
 }
 
 TEST_F(ParserFixtureTest, parseDummyFileThatDoesNotExist) {
   boost::filesystem::path target = boost::filesystem::path("../../test/res/someFileThatDoesNotExist.something");
   ASSERT_ANY_THROW(
-    const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, std::nullopt);
+      const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, std::nullopt);
   );
 }
 

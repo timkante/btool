@@ -25,9 +25,9 @@ class TranslationTable {
 
  public:
 
-  explicit TranslationTable(std::stringstream file);
+  explicit TranslationTable(std::optional<std::stringstream> file);
 
-  explicit TranslationTable(const boost::filesystem::path &path);
+  explicit TranslationTable(const std::optional<boost::filesystem::path> &path);
 
   auto printAll(std::ostream &out = std::cout) const -> void;
 

@@ -9,22 +9,34 @@ using namespace std::literals::string_literals;
 
 /**
  * Constructor.
- * @param ruleFilePath filepath to the translation-table
+ * @param ruleFilePath optional filepath to the translation-table
  * @param targetStyle the style name to filter parse-results for
+ * @param allowAll flag to allow every element to get parsed (ignore TranslationTable)
  * @throws boost::property_tree::json_parser_error whenever translationTable is not JSON compliant
  * @throws std::invalid_argument whenever translationTable is no regular file or does not exist
  */
-Parser::Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles)
-    : targetStyles(std::move(targetStyles)), translationTable(TranslationTable(ruleFilePath)) {}
+Parser::Parser(
+    const std::optional<boost::filesystem::path> &ruleFilePath,
+    std::vector<std::string> targetStyles,
+    const bool allowAll
+) : targetStyles(std::move(targetStyles)),
+    translationTable(TranslationTable(ruleFilePath)),
+    allowAll{allowAll} {}
 
 /**
  * Constructor.
- * @param ruleFileContents contents of the translation-table
+ * @param ruleFileContents optional contents of the translation-table
  * @param targetStyle the style name to filter parse-results for
+ * @param allowAll flag to allow every element to get parsed (ignore TranslationTable)
  * @throws boost::property_tree::json_parser_error whenever translationTable is not JSON compliant
  */
-Parser::Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyles)
-    : targetStyles(std::move(targetStyles)), translationTable(TranslationTable(std::move(ruleFileContents))) {}
+Parser::Parser(
+    std::optional<std::stringstream> ruleFileContents,
+    std::vector<std::string> targetStyles,
+    const bool allowAll
+) : targetStyles(std::move(targetStyles)),
+    translationTable(TranslationTable(std::move(ruleFileContents))),
+    allowAll{allowAll} {}
 
 /**
  * Generate bib-elements and Filter them for a Style
@@ -78,25 +90,14 @@ auto Parser::generate(
     const std::string &filename
 ) const -> std::vector<BibElement> {
   const std::vector<StyleProperties> targetStructures = translationTable.stylePropertiesOf(targetStyles);
-  if (targetStructures.empty()) {
+  std::vector<BibElement> parsedElements = Parser::elementsOf(inputFileContent, filename);
+  if (allowAll) {
+    if (sorting) sortElements(parsedElements, sorting.value());
+    return parsedElements;
+  } else if (targetStructures.empty()) {
     return {};
   } else {
-    const auto parsedElements = Parser::elementsOf(inputFileContent, filename);
-    std::vector<BibElement> filteredElements{};
-    std::copy_if(
-        std::cbegin(parsedElements),
-        std::cend(parsedElements),
-        std::back_inserter(filteredElements),
-        [&](const BibElement &element) {
-          return std::find_if(
-              std::cbegin(targetStructures),
-              std::cend(targetStructures),
-              [&](const StyleProperties &prop) {
-                return element.isCompliantTo(prop);
-              }
-          ) != std::cend(targetStructures);
-        }
-    );
+    auto filteredElements = filterElements(parsedElements, targetStructures);
     if (sorting) sortElements(filteredElements, sorting.value());
     return filteredElements;
   }
@@ -175,4 +176,32 @@ auto Parser::generate(
   );
   if (sorting) sortElements(parsedElements, sorting.value());
   return parsedElements;
+}
+
+/**
+ * Filters list of elements for only elements that are compliant to one of a list of properties
+ * @param elements the list of elements to filter
+ * @param props the list of properties to filter for
+ * @return the filtered list of elements
+ */
+auto Parser::filterElements(
+    const std::vector<BibElement> &elements,
+    const std::vector<StyleProperties> &props
+) noexcept -> std::vector<BibElement> {
+  std::vector<BibElement> filteredElements{};
+  std::copy_if(
+      std::cbegin(elements),
+      std::cend(elements),
+      std::back_inserter(filteredElements),
+      [&](const BibElement &element) {
+        return std::find_if(
+            std::cbegin(props),
+            std::cend(props),
+            [&](const StyleProperties &prop) {
+              return element.isCompliantTo(prop);
+            }
+        ) != std::cend(props);
+      }
+  );
+  return filteredElements;
 }

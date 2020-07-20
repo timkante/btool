@@ -17,11 +17,20 @@
 class Parser {
   std::vector<std::string> targetStyles; ///< the target-styles of the generated files
   TranslationTable translationTable; ///< translation-Table handler
+  bool allowAll; ///< flag that allows all styles and fields to get parsed (set when missing translationTable)
 
  public:
-  Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles);
+  Parser(
+      const std::optional<boost::filesystem::path> &ruleFilePath,
+      std::vector<std::string> targetStyles,
+      const bool allowAll = false
+  );
 
-  Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyle);
+  Parser(
+      std::optional<std::stringstream> ruleFileContents,
+      std::vector<std::string> targetStyle,
+      const bool allowAll = false
+  );
 
   [[nodiscard]] auto generate(
       const std::vector<boost::filesystem::path> &inputPaths,
@@ -50,6 +59,11 @@ class Parser {
       std::vector<BibElement> &elements,
       const std::string &sorting
   ) noexcept -> void;
+
+  static auto filterElements(
+      const std::vector<BibElement> &elements,
+      const std::vector<StyleProperties> &props
+  ) noexcept -> std::vector<BibElement>;
 };
 
 #endif
