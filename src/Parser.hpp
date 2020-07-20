@@ -26,25 +26,25 @@ class Parser {
   [[nodiscard]] auto generate(
       const std::vector<boost::filesystem::path> &inputPaths,
       const std::optional<std::string> &sorting
-  ) const noexcept -> std::vector<BibElement>;
+  ) const -> std::vector<BibElement>;
 
   [[nodiscard]] auto generate(
       const boost::filesystem::path &inputPath,
       const std::optional<std::string> &sorting
-  ) const noexcept -> std::vector<BibElement>;
+  ) const -> std::vector<BibElement>;
 
   [[nodiscard]] auto generate(
       std::string_view inputFileContent,
       const std::optional<std::string> &sorting,
       const std::string &filename
-  ) const noexcept -> std::vector<BibElement>;
+  ) const -> std::vector<BibElement>;
 
  private:
 
   static auto elementsOf(
       std::string_view input,
       const std::string &filename
-  ) noexcept -> std::vector<BibElement>;
+  ) -> std::vector<BibElement>;
 
   static auto sortElements(
       std::vector<BibElement> &elements,

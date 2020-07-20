@@ -29,18 +29,18 @@ Parser::Parser(std::stringstream ruleFileContents, std::vector<std::string> targ
  * @param inputPath filepath to a directory of bib-Files or a single bib-File
  * @param sorting the style name to sort parsing-results for
  * @return collection of parsed bib-elements
+ * @throws std::runtime_error on parsing error
+ * @throws std::illegal_argument if file is invalid
  */
 auto Parser::generate(
     const boost::filesystem::path &inputPath,
     const std::optional<std::string> &sorting
-) const noexcept -> std::vector<BibElement> {
+) const -> std::vector<BibElement> {
   if (!boost::filesystem::exists(inputPath)) {
-    spdlog::critical("No such file or directory. [input={}]", inputPath.string());
-    return {};
+    throw std::invalid_argument("No such file or directory. [input=" + inputPath.string() + "]");
   } else if (boost::filesystem::is_directory(inputPath)) {
     std::vector<BibElement> collector{};
     for (const auto &file : boost::filesystem::directory_iterator(inputPath)) {
-      spdlog::info("Parsing File: {} ...", file.path().string());
       std::ifstream inFile{file.path().string()};
       inFile >> std::noskipws;
       std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
@@ -59,8 +59,7 @@ auto Parser::generate(
     if (sorting) sortElements(elements, sorting.value());
     return elements;
   } else {
-    spdlog::critical("Unexpected file-descriptor. [input={}]", inputPath.string());
-    return {};
+    throw std::invalid_argument("Unexpected file-descriptor. [input=" + inputPath.string() + "]");
   }
 }
 
@@ -70,12 +69,13 @@ auto Parser::generate(
  * @param sorting the style name to sort parsing-results for
  * @param filename name or path of the parsed file (for logging errors)
  * @return collection of parsed, sorted and filtered bib-elements
+ * @throws std::runtime_error on parsing error
  */
 auto Parser::generate(
     std::string_view inputFileContent,
     const std::optional<std::string> &sorting,
     const std::string &filename
-) const noexcept -> std::vector<BibElement> {
+) const -> std::vector<BibElement> {
   const std::vector<StyleProperties> targetStructures = translationTable.stylePropertiesOf(targetStyles);
   if (targetStructures.empty()) {
     return {};
@@ -106,11 +106,12 @@ auto Parser::generate(
  * @param input the contents of the source-file
  * @param filename name or path of the parsed file (for logging errors)
  * @return collection of parsed bib-elements
+ * @throws std::runtime_error if parsing failed
  */
 auto Parser::elementsOf(
     std::string_view input,
     const std::string &filename
-) noexcept -> std::vector<BibElement> {
+) -> std::vector<BibElement> {
   ParserContext context(filename);
   std::vector<BibElement> result;
   try {
@@ -129,9 +130,8 @@ auto Parser::elementsOf(
         });
     return result;
   } catch (ParserException &e) {
-    spdlog::critical("Parsing failed: {}", e.what());
     delete e.state;
-    return {};
+    throw std::runtime_error(e.what());
   }
 }
 
@@ -151,10 +151,18 @@ auto Parser::sortElements(std::vector<BibElement> &elements, const std::string &
   );
 }
 
+/**
+ * Generates Elements of multiple input-files
+ * @param inputPaths all theinput-paths
+ * @param sorting optional sorting to use
+ * @return optionally sorted elements
+ * @throws std::runtime_error on parsing-error
+ * @throws std::invalid_argument if a file is invalid
+ */
 auto Parser::generate(
     const std::vector<boost::filesystem::path> &inputPaths,
     const std::optional<std::string> &sorting
-) const noexcept -> std::vector<BibElement> {
+) const -> std::vector<BibElement> {
   std::vector<BibElement> parsedElements;
   std::for_each(
       std::cbegin(inputPaths),
