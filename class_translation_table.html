@@ -126,10 +126,10 @@ $(document).ready(function(){initNavTree('class_translation_table.html',''); ini
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa275364fbefd658530d3f6907e754920"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#aa275364fbefd658530d3f6907e754920">TranslationTable</a> (std::stringstream file)</td></tr>
-<tr class="separator:aa275364fbefd658530d3f6907e754920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af266ea92b4028756e10eeee8be850b5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#af266ea92b4028756e10eeee8be850b5b">TranslationTable</a> (const boost::filesystem::path &amp;path)</td></tr>
-<tr class="separator:af266ea92b4028756e10eeee8be850b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30321dad1284b7e33b890cc91b4baeb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#af30321dad1284b7e33b890cc91b4baeb">TranslationTable</a> (std::optional&lt; std::stringstream &gt; file)</td></tr>
+<tr class="separator:af30321dad1284b7e33b890cc91b4baeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb3189536423353ef139af201139560"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#abbb3189536423353ef139af201139560">TranslationTable</a> (const std::optional&lt; boost::filesystem::path &gt; &amp;path)</td></tr>
+<tr class="separator:abbb3189536423353ef139af201139560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e1a27368a0becda3e6ce4ba6129b17a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a">printAll</a> (std::ostream &amp;out=std::cout) const -&gt; void</td></tr>
 <tr class="separator:a7e1a27368a0becda3e6ce4ba6129b17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae624b58ca1e2170035ad0c6978fab8da"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_translation_table.html#ae624b58ca1e2170035ad0c6978fab8da">getStyleProperties</a> () const noexcept -&gt; const std::vector&lt; <a class="el" href="struct_style_properties.html">StyleProperties</a> &gt; &amp;</td></tr>
@@ -166,8 +166,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_translation_table_8hpp_source.html#l00016">16</a> of file <a class="el" href="_translation_table_8hpp_source.html">TranslationTable.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa275364fbefd658530d3f6907e754920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa275364fbefd658530d3f6907e754920">&#9670;&nbsp;</a></span>TranslationTable() <span class="overload">[1/2]</span></h2>
+<a id="af30321dad1284b7e33b890cc91b4baeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af30321dad1284b7e33b890cc91b4baeb">&#9670;&nbsp;</a></span>TranslationTable() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +178,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">TranslationTable::TranslationTable </td>
           <td>(</td>
-          <td class="paramtype">std::stringstream&#160;</td>
+          <td class="paramtype">std::optional&lt; std::stringstream &gt;&#160;</td>
           <td class="paramname"><em>file</em></td><td>)</td>
           <td></td>
         </tr>
@@ -204,14 +204,14 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00013">13</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_translation_table_8hpp_source.html#l00017">contents</a>, <a class="el" href="_translation_table_8cpp_source.html#l00083">parseStyles()</a>, and <a class="el" href="_translation_table_8hpp_source.html#l00018">styleProperties</a>.</p>
+<p class="reference">References <a class="el" href="_translation_table_8hpp_source.html#l00017">contents</a>, <a class="el" href="_translation_table_8cpp_source.html#l00097">parseStyles()</a>, and <a class="el" href="_translation_table_8hpp_source.html#l00018">styleProperties</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_translation_table_aa275364fbefd658530d3f6907e754920_cgraph.png" border="0" usemap="#class_translation_table_aa275364fbefd658530d3f6907e754920_cgraph" alt=""/></div>
-<map name="class_translation_table_aa275364fbefd658530d3f6907e754920_cgraph" id="class_translation_table_aa275364fbefd658530d3f6907e754920_cgraph">
+<div class="center"><img src="class_translation_table_af30321dad1284b7e33b890cc91b4baeb_cgraph.png" border="0" usemap="#class_translation_table_af30321dad1284b7e33b890cc91b4baeb_cgraph" alt=""/></div>
+<map name="class_translation_table_af30321dad1284b7e33b890cc91b4baeb_cgraph" id="class_translation_table_af30321dad1284b7e33b890cc91b4baeb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,193,47"/>
 <area shape="rect" href="class_translation_table.html#a76a341c086a75a887ef1a68fafd256a0" title=" " alt="" coords="241,13,433,39"/>
 </map>
@@ -219,8 +219,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af266ea92b4028756e10eeee8be850b5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af266ea92b4028756e10eeee8be850b5b">&#9670;&nbsp;</a></span>TranslationTable() <span class="overload">[2/2]</span></h2>
+<a id="abbb3189536423353ef139af201139560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb3189536423353ef139af201139560">&#9670;&nbsp;</a></span>TranslationTable() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +231,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">TranslationTable::TranslationTable </td>
           <td>(</td>
-          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramtype">const std::optional&lt; boost::filesystem::path &gt; &amp;&#160;</td>
           <td class="paramname"><em>path</em></td><td>)</td>
           <td></td>
         </tr>
@@ -256,16 +256,16 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00024">24</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00029">29</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_translation_table_8hpp_source.html#l00017">contents</a>, <a class="el" href="_translation_table_8cpp_source.html#l00083">parseStyles()</a>, and <a class="el" href="_translation_table_8hpp_source.html#l00018">styleProperties</a>.</p>
+<p class="reference">References <a class="el" href="_translation_table_8hpp_source.html#l00017">contents</a>, <a class="el" href="_translation_table_8cpp_source.html#l00097">parseStyles()</a>, and <a class="el" href="_translation_table_8hpp_source.html#l00018">styleProperties</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_translation_table_af266ea92b4028756e10eeee8be850b5b_cgraph.png" border="0" usemap="#class_translation_table_af266ea92b4028756e10eeee8be850b5b_cgraph" alt=""/></div>
-<map name="class_translation_table_af266ea92b4028756e10eeee8be850b5b_cgraph" id="class_translation_table_af266ea92b4028756e10eeee8be850b5b_cgraph">
+<div class="center"><img src="class_translation_table_abbb3189536423353ef139af201139560_cgraph.png" border="0" usemap="#class_translation_table_abbb3189536423353ef139af201139560_cgraph" alt=""/></div>
+<map name="class_translation_table_abbb3189536423353ef139af201139560_cgraph" id="class_translation_table_abbb3189536423353ef139af201139560_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,193,47"/>
 <area shape="rect" href="class_translation_table.html#a76a341c086a75a887ef1a68fafd256a0" title=" " alt="" coords="241,13,433,39"/>
 </map>
@@ -298,7 +298,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Provides all parsed style-properties </p><dl class="section return"><dt>Returns</dt><dd>all parsed style-properties </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00104">104</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00118">118</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_translation_table_8hpp_source.html#l00018">styleProperties</a>.</p>
 
@@ -335,7 +335,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the parsed style-properties </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00048">48</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00062">62</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_html_generator_8hpp_source.html#l00056">name</a>.</p>
 
@@ -371,7 +371,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00083">83</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00097">97</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_translation_table_8hpp_source.html#l00017">contents</a>.</p>
 
@@ -384,7 +384,7 @@ Private Attributes</h2></td></tr>
 <div class="center"><img src="class_translation_table_a76a341c086a75a887ef1a68fafd256a0_icgraph.png" border="0" usemap="#class_translation_table_a76a341c086a75a887ef1a68fafd256a0_icgraph" alt=""/></div>
 <map name="class_translation_table_a76a341c086a75a887ef1a68fafd256a0_icgraph" id="class_translation_table_a76a341c086a75a887ef1a68fafd256a0_icgraph">
 <area shape="rect" title=" " alt="" coords="241,13,433,39"/>
-<area shape="rect" href="class_translation_table.html#aa275364fbefd658530d3f6907e754920" title=" " alt="" coords="5,5,193,47"/>
+<area shape="rect" href="class_translation_table.html#af30321dad1284b7e33b890cc91b4baeb" title=" " alt="" coords="5,5,193,47"/>
 </map>
 </div>
 
@@ -412,7 +412,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00039">39</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00053">53</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
 
 </div>
 </div>
@@ -447,7 +447,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>(maybe) the properties for the style - None if there are none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00113">113</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00127">127</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_style_properties_8hpp_source.html#l00012">StyleProperties::name</a>, and <a class="el" href="_html_generator_8hpp_source.html#l00056">name</a>.</p>
 
@@ -485,7 +485,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>collection of properties </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>if names is empty, returns all properties </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00127">127</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_translation_table_8cpp_source.html#l00141">141</a> of file <a class="el" href="_translation_table_8cpp_source.html">TranslationTable.cpp</a>.</p>
 
 </div>
 </div>
@@ -514,7 +514,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_translation_table_8hpp_source.html#l00017">17</a> of file <a class="el" href="_translation_table_8hpp_source.html">TranslationTable.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_translation_table_8cpp_source.html#l00083">parseStyles()</a>, and <a class="el" href="_translation_table_8cpp_source.html#l00013">TranslationTable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_translation_table_8cpp_source.html#l00097">parseStyles()</a>, and <a class="el" href="_translation_table_8cpp_source.html#l00013">TranslationTable()</a>.</p>
 
 </div>
 </div>
@@ -542,7 +542,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_translation_table_8hpp_source.html#l00018">18</a> of file <a class="el" href="_translation_table_8hpp_source.html">TranslationTable.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_translation_table_8cpp_source.html#l00104">getStyleProperties()</a>, and <a class="el" href="_translation_table_8cpp_source.html#l00013">TranslationTable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_translation_table_8cpp_source.html#l00118">getStyleProperties()</a>, and <a class="el" href="_translation_table_8cpp_source.html#l00013">TranslationTable()</a>.</p>
 
 </div>
 </div>

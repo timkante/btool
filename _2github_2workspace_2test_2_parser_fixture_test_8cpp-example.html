@@ -124,11 +124,13 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_parser_fix
 <div class="line"><span class="stringliteral">                    &quot;title&quot;</span></div>
 <div class="line"><span class="stringliteral">                ],</span></div>
 <div class="line"><span class="stringliteral">                &quot;optionalFields&quot;: [</span></div>
+<div class="line"><span class="stringliteral">                    &quot;journal&quot;,</span></div>
 <div class="line"><span class="stringliteral">                    &quot;year&quot;,</span></div>
 <div class="line"><span class="stringliteral">                    &quot;volume&quot;,</span></div>
 <div class="line"><span class="stringliteral">                    &quot;number&quot;,</span></div>
 <div class="line"><span class="stringliteral">                    &quot;month&quot;,</span></div>
-<div class="line"><span class="stringliteral">                    &quot;url&quot;</span></div>
+<div class="line"><span class="stringliteral">                    &quot;url&quot;,</span></div>
+<div class="line"><span class="stringliteral">                    &quot;booktitle&quot;</span></div>
 <div class="line"><span class="stringliteral">                ]</span></div>
 <div class="line"><span class="stringliteral">            },</span></div>
 <div class="line"><span class="stringliteral">            {</span></div>
@@ -209,23 +211,24 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_parser_fix
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_parser_fixture_test.html">ParserFixtureTest</a>, parseDummyFile) {</div>
 <div class="line">  boost::filesystem::path target = boost::filesystem::path(<span class="stringliteral">&quot;../../test/res/publications.bib&quot;</span>);</div>
 <div class="line">  ASSERT_NO_THROW([&amp;]() {</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(std::vector&lt;boost::filesystem::path&gt;{target}, <span class="stringliteral">&quot;author&quot;</span>s);</div>
-<div class="line">    ASSERT_EQ(elements.size(), 13u);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(std::vector&lt;boost::filesystem::path&gt;{target}, std::nullopt);</div>
+<div class="line">    ASSERT_EQ(elements.size(), 1u);</div>
 <div class="line">  }());</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_parser_fixture_test.html">ParserFixtureTest</a>, parseDummyFileInDirectory) {</div>
+<div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_parser_fixture_test.html">ParserFixtureTest</a>, parseDummyFileInDirectoryAndAllowAllElements) {</div>
 <div class="line">  boost::filesystem::path target = boost::filesystem::path(<span class="stringliteral">&quot;../../test/res&quot;</span>);</div>
-<div class="line">  ASSERT_NO_THROW([&amp;]() {</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(std::vector&lt;boost::filesystem::path&gt;{target}, <span class="stringliteral">&quot;author&quot;</span>s);</div>
-<div class="line">    ASSERT_EQ(elements.size(), 13u);</div>
-<div class="line">  }());</div>
+<div class="line">  ASSERT_NO_THROW(([&amp;]() {</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = <a class="code" href="class_parser.html">Parser</a>{std::optional&lt;boost::filesystem::path&gt;(std::nullopt), {}, <span class="keyword">true</span>}.<a name="a3"></a><a class="code" href="class_parser.html#adc2ef603a95ec5e6cc3a6b805f70b95a">generate</a>(std::vector&lt;</div>
+<div class="line">        boost::filesystem::path&gt;{target}, std::nullopt);</div>
+<div class="line">    ASSERT_EQ(elements.size(), 62u);</div>
+<div class="line">  }()));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a>(<a class="code" href="struct_parser_fixture_test.html">ParserFixtureTest</a>, parseDummyFileThatDoesNotExist) {</div>
 <div class="line">  boost::filesystem::path target = boost::filesystem::path(<span class="stringliteral">&quot;../../test/res/someFileThatDoesNotExist.something&quot;</span>);</div>
 <div class="line">  ASSERT_ANY_THROW(</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(std::vector&lt;boost::filesystem::path&gt;{target}, <span class="stringliteral">&quot;author&quot;</span>s);</div>
+<div class="line">      <span class="keyword">const</span> <span class="keyword">auto</span> elements = sample.generate(std::vector&lt;boost::filesystem::path&gt;{target}, std::nullopt);</div>
 <div class="line">  );</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -276,6 +279,7 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_parser_fix
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astruct_parser_fixture_test_html"><div class="ttname"><a href="struct_parser_fixture_test.html">ParserFixtureTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_parser_fixture_test_8cpp_source.html#l00016">ParserFixtureTest.cpp:16</a></div></div>
+<div class="ttc" id="aclass_parser_html_adc2ef603a95ec5e6cc3a6b805f70b95a"><div class="ttname"><a href="class_parser.html#adc2ef603a95ec5e6cc3a6b805f70b95a">Parser::generate</a></div><div class="ttdeci">auto generate(const std::vector&lt; boost::filesystem::path &gt; &amp;inputPaths, const std::optional&lt; std::string &gt; &amp;sorting) const -&gt; std::vector&lt; BibElement &gt;</div><div class="ttdef"><b>Definition:</b> <a href="_parser_8cpp_source.html#l00164">Parser.cpp:164</a></div></div>
 <div class="ttc" id="aclass_parser_html"><div class="ttname"><a href="class_parser.html">Parser</a></div><div class="ttdoc">interface to interact with bib-files</div><div class="ttdef"><b>Definition:</b> <a href="_parser_8hpp_source.html#l00017">Parser.hpp:17</a></div></div>
 <div class="ttc" id="a_bib_element_fixture_test_8cpp_html_a0a671a080601a8bdfa1558cb66c80b25"><div class="ttname"><a href="_bib_element_fixture_test_8cpp.html#a0a671a080601a8bdfa1558cb66c80b25">TEST_F</a></div><div class="ttdeci">TEST_F(BibElementFixtureTest, completeElementTest)</div><div class="ttdef"><b>Definition:</b> <a href="_bib_element_fixture_test_8cpp_source.html#l00034">BibElementFixtureTest.cpp:34</a></div></div>
 <div class="ttc" id="a_parser_8hpp_html"><div class="ttname"><a href="_parser_8hpp.html">Parser.hpp</a></div></div>
