@@ -4,6 +4,8 @@ var annotated_dup =
     [ "AbstractParserState", "class_abstract_parser_state.html", "class_abstract_parser_state" ],
     [ "BibElement", "struct_bib_element.html", "struct_bib_element" ],
     [ "BibElementFixtureTest", "struct_bib_element_fixture_test.html", "struct_bib_element_fixture_test" ],
+    [ "ConflictAdder", "struct_conflict_adder.html", "struct_conflict_adder" ],
+    [ "DependencyAdder", "struct_dependency_adder.html", "struct_dependency_adder" ],
     [ "Field", "struct_field.html", "struct_field" ],
     [ "Generator", "struct_generator.html", "struct_generator" ],
     [ "GeneratorException", "struct_generator_exception.html", "struct_generator_exception" ],
