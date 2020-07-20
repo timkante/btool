@@ -5,7 +5,7 @@ var searchData=
   ['parserexception_245',['ParserException',['../struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0',1,'ParserException']]],
   ['parserfixturetest_246',['ParserFixtureTest',['../struct_parser_fixture_test.html#a64a36a49ce741b4a778e522b6bcdf057',1,'ParserFixtureTest']]],
   ['parsestyle_247',['parseStyle',['../class_translation_table.html#a0d59fafb3f20e03734c2274a0d2bfcb3',1,'TranslationTable']]],
-  ['parsestyles_248',['parseStyles',['../class_translation_table.html#abd2cb79eff79d7a11ce088a4ca8592af',1,'TranslationTable']]],
+  ['parsestyles_248',['parseStyles',['../class_translation_table.html#a76a341c086a75a887ef1a68fafd256a0',1,'TranslationTable']]],
   ['plaintextgenerator_249',['PlainTextGenerator',['../struct_plain_text_generator.html#a053e6613b08b983d80e2f39e355d8093',1,'PlainTextGenerator']]],
   ['printall_250',['printAll',['../class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a',1,'TranslationTable']]]
 ];

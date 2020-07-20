@@ -1,10 +1,10 @@
 var class_translation_table =
 [
-    [ "TranslationTable", "class_translation_table.html#af7361e99fd42653b98b913daee8394f3", null ],
-    [ "TranslationTable", "class_translation_table.html#ac82ac6d032d1f9fb9db0df5abdfbab21", null ],
+    [ "TranslationTable", "class_translation_table.html#aa275364fbefd658530d3f6907e754920", null ],
+    [ "TranslationTable", "class_translation_table.html#af266ea92b4028756e10eeee8be850b5b", null ],
     [ "getStyleProperties", "class_translation_table.html#ae624b58ca1e2170035ad0c6978fab8da", null ],
     [ "parseStyle", "class_translation_table.html#a0d59fafb3f20e03734c2274a0d2bfcb3", null ],
-    [ "parseStyles", "class_translation_table.html#abd2cb79eff79d7a11ce088a4ca8592af", null ],
+    [ "parseStyles", "class_translation_table.html#a76a341c086a75a887ef1a68fafd256a0", null ],
     [ "printAll", "class_translation_table.html#a7e1a27368a0becda3e6ce4ba6129b17a", null ],
     [ "stylePropertiesOf", "class_translation_table.html#a3ccdf6ed0cffbfdf8030da2d2be8be7a", null ],
     [ "stylePropertiesOf", "class_translation_table.html#aa1c4d2f0739d6e8a12d49502765deff3", null ],

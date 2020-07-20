@@ -16,7 +16,7 @@ var searchData=
   ['parserstatefixturetest_92',['ParserStateFixtureTest',['../class_parser_state_fixture_test.html',1,'']]],
   ['parserstatefixturetest_2ecpp_93',['ParserStateFixtureTest.cpp',['../_parser_state_fixture_test_8cpp.html',1,'']]],
   ['parsestyle_94',['parseStyle',['../class_translation_table.html#a0d59fafb3f20e03734c2274a0d2bfcb3',1,'TranslationTable']]],
-  ['parsestyles_95',['parseStyles',['../class_translation_table.html#abd2cb79eff79d7a11ce088a4ca8592af',1,'TranslationTable']]],
+  ['parsestyles_95',['parseStyles',['../class_translation_table.html#a76a341c086a75a887ef1a68fafd256a0',1,'TranslationTable']]],
   ['plaintextgenerator_96',['PlainTextGenerator',['../struct_plain_text_generator.html',1,'PlainTextGenerator'],['../struct_plain_text_generator.html#a053e6613b08b983d80e2f39e355d8093',1,'PlainTextGenerator::PlainTextGenerator()']]],
   ['plaintextgenerator_2ecpp_97',['PlainTextGenerator.cpp',['../_plain_text_generator_8cpp.html',1,'']]],
   ['plaintextgenerator_2ehpp_98',['PlainTextGenerator.hpp',['../_plain_text_generator_8hpp.html',1,'']]],
