@@ -13,7 +13,7 @@ using namespace std::literals::string_literals;
  * @param ruleFilePath filepath to the translation-table
  * @param targetStyle the style name to filter parse-results for
  */
-Parser::Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles) noexcept
+Parser::Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles)
     : targetStyles(std::move(targetStyles)), translationTable(TranslationTable(ruleFilePath)) {}
 
 /**
@@ -21,7 +21,7 @@ Parser::Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::str
  * @param ruleFileContents contents of the translation-table
  * @param targetStyle the style name to filter parse-results for
  */
-Parser::Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyles) noexcept
+Parser::Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyles)
     : targetStyles(std::move(targetStyles)), translationTable(TranslationTable(std::move(ruleFileContents))) {}
 
 /**

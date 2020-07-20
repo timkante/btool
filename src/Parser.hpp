@@ -19,9 +19,9 @@ class Parser {
   TranslationTable translationTable; ///< translation-Table handler
 
  public:
-  Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles) noexcept;
+  Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles);
 
-  Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyle) noexcept;
+  Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyle);
 
   [[nodiscard]] auto generate(
       const std::vector<boost::filesystem::path> &inputPaths,
