@@ -1,7 +1,6 @@
 #include <boost/filesystem/path.hpp>
 #include <GlobalParserState.hpp>
 #include <ParserException.hpp>
-#include <spdlog/spdlog.h>
 #include <Parser.hpp>
 #include <algorithm>
 #include <numeric>
@@ -51,7 +50,6 @@ auto Parser::generate(
     if (sorting) sortElements(collector, sorting.value());
     return collector;
   } else if (boost::filesystem::is_regular_file(inputPath)) {
-    spdlog::info("Parsing File: {} ...", inputPath.string());
     std::ifstream inFile{inputPath.string()};
     inFile >> std::noskipws;
     std::string inContent{std::istream_iterator<char>{inFile}, std::istream_iterator<char>{}};
