@@ -218,16 +218,6 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_translatio
 <div class="line">  ASSERT_NO_THROW(<a class="code" href="class_translation_table.html">TranslationTable</a>(boost::filesystem::path(<span class="stringliteral">&quot;../../src/translationTable.json&quot;</span>)));</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#aabc35d30494d9778b891dffffdcc8dd2">TEST</a>(TranslationTableTest, constructorTestFromContent) {</div>
-<div class="line">  ASSERT_NO_THROW(<a class="code" href="class_translation_table.html">TranslationTable</a>(std::stringstream{R<span class="stringliteral">&quot;({&quot;key&quot;: &quot;value&quot;})&quot;}));</span></div>
-<div class="line"><span class="stringliteral">}</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral"><a class="code" href="_bib_element_fixture_test_8cpp.html#aabc35d30494d9778b891dffffdcc8dd2">TEST</a>(TranslationTableTest, printTest) {</span></div>
-<div class="line"><span class="stringliteral">  std::stringstream receiver;</span></div>
-<div class="line"><span class="stringliteral">  <a class="code" href="class_translation_table.html">TranslationTable</a>(std::stringstream{R</span><span class="stringliteral">&quot;({&quot;key&quot;: &quot;value&quot;})&quot;}).printAll(receiver);</span></div>
-<div class="line"><span class="stringliteral">  ASSERT_EQ(receiver.str(), </span><span class="stringliteral">&quot;{\n    \&quot;key\&quot;: \&quot;value\&quot;\n}\n&quot;</span>);</div>
-<div class="line">}</div>
-<div class="line"> </div>
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#aabc35d30494d9778b891dffffdcc8dd2">TEST</a>(TranslationTableTest, parsingInvalidStyleFieldsTest) {</div>
 <div class="line">  <span class="keyword">auto</span> invalidContent = std::stringstream{R<span class="stringliteral">&quot;(</span></div>
 <div class="line"><span class="stringliteral">        {</span></div>
@@ -273,9 +263,7 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_translatio
 <div class="line"><span class="stringliteral">            ]</span></div>
 <div class="line"><span class="stringliteral">        }</span></div>
 <div class="line"><span class="stringliteral">    )&quot;};</span></div>
-<div class="line"><span class="stringliteral">  </span><span class="keyword">const</span> <span class="keyword">auto</span> table = <a class="code" href="class_translation_table.html">TranslationTable</a>(std::move(invalidContent));</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> expected = std::vector&lt;StyleProperties&gt;{};</div>
-<div class="line">  ASSERT_EQ(table.getStyleProperties(), expected);</div>
+<div class="line"><span class="stringliteral">  ASSERT_ANY_THROW(</span><span class="keyword">const</span> <span class="keyword">auto</span> table = <a class="code" href="class_translation_table.html">TranslationTable</a>(std::move(invalidContent)));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#aabc35d30494d9778b891dffffdcc8dd2">TEST</a>(TranslationTableTest, parsingInvalidFileContent) {</div>
@@ -288,23 +276,17 @@ $(document).ready(function(){initNavTree('_2github_2workspace_2test_2_translatio
 <div class="line"><span class="stringliteral">            ],</span></div>
 <div class="line"><span class="stringliteral">        }</span></div>
 <div class="line"><span class="stringliteral">    )&quot;};</span></div>
-<div class="line"><span class="stringliteral">  </span><span class="keyword">const</span> <span class="keyword">auto</span> table = <a class="code" href="class_translation_table.html">TranslationTable</a>(std::move(invalidContent));</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> expected = std::vector&lt;StyleProperties&gt;{};</div>
-<div class="line">  ASSERT_EQ(table.getStyleProperties(), expected);</div>
+<div class="line"><span class="stringliteral">  ASSERT_ANY_THROW(</span><span class="keyword">const</span> <span class="keyword">auto</span> table = <a class="code" href="class_translation_table.html">TranslationTable</a>(std::move(invalidContent)));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#aabc35d30494d9778b891dffffdcc8dd2">TEST</a>(TranslationTableTest, parsingInvalidFile) {</div>
 <div class="line">  <span class="keyword">auto</span> invalidFile = boost::filesystem::path(<span class="stringliteral">&quot;./someUnExistingFile.json&quot;</span>);</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> table = <a class="code" href="class_translation_table.html">TranslationTable</a>(invalidFile);</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> expected = std::vector&lt;StyleProperties&gt;{};</div>
-<div class="line">  ASSERT_EQ(table.getStyleProperties(), expected);</div>
+<div class="line">  ASSERT_ANY_THROW(<span class="keyword">const</span> <span class="keyword">auto</span> table = <a class="code" href="class_translation_table.html">TranslationTable</a>(invalidFile););</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="_bib_element_fixture_test_8cpp.html#aabc35d30494d9778b891dffffdcc8dd2">TEST</a>(TranslationTableTest, parsingDirectory) {</div>
 <div class="line">  <span class="keyword">auto</span> invalidFile = boost::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> table = <a class="code" href="class_translation_table.html">TranslationTable</a>(invalidFile);</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> expected = std::vector&lt;StyleProperties&gt;{};</div>
-<div class="line">  ASSERT_EQ(table.getStyleProperties(), expected);</div>
+<div class="line">  ASSERT_ANY_THROW(<span class="keyword">const</span> <span class="keyword">auto</span> table = <a class="code" href="class_translation_table.html">TranslationTable</a>(invalidFile););</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->

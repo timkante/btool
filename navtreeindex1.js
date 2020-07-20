@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"struct_bib_element_fixture_test.html#ad9dd4019df5958bbd21dec1705c127b4":[1,11,3,2],
-"struct_bib_element_fixture_test.html#ae831dd389d771f2aa3a0c95826d8445c":[1,11,3,0],
 "struct_conflict_adder.html":[1,11,4],
 "struct_conflict_adder.html#a4aa2d326067725ab0760bde24439b273":[1,11,4,1],
 "struct_conflict_adder.html#ae817fc222d085eba1486db125dedf276":[1,11,4,0],
