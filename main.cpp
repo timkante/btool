@@ -15,7 +15,7 @@ namespace fs = boost::filesystem;
 /**
  * Handles Conflicts of program-options
  */
-struct [[maybe_unused]] ConflictAdder {
+struct [[maybe_unused]] Conflicts {
   const po::variables_map &vm; ///< The variables-map, parsed from command line
 
   /**
@@ -40,7 +40,7 @@ struct [[maybe_unused]] ConflictAdder {
 /**
  * Handles Dependencies of program-options
  */
-struct [[maybe_unused]] DependencyAdder {
+struct [[maybe_unused]] Dependencies {
   const po::variables_map &vm; ///< The variables-map, parsed from command line
 
   /**
@@ -106,10 +106,10 @@ int main(int argc, char **argv) {
       return 0;
     }
 
-    ConflictAdder{vm}
+    Conflicts{vm}
         ("html", "xml", "pdf");
 
-    DependencyAdder{vm}
+    Dependencies{vm}
         ("html", "input")
         ("xml", "input")
         ("pdf", "input")
