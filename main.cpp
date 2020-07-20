@@ -2,8 +2,8 @@
 #include <GeneratorException.hpp>
 #include <PlainTextGenerator.hpp>
 #include <HtmlGenerator.hpp>
-#include <functional>
 #include <Parser.hpp>
+#include <optional>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -20,7 +20,7 @@ struct [[maybe_unused]] ConflictAdder {
     const auto conflict = (... + (vm.count(opts) && !vm[opts].defaulted())) >= 2;
     if (conflict) {
       throw std::logic_error(
-          "Conflicting arguments detected: Only zero or one of [" + (... + (opts + ", "s)) + "] is allowed."
+          "Conflicting arguments detected: Only zero or one of ["s + (... + (opts + ", "s)) + "] is allowed."s
       );
     }
     return *this;
@@ -39,7 +39,7 @@ struct [[maybe_unused]] DependencyAdder {
     const auto allRequired = (... && (vm.count(requiredOptions) != 0 && !vm[requiredOptions].defaulted()));
     if (base && !allRequired)
       throw std::logic_error(
-          std::string("Option '") + baseOption + "' requires options [" + (... + (requiredOptions + ", "s)) + "]."
+          "Option '"s + baseOption + "' requires options ["s + (... + (requiredOptions + ", "s)) + "]."s
       );
     return *this;
   }
@@ -56,11 +56,15 @@ int main(int argc, char **argv) {
             "pathname for output (default is stdout)"
         )
         ("table,t", po::value<fs::path>()->required(), "full pathname of translation-table")
-        ("input,i", po::value<std::vector<fs::path>>()->multitoken(), "file(s) to handle")
+        ("input,i", po::value<std::vector<fs::path>>()->multitoken()->required(), "file(s) to handle")
         ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
         ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
         ("pdf,P", po::bool_switch()->default_value(false), "set output-type to xml")
-        ("filter,f", po::value<std::vector<std::string>>()->multitoken(), "filter output for a style-name(s)")
+        (
+            "filter,f",
+            po::value<std::vector<std::string>>()->multitoken()->default_value({}, ""),
+            "filter output for a style-name(s)"
+        )
         ("sort,s", po::value<std::string>()->default_value(""), "sort output for a field");
 
     po::variables_map vm;
@@ -75,14 +79,14 @@ int main(int argc, char **argv) {
         ("html", "xml", "pdf");
 
     DependencyAdder{vm}
-      ("html", "input", "table")
-      ("xml", "input", "table")
-      ("pdf", "input", "table");
+        ("html", "input", "table")
+        ("xml", "input", "table")
+        ("pdf", "input", "table");
 
     const Parser parser{vm["table"].as<fs::path>(), vm["filter"].as<std::vector<std::string>>()};
     const auto elements = parser.generate(
         vm["input"].as<std::vector<fs::path>>(),
-        vm["sort"].as<std::string>()
+        vm["sort"].as<std::string>().empty() ? std::nullopt : std::optional(vm["sort"].as<std::string>())
     );
 
     std::string output;
