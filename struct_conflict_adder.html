@@ -121,11 +121,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a4aa2d326067725ab0760bde24439b273"><td class="memItemLeft" align="right" valign="top">const po::variables_map &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_conflict_adder.html#a4aa2d326067725ab0760bde24439b273">vm</a></td></tr>
+<tr class="memdesc:a4aa2d326067725ab0760bde24439b273"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variables-map, parsed from command line.  <a href="struct_conflict_adder.html#a4aa2d326067725ab0760bde24439b273">More...</a><br /></td></tr>
 <tr class="separator:a4aa2d326067725ab0760bde24439b273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00015">15</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="textblock"><p>Handles Conflicts of program-options </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00018">18</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae817fc222d085eba1486db125dedf276"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae817fc222d085eba1486db125dedf276">&#9670;&nbsp;</a></span>operator()()</h2>
@@ -152,8 +154,27 @@ template&lt;typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Checks vm forconflicts </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>interdependent options (const char *) of variable-size </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opts</td><td>the options </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this to add more conflicts </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">logic_error</td><td>if any conflicting opptions occur </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00019">19</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00029">29</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -170,7 +191,9 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00016">16</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>The variables-map, parsed from command line. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00019">19</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

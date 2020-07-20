@@ -121,11 +121,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a77fb412b33170317f22dc7777c6cf965"><td class="memItemLeft" align="right" valign="top">const po::variables_map &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_dependency_adder.html#a77fb412b33170317f22dc7777c6cf965">vm</a></td></tr>
+<tr class="memdesc:a77fb412b33170317f22dc7777c6cf965"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variables-map, parsed from command line.  <a href="struct_dependency_adder.html#a77fb412b33170317f22dc7777c6cf965">More...</a><br /></td></tr>
 <tr class="separator:a77fb412b33170317f22dc7777c6cf965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00030">30</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="textblock"><p>Handles Dependencies of program-options </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00043">43</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a251f22e95bae6ca8df7964e90a17e539"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a251f22e95bae6ca8df7964e90a17e539">&#9670;&nbsp;</a></span>operator()()</h2>
@@ -162,8 +164,28 @@ template&lt;typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Checks dependencies of program options </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>required options (const char *) of variable-size </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baseOption</td><td>option that requires one or more other options </td></tr>
+    <tr><td class="paramname">requiredOptions</td><td>the required options </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this to add more requirements </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">logic_error</td><td>if option requirements are not met </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00034">34</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00055">55</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -180,7 +202,9 @@ template&lt;typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00031">31</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p>The variables-map, parsed from command line. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00044">44</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
