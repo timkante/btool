@@ -10,19 +10,27 @@
  * @return weather the element is compliant or not
  */
 auto BibElement::isCompliantTo(const StyleProperties &props) const -> bool {
-  return std::all_of(
-      std::cbegin(props.requiredFields),
-      std::cend(props.requiredFields),
-      [&](const std::string &requiredFieldName) {
-        return std::find_if(
-            std::cbegin(attributes),
-            std::cend(attributes),
-            [&requiredFieldName](const Field &actualField) {
-              return requiredFieldName == actualField.name;
-            }
-        ) != std::cend(attributes) && style == props.name;
-      }
-  );
+  return
+      style == props.name
+          && std::all_of(
+              std::cbegin(props.requiredFields),
+              std::cend(props.requiredFields),
+              [&](const std::string &requiredFieldName) {
+                return findAttribute(requiredFieldName).has_value();
+              })
+          && std::all_of(
+              std::cbegin(attributes),
+              std::cend(attributes),
+              [&](const Field &field) {
+                const auto &inRequiredFields = [&](const Field &required) {
+                  return props.requiredFields.find(field.name) != props.requiredFields.end();
+                };
+                const auto &inOptionalFields = [&](const Field &optional) {
+                  return props.optionalFields.find(field.name) != props.optionalFields.end();
+                };
+                return inRequiredFields(field) || inOptionalFields(field);
+              }
+          );
 }
 
 /**

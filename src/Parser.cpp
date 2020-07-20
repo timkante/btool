@@ -39,7 +39,7 @@ auto Parser::generate(
     const std::optional<std::string> &sorting
 ) const -> std::vector<BibElement> {
   if (!boost::filesystem::exists(inputPath)) {
-    throw std::invalid_argument("No such file or directory. [input=" + inputPath.string() + "]");
+    throw std::invalid_argument("No such file or directory. [path=" + inputPath.string() + "]");
   } else if (boost::filesystem::is_directory(inputPath)) {
     std::vector<BibElement> collector{};
     for (const auto &file : boost::filesystem::directory_iterator(inputPath)) {
@@ -60,7 +60,7 @@ auto Parser::generate(
     if (sorting) sortElements(elements, sorting.value());
     return elements;
   } else {
-    throw std::invalid_argument("Unexpected file-descriptor. [input=" + inputPath.string() + "]");
+    throw std::invalid_argument("Unexpected file-descriptor. [path=" + inputPath.string() + "]");
   }
 }
 

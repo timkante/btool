@@ -20,8 +20,8 @@ struct BibElementFixtureTest : public ::testing::Test {
                         "style"s,
                         {
                             {"reqField"s, "a value"s},
-                            {"someOtherField"s, "a value"s},
-                            {"reqField2"s, "a value"s}
+                            {"reqField2"s, "a value"s},
+                            {"optField"s, "a value"s}
                         }},
         incompleteElement{"id"s,
                           "style"s,

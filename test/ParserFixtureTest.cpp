@@ -29,11 +29,13 @@ struct ParserFixtureTest : public ::testing::Test {
                     "title"
                 ],
                 "optionalFields": [
+                    "journal",
                     "year",
                     "volume",
                     "number",
                     "month",
-                    "url"
+                    "url",
+                    "booktitle"
                 ]
             },
             {
@@ -114,23 +116,23 @@ TEST_F(ParserFixtureTest, parseNonRuleCompliantContent) {
 TEST_F(ParserFixtureTest, parseDummyFile) {
   boost::filesystem::path target = boost::filesystem::path("../../test/res/publications.bib");
   ASSERT_NO_THROW([&]() {
-    const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, "author"s);
-    ASSERT_EQ(elements.size(), 13u);
+    const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, std::nullopt);
+    ASSERT_EQ(elements.size(), 1u);
   }());
 }
 
 TEST_F(ParserFixtureTest, parseDummyFileInDirectory) {
   boost::filesystem::path target = boost::filesystem::path("../../test/res");
   ASSERT_NO_THROW([&]() {
-    const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, "author"s);
-    ASSERT_EQ(elements.size(), 13u);
+    const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, std::nullopt);
+    ASSERT_EQ(elements.size(), 1u);
   }());
 }
 
 TEST_F(ParserFixtureTest, parseDummyFileThatDoesNotExist) {
   boost::filesystem::path target = boost::filesystem::path("../../test/res/someFileThatDoesNotExist.something");
   ASSERT_ANY_THROW(
-    const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, "author"s);
+    const auto elements = sample.generate(std::vector<boost::filesystem::path>{target}, std::nullopt);
   );
 }
 
