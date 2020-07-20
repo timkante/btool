@@ -21,13 +21,13 @@ class TranslationTable {
 
   [[nodiscard]] static auto parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties;
 
-  [[nodiscard]] auto parseStyles() const noexcept -> std::vector<StyleProperties>;
+  [[nodiscard]] auto parseStyles() const -> std::vector<StyleProperties>;
 
  public:
 
-  explicit TranslationTable(std::stringstream file) noexcept;
+  explicit TranslationTable(std::stringstream file);
 
-  explicit TranslationTable(const boost::filesystem::path &path) noexcept;
+  explicit TranslationTable(const boost::filesystem::path &path);
 
   auto printAll(std::ostream &out = std::cout) const -> void;
 

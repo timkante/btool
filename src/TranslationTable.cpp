@@ -4,43 +4,33 @@
 #include <boost/filesystem.hpp>
 #include <algorithm>
 #include <iterator>
-#include <spdlog/spdlog.h>
 
 /**
  * Constructor.
  * @param file contents of a file
+ * @throws boost::property_tree::json_parser_error whenever file is not JSON compliant
  * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
  */
-TranslationTable::TranslationTable(std::stringstream file) noexcept {
-  try {
-    boost::property_tree::read_json(file, contents);
-    styleProperties = parseStyles();
-  } catch (const boost::property_tree::json_parser_error &e) {
-    spdlog::critical("Contents are no valid JSON-Format [contents={}]", file.str());
-    styleProperties = {};
-  }
+TranslationTable::TranslationTable(std::stringstream file) {
+  boost::property_tree::read_json(file, contents);
+  styleProperties = parseStyles();
 }
 
 /**
  * Constructor.
  * @param path path to a translation-table json-file
+ * @throws std::invalid_argument whenever path is no regular file or does not exist
+ * @throws boost::property_tree::json_parser_error whenever file is not JSON compliant
  * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
  */
-TranslationTable::TranslationTable(const boost::filesystem::path &path) noexcept {
+TranslationTable::TranslationTable(const boost::filesystem::path &path) {
   if (!boost::filesystem::exists(path)) {
-    spdlog::critical("No such file. [translationTablePath={}]", path.string());
-    styleProperties = {};
+    throw std::invalid_argument("No such file. [translationTablePath=" + path.string() + "]");
   } else if (!boost::filesystem::is_regular_file(path)) {
-    spdlog::critical("Translation-Table is not a file. [translationTablePath={}]", path.string());
-    styleProperties = {};
+    throw std::invalid_argument("Translation-Table is not a file. [translationTablePath=" + path.string() + "]");
   } else {
-    try {
-      boost::property_tree::read_json(path.string(), contents);
-      styleProperties = parseStyles();
-    } catch (const boost::property_tree::json_parser_error &e) {
-      spdlog::critical("Contents are no valid JSON-Format [contents={}]", path.string());
-      styleProperties = {};
-    }
+    boost::property_tree::read_json(path.string(), contents);
+    styleProperties = parseStyles();
   }
 }
 
@@ -90,8 +80,9 @@ auto TranslationTable::parseStyle(
 /**
  * Parses Styles of a top-level json-pointer (tree according to proposed structure)
  * @return all the parsed style properties
+ * @throws std::logic_error whenever the translation-table does not contain styles
  */
-auto TranslationTable::parseStyles() const noexcept -> std::vector<StyleProperties> {
+auto TranslationTable::parseStyles() const -> std::vector<StyleProperties> {
   std::vector<StyleProperties> props;
   const boost::optional<const boost::property_tree::ptree &> styles =
       contents.get_child_optional("styles");
@@ -103,7 +94,7 @@ auto TranslationTable::parseStyles() const noexcept -> std::vector<StyleProperti
                      return this->parseStyle(style.second);
                    });
   } else {
-    spdlog::critical("Property \"styles\" not found in provided Translation-Table.");
+    throw std::logic_error("Property \"styles\" not found in provided Translation-Table.");
   }
   return props;
 }
@@ -140,7 +131,7 @@ auto TranslationTable::stylePropertiesOf(
 ) const noexcept -> std::vector<StyleProperties> {
   if (names.empty()) return getStyleProperties();
   std::vector<StyleProperties> result;
-  for (const auto &style : names){
+  for (const auto &style : names) {
     const auto props = stylePropertiesOf(style);
     if (props) result.push_back(props.value());
   }
