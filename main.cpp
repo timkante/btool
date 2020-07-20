@@ -12,9 +12,19 @@ using namespace std::literals::string_literals;
 namespace po = boost::program_options;
 namespace fs = boost::filesystem;
 
+/**
+ * Handles Conflicts of program-options
+ */
 struct [[maybe_unused]] ConflictAdder {
-  const po::variables_map &vm;
+  const po::variables_map &vm; ///< The variables-map, parsed from command line
 
+  /**
+   * Checks vm forconflicts
+   * @tparam Args interdependent options (const char *) of variable-size
+   * @param opts the options
+   * @return this to add more conflicts
+   * @throws logic_error if any conflicting opptions occur
+   */
   template<typename... Args>
   auto operator()(const Args &...opts) const -> auto {
     const auto conflict = (... + (vm.count(opts) && !vm[opts].defaulted())) >= 2;
@@ -27,9 +37,20 @@ struct [[maybe_unused]] ConflictAdder {
   }
 };
 
+/**
+ * Handles Dependencies of program-options
+ */
 struct [[maybe_unused]] DependencyAdder {
-  const po::variables_map &vm;
+  const po::variables_map &vm; ///< The variables-map, parsed from command line
 
+  /**
+   * Checks dependencies of program options
+   * @tparam Args required options (const char *) of variable-size
+   * @param baseOption option that requires one or more other options
+   * @param requiredOptions the required options
+   * @return this to add more requirements
+   * @throws logic_error if option requirements are not met
+   */
   template<typename... Args>
   auto operator()(
       const char *baseOption,
@@ -45,6 +66,12 @@ struct [[maybe_unused]] DependencyAdder {
   }
 };
 
+/**
+ * Main Program - Resolves command-line-arguments and prints output
+ * @param argc number of command-line arguments
+ * @param argv command-line arguments
+ * @return program exit-code
+ */
 int main(int argc, char **argv) {
   try {
     po::options_description desc("Allowed options");
@@ -81,7 +108,9 @@ int main(int argc, char **argv) {
     DependencyAdder{vm}
         ("html", "input", "table")
         ("xml", "input", "table")
-        ("pdf", "input", "table");
+        ("pdf", "input", "table")
+        ("sort", "input", "table")
+        ("filter", "input", "table");
 
     const Parser parser{vm["table"].as<fs::path>(), vm["filter"].as<std::vector<std::string>>()};
     const auto elements = parser.generate(
