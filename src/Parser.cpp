@@ -11,6 +11,8 @@ using namespace std::literals::string_literals;
  * Constructor.
  * @param ruleFilePath filepath to the translation-table
  * @param targetStyle the style name to filter parse-results for
+ * @throws boost::property_tree::json_parser_error whenever translationTable is not JSON compliant
+ * @throws std::invalid_argument whenever translationTable is no regular file or does not exist
  */
 Parser::Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::string> targetStyles)
     : targetStyles(std::move(targetStyles)), translationTable(TranslationTable(ruleFilePath)) {}
@@ -19,6 +21,7 @@ Parser::Parser(const boost::filesystem::path &ruleFilePath, std::vector<std::str
  * Constructor.
  * @param ruleFileContents contents of the translation-table
  * @param targetStyle the style name to filter parse-results for
+ * @throws boost::property_tree::json_parser_error whenever translationTable is not JSON compliant
  */
 Parser::Parser(std::stringstream ruleFileContents, std::vector<std::string> targetStyles)
     : targetStyles(std::move(targetStyles)), translationTable(TranslationTable(std::move(ruleFileContents))) {}

@@ -9,7 +9,6 @@
  * Constructor.
  * @param file contents of a file
  * @throws boost::property_tree::json_parser_error whenever file is not JSON compliant
- * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
  */
 TranslationTable::TranslationTable(std::stringstream file) {
   boost::property_tree::read_json(file, contents);
@@ -21,7 +20,6 @@ TranslationTable::TranslationTable(std::stringstream file) {
  * @param path path to a translation-table json-file
  * @throws std::invalid_argument whenever path is no regular file or does not exist
  * @throws boost::property_tree::json_parser_error whenever file is not JSON compliant
- * @note Will log occurring errors and construct empty `styleProperties`, `contents` is invalid then
  */
 TranslationTable::TranslationTable(const boost::filesystem::path &path) {
   if (!boost::filesystem::exists(path)) {
