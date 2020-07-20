@@ -19,11 +19,11 @@ struct [[maybe_unused]] Conflicts {
   const po::variables_map &vm; ///< The variables-map, parsed from command line
 
   /**
-   * Checks vm forconflicts
+   * Checks vm for conflicts
    * @tparam Args interdependent options (const char *) of variable-size
    * @param opts the options
    * @return this to add more conflicts
-   * @throws logic_error if any conflicting opptions occur
+   * @throws logic_error if any conflicting options occur
    */
   template<typename... Args>
   auto operator()(const Args &...opts) const -> auto {
