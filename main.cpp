@@ -2,6 +2,7 @@
 #include <GeneratorException.hpp>
 #include <PlainTextGenerator.hpp>
 #include <HtmlGenerator.hpp>
+#include <functional>
 #include <Parser.hpp>
 #include <iostream>
 #include <vector>
@@ -11,38 +12,49 @@ using namespace std::literals::string_literals;
 namespace po = boost::program_options;
 namespace fs = boost::filesystem;
 
-template<typename... Args>
-void conflicting_options(
-    const po::variables_map &vm,
-    const Args &...args
-) {
-  const auto conflict = (... + (vm.count(args) && !vm[args].defaulted())) >= 2;
-  if (conflict) {
-    throw std::logic_error(
-        "Conflicting arguments detected: Only one of [" + (... + (args + ", "s )) + "] is allowed"
-    );
-  }
-}
+struct [[maybe_unused]] ConflictAdder {
+  const po::variables_map &vm;
 
-void option_dependency(
-    const po::variables_map &vm,
-    const char *for_what,
-    const char *required_option
-) {
-  if (vm.count(for_what) && !vm[for_what].defaulted())
-    if (vm.count(required_option) == 0 || vm[required_option].defaulted())
-      throw std::logic_error(std::string("Option '") + for_what
-                                 + "' requires option '" + required_option + "'.");
-}
+  template<typename... Args>
+  auto operator()(const Args &...opts) const -> auto {
+    const auto conflict = (... + (vm.count(opts) && !vm[opts].defaulted())) >= 2;
+    if (conflict) {
+      throw std::logic_error(
+          "Conflicting arguments detected: Only zero or one of [" + (... + (opts + ", "s)) + "] is allowed."
+      );
+    }
+    return *this;
+  }
+};
+
+struct [[maybe_unused]] DependencyAdder {
+  const po::variables_map &vm;
+
+  template<typename... Args>
+  auto operator()(
+      const char *baseOption,
+      const Args &...requiredOptions
+  ) const -> auto {
+    const auto base = vm.count(baseOption) && !vm[baseOption].defaulted();
+    const auto allRequired = (... && (vm.count(requiredOptions) != 0 && !vm[requiredOptions].defaulted()));
+    if (base && !allRequired)
+      throw std::logic_error(
+          std::string("Option '") + baseOption + "' requires options [" + (... + (requiredOptions + ", "s)) + "]."
+      );
+    return *this;
+  }
+};
 
 int main(int argc, char **argv) {
   try {
     po::options_description desc("Allowed options");
     desc.add_options()
         ("help,h", "print usage message")
-        ("output,o",
-         po::value<fs::path>()->required()->default_value("stdout"),
-         "pathname for output (default is stdout)")
+        (
+            "output,o",
+            po::value<fs::path>()->required()->default_value("stdout"),
+            "pathname for output (default is stdout)"
+        )
         ("table,t", po::value<fs::path>()->required(), "full pathname of translation-table")
         ("input,i", po::value<std::vector<fs::path>>()->multitoken(), "file(s) to handle")
         ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
@@ -59,14 +71,13 @@ int main(int argc, char **argv) {
       return 0;
     }
 
-    conflicting_options(vm, "html", "xml", "pdf");
+    ConflictAdder{vm}
+        ("html", "xml", "pdf");
 
-    option_dependency(vm, "html", "output");
-    option_dependency(vm, "xml", "output");
-    option_dependency(vm, "pdf", "output");
-    option_dependency(vm, "html", "table");
-    option_dependency(vm, "xml", "table");
-    option_dependency(vm, "pdf", "table");
+    DependencyAdder{vm}
+      ("html", "input", "table")
+      ("xml", "input", "table")
+      ("pdf", "input", "table");
 
     const Parser parser{vm["table"].as<fs::path>(), vm["filter"].as<std::vector<std::string>>()};
     const auto elements = parser.generate(
