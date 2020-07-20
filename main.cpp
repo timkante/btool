@@ -80,9 +80,13 @@ int main(int argc, char **argv) {
         (
             "output,o",
             po::value<fs::path>()->required()->default_value("stdout"),
-            "pathname for output (default is stdout)"
+            "pathname for output (default is printing to stdout)"
         )
-        ("table,t", po::value<fs::path>()->required()->default_value({}, "none"), "full pathname of translation-table")
+        (
+            "table,t",
+            po::value<fs::path>()->required()->default_value({}, "none"),
+            "(optional) full pathname of translation-table"
+        )
         ("input,i", po::value<std::vector<fs::path>>()->multitoken()->required(), "file(s) to handle")
         ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
         ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
