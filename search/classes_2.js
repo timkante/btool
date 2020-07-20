@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['conflictadder_152',['ConflictAdder',['../struct_conflict_adder.html',1,'']]]
+  ['conflicts_152',['Conflicts',['../struct_conflicts.html',1,'']]]
 ];

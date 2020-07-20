@@ -1,8 +1,8 @@
 var hierarchy =
 [
     [ "BibElement", "struct_bib_element.html", null ],
-    [ "ConflictAdder", "struct_conflict_adder.html", null ],
-    [ "DependencyAdder", "struct_dependency_adder.html", null ],
+    [ "Conflicts", "struct_conflicts.html", null ],
+    [ "Dependencies", "struct_dependencies.html", null ],
     [ "std::exception", null, [
       [ "std::runtime_error", null, [
         [ "GeneratorException", "struct_generator_exception.html", null ],

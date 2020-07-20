@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dependencyadder_153',['DependencyAdder',['../struct_dependency_adder.html',1,'']]]
+  ['dependencies_153',['Dependencies',['../struct_dependencies.html',1,'']]]
 ];

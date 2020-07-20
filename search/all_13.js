@@ -5,5 +5,5 @@ var searchData=
   ['valueparserstate_2ecpp_140',['ValueParserState.cpp',['../_value_parser_state_8cpp.html',1,'']]],
   ['valueparserstate_2ehpp_141',['ValueParserState.hpp',['../_value_parser_state_8hpp.html',1,'']]],
   ['version_142',['Version',['../_l_i_c_e_n_s_e_8txt.html#a457a10a82940188536c43461775a7244',1,'LICENSE.txt']]],
-  ['vm_143',['vm',['../struct_conflict_adder.html#a4aa2d326067725ab0760bde24439b273',1,'ConflictAdder::vm()'],['../struct_dependency_adder.html#a77fb412b33170317f22dc7777c6cf965',1,'DependencyAdder::vm()']]]
+  ['vm_143',['vm',['../struct_conflicts.html#a0c93ceeb8d003b4f0139fec3d010fa9a',1,'Conflicts::vm()'],['../struct_dependencies.html#a35fdb2151ce2d227238fc783685d06c8',1,'Dependencies::vm()']]]
 ];
