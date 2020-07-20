@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parser_243',['Parser',['../class_parser.html#adce4d39afa31d964844ff1e9c852639e',1,'Parser::Parser(const boost::filesystem::path &amp;ruleFilePath, std::vector&lt; std::string &gt; targetStyles) noexcept'],['../class_parser.html#a8f474f8d7ed4b1b6f74ecd97e100b501',1,'Parser::Parser(std::stringstream ruleFileContents, std::vector&lt; std::string &gt; targetStyle) noexcept']]],
+  ['parser_243',['Parser',['../class_parser.html#a679d6c4c155800cf13e97b94fc276426',1,'Parser::Parser(const boost::filesystem::path &amp;ruleFilePath, std::vector&lt; std::string &gt; targetStyles)'],['../class_parser.html#a988651e38476153d566d6700fb5b4746',1,'Parser::Parser(std::stringstream ruleFileContents, std::vector&lt; std::string &gt; targetStyle)']]],
   ['parsercontext_244',['ParserContext',['../struct_parser_context.html#a9014d1ca81df36e774bd1c5962e51b12',1,'ParserContext']]],
   ['parserexception_245',['ParserException',['../struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0',1,'ParserException']]],
   ['parserfixturetest_246',['ParserFixtureTest',['../struct_parser_fixture_test.html#a64a36a49ce741b4a778e522b6bcdf057',1,'ParserFixtureTest']]],

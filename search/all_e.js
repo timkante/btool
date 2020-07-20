@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parser_79',['Parser',['../class_parser.html',1,'Parser'],['../class_parser.html#adce4d39afa31d964844ff1e9c852639e',1,'Parser::Parser(const boost::filesystem::path &amp;ruleFilePath, std::vector&lt; std::string &gt; targetStyles) noexcept'],['../class_parser.html#a8f474f8d7ed4b1b6f74ecd97e100b501',1,'Parser::Parser(std::stringstream ruleFileContents, std::vector&lt; std::string &gt; targetStyle) noexcept']]],
+  ['parser_79',['Parser',['../class_parser.html',1,'Parser'],['../class_parser.html#a679d6c4c155800cf13e97b94fc276426',1,'Parser::Parser(const boost::filesystem::path &amp;ruleFilePath, std::vector&lt; std::string &gt; targetStyles)'],['../class_parser.html#a988651e38476153d566d6700fb5b4746',1,'Parser::Parser(std::stringstream ruleFileContents, std::vector&lt; std::string &gt; targetStyle)']]],
   ['parser_2ecpp_80',['Parser.cpp',['../_parser_8cpp.html',1,'']]],
   ['parser_2ehpp_81',['Parser.hpp',['../_parser_8hpp.html',1,'']]],
   ['parsercontext_82',['ParserContext',['../struct_parser_context.html',1,'ParserContext'],['../struct_parser_context.html#a9014d1ca81df36e774bd1c5962e51b12',1,'ParserContext::ParserContext()']]],

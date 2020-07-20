@@ -1,7 +1,7 @@
 var class_parser =
 [
-    [ "Parser", "class_parser.html#adce4d39afa31d964844ff1e9c852639e", null ],
-    [ "Parser", "class_parser.html#a8f474f8d7ed4b1b6f74ecd97e100b501", null ],
+    [ "Parser", "class_parser.html#a679d6c4c155800cf13e97b94fc276426", null ],
+    [ "Parser", "class_parser.html#a988651e38476153d566d6700fb5b4746", null ],
     [ "elementsOf", "class_parser.html#a65dae52513e7a6bdce66581c9cbb52ea", null ],
     [ "generate", "class_parser.html#aa66b81247f9991bbbb7694bad1589f49", null ],
     [ "generate", "class_parser.html#a7563d76387b215b734de64270a11d528", null ],
