@@ -123,16 +123,6 @@ TEST(TranslationTableTest, constructorTestFromPath) {
   ASSERT_NO_THROW(TranslationTable(boost::filesystem::path("../../src/translationTable.json")));
 }
 
-TEST(TranslationTableTest, constructorTestFromContent) {
-  ASSERT_NO_THROW(TranslationTable(std::stringstream{R"({"key": "value"})"}));
-}
-
-TEST(TranslationTableTest, printTest) {
-  std::stringstream receiver;
-  TranslationTable(std::stringstream{R"({"key": "value"})"}).printAll(receiver);
-  ASSERT_EQ(receiver.str(), "{\n    \"key\": \"value\"\n}\n");
-}
-
 TEST(TranslationTableTest, parsingInvalidStyleFieldsTest) {
   auto invalidContent = std::stringstream{R"(
         {
@@ -178,9 +168,7 @@ TEST(TranslationTableTest, parsingInvalidStylesTest) {
             ]
         }
     )"};
-  const auto table = TranslationTable(std::move(invalidContent));
-  const auto expected = std::vector<StyleProperties>{};
-  ASSERT_EQ(table.getStyleProperties(), expected);
+  ASSERT_ANY_THROW(const auto table = TranslationTable(std::move(invalidContent)));
 }
 
 TEST(TranslationTableTest, parsingInvalidFileContent) {
@@ -193,21 +181,15 @@ TEST(TranslationTableTest, parsingInvalidFileContent) {
             ],
         }
     )"};
-  const auto table = TranslationTable(std::move(invalidContent));
-  const auto expected = std::vector<StyleProperties>{};
-  ASSERT_EQ(table.getStyleProperties(), expected);
+  ASSERT_ANY_THROW(const auto table = TranslationTable(std::move(invalidContent)));
 }
 
 TEST(TranslationTableTest, parsingInvalidFile) {
   auto invalidFile = boost::filesystem::path("./someUnExistingFile.json");
-  const auto table = TranslationTable(invalidFile);
-  const auto expected = std::vector<StyleProperties>{};
-  ASSERT_EQ(table.getStyleProperties(), expected);
+  ASSERT_ANY_THROW(const auto table = TranslationTable(invalidFile););
 }
 
 TEST(TranslationTableTest, parsingDirectory) {
   auto invalidFile = boost::filesystem::path(".");
-  const auto table = TranslationTable(invalidFile);
-  const auto expected = std::vector<StyleProperties>{};
-  ASSERT_EQ(table.getStyleProperties(), expected);
+  ASSERT_ANY_THROW(const auto table = TranslationTable(invalidFile););
 }
