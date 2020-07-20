@@ -100,8 +100,8 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_generator_exception_8hpp.html">GeneratorException.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_plain_text_generator_8hpp.html">PlainTextGenerator.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_html_generator_8hpp.html">HtmlGenerator.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_parser_8hpp.html">Parser.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_parser_8hpp.html">Parser.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> conflict = (... + (vm.count(opts) &amp;&amp; !vm[opts].defaulted())) &gt;= 2;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (conflict) {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keywordflow">throw</span> std::logic_error(</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;          <span class="stringliteral">&quot;Conflicting arguments detected: Only zero or one of [&quot;</span> + (... + (opts + <span class="stringliteral">&quot;, &quot;</span>s)) + <span class="stringliteral">&quot;] is allowed.&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;          <span class="stringliteral">&quot;Conflicting arguments detected: Only zero or one of [&quot;</span>s + (... + (opts + <span class="stringliteral">&quot;, &quot;</span>s)) + <span class="stringliteral">&quot;] is allowed.&quot;</span>s</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      );</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> allRequired = (... &amp;&amp; (vm.count(requiredOptions) != 0 &amp;&amp; !vm[requiredOptions].defaulted()));</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (base &amp;&amp; !allRequired)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">throw</span> std::logic_error(</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          std::string(<span class="stringliteral">&quot;Option &#39;&quot;</span>) + baseOption + <span class="stringliteral">&quot;&#39; requires options [&quot;</span> + (... + (requiredOptions + <span class="stringliteral">&quot;, &quot;</span>s)) + <span class="stringliteral">&quot;].&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          <span class="stringliteral">&quot;Option &#39;&quot;</span>s + baseOption + <span class="stringliteral">&quot;&#39; requires options [&quot;</span>s + (... + (requiredOptions + <span class="stringliteral">&quot;, &quot;</span>s)) + <span class="stringliteral">&quot;].&quot;</span>s</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      );</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
@@ -154,57 +154,61 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="stringliteral">&quot;pathname for output (default is stdout)&quot;</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        )</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        (<span class="stringliteral">&quot;table,t&quot;</span>, po::value&lt;fs::path&gt;()-&gt;required(), <span class="stringliteral">&quot;full pathname of translation-table&quot;</span>)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        (<span class="stringliteral">&quot;input,i&quot;</span>, po::value&lt;std::vector&lt;fs::path&gt;&gt;()-&gt;multitoken(), <span class="stringliteral">&quot;file(s) to handle&quot;</span>)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        (<span class="stringliteral">&quot;input,i&quot;</span>, po::value&lt;std::vector&lt;fs::path&gt;&gt;()-&gt;multitoken()-&gt;required(), <span class="stringliteral">&quot;file(s) to handle&quot;</span>)</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        (<span class="stringliteral">&quot;html,H&quot;</span>, po::bool_switch()-&gt;default_value(<span class="keyword">false</span>), <span class="stringliteral">&quot;set output-type to html&quot;</span>)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        (<span class="stringliteral">&quot;xml,X&quot;</span>, po::bool_switch()-&gt;default_value(<span class="keyword">false</span>), <span class="stringliteral">&quot;set output-type to xml&quot;</span>)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        (<span class="stringliteral">&quot;pdf,P&quot;</span>, po::bool_switch()-&gt;default_value(<span class="keyword">false</span>), <span class="stringliteral">&quot;set output-type to xml&quot;</span>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        (<span class="stringliteral">&quot;filter,f&quot;</span>, po::value&lt;std::vector&lt;std::string&gt;&gt;()-&gt;multitoken(), <span class="stringliteral">&quot;filter output for a style-name(s)&quot;</span>)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        (<span class="stringliteral">&quot;sort,s&quot;</span>, po::value&lt;std::string&gt;()-&gt;default_value(<span class="stringliteral">&quot;&quot;</span>), <span class="stringliteral">&quot;sort output for a field&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    po::variables_map vm;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    store(parse_command_line(argc, argv, desc), vm);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;help&quot;</span>)) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      std::cout &lt;&lt; desc &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="struct_conflict_adder.html">ConflictAdder</a>{vm}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        (<span class="stringliteral">&quot;html&quot;</span>, <span class="stringliteral">&quot;xml&quot;</span>, <span class="stringliteral">&quot;pdf&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="struct_dependency_adder.html">DependencyAdder</a>{vm}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      (<span class="stringliteral">&quot;html&quot;</span>, <span class="stringliteral">&quot;input&quot;</span>, <span class="stringliteral">&quot;table&quot;</span>)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      (<span class="stringliteral">&quot;xml&quot;</span>, <span class="stringliteral">&quot;input&quot;</span>, <span class="stringliteral">&quot;table&quot;</span>)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      (<span class="stringliteral">&quot;pdf&quot;</span>, <span class="stringliteral">&quot;input&quot;</span>, <span class="stringliteral">&quot;table&quot;</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_parser.html">Parser</a> parser{vm[<span class="stringliteral">&quot;table&quot;</span>].as&lt;fs::path&gt;(), vm[<span class="stringliteral">&quot;filter&quot;</span>].as&lt;std::vector&lt;std::string&gt;&gt;()};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> elements = parser.<a class="code" href="class_parser.html#a7563d76387b215b734de64270a11d528">generate</a>(</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        vm[<span class="stringliteral">&quot;input&quot;</span>].as&lt;std::vector&lt;fs::path&gt;&gt;(),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        vm[<span class="stringliteral">&quot;sort&quot;</span>].as&lt;std::string&gt;()</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::string output;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (vm[<span class="stringliteral">&quot;html&quot;</span>].as&lt;bool&gt;()) output = <a class="code" href="struct_html_generator.html">HtmlGenerator</a>(elements).<a class="code" href="struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7">write</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">else</span> output = <a class="code" href="struct_plain_text_generator.html">PlainTextGenerator</a>(elements).<a class="code" href="struct_plain_text_generator.html#a40c97e4478815514e8527323e4fc8b06">write</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        (</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="stringliteral">&quot;filter,f&quot;</span>,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            po::value&lt;std::vector&lt;std::string&gt;&gt;()-&gt;multitoken()-&gt;default_value({}, <span class="stringliteral">&quot;&quot;</span>),</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="stringliteral">&quot;filter output for a style-name(s)&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        )</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        (<span class="stringliteral">&quot;sort,s&quot;</span>, po::value&lt;std::string&gt;()-&gt;default_value(<span class="stringliteral">&quot;&quot;</span>), <span class="stringliteral">&quot;sort output for a field&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    po::variables_map vm;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    store(parse_command_line(argc, argv, desc), vm);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;help&quot;</span>)) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      std::cout &lt;&lt; desc &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="struct_conflict_adder.html">ConflictAdder</a>{vm}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        (<span class="stringliteral">&quot;html&quot;</span>, <span class="stringliteral">&quot;xml&quot;</span>, <span class="stringliteral">&quot;pdf&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="struct_dependency_adder.html">DependencyAdder</a>{vm}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        (<span class="stringliteral">&quot;html&quot;</span>, <span class="stringliteral">&quot;input&quot;</span>, <span class="stringliteral">&quot;table&quot;</span>)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        (<span class="stringliteral">&quot;xml&quot;</span>, <span class="stringliteral">&quot;input&quot;</span>, <span class="stringliteral">&quot;table&quot;</span>)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        (<span class="stringliteral">&quot;pdf&quot;</span>, <span class="stringliteral">&quot;input&quot;</span>, <span class="stringliteral">&quot;table&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_parser.html">Parser</a> parser{vm[<span class="stringliteral">&quot;table&quot;</span>].as&lt;fs::path&gt;(), vm[<span class="stringliteral">&quot;filter&quot;</span>].as&lt;std::vector&lt;std::string&gt;&gt;()};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> elements = parser.<a class="code" href="class_parser.html#a7563d76387b215b734de64270a11d528">generate</a>(</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        vm[<span class="stringliteral">&quot;input&quot;</span>].as&lt;std::vector&lt;fs::path&gt;&gt;(),</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        vm[<span class="stringliteral">&quot;sort&quot;</span>].as&lt;std::string&gt;().empty() ? std::nullopt : std::optional(vm[<span class="stringliteral">&quot;sort&quot;</span>].as&lt;std::string&gt;())</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    );</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (vm[<span class="stringliteral">&quot;output&quot;</span>].defaulted()) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      std::cout &lt;&lt; output &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      std::ofstream f{vm[<span class="stringliteral">&quot;output&quot;</span>].as&lt;boost::filesystem::path&gt;().<span class="keywordtype">string</span>()};</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="keywordflow">if</span> (f.is_open()) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        f &lt;&lt; output;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        f.close();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_generator_exception.html">GeneratorException</a>(<span class="stringliteral">&quot;Could not write to file: &quot;</span> + vm[<span class="stringliteral">&quot;output&quot;</span>].as&lt;boost::filesystem::path&gt;().<span class="keywordtype">string</span>());</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::cerr &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::string output;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (vm[<span class="stringliteral">&quot;html&quot;</span>].as&lt;bool&gt;()) output = <a class="code" href="struct_html_generator.html">HtmlGenerator</a>(elements).<a class="code" href="struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7">write</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">else</span> output = <a class="code" href="struct_plain_text_generator.html">PlainTextGenerator</a>(elements).<a class="code" href="struct_plain_text_generator.html#a40c97e4478815514e8527323e4fc8b06">write</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (vm[<span class="stringliteral">&quot;output&quot;</span>].defaulted()) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      std::cout &lt;&lt; output &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      std::ofstream f{vm[<span class="stringliteral">&quot;output&quot;</span>].as&lt;boost::filesystem::path&gt;().<span class="keywordtype">string</span>()};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordflow">if</span> (f.is_open()) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        f &lt;&lt; output;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        f.close();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_generator_exception.html">GeneratorException</a>(<span class="stringliteral">&quot;Could not write to file: &quot;</span> + vm[<span class="stringliteral">&quot;output&quot;</span>].as&lt;boost::filesystem::path&gt;().<span class="keywordtype">string</span>());</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    std::cerr &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astruct_conflict_adder_html"><div class="ttname"><a href="struct_conflict_adder.html">ConflictAdder</a></div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00015">main.cpp:15</a></div></div>
