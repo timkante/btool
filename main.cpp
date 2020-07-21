@@ -72,7 +72,7 @@ struct [[maybe_unused]] Dependencies {
  * @param argv command-line arguments
  * @return program exit-code
  */
-int main(int argc, char **argv) {
+int main(int argc, char **argv) try {
   po::options_description desc("Allowed options");
   desc.add_options()
       ("help,h", "print usage message")
@@ -138,5 +138,8 @@ int main(int argc, char **argv) {
     }
   }
   return 0;
+} catch (std::exception &e) {
+  std::cerr << e.what() << "\n";
+  return -1;
 }
 
