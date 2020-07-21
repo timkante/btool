@@ -53,19 +53,19 @@ struct HtmlGenerator : public AbstractGenerator {
   explicit HtmlGenerator(const std::vector<BibElement> &elements);
 };
 
-template<HtmlGenerator::HtmlTag> inline const char *name = "Invalid HTML-Tag";
-template<> inline const char *name<HtmlGenerator::HtmlTag::TABLE> = "table";
-template<> inline const char *name<HtmlGenerator::HtmlTag::TABLE_BODY> = "tbody";
-template<> inline const char *name<HtmlGenerator::HtmlTag::TABLE_HEADING> = "th";
-template<> inline const char *name<HtmlGenerator::HtmlTag::TABLE_ENTRY> = "td";
-template<> inline const char *name<HtmlGenerator::HtmlTag::TABLE_ROW> = "tr";
-template<> inline const char *name<HtmlGenerator::HtmlTag::LINK> = "link";
-template<> inline const char *name<HtmlGenerator::HtmlTag::SCRIPT> = "script";
-template<> inline const char *name<HtmlGenerator::HtmlTag::META> = "meta";
-template<> inline const char *name<HtmlGenerator::HtmlTag::TITLE> = "title";
-template<> inline const char *name<HtmlGenerator::HtmlTag::H1> = "h1";
-template<> inline const char *name<HtmlGenerator::HtmlTag::H5> = "h5";
-template<> inline const char *name<HtmlGenerator::HtmlTag::DIV> = "div";
-template<> inline const char *name<HtmlGenerator::HtmlTag::BUTTON> = "button";
+template<HtmlGenerator::HtmlTag> inline char const * const name = "Invalid HTML-Tag";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::TABLE> = "table";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::TABLE_BODY> = "tbody";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::TABLE_HEADING> = "th";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::TABLE_ENTRY> = "td";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::TABLE_ROW> = "tr";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::LINK> = "link";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::SCRIPT> = "script";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::META> = "meta";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::TITLE> = "title";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::H1> = "h1";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::H5> = "h5";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::DIV> = "div";
+template<> inline char const * const name<HtmlGenerator::HtmlTag::BUTTON> = "button";
 
 #endif
