@@ -72,76 +72,74 @@ struct [[maybe_unused]] Dependencies {
  * @param argv command-line arguments
  * @return program exit-code
  */
-int main(int argc, char **argv) {
-  try {
-    po::options_description desc("Allowed options");
-    desc.add_options()
-        ("help,h", "print usage message")
-        (
-            "output,o",
-            po::value<fs::path>()->required()->default_value("stdout"),
-            "pathname for output (default is printing to stdout)"
-        )
-        (
-            "table,t",
-            po::value<fs::path>()->required()->default_value({}, "none"),
-            "(optional) full pathname of translation-table"
-        )
-        ("input,i", po::value<std::vector<fs::path>>()->multitoken()->required(), "file(s) to handle")
-        ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
-        ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
-        ("pdf,P", po::bool_switch()->default_value(false), "set output-type to xml")
-        (
-            "filter,f",
-            po::value<std::vector<std::string>>()->multitoken()->default_value({}, ""),
-            "filter output for a style-name(s)"
-        )
-        ("sort,s", po::value<std::string>()->default_value(""), "sort output for a field");
+int main(int argc, char **argv) try {
+  po::options_description desc("Allowed options");
+  desc.add_options()
+      ("help,h", "print usage message")
+      (
+          "output,o",
+          po::value<fs::path>()->required()->default_value("stdout"),
+          "pathname for output (default is printing to stdout)"
+      )
+      (
+          "table,t",
+          po::value<fs::path>()->required()->default_value({}, "none"),
+          "(optional) full pathname of translation-table"
+      )
+      ("input,i", po::value<std::vector<fs::path>>()->multitoken()->required(), "file(s) to handle")
+      ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
+      ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
+      ("pdf,P", po::bool_switch()->default_value(false), "set output-type to xml")
+      (
+          "filter,f",
+          po::value<std::vector<std::string>>()->multitoken()->default_value({}, ""),
+          "filter output for a style-name(s)"
+      )
+      ("sort,s", po::value<std::string>()->default_value(""), "sort output for a field");
 
-    po::variables_map vm;
-    store(parse_command_line(argc, argv, desc), vm);
+  po::variables_map vm;
+  store(parse_command_line(argc, argv, desc), vm);
 
-    if (vm.count("help")) {
-      std::cout << desc << "\n";
-      return 0;
-    }
-
-    Conflicts{vm}
-        ("html", "xml", "pdf");
-
-    Dependencies{vm}
-        ("html", "input")
-        ("xml", "input")
-        ("pdf", "input")
-        ("sort", "input")
-        ("filter", "input");
-
-    const auto tablePath = vm["table"].defaulted() ? std::nullopt : std::optional(vm["table"].as<fs::path>());
-    const Parser parser{tablePath, vm["filter"].as<std::vector<std::string>>(), vm["table"].defaulted()};
-    const auto elements = parser.generate(
-        vm["input"].as<std::vector<fs::path>>(),
-        vm["sort"].as<std::string>().empty() ? std::nullopt : std::optional(vm["sort"].as<std::string>())
-    );
-
-    std::string output;
-    if (vm["html"].as<bool>()) output = HtmlGenerator(elements).write();
-    else output = PlainTextGenerator(elements).write();
-
-    if (vm["output"].defaulted()) {
-      std::cout << output << '\n';
-    } else {
-      std::ofstream f{vm["output"].as<boost::filesystem::path>().string()};
-      if (f.is_open()) {
-        f << output;
-        f.close();
-      } else {
-        throw GeneratorException("Could not write to file: " + vm["output"].as<boost::filesystem::path>().string());
-      }
-    }
+  if (vm.count("help")) {
+    std::cout << desc << "\n";
+    return 0;
   }
-  catch (std::exception &e) {
-    std::cerr << e.what() << "\n";
-    return -1;
+
+  Conflicts{vm}
+      ("html", "xml", "pdf");
+
+  Dependencies{vm}
+      ("html", "input")
+      ("xml", "input")
+      ("pdf", "input")
+      ("sort", "input")
+      ("filter", "input");
+
+  const auto tablePath = vm["table"].defaulted() ? std::nullopt : std::optional(vm["table"].as<fs::path>());
+  const Parser parser{tablePath, vm["filter"].as<std::vector<std::string>>(), vm["table"].defaulted()};
+  const auto elements = parser.generate(
+      vm["input"].as<std::vector<fs::path>>(),
+      vm["sort"].as<std::string>().empty() ? std::nullopt : std::optional(vm["sort"].as<std::string>())
+  );
+
+  std::string output;
+  if (vm["html"].as<bool>()) output = HtmlGenerator(elements).write();
+  else output = PlainTextGenerator(elements).write();
+
+  if (vm["output"].defaulted()) {
+    std::cout << output << '\n';
+  } else {
+    std::ofstream f{vm["output"].as<boost::filesystem::path>().string()};
+    if (f.is_open()) {
+      f << output;
+      f.close();
+    } else {
+      throw GeneratorException("Could not write to file: " + vm["output"].as<boost::filesystem::path>().string());
+    }
   }
   return 0;
+} catch (std::exception &e) {
+  std::cerr << e.what() << "\n";
+  return -1;
 }
+
