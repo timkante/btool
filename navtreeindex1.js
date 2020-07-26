@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b":[1,11,2,2],
+"struct_bib_element.html#a33e781d95e3e494f31f6dfd2b5f61613":[1,11,2,4],
 "struct_bib_element.html#a92a0d0a9429d2a7b6ba031db226e779a":[1,11,2,1],
 "struct_bib_element.html#ab93dff716574c52a57b094c4b698a479":[1,11,2,5],
 "struct_bib_element.html#ae3974beaa2bd5264a02427602fc2a623":[1,11,2,0],

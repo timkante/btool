@@ -243,11 +243,11 @@ var NAVTREEINDEX0 =
 "index.html#autotoc_md8":[3,0,1],
 "index.html#autotoc_md9":[3,1],
 "main_8cpp.html":[2,0,2],
-"main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[2,0,2,3],
+"main_8cpp.html#a38269a0685b11d1bb8eb20c35c44c423":[2,0,2,3],
+"main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[2,0,2,4],
+"main_8cpp.html#ae3533f482e105f377421de3b6e6d2d9f":[2,0,2,5],
 "main_8cpp_source.html":[2,0,2],
 "pages.html":[],
 "struct_bib_element.html":[1,11,2],
-"struct_bib_element.html#a2d735d0621a36f8e88cb1d785c08adbb":[1,11,2,3],
-"struct_bib_element.html#a2fd69e4fbd9943c7f92d39041af1183b":[1,11,2,2],
-"struct_bib_element.html#a33e781d95e3e494f31f6dfd2b5f61613":[1,11,2,4]
+"struct_bib_element.html#a2d735d0621a36f8e88cb1d785c08adbb":[1,11,2,3]
 };
