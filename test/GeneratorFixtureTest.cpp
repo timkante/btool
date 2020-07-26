@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 #include <BibElement.hpp>
 #include <HtmlGenerator.hpp>
-#include <Parser.hpp>
-#include <fstream>
+#include <XmlGenerator.hpp>
+#include <PlainTextGenerator.hpp>
 
 using namespace std::literals::string_literals;
 
@@ -12,7 +12,7 @@ using namespace std::literals::string_literals;
  * @test Generator Fixture Tests
  */
 struct GeneratorFixtureTest : public ::testing::Test {
-  HtmlGenerator generator{
+  std::vector<BibElement> element{
       {
           {
               "FeigenspanSiFr11",
@@ -35,27 +35,6 @@ struct GeneratorFixtureTest : public ::testing::Test {
 };
 
 TEST_F(GeneratorFixtureTest, uniqueFields) {
-  const std::vector<BibElement> el{
-      {
-          {
-              "FeigenspanSiFr11",
-              "article",
-              {
-                  {"author", "{Janet Feigenspan and Norbert Siegmund and Jana Fruth}"},
-                  {"title", "{{On the Role of Program Comprehension in Embedded Systems}}"},
-                  {"journal", "{Softwaretechnik-Trends}"},
-                  {"year", "{2011}"},
-                  {"volume", "{31}"},
-                  {"number", "{2}"},
-                  {"month", "May"},
-                  {"url",
-                   "{http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}"
-                  }
-              }
-          }
-      }
-  };
-
   std::unordered_set<std::string> expected{
     "author",
     "title",
@@ -67,13 +46,27 @@ TEST_F(GeneratorFixtureTest, uniqueFields) {
     "url"
   };
 
-  ASSERT_EQ(AbstractGenerator::uniqueFieldsOf(el), expected);
+  ASSERT_EQ(AbstractGenerator::uniqueFieldsOf(element), expected);
 }
 
 TEST_F(GeneratorFixtureTest, htmlGeneratorTest) {
   ASSERT_NO_THROW(([&](){
-    const auto html = generator.write();
+    const auto html = HtmlGenerator{element}.write();
     ASSERT_NE(html, "");
+  }()));
+}
+
+TEST_F(GeneratorFixtureTest, xmlGeneratorTest) {
+  ASSERT_NO_THROW(([&](){
+    const auto xml = XmlGenerator{element}.write();
+    ASSERT_NE(xml, "");
+  }()));
+}
+
+TEST_F(GeneratorFixtureTest, plainTextGeneratorTest) {
+  ASSERT_NO_THROW(([&](){
+    const auto plain = PlainTextGenerator{element}.write();
+    ASSERT_NE(plain, "");
   }()));
 }
 

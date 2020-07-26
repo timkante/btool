@@ -2,6 +2,7 @@
 #include <GeneratorException.hpp>
 #include <PlainTextGenerator.hpp>
 #include <HtmlGenerator.hpp>
+#include <XmlGenerator.hpp>
 #include <Parser.hpp>
 #include <optional>
 #include <iostream>
@@ -124,6 +125,7 @@ int main(int argc, char **argv) try {
 
   std::string output;
   if (vm["html"].as<bool>()) output = HtmlGenerator(elements).write();
+  if (vm["xml"].as<bool>()) output = XmlGenerator(elements).write();
   else output = PlainTextGenerator(elements).write();
 
   if (vm["output"].defaulted()) {

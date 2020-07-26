@@ -15,12 +15,12 @@ add_compile_options(-std=c++17)
 
 if (SONAR)
     add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
+endif ()
 
-if(SONAR OR COVERAGE)
+if (SONAR OR COVERAGE)
     add_compile_options(--coverage)
     add_link_options(--coverage)
-endif()
+endif ()
 
 include_directories(
         "${CMAKE_SOURCE_DIR}/src"
@@ -43,7 +43,8 @@ set(MAIN_SOURCES
         src/AbstractGenerator.cpp
         src/GeneratorException.cpp
         src/HtmlGenerator.cpp
-        src/PlainTextGenerator.cpp)
+        src/PlainTextGenerator.cpp
+        src/XmlGenerator.cpp)
 
 set(MAIN_HEADERS
         src/TranslationTable.hpp
@@ -64,7 +65,8 @@ set(MAIN_HEADERS
         src/Generator.hpp
         src/GeneratorException.hpp
         src/HtmlGenerator.hpp
-        src/PlainTextGenerator.hpp)
+        src/PlainTextGenerator.hpp
+        src/XmlGenerator.hpp)
 
 add_library(${PROJECT_NAME}_lib STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
