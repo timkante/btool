@@ -29,6 +29,7 @@
   + [Program options](#basic-program-options)
   + [Usage constraints](#usage-constraints)
   + [Examples](#examples)
+  + [Translation-Tables](#using-a-translation-table)
 + [What is this project built with?](#built-with-heart-and)
 + [Contributors](#team-busts_in_silhouette)
 + [Milestones](#milestones-triangular_flag_on_post)
@@ -141,11 +142,10 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
 
 + `-h [ --help ]` print usage message
 + `-o [ --output ] arg (="stdout")` pathname for output (default is stdout)
-+ `-t [ --table ] arg` full pathname of translation-table
++ `-t [ --table ] arg` full pathname of translation-table (can be used for extensive filtering)
 + `-i [ --input ] arg` file(s) to handle
 + `-H [ --html ]` set output-type to html
 + `-X [ --xml ]` set output-type to xml
-+ `-P [ --pdf ]` set output-type to xml
 + `-f [ --filter ] arg` filter output for a style-name(s)
 + `-s [ --sort ] arg` sort output for a field
 
@@ -153,7 +153,6 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
 
 + Only one output-type can be selected (`--html`, `--xml` or `--pdf`), if no type is given, plain-text will be used
 + Generating output always requires one or more files/directories as input (`--input`)
-+ Generating output always requires a translation-table (`--table`)
 
 ### Examples:
 
@@ -162,14 +161,97 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
 btool --help
 ```
 
-+ Generating a HTML page from a given directory of `.bib`-files, sorted by author
++ Generating a HTML page from a given directory of `.bib`-files, sorted by author, filtered by translation-table, outputting it to `./index.html`
 ```
 btool -t ./tables/mytable.json -i ./files --html -s author -o index.html
 ```
 
 + Print results from a given set of of `.bib`-files, sorted by author, filtered for articles and books, to stdout
 ```
-btool -t ./tables/mytable.json -i file1.bib file2.bib ./someMoreFiles -s author -f article booky
+btool -i file1.bib file2.bib ./someMoreFiles -s author -f article booky
+```
+
+### Using a translation-table:
+
+If you want to do more complex filtering of elements, not only filtering for styles, maybe using a translation-table can help you.  
+Providing the Parser such a table, will make it filter for them.  
+It will only generate Elements that match the constraints given by the table.  
+So you have the ability to filter for styles with necessary fields and optional fields, Elements that don't have all necessary fields, or fields that are not necessary or optional, will get stripped off.  
+You can combine translation-table filtering with the `--filter`-option if you want to.
+
+The translation-table has to be of the following (JSON) format:
+
+```typescript
+type Table = {
+  styles: Constraint[];
+}
+
+type Constraint = {
+    name: String;
+    requiredFields: String[];
+    optionalFields: String[];
+}
+```
+
+Here's an example:
+
+```JSON
+{
+"styles": [
+    {
+      "name": "article",
+      "requiredFields": [
+        "author",
+        "title",
+        "year",
+        "journal"
+      ],
+      "optionalFields": [
+        "volume",
+        "number",
+        "pages",
+        "month",
+        "note"
+      ]
+    },
+    {
+      "name": "book",
+      "requiredFields": [
+        "author",
+        "title",
+        "year",
+        "publisher"
+      ],
+      "optionalFields": [
+        "volume",
+        "series",
+        "address",
+        "edition",
+        "month",
+        "note",
+        "isbn"
+      ]
+    },
+    {
+      "name": "proceedings",
+      "requiredFields": [
+        "title",
+        "year"
+      ],
+      "optionalFields": [
+        "volume",
+        "pages",
+        "address",
+        "edition",
+        "editor",
+        "month",
+        "note",
+        "organization",
+        "publisher"
+      ]
+    }
+  ]
+}
 ```
 
 ## Built with :heart: and
