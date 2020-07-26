@@ -8,7 +8,7 @@
 ### Builds :construction_worker: and Deployments :rocket:
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c88170d7-f1a1-48d4-8e86-d8d1fdfb8afd/deploy-status)](https://app.netlify.com/sites/relaxed-heisenberg-aecc6d/deploys)
-![Travis Badge](https://travis-ci.com/timkante/bibParser.svg?branch=master "TravisCI - Status")
+[![Build Status](https://travis-ci.com/timkante/btool.svg?branch=master)](https://travis-ci.com/timkante/btool)
 
 ### Code-Quality :art::nail_care:
 
@@ -334,6 +334,6 @@ Group-Members of Group 1:
 
 ## Links :link:
 
-For the current CI-Status/Report [TravisCI](https://travis-ci.com/github/timkante/bibParser "TravisCI")  
+For the current CI-Status/Report [TravisCI](https://travis-ci.com/timkante/btool "TravisCI")  
 For Code-Analysis: [SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser "SonarCloud")  
 Documentation: [Netlify](https://btool.timkante.dev "Doxygen")
