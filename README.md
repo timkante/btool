@@ -177,11 +177,11 @@ btool -t ./tables/mytable.json -i file1.bib file2.bib ./someMoreFiles -s author 
 | | technology | purpose |
 |---|---|---|
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/612px-ISO_C%2B%2B_Logo.svg.png" width="60" /> | [C++](https://www.cplusplus.com/) | speed |
-| <img src="https://travis-ci.org/images/logos/TravisCI-Mascot-1.png" width="60" />| [Travis-CI](https://travis-ci.com/github/timkante/bibParser) | CI/CD |
+| <img src="https://travis-ci.org/images/logos/TravisCI-Mascot-1.png" width="60" />| [Travis-CI](https://travis-ci.com/github/timkante/btool) | CI/CD |
 | <img src="https://pbs.twimg.com/profile_images/955394530806829056/LC7DAYM3_400x400.jpg" width="60" /> | [SonarQube/SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser) | code-quality |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cmake.svg/2072px-Cmake.svg.png" width="60" /> | [CMake](https://cmake.org/) | builds |
-| <img src="https://cdn.worldvectorlogo.com/logos/netlify.svg" width="60" /> | [Netlify](https://bibparser.timkante.dev/) | documentation |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" width="60" /> | [GitHub](https://github.com/timkante/bibParser) | version-control |
+| <img src="https://cdn.worldvectorlogo.com/logos/netlify.svg" width="60" /> | [Netlify](https://btool.timkante.dev/) | documentation |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" width="60" /> | [GitHub](https://github.com/timkante/btool) | version-control |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" width="60" /> | [googletest](https://github.com/google/googletest) | testing |
 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png" width="60" /> | [Markdown](https://markdown.de/) | non-code-documentation
 | <img src="https://www.seo-denda.de/wp-content/uploads/2019/07/bootstrap-logo.png" width="60" /> | [Bootstrap](https://getbootstrap.com/) | HTML-Beautification
