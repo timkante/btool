@@ -48,14 +48,16 @@ auto AbstractGenerator::uniqueFieldsOf(
 }
 
 /**
- * Sorts a unordered Set of keys into a vector
- * @param set the unordered set of keys
- * @return the sorted vector of keys
+ * Sorts a unordered vector of fields into a vector
+ * @param set the unordered vector of fields
+ * @return the sorted vector of fields
  */
-auto AbstractGenerator::sortedKeys(
-    const std::unordered_set<std::string> &set
-) noexcept -> std::vector<std::string> {
-  std::vector<std::string> sortedKeys{std::cbegin(set), std::cend(set)};
-  std::sort(std::begin(sortedKeys), std::end(sortedKeys));
-  return sortedKeys;
+auto AbstractGenerator::sortedFields(
+    const std::vector<Field> &fields
+) noexcept -> std::vector<Field> {
+  std::vector<Field> sortedFields{std::cbegin(fields), std::cend(fields)};
+  std::sort(std::begin(sortedFields), std::end(sortedFields), [](const Field &l, const Field &r) {
+    return l.name < r.name;
+  });
+  return sortedFields;
 }

@@ -100,7 +100,7 @@ struct [[maybe_unused]] Requirements {
  * @param vm[out] the variables map to store command-line-parameters into
  * @param description[out] the cli description to populate
  */
-void parseCommandLine(int argc, char *const *argv, po::variables_map &vm, po::options_description &description) {
+void parseCommandLine(int argc, char **argv, po::variables_map &vm, po::options_description &description) {
   description.add_options()
       ("help,h", "print usage message")
       (
@@ -113,9 +113,11 @@ void parseCommandLine(int argc, char *const *argv, po::variables_map &vm, po::op
           boost::program_options::value<fs::path>()->required()->default_value({}, "none"),
           "(optional) full pathname of translation-table"
       )
-      ("input,i",
-       boost::program_options::value<std::__1::vector<fs::path>>()->multitoken()->required(),
-       "file(s) to handle")
+      (
+          "input,i",
+          boost::program_options::value<std::__1::vector<fs::path>>()->multitoken()->required(),
+          "file(s) to handle"
+      )
       ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
       ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
       (
@@ -155,7 +157,7 @@ void checkConstraints(const po::variables_map &vm) {
  */
 int main(int argc, char **argv) try {
   po::variables_map vm;
-  po::options_description description("Allowed Options");;
+  po::options_description description("Allowed Options");
   parseCommandLine(argc, argv, vm, description);
 
   if (vm.count("help")) {
@@ -174,7 +176,7 @@ int main(int argc, char **argv) try {
 
   std::string output;
   if (vm["html"].as<bool>()) output = HtmlGenerator(elements).write();
-  if (vm["xml"].as<bool>()) output = XmlGenerator(elements).write();
+  else if (vm["xml"].as<bool>()) output = XmlGenerator(elements).write();
   else output = PlainTextGenerator(elements).write();
 
   if (vm["output"].defaulted()) {

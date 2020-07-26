@@ -18,7 +18,6 @@ auto HtmlGenerator::write() -> std::string {
   if (elements.empty()) {
     fail("Empty-Input is not Writable", "");
   }
-
   auto document = CTML::Document();
   document.head()
       .AppendChild(
@@ -81,7 +80,6 @@ HtmlGenerator::HtmlGenerator(const std::vector<BibElement> &elements) : Abstract
 /**
  * Fills the Main Container-Div of the Page-Body
  * @param parent[out] The Parent node (Container-Div)
- * @param keys all the Field-Keys to handle (sorted)
  */
 void HtmlGenerator::fillContainer(
     CTML::Node &parent
@@ -97,7 +95,6 @@ void HtmlGenerator::fillContainer(
  * Creates A Card for an element and appends it to the Parent
  * @param parent[out] the node the Card gets appended to
  * @param element the element to create the Card for
- * @param keys all possible Field-Keys (sorted)
  */
 auto HtmlGenerator::appendCard(
     CTML::Node &parent,
@@ -143,7 +140,6 @@ auto HtmlGenerator::appendCard(
  * Appends a table of all Element-Atrributes to a node
  * @param parent[out] the node to append the table to
  * @param element the element to create the table for
- * @param keys all possible Field-Keys (sorted)
  */
 auto HtmlGenerator::appendTable(
     CTML::Node &parent,
@@ -151,7 +147,7 @@ auto HtmlGenerator::appendTable(
 ) noexcept -> void {
   auto table = CTML::Node(name<HtmlTag::TABLE>).ToggleClass("table");
   auto tableBody = CTML::Node(name<HtmlTag::TABLE_BODY>);
-  for (const auto &field : element.attributes) {
+  for (const auto &field : sortedFields(element.attributes)) {
     auto row = CTML::Node(name<HtmlTag::TABLE_ROW>)
         .AppendChild(
             CTML::Node(

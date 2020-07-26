@@ -7,13 +7,12 @@
  * @throws FileWriterException on error
  */
 auto PlainTextGenerator::write() -> std::string {
-  const auto keys = sortedKeys(uniqueFieldsOf(elements));
-  if (keys.empty()) fail("Cannot output empty results.", "");
+  if (elements.empty()) fail("Cannot output empty results.", "");
   std::string result;
   for (const auto &element : elements){
     std::string repr = "@" + element.style + "{" + element.id + ",\n";
-    for (const auto &key : keys){
-      repr += "\t" + key + " = " + element.findAttribute(key).value_or<Field>({"", ""}).value + ",\n";
+    for (const auto &key : sortedFields(element.attributes)){
+      repr += "\t" + key.name + " = " + key.value + ",\n";
     }
     repr += "}\n";
     result += repr;

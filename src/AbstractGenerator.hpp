@@ -4,7 +4,7 @@
 #include <boost/filesystem/path.hpp>
 #include <BibElement.hpp>
 #include <Generator.hpp>
-#include <unordered_set>
+#include <Field.hpp>
 #include <string>
 #include <vector>
 
@@ -24,7 +24,7 @@ class AbstractGenerator : public Generator {
 
   static auto uniqueFieldsOf(const std::vector<BibElement> &values) noexcept -> std::unordered_set<std::string>;
 
-  static auto sortedKeys(const std::unordered_set<std::string> &set) noexcept -> std::vector<std::string>;
+  static auto sortedFields(const std::vector<Field> &set) noexcept -> std::vector<Field>;
 };
 
 #endif
