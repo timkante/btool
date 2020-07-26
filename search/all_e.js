@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parsecommandline_83',['parseCommandLine',['../main_8cpp.html#ae3533f482e105f377421de3b6e6d2d9f',1,'main.cpp']]],
+  ['parsecommandline_83',['parseCommandLine',['../main_8cpp.html#a4e96f5fc763ba060170e7e8b612e2cce',1,'main.cpp']]],
   ['parser_84',['Parser',['../class_parser.html',1,'Parser'],['../class_parser.html#acd51bd245362a88c0e4249c1147117b8',1,'Parser::Parser(const std::optional&lt; boost::filesystem::path &gt; &amp;ruleFilePath, std::vector&lt; std::string &gt; targetStyles, const bool allowAll=false)'],['../class_parser.html#a899eb66b53d65b740c2700d990382788',1,'Parser::Parser(std::optional&lt; std::stringstream &gt; ruleFileContents, std::vector&lt; std::string &gt; targetStyle, const bool allowAll=false)']]],
   ['parser_2ecpp_85',['Parser.cpp',['../_parser_8cpp.html',1,'']]],
   ['parser_2ehpp_86',['Parser.hpp',['../_parser_8hpp.html',1,'']]],

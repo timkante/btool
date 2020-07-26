@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parsecommandline_258',['parseCommandLine',['../main_8cpp.html#ae3533f482e105f377421de3b6e6d2d9f',1,'main.cpp']]],
+  ['parsecommandline_258',['parseCommandLine',['../main_8cpp.html#a4e96f5fc763ba060170e7e8b612e2cce',1,'main.cpp']]],
   ['parser_259',['Parser',['../class_parser.html#acd51bd245362a88c0e4249c1147117b8',1,'Parser::Parser(const std::optional&lt; boost::filesystem::path &gt; &amp;ruleFilePath, std::vector&lt; std::string &gt; targetStyles, const bool allowAll=false)'],['../class_parser.html#a899eb66b53d65b740c2700d990382788',1,'Parser::Parser(std::optional&lt; std::stringstream &gt; ruleFileContents, std::vector&lt; std::string &gt; targetStyle, const bool allowAll=false)']]],
   ['parsercontext_260',['ParserContext',['../struct_parser_context.html#a9014d1ca81df36e774bd1c5962e51b12',1,'ParserContext']]],
   ['parserexception_261',['ParserException',['../struct_parser_exception.html#a01837b3f67eeb3045df6a29dff3cbec0',1,'ParserException']]],
