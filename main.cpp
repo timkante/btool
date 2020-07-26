@@ -48,20 +48,46 @@ struct [[maybe_unused]] Dependencies {
    * Checks dependencies of program options
    * @tparam Args required options (const char *) of variable-size
    * @param baseOption option that requires one or more other options
-   * @param requiredOptions the required options
+   * @param dependencies the required options
    * @return this to add more requirements
    * @throws logic_error if option requirements are not met
    */
   template<typename... Args>
   auto operator()(
       const char *baseOption,
-      const Args &...requiredOptions
+      const Args &...dependencies
   ) const -> auto {
     const auto base = vm.count(baseOption) && !vm[baseOption].defaulted();
-    const auto allRequired = (... && (vm.count(requiredOptions) != 0 && !vm[requiredOptions].defaulted()));
-    if (base && !allRequired)
+    const auto allDependencies = (... && (vm.count(dependencies) != 0 && !vm[dependencies].defaulted()));
+    if (base && !allDependencies)
       throw std::logic_error(
-          "Option '"s + baseOption + "' requires options ["s + (... + (requiredOptions + ", "s)) + "]."s
+          "Option '"s + baseOption + "' requires options ["s + (... + (dependencies + ", "s)) + "]."s
+      );
+    return *this;
+  }
+};
+
+/**
+ * Handles Dependencies of program-options
+ */
+struct [[maybe_unused]] Requirements {
+  const po::variables_map &vm; ///< The variables-map, parsed from command line
+
+  /**
+   * Checks required program options
+   * @tparam Args required options (const char *) of variable-size
+   * @param requiredOptions the required options
+   * @return this to add more requirements
+   * @throws logic_error if option requirements are not met
+   */
+  template<typename... Args>
+  auto operator()(
+      const Args &...requiredOptions
+  ) const -> auto {
+    const auto allRequired = (... && (vm.count(requiredOptions) != 0 && !vm[requiredOptions].defaulted()));
+    if (!allRequired)
+      throw std::logic_error(
+          "Options ["s + (... + (requiredOptions + ", "s)) + "] are required for the program to run."s
       );
     return *this;
   }
@@ -90,7 +116,6 @@ int main(int argc, char **argv) try {
       ("input,i", po::value<std::vector<fs::path>>()->multitoken()->required(), "file(s) to handle")
       ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
       ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
-      ("pdf,P", po::bool_switch()->default_value(false), "set output-type to xml")
       (
           "filter,f",
           po::value<std::vector<std::string>>()->multitoken()->default_value({}, ""),
@@ -106,13 +131,15 @@ int main(int argc, char **argv) try {
     return 0;
   }
 
+  Requirements{vm}
+      ("input");
+
   Conflicts{vm}
-      ("html", "xml", "pdf");
+      ("html", "pdf");
 
   Dependencies{vm}
       ("html", "input")
       ("xml", "input")
-      ("pdf", "input")
       ("sort", "input")
       ("filter", "input");
 
