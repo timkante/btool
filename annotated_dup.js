@@ -21,6 +21,7 @@ var annotated_dup =
     [ "ParserState", "struct_parser_state.html", "struct_parser_state" ],
     [ "ParserStateFixtureTest", "class_parser_state_fixture_test.html", "class_parser_state_fixture_test" ],
     [ "PlainTextGenerator", "struct_plain_text_generator.html", "struct_plain_text_generator" ],
+    [ "Requirements", "struct_requirements.html", "struct_requirements" ],
     [ "StyleParserState", "class_style_parser_state.html", "class_style_parser_state" ],
     [ "StyleProperties", "struct_style_properties.html", "struct_style_properties" ],
     [ "TranslationTable", "class_translation_table.html", "class_translation_table" ],

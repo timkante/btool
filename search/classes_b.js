@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['translationtable_175',['TranslationTable',['../class_translation_table.html',1,'']]],
-  ['translationtablefixturetest_176',['TranslationTableFixtureTest',['../struct_translation_table_fixture_test.html',1,'']]]
+  ['styleparserstate_175',['StyleParserState',['../class_style_parser_state.html',1,'']]],
+  ['styleproperties_176',['StyleProperties',['../struct_style_properties.html',1,'']]]
 ];

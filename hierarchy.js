@@ -28,6 +28,7 @@ var hierarchy =
         [ "ValueParserState", "class_value_parser_state.html", null ]
       ] ]
     ] ],
+    [ "Requirements", "struct_requirements.html", null ],
     [ "StyleProperties", "struct_style_properties.html", null ],
     [ "Test", null, [
       [ "BibElementFixtureTest", "struct_bib_element_fixture_test.html", null ],
