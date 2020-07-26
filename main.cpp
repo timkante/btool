@@ -94,43 +94,46 @@ struct [[maybe_unused]] Requirements {
 };
 
 /**
- * Main Program - Resolves command-line-arguments and prints output
- * @param argc number of command-line arguments
- * @param argv command-line arguments
- * @return program exit-code
+ * Defines CLI and translates program arguments
+ * @param argc the number of program arguments
+ * @param argv the program arguments
+ * @param vm[out] the variables map to store command-line-parameters into
+ * @param description[out] the cli description to populate
  */
-int main(int argc, char **argv) try {
-  po::options_description desc("Allowed options");
-  desc.add_options()
+void parseCommandLine(int argc, char *const *argv, po::variables_map &vm, po::options_description &description) {
+  description.add_options()
       ("help,h", "print usage message")
       (
           "output,o",
-          po::value<fs::path>()->required()->default_value("stdout"),
+          boost::program_options::value<fs::path>()->required()->default_value("stdout"),
           "pathname for output (default is printing to stdout)"
       )
       (
           "table,t",
-          po::value<fs::path>()->required()->default_value({}, "none"),
+          boost::program_options::value<fs::path>()->required()->default_value({}, "none"),
           "(optional) full pathname of translation-table"
       )
-      ("input,i", po::value<std::vector<fs::path>>()->multitoken()->required(), "file(s) to handle")
+      ("input,i",
+       boost::program_options::value<std::__1::vector<fs::path>>()->multitoken()->required(),
+       "file(s) to handle")
       ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
       ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
       (
           "filter,f",
-          po::value<std::vector<std::string>>()->multitoken()->default_value({}, ""),
+          boost::program_options::value<std::__1::vector<std::string>>()->multitoken()->default_value({}, ""),
           "filter output for a style-name(s)"
       )
-      ("sort,s", po::value<std::string>()->default_value(""), "sort output for a field");
+      ("sort,s", boost::program_options::value<std::string>()->default_value(""), "sort output for a field");
 
-  po::variables_map vm;
-  store(parse_command_line(argc, argv, desc), vm);
+  store(parse_command_line(argc, argv, description), vm);
+}
 
-  if (vm.count("help")) {
-    std::cout << desc << "\n";
-    return 0;
-  }
-
+/**
+ * Defines all argument constraints and checks them
+ * @param vm the program arguments
+ * @throws std::logic_error when any constraint is violated
+ */
+void checkConstraints(const po::variables_map &vm) {
   Requirements{vm}
       ("input");
 
@@ -142,6 +145,25 @@ int main(int argc, char **argv) try {
       ("xml", "input")
       ("sort", "input")
       ("filter", "input");
+}
+
+/**
+ * Main Program - Resolves command-line-arguments and prints output
+ * @param argc number of command-line arguments
+ * @param argv command-line arguments
+ * @return program exit-code
+ */
+int main(int argc, char **argv) try {
+  po::variables_map vm;
+  po::options_description description("Allowed Options");;
+  parseCommandLine(argc, argv, vm, description);
+
+  if (vm.count("help")) {
+    std::cout << description << "\n";
+    return 0;
+  }
+
+  checkConstraints(vm);
 
   const auto tablePath = vm["table"].defaulted() ? std::nullopt : std::optional(vm["table"].as<fs::path>());
   const Parser parser{tablePath, vm["filter"].as<std::vector<std::string>>(), vm["table"].defaulted()};
