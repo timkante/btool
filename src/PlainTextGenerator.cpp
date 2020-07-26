@@ -8,7 +8,7 @@
  */
 auto PlainTextGenerator::write() -> std::string {
   const auto keys = sortedKeys(uniqueFieldsOf(elements));
-  if (keys.empty()) fail("Cannot output empty results.");
+  if (keys.empty()) fail("Cannot output empty results.", "");
   std::string result;
   for (const auto &element : elements){
     std::string repr = "@" + element.style + "{" + element.id + ",\n";
