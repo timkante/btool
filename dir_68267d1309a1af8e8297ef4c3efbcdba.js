@@ -67,5 +67,9 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "ValueParserState.cpp", "_value_parser_state_8cpp.html", null ],
     [ "ValueParserState.hpp", "_value_parser_state_8hpp.html", [
       [ "ValueParserState", "class_value_parser_state.html", "class_value_parser_state" ]
+    ] ],
+    [ "XmlGenerator.cpp", "_xml_generator_8cpp.html", null ],
+    [ "XmlGenerator.hpp", "_xml_generator_8hpp.html", [
+      [ "XmlGenerator", "struct_xml_generator.html", "struct_xml_generator" ]
     ] ]
 ];

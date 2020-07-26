@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['_7egenerator_146',['~Generator',['../struct_generator.html#a175792ff2622a6ce48bf2adab7e09e58',1,'Generator']]],
-  ['_7eparserstate_147',['~ParserState',['../struct_parser_state.html#a9c1f0f6f76282166a729143852c8f0e0',1,'ParserState']]]
+  ['xmlgenerator_147',['XmlGenerator',['../struct_xml_generator.html',1,'XmlGenerator'],['../struct_xml_generator.html#aa043b3da6ebcb221d513de6d406e40f4',1,'XmlGenerator::XmlGenerator()']]],
+  ['xmlgenerator_2ecpp_148',['XmlGenerator.cpp',['../_xml_generator_8cpp.html',1,'']]],
+  ['xmlgenerator_2ehpp_149',['XmlGenerator.hpp',['../_xml_generator_8hpp.html',1,'']]]
 ];

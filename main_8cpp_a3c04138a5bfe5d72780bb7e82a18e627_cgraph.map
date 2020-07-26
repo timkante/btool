@@ -1,6 +1,7 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,64,56,91"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,93,56,120"/>
 <area shape="rect" id="node2" href="$class_parser.html#adc2ef603a95ec5e6cc3a6b805f70b95a" title=" " alt="" coords="117,5,233,32"/>
 <area shape="rect" id="node3" href="$struct_plain_text_generator.html#a40c97e4478815514e8527323e4fc8b06" title=" " alt="" coords="108,57,241,98"/>
-<area shape="rect" id="node4" href="$struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7" title=" " alt="" coords="104,123,245,149"/>
+<area shape="rect" id="node4" href="$struct_xml_generator.html#a9062f648042b374a62c9f58a6c83e8c3" title=" " alt="" coords="107,123,243,149"/>
+<area shape="rect" id="node5" href="$struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7" title=" " alt="" coords="104,173,245,200"/>
 </map>

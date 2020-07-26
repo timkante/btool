@@ -99,13 +99,13 @@ $(document).ready(function(){initNavTree('_generator_fixture_test_8cpp_source.ht
 <a href="_generator_fixture_test_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_bib_element_8hpp.html">BibElement.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_html_generator_8hpp.html">HtmlGenerator.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_parser_8hpp.html">Parser.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_xml_generator_8hpp.html">XmlGenerator.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_plain_text_generator_8hpp.html">PlainTextGenerator.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std::literals::string_literals;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_generator_fixture_test.html">   14</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a> : <span class="keyword">public</span> ::testing::Test {</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_generator_fixture_test.html#ad2f0d5e6e421666ddd955ed54cf3d5ef">   15</a></span>&#160;  <a class="code" href="struct_html_generator.html">HtmlGenerator</a> generator{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_generator_fixture_test.html#a70cef03235663118dc07a48535e5aebd">   15</a></span>&#160;  std::vector&lt;BibElement&gt; element{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;          {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;              <span class="stringliteral">&quot;FeigenspanSiFr11&quot;</span>,</div>
@@ -128,60 +128,59 @@ $(document).ready(function(){initNavTree('_generator_fixture_test_8cpp_source.ht
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">   37</a></span>&#160;<a class="code" href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, uniqueFields) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> std::vector&lt;BibElement&gt; el{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;              <span class="stringliteral">&quot;FeigenspanSiFr11&quot;</span>,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;              <span class="stringliteral">&quot;article&quot;</span>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;              {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                  {<span class="stringliteral">&quot;author&quot;</span>, <span class="stringliteral">&quot;{Janet Feigenspan and Norbert Siegmund and Jana Fruth}&quot;</span>},</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                  {<span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;{{On the Role of Program Comprehension in Embedded Systems}}&quot;</span>},</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                  {<span class="stringliteral">&quot;journal&quot;</span>, <span class="stringliteral">&quot;{Softwaretechnik-Trends}&quot;</span>},</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                  {<span class="stringliteral">&quot;year&quot;</span>, <span class="stringliteral">&quot;{2011}&quot;</span>},</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                  {<span class="stringliteral">&quot;volume&quot;</span>, <span class="stringliteral">&quot;{31}&quot;</span>},</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                  {<span class="stringliteral">&quot;number&quot;</span>, <span class="stringliteral">&quot;{2}&quot;</span>},</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                  {<span class="stringliteral">&quot;month&quot;</span>, <span class="stringliteral">&quot;May&quot;</span>},</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                  {<span class="stringliteral">&quot;url&quot;</span>,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                   <span class="stringliteral">&quot;{http://www.uni-koblenz-landau.de/koblenz/fb4/institute/uebergreifend/sre/conferences/wsr/wsr2011/wsr2011_proceedings.pdf}&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                  }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;              }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;          }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  std::unordered_set&lt;std::string&gt; expected{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="stringliteral">&quot;author&quot;</span>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="stringliteral">&quot;title&quot;</span>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="stringliteral">&quot;journal&quot;</span>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="stringliteral">&quot;year&quot;</span>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="stringliteral">&quot;volume&quot;</span>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="stringliteral">&quot;number&quot;</span>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="stringliteral">&quot;month&quot;</span>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="stringliteral">&quot;url&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  ASSERT_EQ(<a class="code" href="class_abstract_generator.html#a264b078ed1b37f0cb6de71ea89db30da">AbstractGenerator::uniqueFieldsOf</a>(element), expected);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="_generator_fixture_test_8cpp.html#a067feacc86b6677cb7c12897bf54b2e9">   52</a></span>&#160;<a class="code" href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, htmlGeneratorTest) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  ASSERT_NO_THROW(([&amp;](){</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> html = <a class="code" href="struct_html_generator.html">HtmlGenerator</a>{element}.<a class="code" href="struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7">write</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    ASSERT_NE(html, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }()));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  std::unordered_set&lt;std::string&gt; expected{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="stringliteral">&quot;author&quot;</span>,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="stringliteral">&quot;title&quot;</span>,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="stringliteral">&quot;journal&quot;</span>,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="stringliteral">&quot;year&quot;</span>,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="stringliteral">&quot;volume&quot;</span>,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="stringliteral">&quot;number&quot;</span>,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="stringliteral">&quot;month&quot;</span>,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="stringliteral">&quot;url&quot;</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  ASSERT_EQ(<a class="code" href="class_abstract_generator.html#a264b078ed1b37f0cb6de71ea89db30da">AbstractGenerator::uniqueFieldsOf</a>(el), expected);</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="_generator_fixture_test_8cpp.html#a0e3e157b83b7488d38b7c0cc1f123b3b">   59</a></span>&#160;<a class="code" href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, xmlGeneratorTest) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  ASSERT_NO_THROW(([&amp;](){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> xml = <a class="code" href="struct_xml_generator.html">XmlGenerator</a>{element}.<a class="code" href="struct_xml_generator.html#a9062f648042b374a62c9f58a6c83e8c3">write</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ASSERT_NE(xml, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }()));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="_generator_fixture_test_8cpp.html#abcb7e88f678d8f8d1a50940f1c384eac">   66</a></span>&#160;<a class="code" href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, plainTextGeneratorTest) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  ASSERT_NO_THROW(([&amp;](){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> plain = <a class="code" href="struct_plain_text_generator.html">PlainTextGenerator</a>{element}.<a class="code" href="struct_plain_text_generator.html#a40c97e4478815514e8527323e4fc8b06">write</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ASSERT_NE(plain, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }()));</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="_generator_fixture_test_8cpp.html#a067feacc86b6677cb7c12897bf54b2e9">   73</a></span>&#160;<a class="code" href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, htmlGeneratorTest) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  ASSERT_NO_THROW(([&amp;](){</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> html = generator.write();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ASSERT_NE(html, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }()));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="_generator_fixture_test_8cpp.html#a8b907287032cb78b63d83b7ffe082a91">   80</a></span>&#160;<a class="code" href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, htmlGeneratorThrowsOnEmptyInput) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  ASSERT_ANY_THROW([]() {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="struct_html_generator.html">HtmlGenerator</a>({}).write();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }());</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="_generator_fixture_test_8cpp.html#a8b907287032cb78b63d83b7ffe082a91">   73</a></span>&#160;<a class="code" href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">TEST_F</a>(<a class="code" href="struct_generator_fixture_test.html">GeneratorFixtureTest</a>, htmlGeneratorThrowsOnEmptyInput) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  ASSERT_ANY_THROW([]() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="struct_html_generator.html">HtmlGenerator</a>({}).write();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="a_plain_text_generator_8hpp_html"><div class="ttname"><a href="_plain_text_generator_8hpp.html">PlainTextGenerator.hpp</a></div></div>
+<div class="ttc" id="a_xml_generator_8hpp_html"><div class="ttname"><a href="_xml_generator_8hpp.html">XmlGenerator.hpp</a></div></div>
+<div class="ttc" id="astruct_html_generator_html_a20c7fa21d61d716904cebb7b5f870cf7"><div class="ttname"><a href="struct_html_generator.html#a20c7fa21d61d716904cebb7b5f870cf7">HtmlGenerator::write</a></div><div class="ttdeci">auto write() -&gt; std::string override</div><div class="ttdef"><b>Definition:</b> <a href="_html_generator_8cpp_source.html#l00017">HtmlGenerator.cpp:17</a></div></div>
 <div class="ttc" id="astruct_html_generator_html"><div class="ttname"><a href="struct_html_generator.html">HtmlGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="_html_generator_8hpp_source.html#l00011">HtmlGenerator.hpp:11</a></div></div>
 <div class="ttc" id="a_html_generator_8hpp_html"><div class="ttname"><a href="_html_generator_8hpp.html">HtmlGenerator.hpp</a></div></div>
+<div class="ttc" id="astruct_plain_text_generator_html"><div class="ttname"><a href="struct_plain_text_generator.html">PlainTextGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="_plain_text_generator_8hpp_source.html#l00006">PlainTextGenerator.hpp:6</a></div></div>
+<div class="ttc" id="astruct_plain_text_generator_html_a40c97e4478815514e8527323e4fc8b06"><div class="ttname"><a href="struct_plain_text_generator.html#a40c97e4478815514e8527323e4fc8b06">PlainTextGenerator::write</a></div><div class="ttdeci">auto write() -&gt; std::string override</div><div class="ttdef"><b>Definition:</b> <a href="_plain_text_generator_8cpp_source.html#l00009">PlainTextGenerator.cpp:9</a></div></div>
 <div class="ttc" id="aclass_abstract_generator_html_a264b078ed1b37f0cb6de71ea89db30da"><div class="ttname"><a href="class_abstract_generator.html#a264b078ed1b37f0cb6de71ea89db30da">AbstractGenerator::uniqueFieldsOf</a></div><div class="ttdeci">static auto uniqueFieldsOf(const std::vector&lt; BibElement &gt; &amp;values) noexcept -&gt; std::unordered_set&lt; std::string &gt;</div><div class="ttdef"><b>Definition:</b> <a href="_abstract_generator_8cpp_source.html#l00033">AbstractGenerator.cpp:33</a></div></div>
+<div class="ttc" id="astruct_xml_generator_html"><div class="ttname"><a href="struct_xml_generator.html">XmlGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="_xml_generator_8hpp_source.html#l00009">XmlGenerator.hpp:9</a></div></div>
 <div class="ttc" id="a_generator_fixture_test_8cpp_html_aed8e06465114481cee68849222a5e9e7"><div class="ttname"><a href="_generator_fixture_test_8cpp.html#aed8e06465114481cee68849222a5e9e7">TEST_F</a></div><div class="ttdeci">TEST_F(GeneratorFixtureTest, uniqueFields)</div><div class="ttdef"><b>Definition:</b> <a href="_generator_fixture_test_8cpp_source.html#l00037">GeneratorFixtureTest.cpp:37</a></div></div>
-<div class="ttc" id="a_parser_8hpp_html"><div class="ttname"><a href="_parser_8hpp.html">Parser.hpp</a></div></div>
+<div class="ttc" id="astruct_xml_generator_html_a9062f648042b374a62c9f58a6c83e8c3"><div class="ttname"><a href="struct_xml_generator.html#a9062f648042b374a62c9f58a6c83e8c3">XmlGenerator::write</a></div><div class="ttdeci">auto write() -&gt; std::string override</div><div class="ttdef"><b>Definition:</b> <a href="_xml_generator_8cpp_source.html#l00015">XmlGenerator.cpp:15</a></div></div>
 <div class="ttc" id="a_bib_element_8hpp_html"><div class="ttname"><a href="_bib_element_8hpp.html">BibElement.hpp</a></div></div>
 <div class="ttc" id="astruct_generator_fixture_test_html"><div class="ttname"><a href="struct_generator_fixture_test.html">GeneratorFixtureTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_generator_fixture_test_8cpp_source.html#l00014">GeneratorFixtureTest.cpp:14</a></div></div>
 <!-- start footer part -->

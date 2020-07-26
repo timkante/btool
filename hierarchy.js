@@ -13,7 +13,8 @@ var hierarchy =
     [ "Generator", "struct_generator.html", [
       [ "AbstractGenerator", "class_abstract_generator.html", [
         [ "HtmlGenerator", "struct_html_generator.html", null ],
-        [ "PlainTextGenerator", "struct_plain_text_generator.html", null ]
+        [ "PlainTextGenerator", "struct_plain_text_generator.html", null ],
+        [ "XmlGenerator", "struct_xml_generator.html", null ]
       ] ]
     ] ],
     [ "Parser", "class_parser.html", null ],

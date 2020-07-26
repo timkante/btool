@@ -25,5 +25,6 @@ var annotated_dup =
     [ "StyleProperties", "struct_style_properties.html", "struct_style_properties" ],
     [ "TranslationTable", "class_translation_table.html", "class_translation_table" ],
     [ "TranslationTableFixtureTest", "struct_translation_table_fixture_test.html", "struct_translation_table_fixture_test" ],
-    [ "ValueParserState", "class_value_parser_state.html", "class_value_parser_state" ]
+    [ "ValueParserState", "class_value_parser_state.html", "class_value_parser_state" ],
+    [ "XmlGenerator", "struct_xml_generator.html", "struct_xml_generator" ]
 ];

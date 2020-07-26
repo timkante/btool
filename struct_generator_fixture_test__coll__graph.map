@@ -1,13 +1,10 @@
 <map id="GeneratorFixtureTest" name="GeneratorFixtureTest">
-<area shape="rect" id="node1" title=" " alt="" coords="5,1319,149,1396"/>
-<area shape="rect" id="node2" title=" " alt="" coords="32,1142,80,1219"/>
-<area shape="rect" id="node3" href="$struct_html_generator.html" title=" " alt="" coords="105,1105,231,1256"/>
-<area shape="rect" id="node4" href="$class_abstract_generator.html" title=" " alt="" coords="95,920,241,1056"/>
-<area shape="rect" id="node5" href="$struct_generator.html" title=" " alt="" coords="94,765,199,857"/>
-<area shape="rect" id="node6" title=" " alt="" coords="224,773,395,850"/>
-<area shape="rect" id="node7" href="$struct_bib_element.html" title="bib&#45;element&#45;Container" alt="" coords="247,596,371,703"/>
-<area shape="rect" id="node8" title=" " alt="" coords="326,456,458,533"/>
-<area shape="rect" id="node9" href="$struct_field.html" title="Field&#45;Container." alt="" coords="332,301,436,379"/>
-<area shape="rect" id="node10" title="STL class." alt="" coords="270,147,349,224"/>
-<area shape="rect" id="node11" title="STL class." alt="" coords="247,5,371,97"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,905,149,983"/>
+<area shape="rect" id="node2" title=" " alt="" coords="32,765,80,843"/>
+<area shape="rect" id="node3" title=" " alt="" coords="104,765,275,843"/>
+<area shape="rect" id="node4" href="$struct_bib_element.html" title="bib&#45;element&#45;Container" alt="" coords="127,596,251,703"/>
+<area shape="rect" id="node5" title=" " alt="" coords="206,456,338,533"/>
+<area shape="rect" id="node6" href="$struct_field.html" title="Field&#45;Container." alt="" coords="212,301,316,379"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="150,147,229,224"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="127,5,251,97"/>
 </map>

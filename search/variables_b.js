@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['optionalfields_289',['optionalFields',['../struct_style_properties.html#a548cf8be3a9b65478e2da7dde22b63af',1,'StyleProperties']]]
+  ['props_298',['props',['../struct_bib_element_fixture_test.html#a7bee5d510872d6e87d5b66bc8af3810d',1,'BibElementFixtureTest']]]
 ];
