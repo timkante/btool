@@ -35,7 +35,7 @@
 + [Milestones](#milestones-triangular_flag_on_post)
 + [Reports](#reports-pencil)
 + [Resources and Tools](#links-link)
-+ [Required tasks](#Required-tasks-pencil)
++ [Required tasks](#required-tasks-pencil)
 
 ## Project-Description :pencil:
 
