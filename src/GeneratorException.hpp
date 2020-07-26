@@ -11,7 +11,7 @@
 struct GeneratorException  : std::runtime_error {
   std::string message; ///< the message to throw
 
-  GeneratorException(std::string message);
+  explicit GeneratorException(std::string message);
 
   [[nodiscard]] auto what() const noexcept -> const char * override;
 };

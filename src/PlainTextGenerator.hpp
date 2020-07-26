@@ -3,9 +3,9 @@
 
 #include <AbstractGenerator.hpp>
 
-struct PlainTextGenerator : public AbstractGenerator {
+struct PlainTextGenerator : AbstractGenerator {
 
-  [[noreturn]] auto fail(const std::string &message, const std::string &type = "plain-text") -> void override;
+  [[noreturn]] auto fail(const std::string &message, const std::string &type) -> void override;
 
   auto write() -> std::string override;
 

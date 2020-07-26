@@ -26,7 +26,7 @@ auto PlainTextGenerator::write() -> std::string {
  * @param message the message to append
  */
 auto PlainTextGenerator::fail(const std::string &message, const std::string &type) -> void {
-  AbstractGenerator::fail(message, type);
+  AbstractGenerator::fail(message, "plain-text");
 }
 
 PlainTextGenerator::PlainTextGenerator(const std::vector<BibElement> &elements) : AbstractGenerator{elements} {};

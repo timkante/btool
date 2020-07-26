@@ -14,7 +14,8 @@
  * Handles interaction with the bib-files and does parsing of it
  * @brief interface to interact with bib-files
  */
-class Parser {
+class
+Parser {
   std::vector<std::string> targetStyles; ///< the target-styles of the generated files
   TranslationTable translationTable; ///< translation-Table handler
   bool allowAll; ///< flag that allows all styles and fields to get parsed (set when missing translationTable)

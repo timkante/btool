@@ -16,9 +16,7 @@
 class TranslationTable {
   boost::property_tree::ptree contents; ///< pointer to parsed json-tree
   std::vector<StyleProperties> styleProperties; ///< parsed style-properties
-
- private:
-
+  
   [[nodiscard]] static auto parseStyle(const boost::property_tree::ptree &style) noexcept -> StyleProperties;
 
   [[nodiscard]] auto parseStyles() const -> std::vector<StyleProperties>;

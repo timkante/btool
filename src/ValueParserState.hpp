@@ -26,7 +26,7 @@ class ValueParserState : public AbstractParserState {
 
   auto handleCharacter(char c) -> ParserState * override;
 
-  auto replaceSpecialCharacter(std::string &s) -> void;
+  static auto replaceSpecialCharacter(std::string &s) -> void;
 };
 
 #endif

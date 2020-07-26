@@ -8,7 +8,7 @@
 /**
  * HTML-Generator
  */
-struct HtmlGenerator : public AbstractGenerator {
+struct HtmlGenerator : AbstractGenerator {
 
   /**
    * Enum that contains all known HTML tags.
@@ -29,25 +29,22 @@ struct HtmlGenerator : public AbstractGenerator {
     BUTTON
   };
 
-  [[noreturn]] auto fail(const std::string &message, const std::string &type = "HTML") -> void override;
+  [[noreturn]] auto fail(const std::string &message, const std::string &type) -> void override;
 
   auto write() -> std::string override;
 
   auto fillContainer(
+      CTML::Node &parent
+  ) const noexcept -> void;
+
+  static auto appendCard(
       CTML::Node &parent,
-      const std::vector<std::string> &keys
+      const BibElement &element
   ) noexcept -> void;
 
-  auto appendCard(
+  static auto appendTable(
       CTML::Node &parent,
-      const BibElement &element,
-      const std::vector<std::string> &keys
-  ) noexcept -> void;
-
-  auto appendTable(
-      CTML::Node &parent,
-      const BibElement &element,
-      const std::vector<std::string> &keys
+      const BibElement &element
   ) noexcept -> void;
 
   explicit HtmlGenerator(const std::vector<BibElement> &elements);

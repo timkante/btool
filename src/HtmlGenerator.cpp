@@ -16,9 +16,8 @@ auto HtmlGenerator::fail(const std::string &message, const std::string &type) ->
  */
 auto HtmlGenerator::write() -> std::string {
   if (elements.empty()) {
-    fail("Empty-Input is not Writable");
+    fail("Empty-Input is not Writable", "");
   }
-  auto keys = uniqueFieldsOf(elements);
 
   auto document = CTML::Document();
   document.head()
@@ -47,7 +46,7 @@ auto HtmlGenerator::write() -> std::string {
 
   auto container = CTML::Node(name<HtmlTag::DIV>).ToggleClass("container");
 
-  fillContainer(container, sortedKeys(keys));
+  fillContainer(container);
 
   document.body()
       .AppendChild(container)
@@ -85,12 +84,11 @@ HtmlGenerator::HtmlGenerator(const std::vector<BibElement> &elements) : Abstract
  * @param keys all the Field-Keys to handle (sorted)
  */
 void HtmlGenerator::fillContainer(
-    CTML::Node &parent,
-    const std::vector<std::string> &keys
-) noexcept {
+    CTML::Node &parent
+) const noexcept {
   auto accordion = CTML::Node(name<HtmlTag::DIV>).SetAttribute("id", "accordion");
   for (const auto &element: elements) {
-    appendCard(accordion, element, keys);
+    appendCard(accordion, element);
   }
   parent.AppendChild(accordion);
 }
@@ -103,8 +101,7 @@ void HtmlGenerator::fillContainer(
  */
 auto HtmlGenerator::appendCard(
     CTML::Node &parent,
-    const BibElement &element,
-    const std::vector<std::string> &keys
+    const BibElement &element
 ) noexcept -> void {
   auto card = CTML::Node(name<HtmlTag::DIV>).ToggleClass("card");
 
@@ -132,7 +129,7 @@ auto HtmlGenerator::appendCard(
 
   auto cardBody = CTML::Node(name<HtmlTag::DIV>).ToggleClass("card-body");
 
-  appendTable(cardBody, element, keys);
+  appendTable(cardBody, element);
 
   cardBodyWrapper.AppendChild(cardBody);
   headerHeading.AppendChild(button);
@@ -150,17 +147,21 @@ auto HtmlGenerator::appendCard(
  */
 auto HtmlGenerator::appendTable(
     CTML::Node &parent,
-    const BibElement &element,
-    const std::vector<std::string> &keys
+    const BibElement &element
 ) noexcept -> void {
   auto table = CTML::Node(name<HtmlTag::TABLE>).ToggleClass("table");
   auto tableBody = CTML::Node(name<HtmlTag::TABLE_BODY>);
-  for (const auto &key : keys) {
+  for (const auto &field : element.attributes) {
     auto row = CTML::Node(name<HtmlTag::TABLE_ROW>)
-        .AppendChild(CTML::Node(name<HtmlTag::TABLE_HEADING>, key).SetAttribute("scope", "row"))
+        .AppendChild(
+            CTML::Node(
+                name<HtmlTag::TABLE_HEADING>,
+                field.name
+            ).SetAttribute("scope", "row")
+        )
         .AppendChild(CTML::Node(
             name<HtmlTag::TABLE_ENTRY>,
-            element.findAttribute(key).value_or<Field>({"", ""}).value
+            field.value
         ));
     tableBody.AppendChild(row);
   }

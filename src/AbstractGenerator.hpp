@@ -17,11 +17,10 @@ class AbstractGenerator : public Generator {
 
   [[noreturn]] virtual auto fail(const std::string &message, const std::string &type = "unknown") -> void;
 
-  auto write() -> std::string;
+  auto write() -> std::string override;
 
  public:
-
-  AbstractGenerator(std::vector<BibElement> elements);
+  explicit AbstractGenerator(std::vector<BibElement> elements);
 
   static auto uniqueFieldsOf(const std::vector<BibElement> &values) noexcept -> std::unordered_set<std::string>;
 

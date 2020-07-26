@@ -169,7 +169,7 @@ auto Parser::generate(
   std::for_each(
       std::cbegin(inputPaths),
       std::cend(inputPaths),
-      [&](const boost::filesystem::path &p) {
+      [this, &parsedElements, &sorting](const boost::filesystem::path &p) {
         const auto elements = generate(p, sorting);
         parsedElements.insert(std::end(parsedElements), std::cbegin(elements), std::cend(elements));
       }
@@ -193,7 +193,7 @@ auto Parser::filterElements(
       std::cbegin(elements),
       std::cend(elements),
       std::back_inserter(filteredElements),
-      [&](const BibElement &element) {
+      [&props](const BibElement &element) {
         return std::find_if(
             std::cbegin(props),
             std::cend(props),

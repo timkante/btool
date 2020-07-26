@@ -15,20 +15,16 @@ auto BibElement::isCompliantTo(const StyleProperties &props) const -> bool {
           && std::all_of(
               std::cbegin(props.requiredFields),
               std::cend(props.requiredFields),
-              [&](const std::string &requiredFieldName) {
+              [this](const std::string &requiredFieldName) {
                 return findAttribute(requiredFieldName).has_value();
               })
           && std::all_of(
               std::cbegin(attributes),
               std::cend(attributes),
-              [&](const Field &field) {
-                const auto &inRequiredFields = [&](const Field &required) {
-                  return props.requiredFields.find(field.name) != props.requiredFields.end();
-                };
-                const auto &inOptionalFields = [&](const Field &optional) {
-                  return props.optionalFields.find(field.name) != props.optionalFields.end();
-                };
-                return inRequiredFields(field) || inOptionalFields(field);
+              [&props](const Field &field) {
+                const auto inRequiredFields = props.requiredFields.find(field.name) != props.requiredFields.end();
+                const auto inOptionalFields = props.optionalFields.find(field.name) != props.optionalFields.end();
+                return inRequiredFields || inOptionalFields;
               }
           );
 }

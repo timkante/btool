@@ -6,9 +6,9 @@
 /**
  * XML-Generator
  */
-struct XmlGenerator : public AbstractGenerator {
+struct XmlGenerator : AbstractGenerator {
 
-  [[noreturn]] auto fail(const std::string &message, const std::string &type = "XML") -> void override;
+  [[noreturn]] auto fail(const std::string &message, const std::string &type) -> void override;
 
   auto write() -> std::string override;
 
