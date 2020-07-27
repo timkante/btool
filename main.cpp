@@ -115,14 +115,14 @@ void parseCommandLine(int argc, char **argv, po::variables_map &vm, po::options_
       )
       (
           "input,i",
-          boost::program_options::value<std::__1::vector<fs::path>>()->multitoken()->required(),
+          boost::program_options::value<std::vector<fs::path>>()->multitoken()->required(),
           "file(s) to handle"
       )
       ("html,H", po::bool_switch()->default_value(false), "set output-type to html")
       ("xml,X", po::bool_switch()->default_value(false), "set output-type to xml")
       (
           "filter,f",
-          boost::program_options::value<std::__1::vector<std::string>>()->multitoken()->default_value({}, ""),
+          boost::program_options::value<std::vector<std::string>>()->multitoken()->default_value({}, ""),
           "filter output for a style-name(s)"
       )
       ("sort,s", boost::program_options::value<std::string>()->default_value(""), "sort output for a field");
