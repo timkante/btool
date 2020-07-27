@@ -11,7 +11,7 @@ find_package(Boost 1.50 REQUIRED COMPONENTS system filesystem program_options)
 
 option(SONAR "Build all profiling-files." OFF)
 option(COVERAGE "Generate coverage-files." OFF)
-add_compile_options(-std=c++17)
+add_compile_options(-std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden)
 
 if (SONAR)
     add_compile_options(-Wall -Wextra -Wpedantic)
