@@ -25,6 +25,7 @@
     + [Boost](#boost-library)
     + [CMake](#cmake)
   + [Build the Source](#build-construction_worker)
+  + [Get the executable](#alternative)
 + [How to use the program](#usage-sparkles)
   + [Program options](#basic-program-options)
   + [Usage constraints](#usage-constraints)
@@ -136,6 +137,10 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
     ```bash
     $ ./btool <YOUR_ARGUMENTS>
     ```
+
+### Alternative:
+
+Get the executable for your Operating-System from the latest release, rename it to btool and hack away!
 
 ## Usage :sparkles:
 
