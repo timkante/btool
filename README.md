@@ -255,6 +255,8 @@ Here's an example:
 }
 ```
 
+Also see [even bigger example](test/res/publications.bib).
+
 ## Built with :heart: and
 
 | | technology | purpose |
