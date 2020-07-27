@@ -152,7 +152,7 @@ Follow the [official cmake instructions](https://cmake.org/download/) to get you
 
 ### Usage constraints:
 
-+ Only one output-type can be selected (`--html`, `--xml` or `--pdf`), if no type is given, plain-text will be used
++ Only one output-type can be selected (`--html` or `--xml`), if no type is given, plain-text will be used
 + Generating output always requires one or more files/directories as input (`--input`)
 
 ### Examples:
@@ -311,12 +311,12 @@ Group-Members of Group 1:
         + [SnowCard 004](doc/snowCards/functional/snowCardFunctional004.md)
         + [SnowCard 005](doc/snowCards/functional/snowCardFunctional005.md)
     + nonfunctional:
-        + [SnowCard 006](doc/snowCards/nonfunctional/snowCardNonFuctional006.md)
-        + [SnowCard 007](doc/snowCards/nonfunctional/snowCardNonFuctional007.md)
-        + [SnowCard 008](doc/snowCards/nonfunctional/snowCardNonFuctional008.md)
-        + [SnowCard 009](doc/snowCards/nonfunctional/snowCardNonFuctional009.md)
-        + [SnowCard 010](doc/snowCards/nonfunctional/snowCardNonFuctional010.md)
-        + [SnowCard 011](doc/snowCards/nonfunctional/snowCardNonFuctional011.md)
+        + [SnowCard 006](doc/snowCards/nonFunctional/snowCardNonFuctional006.md)
+        + [SnowCard 007](doc/snowCards/nonFunctional/snowCardNonFuctional007.md)
+        + [SnowCard 008](doc/snowCards/nonFunctional/snowCardNonFuctional008.md)
+        + [SnowCard 009](doc/snowCards/nonFunctional/snowCardNonFuctional009.md)
+        + [SnowCard 010](doc/snowCards/nonFunctional/snowCardNonFuctional010.md)
+        + [SnowCard 011](doc/snowCards/nonFunctional/snowCardNonFuctional011.md)
 + [CRC-Cards](doc/CRC_Cards/crcCards.md)
 + [class diagram](doc/milestone3/Klassendiagramm.vpd.png)
 + use-case diagrams
