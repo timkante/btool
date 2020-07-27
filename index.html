@@ -122,6 +122,7 @@ Table of contents</h2>
 </ul>
 </li>
 <li><a href="#build-construction_worker">Build the Source</a></li>
+<li><a href="#alternative">Get the executable</a></li>
 </ul>
 </li>
 <li><a href="#usage-sparkles">How to use the program</a><ul>
@@ -206,9 +207,12 @@ Build :construction_worker:</h3>
 <p class="startli">```bash $ ./btool &lt;YOUR_ARGUMENTS&gt; ```</p>
 </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h3><a class="anchor" id="autotoc_md10"></a>
+Alternative:</h3>
+<p>Get the executable for your Operating-System from the latest release, rename it to btool and hack away!</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Usage :sparkles:</h2>
-<h3><a class="anchor" id="autotoc_md11"></a>
+<h3><a class="anchor" id="autotoc_md12"></a>
 Basic program options:</h3>
 <ul>
 <li><code>-h [ --help ]</code> print usage message</li>
@@ -220,13 +224,13 @@ Basic program options:</h3>
 <li><code>-f [ --filter ] arg</code> filter output for a style-name(s)</li>
 <li><code>-s [ --sort ] arg</code> sort output for a field</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md12"></a>
+<h3><a class="anchor" id="autotoc_md13"></a>
 Usage constraints:</h3>
 <ul>
 <li>Only one output-type can be selected (<code>--html</code> or <code>--xml</code>), if no type is given, plain-text will be used</li>
 <li>Generating output always requires one or more files/directories as input (<code>--input</code>)</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md13"></a>
+<h3><a class="anchor" id="autotoc_md14"></a>
 Examples:</h3>
 <ul>
 <li>Show help message <div class="fragment"><div class="line">btool --help</div>
@@ -236,7 +240,7 @@ Examples:</h3>
 <li>Print results from a given set of of <code>.bib</code>-files, sorted by author, filtered for articles and books, to stdout <div class="fragment"><div class="line">btool -i file1.bib file2.bib ./someMoreFiles -s author -f article booky</div>
 </div><!-- fragment --></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md14"></a>
+<h3><a class="anchor" id="autotoc_md15"></a>
 Using a translation-table:</h3>
 <p>If you want to do more complex filtering of elements, not only filtering for styles, maybe using a translation-table can help you. <br  />
  Providing the <a class="el" href="class_parser.html" title="interface to interact with bib-files">Parser</a> such a table, will make it filter for them. <br  />
@@ -311,7 +315,7 @@ Using a translation-table:</h3>
 <div class="line">  ]</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Also see <a href="test/res/publications.bib">even bigger example</a>.</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Built with :heart: and</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -341,7 +345,7 @@ Built with :heart: and</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"><a href="https://github.com/tinfoilboy/CTML">CTML</a> </td><td class="markdownTableBodyNone">HTML-Generation  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Team :busts_in_silhouette:</h2>
 <p>Group-Members of Group 1:</p><ul>
 <li>Valeri Fitz (Project-Manager)</li>
@@ -352,13 +356,13 @@ Team :busts_in_silhouette:</h2>
 <li>Tom Seidel</li>
 <li>Martin Zeidler</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Milestones :triangular_flag_on_post:</h2>
 <p>Milestone 1 - KW 18 <br  />
  Milestone 2 - KW 19 <br  />
  Milestone 3 - KW 20 <br  />
  Milestone 4 - KW 21</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Reports :pencil:</h2>
 <p>Report - KW 22 <br  />
  Report - KW 23 <br  />
@@ -368,7 +372,7 @@ Reports :pencil:</h2>
  Report - KW 27 <br  />
  Report - KW 28 <br  />
  Report - KW 29</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Required tasks :pencil:</h2>
 <ul>
 <li>Volere SnowCards<ul>
@@ -412,7 +416,7 @@ Required tasks :pencil:</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Links :link:</h2>
 <p>For the current CI-Status/Report <a href="https://travis-ci.com/timkante/btool" title="TravisCI">TravisCI</a> <br  />
  For Code-Analysis: <a href="https://sonarcloud.io/dashboard?id=timkante_bibParser" title="SonarCloud">SonarCloud</a> <br  />

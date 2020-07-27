@@ -38,20 +38,21 @@ var NAVTREE =
           [ "Boost-Library", "index.html#autotoc_md7", null ],
           [ "CMake", "index.html#autotoc_md8", null ]
         ] ],
-        [ "Build :construction_worker:", "index.html#autotoc_md9", null ]
+        [ "Build :construction_worker:", "index.html#autotoc_md9", null ],
+        [ "Alternative:", "index.html#autotoc_md10", null ]
       ] ],
-      [ "Usage :sparkles:", "index.html#autotoc_md10", [
-        [ "Basic program options:", "index.html#autotoc_md11", null ],
-        [ "Usage constraints:", "index.html#autotoc_md12", null ],
-        [ "Examples:", "index.html#autotoc_md13", null ],
-        [ "Using a translation-table:", "index.html#autotoc_md14", null ]
+      [ "Usage :sparkles:", "index.html#autotoc_md11", [
+        [ "Basic program options:", "index.html#autotoc_md12", null ],
+        [ "Usage constraints:", "index.html#autotoc_md13", null ],
+        [ "Examples:", "index.html#autotoc_md14", null ],
+        [ "Using a translation-table:", "index.html#autotoc_md15", null ]
       ] ],
-      [ "Built with :heart: and", "index.html#autotoc_md15", null ],
-      [ "Team :busts_in_silhouette:", "index.html#autotoc_md16", null ],
-      [ "Milestones :triangular_flag_on_post:", "index.html#autotoc_md17", null ],
-      [ "Reports :pencil:", "index.html#autotoc_md18", null ],
-      [ "Required tasks :pencil:", "index.html#autotoc_md19", null ],
-      [ "Links :link:", "index.html#autotoc_md20", null ],
+      [ "Built with :heart: and", "index.html#autotoc_md16", null ],
+      [ "Team :busts_in_silhouette:", "index.html#autotoc_md17", null ],
+      [ "Milestones :triangular_flag_on_post:", "index.html#autotoc_md18", null ],
+      [ "Reports :pencil:", "index.html#autotoc_md19", null ],
+      [ "Required tasks :pencil:", "index.html#autotoc_md20", null ],
+      [ "Links :link:", "index.html#autotoc_md21", null ],
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
@@ -77,7 +78,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_2github_2workspace_2test_2_bib_element_fixture_test_8cpp-example.html",
-"struct_bib_element.html#a2d735d0621a36f8e88cb1d785c08adbb"
+"struct_bib_element.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
