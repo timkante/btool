@@ -343,5 +343,5 @@ Group-Members of Group 1:
 
 For the current CI-Status/Report [TravisCI](https://travis-ci.com/timkante/btool "TravisCI")  
 For Code-Analysis: [SonarCloud](https://sonarcloud.io/dashboard?id=timkante_bibParser "SonarCloud")  
-Documentation: [Netlify](https://btool.timkante.dev "Doxygen")
+Documentation: [Netlify](https://btool.timkante.dev "Doxygen")  
 Presentation-slides: [Netlify](https://slides.btool.timkante.dev)
