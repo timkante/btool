@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "btool", "index.html", [
-    [ "Test List", "test.html", null ],
     [ "Classes", "annotated.html", [
       [ "Project Status :octocat:", "index.html#autotoc_md0", [
         [ "Builds :construction_worker: and Deployments :rocket:", "index.html#autotoc_md1", null ],
