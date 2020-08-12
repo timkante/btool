@@ -113,6 +113,7 @@ auto HtmlGenerator::appendCard(
       element.id + " - " + element.findAttribute("title").value_or<Field>({"", ""}).value
   )
       .ToggleClass("btn btn-link collapsed")
+      .SetAttribute("style", "white-space: normal; text-align: left;")
       .SetAttribute("data-toggle", "collapse")
       .SetAttribute("data-target", "#collapse" + element.id)
       .SetAttribute("aria-expanded", "false")
