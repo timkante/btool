@@ -189,57 +189,58 @@ $(document).ready(function(){initNavTree('_html_generator_8cpp_source.html','');
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      element.id + <span class="stringliteral">&quot; - &quot;</span> + element.findAttribute(<span class="stringliteral">&quot;title&quot;</span>).value_or&lt;<a class="code" href="struct_field.html">Field</a>&gt;({<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>}).<a class="code" href="struct_field.html#a70997ea8176bc81041379bec3962f8e7">value</a></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  )</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      .ToggleClass(<span class="stringliteral">&quot;btn btn-link collapsed&quot;</span>)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;data-toggle&quot;</span>, <span class="stringliteral">&quot;collapse&quot;</span>)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;data-target&quot;</span>, <span class="stringliteral">&quot;#collapse&quot;</span> + element.id)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;aria-expanded&quot;</span>, <span class="stringliteral">&quot;false&quot;</span>)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;aria-controls&quot;</span>, <span class="stringliteral">&quot;collapse&quot;</span> + element.id);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">auto</span> cardBodyWrapper = CTML::Node(name&lt;HtmlTag::DIV&gt;)</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      .ToggleClass(<span class="stringliteral">&quot;collapse&quot;</span>)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;id&quot;</span>, <span class="stringliteral">&quot;collapse&quot;</span> + element.id)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;aria-labelledby&quot;</span>, element.id)</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;data-parent&quot;</span>, <span class="stringliteral">&quot;#accordion&quot;</span>);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keyword">auto</span> cardBody = CTML::Node(name&lt;HtmlTag::DIV&gt;).ToggleClass(<span class="stringliteral">&quot;card-body&quot;</span>);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  appendTable(cardBody, element);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  cardBodyWrapper.AppendChild(cardBody);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  headerHeading.AppendChild(button);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  cardHeader.AppendChild(headerHeading);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  card.AppendChild(cardHeader);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  card.AppendChild(cardBodyWrapper);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  parent.AppendChild(card);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="struct_html_generator.html#a5b09a5df1b8d7a2eef84cb83fe28c7c0">  144</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_html_generator.html#a5b09a5df1b8d7a2eef84cb83fe28c7c0">HtmlGenerator::appendTable</a>(</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    CTML::Node &amp;parent,</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;element</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;) noexcept -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keyword">auto</span> table = CTML::Node(name&lt;HtmlTag::TABLE&gt;).ToggleClass(<span class="stringliteral">&quot;table&quot;</span>);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keyword">auto</span> tableBody = CTML::Node(name&lt;HtmlTag::TABLE_BODY&gt;);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;field : sortedFields(element.attributes)) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keyword">auto</span> row = CTML::Node(name&lt;HtmlTag::TABLE_ROW&gt;)</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        .AppendChild(</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            CTML::Node(</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                name&lt;HtmlTag::TABLE_HEADING&gt;,</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                field.name</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            ).SetAttribute(<span class="stringliteral">&quot;scope&quot;</span>, <span class="stringliteral">&quot;row&quot;</span>)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        )</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        .AppendChild(CTML::Node(</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            name&lt;HtmlTag::TABLE_ENTRY&gt;,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            field.value</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        ));</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    tableBody.AppendChild(row);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  table.AppendChild(tableBody);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  parent.AppendChild(table);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;style&quot;</span>, <span class="stringliteral">&quot;white-space: normal; text-align: left;&quot;</span>)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;data-toggle&quot;</span>, <span class="stringliteral">&quot;collapse&quot;</span>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;data-target&quot;</span>, <span class="stringliteral">&quot;#collapse&quot;</span> + element.id)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;aria-expanded&quot;</span>, <span class="stringliteral">&quot;false&quot;</span>)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;aria-controls&quot;</span>, <span class="stringliteral">&quot;collapse&quot;</span> + element.id);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">auto</span> cardBodyWrapper = CTML::Node(name&lt;HtmlTag::DIV&gt;)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      .ToggleClass(<span class="stringliteral">&quot;collapse&quot;</span>)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;id&quot;</span>, <span class="stringliteral">&quot;collapse&quot;</span> + element.id)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;aria-labelledby&quot;</span>, element.id)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      .SetAttribute(<span class="stringliteral">&quot;data-parent&quot;</span>, <span class="stringliteral">&quot;#accordion&quot;</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">auto</span> cardBody = CTML::Node(name&lt;HtmlTag::DIV&gt;).ToggleClass(<span class="stringliteral">&quot;card-body&quot;</span>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  appendTable(cardBody, element);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  cardBodyWrapper.AppendChild(cardBody);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  headerHeading.AppendChild(button);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  cardHeader.AppendChild(headerHeading);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  card.AppendChild(cardHeader);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  card.AppendChild(cardBodyWrapper);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  parent.AppendChild(card);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="struct_html_generator.html#a5b09a5df1b8d7a2eef84cb83fe28c7c0">  145</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="struct_html_generator.html#a5b09a5df1b8d7a2eef84cb83fe28c7c0">HtmlGenerator::appendTable</a>(</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    CTML::Node &amp;parent,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">const</span> <a class="code" href="struct_bib_element.html">BibElement</a> &amp;element</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;) noexcept -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keyword">auto</span> table = CTML::Node(name&lt;HtmlTag::TABLE&gt;).ToggleClass(<span class="stringliteral">&quot;table&quot;</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keyword">auto</span> tableBody = CTML::Node(name&lt;HtmlTag::TABLE_BODY&gt;);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;field : sortedFields(element.attributes)) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keyword">auto</span> row = CTML::Node(name&lt;HtmlTag::TABLE_ROW&gt;)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        .AppendChild(</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            CTML::Node(</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                name&lt;HtmlTag::TABLE_HEADING&gt;,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                field.name</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            ).SetAttribute(<span class="stringliteral">&quot;scope&quot;</span>, <span class="stringliteral">&quot;row&quot;</span>)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        )</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        .AppendChild(CTML::Node(</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            name&lt;HtmlTag::TABLE_ENTRY&gt;,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            field.value</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        ));</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    tableBody.AppendChild(row);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  table.AppendChild(tableBody);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  parent.AppendChild(table);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_abstract_generator_html"><div class="ttname"><a href="class_abstract_generator.html">AbstractGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="_abstract_generator_8hpp_source.html#l00014">AbstractGenerator.hpp:14</a></div></div>
-<div class="ttc" id="astruct_html_generator_html_a5b09a5df1b8d7a2eef84cb83fe28c7c0"><div class="ttname"><a href="struct_html_generator.html#a5b09a5df1b8d7a2eef84cb83fe28c7c0">HtmlGenerator::appendTable</a></div><div class="ttdeci">static auto appendTable(CTML::Node &amp;parent, const BibElement &amp;element) noexcept -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="_html_generator_8cpp_source.html#l00144">HtmlGenerator.cpp:144</a></div></div>
+<div class="ttc" id="astruct_html_generator_html_a5b09a5df1b8d7a2eef84cb83fe28c7c0"><div class="ttname"><a href="struct_html_generator.html#a5b09a5df1b8d7a2eef84cb83fe28c7c0">HtmlGenerator::appendTable</a></div><div class="ttdeci">static auto appendTable(CTML::Node &amp;parent, const BibElement &amp;element) noexcept -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="_html_generator_8cpp_source.html#l00145">HtmlGenerator.cpp:145</a></div></div>
 <div class="ttc" id="aclass_abstract_generator_html_a36877e43b8ad9474182ec3cd276cab2d"><div class="ttname"><a href="class_abstract_generator.html#a36877e43b8ad9474182ec3cd276cab2d">AbstractGenerator::fail</a></div><div class="ttdeci">virtual auto fail(const std::string &amp;message, const std::string &amp;type=&quot;unknown&quot;) -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="_abstract_generator_8cpp_source.html#l00012">AbstractGenerator.cpp:12</a></div></div>
 <div class="ttc" id="astruct_html_generator_html_a81c0eb51c9293db7d0adcbfc82295577"><div class="ttname"><a href="struct_html_generator.html#a81c0eb51c9293db7d0adcbfc82295577">HtmlGenerator::fail</a></div><div class="ttdeci">auto fail(const std::string &amp;message, const std::string &amp;type) -&gt; void override</div><div class="ttdef"><b>Definition:</b> <a href="_html_generator_8cpp_source.html#l00008">HtmlGenerator.cpp:8</a></div></div>
 <div class="ttc" id="astruct_field_html"><div class="ttname"><a href="struct_field.html">Field</a></div><div class="ttdoc">Field-Container.</div><div class="ttdef"><b>Definition:</b> <a href="_field_8hpp_source.html#l00011">Field.hpp:11</a></div></div>
