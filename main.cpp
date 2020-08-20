@@ -156,7 +156,7 @@ void checkConstraints(const po::variables_map &vm) {
  * @return program exit-code
  */
 int main(int argc, char **argv) try {
-  //po::variables_map vm;
+  po::variables_map vm;
   po::options_description description("Allowed Options");
   parseCommandLine(argc, argv, vm, description);
 
